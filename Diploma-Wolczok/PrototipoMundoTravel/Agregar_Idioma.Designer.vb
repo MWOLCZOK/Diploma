@@ -39,7 +39,7 @@ Partial Class Agregar_Idioma
         'CbxCultura
         '
         Me.CbxCultura.FormattingEnabled = True
-        Me.CbxCultura.Location = New System.Drawing.Point(339, 39)
+        Me.CbxCultura.Location = New System.Drawing.Point(342, 39)
         Me.CbxCultura.Name = "CbxCultura"
         Me.CbxCultura.Size = New System.Drawing.Size(173, 21)
         Me.CbxCultura.TabIndex = 14
