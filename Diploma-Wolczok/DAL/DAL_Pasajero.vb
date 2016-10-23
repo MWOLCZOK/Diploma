@@ -27,6 +27,7 @@ Public Class DAL_Pasajero
             End With
             Acceso.Escritura(command)
             command.Dispose()
+            'PRUEBA
 
         Catch ex As Exception
         End Try
