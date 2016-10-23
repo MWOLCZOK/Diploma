@@ -67,7 +67,8 @@ Public Class DAL_Localidad
         oLocalidad.CantidadBarrios = paramDataRow.Item("Cantidadbarrios")
         oLocalidad.Habitantes = paramDataRow.Item("Habitantes")
         'falta provincia
-
+        'aca va la provincia
+        'entendes?
         Return oLocalidad
     End Function
 
