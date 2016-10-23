@@ -96,7 +96,7 @@ Partial Class Agregar_Idioma
         Me.DgVIdioma.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgVIdioma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgVIdioma.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Control, Me.Codigo, Me.Palabra, Me.Traduccion})
-        Me.DgVIdioma.Location = New System.Drawing.Point(-6, 66)
+        Me.DgVIdioma.Location = New System.Drawing.Point(-6, 71)
         Me.DgVIdioma.MultiSelect = False
         Me.DgVIdioma.Name = "DgVIdioma"
         Me.DgVIdioma.RowHeadersVisible = False
