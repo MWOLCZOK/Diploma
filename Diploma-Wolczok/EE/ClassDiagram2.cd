@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EE.BE_Alojamiento" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAACBAQIAQICAAmBBADBIKBAAAAAAAAAAABAomARAA=</HashCode>
+      <FileName>BE_Alojamiento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Asiento" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAMABIAAAAAAAAAAABAA=</HashCode>
+      <FileName>BE_Asiento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Avion" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkgAAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BE_Avion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_CategoriaAsiento" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIMAAAAAAEJAAAAAAAAAAAAAUAAAAQ=</HashCode>
+      <FileName>BE_CategoriaAsiento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_ComprobantePago" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAEAAAQoAEAgEAAAABAAAAQAAQAAgAAAAAAQA=</HashCode>
+      <FileName>BE_ComprobantePago.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Departamento" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAEAABBAAgAAQgAAAAEAAAAAEAAAAAAIAAAA=</HashCode>
+      <FileName>BE_Departamento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Destino" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAgAAACAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>BE_Destino.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_EmpresaMicro" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAMAgAAAAABgAwAAAAIAAAAAgAAEIA=</HashCode>
+      <FileName>BE_EmpresaMicro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Habitacion" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAAAKIAAYAAAIAQIIAAAAACAAAIAAAAAAAAwAQAA=</HashCode>
+      <FileName>BE_Habitacion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Hostel" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAUAAAKQAAAEAAAIgAAAABAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>BE_Hostel.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Hotel" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAACAAAIAAAAgCAABAAAAAAAAAAAAAoAAAA=</HashCode>
+      <FileName>BE_Hotel.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_LineaAerea" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAMAAAAEAABAAwAAAAQAAAAAhAAAIA=</HashCode>
+      <FileName>BE_LineaAerea.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Localidad" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAACGAACAAAABAAQAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>BE_Localidad.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Micro" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA=</HashCode>
+      <FileName>BE_Micro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Pago" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAoAAAACAAAQAACAAAAAAACAAAAAAAQA=</HashCode>
+      <FileName>BE_Pago.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Pais" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACERAAAAAABCAQAAAAAAAIBAAAAAAA=</HashCode>
+      <FileName>BE_Pais.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Pasajero" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACACQEEAAAgQQAAAkACAAAADAAAgKAAAA=</HashCode>
+      <FileName>BE_Pasajero.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Posada" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAgAAAAEgAAQAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>BE_Posada.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Provincia" Collapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAACgAAAAAAGAAAAAAABAQAAAABAQAAAAAAAAgA=</HashCode>
+      <FileName>BE_Provincia.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_RerservaAlojamiento" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAIAAAAAACAAAgAAAgAAAABgAAAAAAAAAAAcAAQAA=</HashCode>
+      <FileName>BE_RerservaAlojamiento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Reserva" Collapsed="true">
+    <Position X="6.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAAAAAAAAAAAYAAAAAgAAAAAAIAAAAAAIIAAg=</HashCode>
+      <FileName>BE_Reserva.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_ReservaViaje" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AISAAAgAAAAAAABgCAGEAIABAAQACAAAAAAAAwAAQAE=</HashCode>
+      <FileName>BE_ReservaViaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_ServicioVuelo" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAEAAAAAAAAAEAEAAAgACAAQAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>BE_ServicioVuelo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Transporte" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAACAkAAAAAAAFAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>BE_Transporte.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Viaje" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAAAAAAAEEAACAAQARAAAIAAAAAAAAAgAAAEA=</HashCode>
+      <FileName>BE_Viaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Voucher" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQBEAAAAIAAAAgAAAAAAQAAAAQQACAACAAAQAAQAg=</HashCode>
+      <FileName>BE_Voucher.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_VoucherAlojamiento" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAEAAACAAAAACAAAAAAAAACAAAMAAAAA=</HashCode>
+      <FileName>BE_VoucherAlojamiento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_VoucherViaje" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAEAAAQAAABCgAAAAAAAACAAAAFAIBAAAgAAAAADQ=</HashCode>
+      <FileName>BE_VoucherViaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.BE_Vuelo" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAARAAAACAAAIAAAAAAAAAAAAAAAAAAAEAAABA=</HashCode>
+      <FileName>BE_Vuelo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.GrupoPermisoEntidad" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAIAAAgAAAQAAAAAIAAAAAAAAAEAEAAAAA=</HashCode>
+      <FileName>GrupoPermisoEntidad.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.PermisoBaseEntidad" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAIgAAkgABQgAAAAIAAAAAAAAAEAAIAAAA=</HashCode>
+      <FileName>PermisoBaseEntidad.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.PermisoEntidad" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAIAAAgAAAQAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>PermisoEntidad.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.Usuario" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgAQEAYBAgABRAAAIAAACAIEAAAIAAAA=</HashCode>
+      <FileName>Usuario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EE.My.MySettings" Collapsed="true">
+    <Position X="20.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Module Name="EE.My.Resources.Resources" Collapsed="true">
+    <Position X="14.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="EE.My.MySettingsProperty" Collapsed="true">
+    <Position X="12.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

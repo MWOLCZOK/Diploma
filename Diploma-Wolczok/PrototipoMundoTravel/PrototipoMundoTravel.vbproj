@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8B571D8-3056-4830-9338-E7D2D8DC99D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PrototipoMundoTravel.My.MyApplication</StartupObject>
+    <RootNamespace>PrototipoMundoTravel</RootNamespace>
+    <AssemblyName>PrototipoMundoTravel</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PrototipoMundoTravel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PrototipoMundoTravel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agregar_Hostel.Designer.vb">
+      <DependentUpon>Agregar_Hostel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Hostel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Hotel.Designer.vb">
+      <DependentUpon>Agregar_Hotel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Hotel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Idioma.Designer.vb">
+      <DependentUpon>Agregar_Idioma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Idioma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Localidad.Designer.vb">
+      <DependentUpon>Agregar_Localidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Localidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Pais.Designer.vb">
+      <DependentUpon>Agregar_Pais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Pais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Pasajero.Designer.vb">
+      <DependentUpon>Agregar_Pasajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Pasajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Provincia.Designer.vb">
+      <DependentUpon>Agregar_Provincia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Provincia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Usuario.Designer.vb">
+      <DependentUpon>Agregar_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar Pais.Designer.vb">
+      <DependentUpon>Eliminar Pais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar Pais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Idioma.Designer.vb">
+      <DependentUpon>Eliminar_Idioma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Idioma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Localidad.Designer.vb">
+      <DependentUpon>Eliminar_Localidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Localidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Pasajero.Designer.vb">
+      <DependentUpon>Eliminar_Pasajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Pasajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Permiso.Designer.vb">
+      <DependentUpon>Eliminar_Permiso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Permiso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Provincia.Designer.vb">
+      <DependentUpon>Eliminar_Provincia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Provincia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Usuario.Designer.vb">
+      <DependentUpon>Eliminar_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Backup.Designer.vb">
+      <DependentUpon>Form_Backup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Backup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControladorTraductor.vb" />
+    <Compile Include="ControladorPermisos.vb" />
+    <Compile Include="Form_Restore.Designer.vb">
+      <DependentUpon>Form_Restore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Restore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_Permisos.Designer.vb">
+      <DependentUpon>Agregar_Permisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Permisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar Pais.Designer.vb">
+      <DependentUpon>Modificar Pais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar Pais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Idioma.Designer.vb">
+      <DependentUpon>Modificar_Idioma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Idioma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Localidad.Designer.vb">
+      <DependentUpon>Modificar_Localidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Localidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Pasajero.Designer.vb">
+      <DependentUpon>Modificar_Pasajero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Pasajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Permiso.Designer.vb">
+      <DependentUpon>Modificar_Permiso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Permiso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Provincia.Designer.vb">
+      <DependentUpon>Modificar_Provincia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Provincia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar_Usuario.Designer.vb">
+      <DependentUpon>Modificar_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SeleccionarIdioma.Designer.vb">
+      <DependentUpon>SeleccionarIdioma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarIdioma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizarBitacora.Designer.vb">
+      <DependentUpon>visualizarBitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visualizarBitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Agregar_Hostel.resx">
+      <DependentUpon>Agregar_Hostel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Hotel.resx">
+      <DependentUpon>Agregar_Hotel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Idioma.resx">
+      <DependentUpon>Agregar_Idioma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Localidad.resx">
+      <DependentUpon>Agregar_Localidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Pais.resx">
+      <DependentUpon>Agregar_Pais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Pasajero.resx">
+      <DependentUpon>Agregar_Pasajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Provincia.resx">
+      <DependentUpon>Agregar_Provincia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Usuario.resx">
+      <DependentUpon>Agregar_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar Pais.resx">
+      <DependentUpon>Eliminar Pais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Idioma.resx">
+      <DependentUpon>Eliminar_Idioma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Localidad.resx">
+      <DependentUpon>Eliminar_Localidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Pasajero.resx">
+      <DependentUpon>Eliminar_Pasajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Permiso.resx">
+      <DependentUpon>Eliminar_Permiso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Provincia.resx">
+      <DependentUpon>Eliminar_Provincia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Usuario.resx">
+      <DependentUpon>Eliminar_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Backup.resx">
+      <DependentUpon>Form_Backup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Restore.resx">
+      <DependentUpon>Form_Restore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Permisos.resx">
+      <DependentUpon>Agregar_Permisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar Pais.resx">
+      <DependentUpon>Modificar Pais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Idioma.resx">
+      <DependentUpon>Modificar_Idioma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Localidad.resx">
+      <DependentUpon>Modificar_Localidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Pasajero.resx">
+      <DependentUpon>Modificar_Pasajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Permiso.resx">
+      <DependentUpon>Modificar_Permiso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Provincia.resx">
+      <DependentUpon>Modificar_Provincia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Usuario.resx">
+      <DependentUpon>Modificar_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleccionarIdioma.resx">
+      <DependentUpon>SeleccionarIdioma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizarBitacora.resx">
+      <DependentUpon>visualizarBitacora.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.vbproj">
+      <Project>{125de246-613f-4346-972e-d8e2dda248a0}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EE\BE.vbproj">
+      <Project>{0adb6d50-dbc9-4dfe-ae2a-6d19f03e94a3}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
