@@ -79,6 +79,12 @@
     <Compile Include="Agregar_Departamento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Agregar_Destino.Designer.vb">
+      <DependentUpon>Agregar_Destino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Destino.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Agregar_Hostel.Designer.vb">
       <DependentUpon>Agregar_Hostel.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,12 @@
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
     </Compile>
     <Compile Include="Eliminar Pais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Destino.Designer.vb">
+      <DependentUpon>Eliminar_Destino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Destino.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Eliminar_Idioma.Designer.vb">
@@ -207,6 +219,12 @@
     <Compile Include="Modificar Pais.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modificar_Destino.Designer.vb">
+      <DependentUpon>Modificar_Destino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_Destino.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modificar_Idioma.Designer.vb">
       <DependentUpon>Modificar_Idioma.vb</DependentUpon>
     </Compile>
@@ -275,6 +293,9 @@
     <EmbeddedResource Include="Agregar_Departamento.resx">
       <DependentUpon>Agregar_Departamento.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Destino.resx">
+      <DependentUpon>Agregar_Destino.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Hostel.resx">
       <DependentUpon>Agregar_Hostel.vb</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar Pais.resx">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Destino.resx">
+      <DependentUpon>Eliminar_Destino.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar_Idioma.resx">
       <DependentUpon>Eliminar_Idioma.vb</DependentUpon>
@@ -337,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar Pais.resx">
       <DependentUpon>Modificar Pais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar_Destino.resx">
+      <DependentUpon>Modificar_Destino.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar_Idioma.resx">
       <DependentUpon>Modificar_Idioma.vb</DependentUpon>

@@ -68,6 +68,7 @@
     <Compile Include="BLL_BackupRestore.vb" />
     <Compile Include="BLL_Bitacora.vb" />
     <Compile Include="BLL_Departamento.vb" />
+    <Compile Include="BLL_Destino.vb" />
     <Compile Include="BLL_DigitoVerificador.vb" />
     <Compile Include="BLL_GestorNegocio.vb" />
     <Compile Include="BLL_GestorVoucher.vb" />

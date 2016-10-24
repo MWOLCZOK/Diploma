@@ -109,6 +109,7 @@ Public Class DAL_Hostel
 
     Private Function formatearHostel(ByVal paramDataRow As DataRow) As BE_Hostel
         Dim oHostel As New BE_Hostel
+        oHostel.ID = paramDataRow.Item("ID")
         oHostel.Categoria = paramDataRow.Item("Categoria")
         oHostel.ConectividadWIFI = paramDataRow.Item("ConectividadWIFI")
         oHostel.Descripcion = paramDataRow.Item("Descripcion")

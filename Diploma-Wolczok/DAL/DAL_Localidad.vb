@@ -90,5 +90,24 @@ Public Class DAL_Localidad
         End Try
     End Function
 
+    Public Function consultarLocalidad(ByVal oLocalidad As EE.BE_Localidad) As EE.BE_Localidad
+        Try
+            Dim consulta As String = ("Select * from Localidad where ID=@ID and BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", oLocalidad.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return Me.formatearLocalidad(dt.Rows(0))
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 
 End Class

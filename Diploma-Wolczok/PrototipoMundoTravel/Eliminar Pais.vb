@@ -44,4 +44,12 @@ Public Class Eliminar_Pais
         Me.Close()
 
     End Sub
+
+    Private Sub CbxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxPais.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub lblusuario_Click(sender As Object, e As EventArgs) Handles lblusuario.Click
+
+    End Sub
 End Class
