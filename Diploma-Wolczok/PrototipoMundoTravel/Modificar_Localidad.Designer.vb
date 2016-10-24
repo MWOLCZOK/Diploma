@@ -22,7 +22,6 @@ Partial Class Modificar_Localidad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Txtdestino = New System.Windows.Forms.TextBox()
         Me.Txthabitantes = New System.Windows.Forms.TextBox()
         Me.Txtcantidadbarrios = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,14 +33,8 @@ Partial Class Modificar_Localidad
         Me.lblidioma = New System.Windows.Forms.Label()
         Me.Cbxloc = New System.Windows.Forms.ComboBox()
         Me.lblpais = New System.Windows.Forms.Label()
+        Me.Cbxprov = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
-        '
-        'Txtdestino
-        '
-        Me.Txtdestino.Location = New System.Drawing.Point(35, 263)
-        Me.Txtdestino.Name = "Txtdestino"
-        Me.Txtdestino.Size = New System.Drawing.Size(254, 20)
-        Me.Txtdestino.TabIndex = 75
         '
         'Txthabitantes
         '
@@ -105,9 +98,9 @@ Partial Class Modificar_Localidad
         Me.lblperfil.AutoSize = True
         Me.lblperfil.Location = New System.Drawing.Point(32, 247)
         Me.lblperfil.Name = "lblperfil"
-        Me.lblperfil.Size = New System.Drawing.Size(43, 13)
+        Me.lblperfil.Size = New System.Drawing.Size(51, 13)
         Me.lblperfil.TabIndex = 66
-        Me.lblperfil.Text = "Destino"
+        Me.lblperfil.Text = "Provincia"
         '
         'lblidioma
         '
@@ -136,12 +129,21 @@ Partial Class Modificar_Localidad
         Me.lblpais.TabIndex = 63
         Me.lblpais.Text = "Seleccionar Localidad"
         '
+        'Cbxprov
+        '
+        Me.Cbxprov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cbxprov.FormattingEnabled = True
+        Me.Cbxprov.Location = New System.Drawing.Point(35, 263)
+        Me.Cbxprov.Name = "Cbxprov"
+        Me.Cbxprov.Size = New System.Drawing.Size(254, 21)
+        Me.Cbxprov.TabIndex = 75
+        '
         'Modificar_Localidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(341, 365)
-        Me.Controls.Add(Me.Txtdestino)
+        Me.Controls.Add(Me.Cbxprov)
         Me.Controls.Add(Me.Txthabitantes)
         Me.Controls.Add(Me.Txtcantidadbarrios)
         Me.Controls.Add(Me.Label1)
@@ -159,7 +161,6 @@ Partial Class Modificar_Localidad
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Txtdestino As System.Windows.Forms.TextBox
     Friend WithEvents Txthabitantes As System.Windows.Forms.TextBox
     Friend WithEvents Txtcantidadbarrios As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -171,4 +172,5 @@ Partial Class Modificar_Localidad
     Friend WithEvents lblidioma As System.Windows.Forms.Label
     Friend WithEvents Cbxloc As System.Windows.Forms.ComboBox
     Friend WithEvents lblpais As System.Windows.Forms.Label
+    Friend WithEvents Cbxprov As System.Windows.Forms.ComboBox
 End Class

@@ -5,6 +5,8 @@ Public Class Modificar_Localidad
 
     Private Sub Modificar_Localidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         iniciar()
+        cargarcombos()
+
     End Sub
 
 
@@ -20,7 +22,7 @@ Public Class Modificar_Localidad
             Txtdescripcion.Text = ""
             Txtcantidadbarrios.Text = ""
             Txthabitantes.Text = ""
-            Txtdestino.Text = ""
+            'Txtdestino.Text = ""
 
             Dim GestorLoc As New BLL_Localidad
             Dim Listaloc = GestorLoc.consultarLocalidades()
@@ -32,6 +34,16 @@ Public Class Modificar_Localidad
         End Try
     End Sub
 
+    Public Sub cargarcombos()
+        Dim Listaprov As New List(Of BE_Provincia)
+        Dim bllListaprov As New BLL_Provincia
+        Listaprov = bllListaprov.Consultarprovincias
+        For Each miprov As BE_Provincia In Listaprov
+            Me.Cbxprov.Items.Add(miprov)
+        Next
+
+    End Sub
+
     Private Sub Cbxloc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbxloc.SelectedIndexChanged
         Try
             If Not IsNothing(Cbxloc.SelectedItem) Then
@@ -41,6 +53,11 @@ Public Class Modificar_Localidad
                 Me.Txtcantidadbarrios.Text = Nuevaloc.CantidadBarrios
                 Me.Txthabitantes.Text = Nuevaloc.Habitantes
                 '            Me.Txtdestino.Text = Nuevaloc.Destino
+                For Each miProv As BE_Provincia In Cbxprov.Items
+                    If miProv.ID = Nuevaloc.Provincia.ID Then
+                        Cbxprov.SelectedItem = miProv
+                    End If
+                Next
             End If
         Catch ex As Exception
         End Try
