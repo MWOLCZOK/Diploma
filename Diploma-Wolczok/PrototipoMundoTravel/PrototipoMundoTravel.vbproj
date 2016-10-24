@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agregar_Departamento.Designer.vb">
+      <DependentUpon>Agregar_Departamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Departamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Agregar_Hostel.Designer.vb">
       <DependentUpon>Agregar_Hostel.vb</DependentUpon>
     </Compile>
@@ -266,6 +272,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Agregar_Departamento.resx">
+      <DependentUpon>Agregar_Departamento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Hostel.resx">
       <DependentUpon>Agregar_Hostel.vb</DependentUpon>
     </EmbeddedResource>
@@ -381,6 +390,9 @@
       <Project>{0adb6d50-dbc9-4dfe-ae2a-6d19f03e94a3}</Project>
       <Name>BE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BDMundoTravel.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

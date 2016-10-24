@@ -90,7 +90,7 @@ Public Class DAL_Pais
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim parampais As BE_Pais = DirectCast(paramobjeto, BE_Pais)
-            Dim command As SqlCommand = Acceso.MiComando("Update Pais set Descripcion=@Descripcion, Idioma=@Idioma, Poblaciontotal=@PoblacionTotal, Zonahoraria=@ZonaHoraria, Provincia=@Provincia where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Pais set Descripcion=@Descripcion, Idioma=@Idioma, Poblaciontotal=@PoblacionTotal, Zonahoraria=@ZonaHoraria, where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", parampais.ID))
                 .Add(New SqlParameter("@Descripcion", parampais.Descripcion))

@@ -94,4 +94,24 @@ Public Class DAL_Provincia
     End Function
 
 
+    Public Function consultarProvincia(ByVal oProvincia As EE.BE_Provincia) As EE.BE_Provincia
+        Try
+            Dim consulta As String = ("Select * from Provincia where ID=@ID and BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", oProvincia.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return Me.formatearProvincia(dt.Rows(0))
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
 End Class

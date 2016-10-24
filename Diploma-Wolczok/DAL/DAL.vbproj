@@ -69,6 +69,7 @@
     <Compile Include="DAL_Alojamiento.vb" />
     <Compile Include="DAL_BackupRestore.vb" />
     <Compile Include="DAL_Bitacora.vb" />
+    <Compile Include="DAL_Departamento.vb" />
     <Compile Include="DAL_DigitoVerificador.vb" />
     <Compile Include="DAL_Hostel.vb" />
     <Compile Include="DAL_Hotel.vb" />

@@ -66,9 +66,9 @@ Public Class DAL_Localidad
         oLocalidad.Descripcion = paramDataRow.Item("Descripcion")
         oLocalidad.CantidadBarrios = paramDataRow.Item("Cantidadbarrios")
         oLocalidad.Habitantes = paramDataRow.Item("Habitantes")
-        'falta provincia
-        'aca va la provincia
-        'entendes?
+        Dim oProvincia As New BE_Provincia
+        oProvincia.ID = CInt(paramDataRow.Item("ID_Provincia"))
+        oLocalidad.Provincia = (New DAL.DAL_Provincia).consultarProvincia(oProvincia)
         Return oLocalidad
     End Function
 
