@@ -265,8 +265,8 @@ Public Class FormMenu
     End Sub
 
     Private Sub EliminarDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarDepartamentoToolStripMenuItem.Click
-        Dim formdep As New Eliminar_Departamento
-        AbrirForm(formdep)
+        '       Dim formdep As New Eliminar_Departamento
+        '     AbrirForm(formdep)
     End Sub
 
     Private Sub AgregarDestinoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarDestinoToolStripMenuItem.Click

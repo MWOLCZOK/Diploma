@@ -114,6 +114,9 @@ Public Class DAL_Departamento
         oDepa.TipoCama = paramDataRow.Item("Tipocama")
         oDepa.TipoHabitacion = paramDataRow.Item("Tipohabitacion")
         oDepa.Ubicacion = paramDataRow.Item("Ubicacion")
+        Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+        oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oDepa)
+        oDepa.ListaHabitaciones = oListaHabitaciones
         Return oDepa
     End Function
 

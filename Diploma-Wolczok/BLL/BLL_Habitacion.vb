@@ -31,7 +31,7 @@ Public Class BLL_Habitacion
         Return _dalHabitacion.ConsultarHabitaciones()
     End Function
 
-    Public Function ConsultarHabitacion() As BE_Habitacion
-        Return _dalHabitacion.ConsultarHabitacion()
+    Public Function ConsultarHabitacion(ByVal paramHabitacion As BE_Habitacion) As BE_Habitacion
+        Return _dalHabitacion.ConsultarHabitacion(paramHabitacion)
     End Function
 End Class

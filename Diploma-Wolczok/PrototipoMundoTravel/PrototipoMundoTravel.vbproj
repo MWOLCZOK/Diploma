@@ -139,12 +139,6 @@
     <Compile Include="Eliminar Pais.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Eliminar_Departamento.Designer.vb">
-      <DependentUpon>Eliminar_Departamento.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Eliminar_Departamento.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Eliminar_Destino.Designer.vb">
       <DependentUpon>Eliminar_Destino.vb</DependentUpon>
     </Compile>
@@ -328,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar Pais.resx">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar_Departamento.resx">
-      <DependentUpon>Eliminar_Departamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar_Destino.resx">
       <DependentUpon>Eliminar_Destino.vb</DependentUpon>

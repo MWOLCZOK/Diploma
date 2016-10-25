@@ -131,6 +131,9 @@ Public Class DAL_Hotel
         oHotel.CantidadEstrellas = paramDataRow.Item("CantidadEstrellas")
         oHotel.Nombre = paramDataRow.Item("Nombre")
         oHotel.TipoHotel = paramDataRow.Item("TipoHotel")
+        Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+        oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oHotel)
+        oHotel.ListaHabitaciones = oListaHabitaciones
         Return oHotel
     End Function
 End Class

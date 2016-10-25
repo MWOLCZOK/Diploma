@@ -130,6 +130,9 @@ Public Class DAL_Hostel
         oHostel.HabitacionPrivada = paramDataRow.Item("HabitacionPrivada")
         oHostel.Lockers = paramDataRow.Item("Lockers")
         oHostel.Nombre = paramDataRow.Item("Nombre")
+        Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+        oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oHostel)
+        oHostel.ListaHabitaciones = oListaHabitaciones
         Return oHostel
     End Function
 End Class

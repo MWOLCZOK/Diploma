@@ -85,7 +85,7 @@ Public Class DAL_Habitacion
 
     Public Function ConsultarHabitacion(ByVal oHabitacion As EE.BE_Habitacion) As BE_Habitacion
         Try
-            Dim consulta As String = ("Select * from Destino where ID=@ID and BL=@BL")
+            Dim consulta As String = ("Select * from Habitacion where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
                 .Add(New SqlParameter("@ID", oHabitacion.ID))
@@ -102,6 +102,26 @@ Public Class DAL_Habitacion
         End Try
     End Function
 
+    Public Function ConsultarHabitaciones(ByVal oAlojamiento As EE.BE_Alojamiento) As List(Of BE_Habitacion)
+        Try
+            Dim consulta As String = ("Select * from Habitacion where ID_Habitacion=@ID_Habitacion and BL=@BL")
+            Dim milistaHabitacion As New List(Of BE_Habitacion)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID_Habitacion", oAlojamiento.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                milistaHabitacion.Add(Me.formatearHabitacion(drow))
+            Next
+            Return milistaHabitacion
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+  
     Private Function formatearHabitacion(ByVal paramDataRow As DataRow) As BE_Habitacion
         Dim oHabitacion As New BE_Habitacion
         oHabitacion.ID = paramDataRow.Item("ID")
