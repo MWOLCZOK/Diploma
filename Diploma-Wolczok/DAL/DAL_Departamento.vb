@@ -5,14 +5,13 @@ Imports System.Configuration
 Public Class DAL_Departamento
 
     Implements Master
-
-
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramDepartamento As BE_Departamento = DirectCast(paramobjeto, BE_Departamento)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Departamento values (@ID, @Nombre, @Cantidadhambientes, @Cantidadbaños, @Cochera, @Tipoedificio,@Categoria, @Conectividadwifi, @Descripcion, @Gimnasio, @Mascotas, @Piscina, @Precioalquiler, @Sauna, @Servicioaireacond, @Serviciodesayuno, @Serviciotv, @Tipoalojamiento, @Tipocama, @Tipohabitacion, @Ubicacion, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Departamento values (@ID, @ID_Destino, @Nombre, @Cantidadhambientes, @Cantidadbaños, @Cochera, @Tipoedificio,@Categoria, @Conectividadwifi, @Descripcion, @Gimnasio, @Mascotas, @Piscina, @Precioalquiler, @Sauna, @Servicioaireacond, @Serviciodesayuno, @Serviciotv, @Tipoalojamiento, @Tipocama, @Tipohabitacion, @Ubicacion, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Departamento")))
+                .Add(New SqlParameter("@ID_Destino", paramDepartamento.Destino.ID))
                 .Add(New SqlParameter("@Nombre", paramDepartamento.Nombre))
                 .Add(New SqlParameter("@Cantidadhambientes", paramDepartamento.CantidadAmbientes))
                 .Add(New SqlParameter("@Cantidadbaños", paramDepartamento.CantidadBaños))
@@ -42,6 +41,8 @@ Public Class DAL_Departamento
         End Try
     End Sub
 
+
+
     Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar
         Try
             Dim paramDepartamento As BE_Departamento = DirectCast(paramobjeto, BE_Departamento)
@@ -59,9 +60,10 @@ Public Class DAL_Departamento
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramDepartamento As BE_Departamento = DirectCast(paramobjeto, BE_Departamento)
-            Dim command As SqlCommand = Acceso.MiComando("Update Departamento set Nombre=@Nombre, Cantidadhambientes=@Cantidadhambientes, Cantidadbaños=@Cantidadbaños, Cochera=@Cochera, Tipoedificio=@Tipoedificio, Categoria=@Categoria, Conectividadwifi=@Conectividadwifi, Descripcion=@Descripcion, Gimnasio=@Gimnasio, Mascotas=@Mascotas, Piscina=@Piscina, Precioalquiler=@Precioalquiler, Sauna=@Sauna, Servicioaireacond=@Servicioaireacond, Serviciodesayuno=@Serviciodesayuno, Serviciotv=@Serviciotv, Tipoalojamiento=@Tipoalojamiento, Tipocama=@Tipocama, Tipohabitacion=@Tipohabitacion, Ubicacion=@Ubicacion where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Departamento set ID_Destino=@ID_Destino,Nombre=@Nombre, Cantidadhambientes=@Cantidadhambientes, Cantidadbaños=@Cantidadbaños, Cochera=@Cochera, Tipoedificio=@Tipoedificio, Categoria=@Categoria, Conectividadwifi=@Conectividadwifi, Descripcion=@Descripcion, Gimnasio=@Gimnasio, Mascotas=@Mascotas, Piscina=@Piscina, Precioalquiler=@Precioalquiler, Sauna=@Sauna, Servicioaireacond=@Servicioaireacond, Serviciodesayuno=@Serviciodesayuno, Serviciotv=@Serviciotv, Tipoalojamiento=@Tipoalojamiento, Tipocama=@Tipocama, Tipohabitacion=@Tipohabitacion, Ubicacion=@Ubicacion where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramDepartamento.ID))
+                .Add(New SqlParameter("@ID_Destino", paramDepartamento.Destino.ID))
                 .Add(New SqlParameter("@Nombre", paramDepartamento.Nombre))
                 .Add(New SqlParameter("@Cantidadhambientes", paramDepartamento.CantidadAmbientes))
                 .Add(New SqlParameter("@Cantidadbaños", paramDepartamento.CantidadBaños))
@@ -94,6 +96,9 @@ Public Class DAL_Departamento
     Private Function formatearDepartamento(ByVal paramDataRow As DataRow) As BE_Departamento
         Dim oDepa As New BE_Departamento
         oDepa.ID = paramDataRow.Item("ID")
+        Dim oDestino As New BE_Destino
+        oDestino.ID = paramDataRow.Item("ID_Destino")
+        oDepa.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
         oDepa.Nombre = paramDataRow.Item("Nombre")
         oDepa.CantidadAmbientes = paramDataRow.Item("Cantidadhambientes")
         oDepa.CantidadBaños = paramDataRow.Item("Cantidadbaños")

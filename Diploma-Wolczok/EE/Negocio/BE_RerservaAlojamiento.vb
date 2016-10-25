@@ -53,21 +53,14 @@
     End Property
 
 
-    Private _alojamiento As BE_Alojamiento
-    Public Property Alojamiento() As BE_Alojamiento
+    Private _habitacion As EE.BE_Habitacion
+    Public Property Habitacion() As EE.BE_Habitacion
         Get
-            Return _alojamiento
+            Return _habitacion
         End Get
-        Set(ByVal value As BE_Alojamiento)
-            _alojamiento = value
+        Set(ByVal value As EE.BE_Habitacion)
+            _habitacion = value
         End Set
     End Property
-
-
-
-
-
-
-
 
 End Class

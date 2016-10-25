@@ -3,18 +3,6 @@
     Inherits BE_Alojamiento
 
 
-    Private _id As Integer
-    Public Property ID() As Integer
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Integer)
-            _id = value
-        End Set
-    End Property
-
-
-
     Private _actividadesfamiliares As String
     Public Property ActividadesFamiliares() As String
         Get

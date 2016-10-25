@@ -11,7 +11,7 @@ Public Class DAL_Destino
             Dim paramDestino As BE_Destino = DirectCast(paramobjeto, BE_Destino)
             Dim command As SqlCommand = Acceso.MiComando("Insert into Destino values (@ID, @ID_Localidad, @Aeropuerto,  @BL)")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID_destino", "Destino")))
+                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Destino")))
                 .Add(New SqlParameter("@ID_Localidad", paramDestino.Localidad.ID))
                 .Add(New SqlParameter("@Aeropuerto", paramDestino.TieneAeropuerto))
                 .Add(New SqlParameter("@BL", False))
@@ -43,7 +43,7 @@ Public Class DAL_Destino
             Dim paramDestino As BE_Destino = DirectCast(paramobjeto, BE_Destino)
             Dim command As SqlCommand = Acceso.MiComando("Update Hostel set ID_Localidad=@ID_Localidad,TieneAeropuerto=@Aeropuerto where ID=@ID")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID_destino", "Destino")))
+                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Destino")))
                 .Add(New SqlParameter("@ID_Localidad", paramDestino.Localidad.ID))
                 .Add(New SqlParameter("@Aeropuerto", paramDestino.TieneAeropuerto))
             End With
@@ -96,7 +96,7 @@ Public Class DAL_Destino
 
     Private Function formatearDestino(ByVal paramDataRow As DataRow) As BE_Destino
         Dim oDestino As New BE_Destino
-        oDestino.ID = paramDataRow.Item("ID_destino")
+        oDestino.ID = paramDataRow.Item("ID")
         oDestino.TieneAeropuerto = paramDataRow.Item("Aeropuerto")
         Dim oLocalidad As New BE_Localidad
         oLocalidad.ID = CInt(paramDataRow.Item("ID_Localidad"))

@@ -133,6 +133,12 @@
     <Compile Include="Agregar_Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarAlojamiento.Designer.vb">
+      <DependentUpon>BuscarAlojamiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarAlojamiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Eliminar Pais.Designer.vb">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Usuario.resx">
       <DependentUpon>Agregar_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarAlojamiento.resx">
+      <DependentUpon>BuscarAlojamiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar Pais.resx">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>

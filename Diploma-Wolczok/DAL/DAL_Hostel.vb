@@ -9,9 +9,10 @@ Public Class DAL_Hostel
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramHostel As BE_Hostel = DirectCast(paramobjeto, BE_Hostel)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Hostel values (@ID, @Categoria,@ConectividadWifi,@Descripcion,@Gimnasio,@Mascotas,@Piscina,@PrecioAlquiler,@Sauna, @ServicioAireAcond, @ServicioDesayuno, @ServicioTV,@TipoAlojamiento,@TipoCama,@TipoHabitacion,@Ubicacion,@Amoblado,@CantidadPersonas,@HabitacionPrivada, @Lockers, @Nombre, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Hostel values (@ID, @ID_Destino, @Categoria,@ConectividadWifi,@Descripcion,@Gimnasio,@Mascotas,@Piscina,@PrecioAlquiler,@Sauna, @ServicioAireAcond, @ServicioDesayuno, @ServicioTV,@TipoAlojamiento,@TipoCama,@TipoHabitacion,@Ubicacion,@Amoblado,@CantidadPersonas,@HabitacionPrivada, @Lockers, @Nombre, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Hostel")))
+                .Add(New SqlParameter("@ID_Destino", paramHostel.Destino.ID))
                 .Add(New SqlParameter("@Categoria", paramHostel.Categoria))
                 .Add(New SqlParameter("@ConectividadWifi", paramHostel.ConectividadWIFI))
                 .Add(New SqlParameter("@Descripcion", paramHostel.Descripcion))
@@ -57,9 +58,10 @@ Public Class DAL_Hostel
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramHostel As BE_Hostel = DirectCast(paramobjeto, BE_Hostel)
-            Dim command As SqlCommand = Acceso.MiComando("Update Hostel set Descripcion=@Descripcion,Categoria=@Categoria,ConectividadWifi=@ConectividadWifi,Descripcion=@Descripcion,Gimnasio=@Gimnasio,Mascotas=@Mascotas,Piscina=@Piscina,PrecioAlquiler=@PrecioAlquiler,Sauna=@Sauna,ServicioAireAcond=@ServicioAireAcond,ServicioDesayuno=@ServicioDesayuno,ServicioTV=@ServicioTV,TipoAlojamiento=@TipoAlojamiento,TipoCama=@TipoCama,TipoHabitacion=@TipoHabitacion,Ubicacion=@Ubicacion,Amoblado=@Amoblado,CantidadPersonas=@CantidadPersonas,HabitacionPrivada=@HabitacionPrivada,Lockers=@Lockers,Nombre=@Nombre where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Hostel set ID_Destino@ID_Destino,Descripcion=@Descripcion,Categoria=@Categoria,ConectividadWifi=@ConectividadWifi,Descripcion=@Descripcion,Gimnasio=@Gimnasio,Mascotas=@Mascotas,Piscina=@Piscina,PrecioAlquiler=@PrecioAlquiler,Sauna=@Sauna,ServicioAireAcond=@ServicioAireAcond,ServicioDesayuno=@ServicioDesayuno,ServicioTV=@ServicioTV,TipoAlojamiento=@TipoAlojamiento,TipoCama=@TipoCama,TipoHabitacion=@TipoHabitacion,Ubicacion=@Ubicacion,Amoblado=@Amoblado,CantidadPersonas=@CantidadPersonas,HabitacionPrivada=@HabitacionPrivada,Lockers=@Lockers,Nombre=@Nombre where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramHostel.ID))
+                .Add(New SqlParameter("@ID_Destino", paramHostel.Destino.ID))
                 .Add(New SqlParameter("@Categoria", paramHostel.Categoria))
                 .Add(New SqlParameter("@ConectividadWifi", paramHostel.ConectividadWIFI))
                 .Add(New SqlParameter("@Descripcion", paramHostel.Descripcion))
@@ -107,9 +109,12 @@ Public Class DAL_Hostel
         End Try
     End Function
 
-    Private Function formatearHostel(ByVal paramDataRow As DataRow) As BE_Hostel
+    Public Function formatearHostel(ByVal paramDataRow As DataRow) As BE_Hostel
         Dim oHostel As New BE_Hostel
         oHostel.ID = paramDataRow.Item("ID")
+        Dim oDestino As New BE_Destino
+        oDestino.ID = paramDataRow.Item("ID_Destino")
+        oHostel.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
         oHostel.Categoria = paramDataRow.Item("Categoria")
         oHostel.ConectividadWIFI = paramDataRow.Item("ConectividadWIFI")
         oHostel.Descripcion = paramDataRow.Item("Descripcion")
@@ -135,4 +140,5 @@ Public Class DAL_Hostel
         oHostel.ListaHabitaciones = oListaHabitaciones
         Return oHostel
     End Function
+
 End Class

@@ -13,9 +13,10 @@ Public Class DAL_Hotel
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramHotel As BE_Hotel = DirectCast(paramobjeto, BE_Hotel)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Hotel values (@ID, @Categoria,@ConectividadWifi,@Descripcion,@Gimnasio,@Mascotas,@Piscina,@PrecioAlquiler,@Sauna, @ServicioAireAcond, @ServicioDesayuno, @ServicioTV,@TipoAlojamiento,@TipoCama,@TipoHabitacion,@Ubicacion,@ActividadesFamiliares,@CantidadEstrellas,@Nombre, @TipoHotel, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Hotel values (@ID, @ID_Destino, @Categoria,@ConectividadWifi,@Descripcion,@Gimnasio,@Mascotas,@Piscina,@PrecioAlquiler,@Sauna, @ServicioAireAcond, @ServicioDesayuno, @ServicioTV,@TipoAlojamiento,@TipoCama,@TipoHabitacion,@Ubicacion,@ActividadesFamiliares,@CantidadEstrellas,@Nombre, @TipoHotel, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Hostel")))
+                .Add(New SqlParameter("@ID_Destino", paramHotel.Destino.ID))
                 .Add(New SqlParameter("@Categoria", paramHotel.Categoria))
                 .Add(New SqlParameter("@ConectividadWifi", paramHotel.ConectividadWIFI))
                 .Add(New SqlParameter("@Descripcion", paramHotel.Descripcion))
@@ -60,9 +61,10 @@ Public Class DAL_Hotel
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramHotel As BE_Hotel = DirectCast(paramobjeto, BE_Hotel)
-            Dim command As SqlCommand = Acceso.MiComando("Update Hotel set Descripcion=@Descripcion,Categoria=@Categoria,ConectividadWifi=@ConectividadWifi,Descripcion=@Descripcion,Gimnasio=@Gimnasio,Mascotas=@Mascotas,Piscina=@Piscina,PrecioAlquiler=@PrecioAlquiler,Sauna=@Sauna,ServicioAireAcond=@ServicioAireAcond,ServicioDesayuno=@ServicioDesayuno,ServicioTV=@ServicioTV,TipoAlojamiento=@TipoAlojamiento,TipoCama=@TipoCama,TipoHabitacion=@TipoHabitacion,Ubicacion=@Ubicacion,ActividadesFamiliares=@ActividadesFamiliares,CantidadEstrellas=@CantidadEstrellas,Nombre=@Nombre,TipoHotel=@TipoHotel where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Hotel set ID_Destino=@ID_Destino,Descripcion=@Descripcion,Categoria=@Categoria,ConectividadWifi=@ConectividadWifi,Descripcion=@Descripcion,Gimnasio=@Gimnasio,Mascotas=@Mascotas,Piscina=@Piscina,PrecioAlquiler=@PrecioAlquiler,Sauna=@Sauna,ServicioAireAcond=@ServicioAireAcond,ServicioDesayuno=@ServicioDesayuno,ServicioTV=@ServicioTV,TipoAlojamiento=@TipoAlojamiento,TipoCama=@TipoCama,TipoHabitacion=@TipoHabitacion,Ubicacion=@Ubicacion,ActividadesFamiliares=@ActividadesFamiliares,CantidadEstrellas=@CantidadEstrellas,Nombre=@Nombre,TipoHotel=@TipoHotel where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramHotel.ID))
+                .Add(New SqlParameter("@ID_Destino", paramHotel.Destino.ID))
                 .Add(New SqlParameter("@Categoria", paramHotel.Categoria))
                 .Add(New SqlParameter("@ConectividadWifi", paramHotel.ConectividadWIFI))
                 .Add(New SqlParameter("@Descripcion", paramHotel.Descripcion))
@@ -112,6 +114,9 @@ Public Class DAL_Hotel
     Private Function formatearHotel(ByVal paramDataRow As DataRow) As BE_Hotel
         Dim oHotel As New BE_Hotel
         oHotel.ID = paramDataRow.Item("ID")
+        Dim oDestino As New BE_Destino
+        oDestino.ID = paramDataRow.Item("ID_Destino")
+        oHotel.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
         oHotel.Categoria = paramDataRow.Item("Categoria")
         oHotel.ConectividadWIFI = paramDataRow.Item("ConectividadWIFI")
         oHotel.Descripcion = paramDataRow.Item("Descripcion")

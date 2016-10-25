@@ -171,4 +171,14 @@
         End Set
     End Property
 
+    Private _destino As BE_Destino
+    Public Property Destino() As BE_Destino
+        Get
+            Return _destino
+        End Get
+        Set(ByVal value As BE_Destino)
+            _destino = value
+        End Set
+    End Property
+
 End Class

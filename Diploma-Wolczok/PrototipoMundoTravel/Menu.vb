@@ -278,4 +278,9 @@ Public Class FormMenu
         Dim formdestino As New Eliminar_Destino
         AbrirForm(formdestino)
     End Sub
+
+    Private Sub BusquedaDeAlojamientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusquedaDeAlojamientoToolStripMenuItem.Click
+        Dim formalojamiento As New BuscarAlojamiento
+        AbrirForm(formalojamiento)
+    End Sub
 End Class
