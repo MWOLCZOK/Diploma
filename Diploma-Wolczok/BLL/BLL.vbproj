@@ -72,6 +72,7 @@
     <Compile Include="BLL_DigitoVerificador.vb" />
     <Compile Include="BLL_GestorNegocio.vb" />
     <Compile Include="BLL_GestorVoucher.vb" />
+    <Compile Include="BLL_Habitacion.vb" />
     <Compile Include="BLL_Hostel.vb" />
     <Compile Include="BLL_Hotel.vb" />
     <Compile Include="BLL_Idioma.vb" />

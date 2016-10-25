@@ -1,5 +1,15 @@
 ﻿Public Class BE_Habitacion
 
+    Private _id As Integer
+    Public Property ID() As Integer
+        Get
+            Return _id
+        End Get
+        Set(ByVal value As Integer)
+            _id = value
+        End Set
+    End Property
+
     Private _cantidadcamas As Integer
     Public Property CantidadCamas() As Integer
         Get
@@ -59,5 +69,16 @@
             _mesa = value
         End Set
     End Property
+
+    Private _Alojamiento As BE_Alojamiento
+    Public Property Alojamiento() As BE_Alojamiento
+        Get
+            Return _Alojamiento
+        End Get
+        Set(ByVal value As BE_Alojamiento)
+            _Alojamiento = value
+        End Set
+    End Property
+
 
 End Class
