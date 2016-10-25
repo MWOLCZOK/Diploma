@@ -9,9 +9,9 @@ Public Class DAL_Destino
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramDestino As BE_Destino = DirectCast(paramobjeto, BE_Destino)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Destino values (@ID, @ID_Localidad, @Aeropuerto,  @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Destino values (@ID_destino, @ID_Localidad, @Aeropuerto,  @BL)")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Destino")))
+                .Add(New SqlParameter("@ID_destino", Acceso.TraerID("ID_destino", "Destino")))
                 .Add(New SqlParameter("@ID_Localidad", paramDestino.Localidad.ID))
                 .Add(New SqlParameter("@Aeropuerto", paramDestino.TieneAeropuerto))
                 .Add(New SqlParameter("@BL", False))
@@ -26,9 +26,9 @@ Public Class DAL_Destino
     Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar
         Try
             Dim paramDestino As BE_Destino = DirectCast(paramobjeto, BE_Destino)
-            Dim command As SqlCommand = Acceso.MiComando("Update Destino set BL=@BL where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Destino set BL=@BL where ID=@ID_destino")
             With command.Parameters
-                .Add(New SqlParameter("@ID", paramDestino.ID))
+                .Add(New SqlParameter("@ID_destino", paramDestino.ID))
                 .Add(New SqlParameter("@BL", True))
             End With
             Acceso.Escritura(command)
@@ -41,9 +41,9 @@ Public Class DAL_Destino
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramDestino As BE_Destino = DirectCast(paramobjeto, BE_Destino)
-            Dim command As SqlCommand = Acceso.MiComando("Update Hostel set ID_Localidad=@ID_Localidad,Aeropuerto=@Aeropuerto where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Hostel set ID_Localidad=@ID_Localidad,TieneAeropuerto=@Aeropuerto where ID=@ID_destino")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Destino")))
+                .Add(New SqlParameter("@ID_destino", Acceso.TraerID("ID_destino", "Destino")))
                 .Add(New SqlParameter("@ID_Localidad", paramDestino.Localidad.ID))
                 .Add(New SqlParameter("@Aeropuerto", paramDestino.TieneAeropuerto))
             End With
@@ -79,7 +79,7 @@ Public Class DAL_Destino
             Dim consulta As String = ("Select * from Destino where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", oDestino.ID))
+                .Add(New SqlParameter("@ID_destino", oDestino.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)
@@ -96,8 +96,8 @@ Public Class DAL_Destino
 
     Private Function formatearDestino(ByVal paramDataRow As DataRow) As BE_Destino
         Dim oDestino As New BE_Destino
-        oDestino.ID = paramDataRow.Item("ID")
-        oDestino.TieneAeropuerto = paramDataRow.Item("TieneAeropuerto")
+        oDestino.ID = paramDataRow.Item("ID_destino")
+        oDestino.TieneAeropuerto = paramDataRow.Item("Aeropuerto")
         Dim oLocalidad As New BE_Localidad
         oLocalidad.ID = CInt(paramDataRow.Item("ID_Localidad"))
         oDestino.Localidad = (New DAL.DAL_Localidad).consultarLocalidad(oLocalidad)

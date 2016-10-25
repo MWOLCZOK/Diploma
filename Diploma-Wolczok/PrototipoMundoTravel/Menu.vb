@@ -258,4 +258,24 @@ Public Class FormMenu
         Dim forHot As New Agregar_Hotel
         AbrirForm(forHot)
     End Sub
+
+    Private Sub AltaDeDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeDepartamentoToolStripMenuItem.Click
+        Dim formdep As New Agregar_Departamento
+        AbrirForm(formdep)
+    End Sub
+
+    Private Sub EliminarDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarDepartamentoToolStripMenuItem.Click
+        Dim formdep As New Eliminar_Departamento
+        AbrirForm(formdep)
+    End Sub
+
+    Private Sub AgregarDestinoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarDestinoToolStripMenuItem.Click
+        Dim formdestino As New Agregar_Destino
+        AbrirForm(formdestino)
+    End Sub
+
+    Private Sub EliminarDestinoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarDestinoToolStripMenuItem.Click
+        Dim formdestino As New Eliminar_Destino
+        AbrirForm(formdestino)
+    End Sub
 End Class

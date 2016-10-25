@@ -1,12 +1,16 @@
 ﻿Imports EE
 
 Public Class Agregar_Destino
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim oDestino As New BE_Destino
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnaceptar.Click
+        Try
+            Dim oDestino As New BE_Destino
         Dim bllDestino As New BLL.bll_Destino
-        oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
-        oDestino.TieneAeropuerto = Me.CheckBox1.Checked
-
+            oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
+            oDestino.TieneAeropuerto = Me.CheckBox1.Checked
+            bllDestino.altaDestino(oDestino)
+        Catch ex As Exception
+            MsgBox("Error")
+        End Try
     End Sub
 
     Private Sub Agregar_Destino_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -20,6 +24,11 @@ Public Class Agregar_Destino
 
         For Each miLoc As BE_Localidad In oListaLocalidad
             Me.ComboBox1.Items.Add(miLoc)
+            ComboBox1.DisplayMember = "NombreCompleto"
         Next
+    End Sub
+
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+        Me.Close()
     End Sub
 End Class

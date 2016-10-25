@@ -55,6 +55,13 @@
         Return Me.Descripcion
     End Function
 
+    Public ReadOnly Property NombreCompleto() As String
+        Get
+            Return Me.Descripcion & ", " & Me.Provincia.Descripcion & ", " & Me.Provincia.Pais.Descripcion
+        End Get
+    End Property
+
+
 
 
 

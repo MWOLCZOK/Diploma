@@ -11,7 +11,7 @@ Public Class Agregar_Departamento
 
     Private Function validarFormulario() As Boolean
         Try
-            If Me.Txtnombre.Text = "" Or Me.Txtcantidadamb.Text = "" Or Me.Txtcantidadbañ.Text = "" Or Me.Txtcochera.Text = "" Or Me.Txttipoedif.Text = "" Or Me.Txtcategoria.Text = "" Or Me.Txtconectividadwifi.Text = "" Or Me.Txtdescrip.Text = "" Or Me.Txtgimnasio.Text = "" Or Me.Txtmascotas.Text = "" Or Me.Txtpiscina.Text = "" Or Me.Txtprecioalquiler.Text = "" Or Me.Txtsauna.Text = "" Or Me.Txtservicioaireacond.Text = "" Or Me.Txtdesayuno.Text = "" Or Me.Txtserviciotv.Text = "" Or Me.Txttipoaloj.Text = "" Or Me.Txttipocama.Text = "" Or Me.Txttipohab.Text = "" Or Me.Txtubic.Text = "" Then Return False
+            If Me.Txtnombre.Text = "" Or Me.Txtcantidadamb.Text = "" Or Me.Txtcantidadbañ.Text = "" Or Me.Txttipoedif.Text = "" Or Me.Txtcategoria.Text = "" Or Me.Txtdescrip.Text = "" Or Me.Txtprecioalquiler.Text = "" Or Me.Txttipoaloj.Text = "" Or Me.Txttipocama.Text = "" Or Me.Txttipohab.Text = "" Or Me.Txtubic.Text = "" Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -28,19 +28,19 @@ Public Class Agregar_Departamento
                 odep.Nombre = Me.Txtnombre.Text
                 odep.CantidadAmbientes = Me.Txtcantidadamb.Text
                 odep.CantidadBaños = Me.Txtcantidadbañ.Text
-                odep.Cochera = Me.Txtcochera.Text
+                odep.Cochera = Me.Ckbxcochera.Checked
                 odep.TipoEdificio = Me.Txttipoedif.Text
                 odep.Categoria = Me.Txtcategoria.Text
-                odep.ConectividadWIFI = Me.Txtconectividadwifi.Text
+                odep.ConectividadWIFI = Me.ckbxwifi.Checked
                 odep.Descripcion = Me.Txtdescrip.Text
-                odep.Gimnasio = Me.Txtgimnasio.Text
-                odep.Mascota = Me.Txtmascotas.Text
-                odep.Piscina = Me.Txtpiscina.Text
+                odep.Gimnasio = Me.Ckbgym.Checked
+                odep.Mascota = Me.ckbxmascotas.Checked
+                odep.Piscina = Me.ckbxpiscina.Checked
                 odep.PrecioAlquiler = Me.Txtprecioalquiler.Text
-                odep.Sauna = Me.Txtsauna.Text
-                odep.ServicioAireAcond = Me.Txtservicioaireacond.Text
-                odep.Desayuno = Me.Txtdesayuno.Text
-                odep.ServicioTV = Me.Txtserviciotv.Text
+                odep.Sauna = Me.Ckboxsauna.Checked
+                odep.ServicioAireAcond = Me.Ckbxaireacond.Checked
+                odep.Desayuno = Me.ckbxdesayuno.Checked
+                odep.ServicioTV = Me.ckbxtv.Checked
                 odep.TipoAlojamiento = Me.Txttipoaloj.Text
                 odep.TipoCama = Me.Txttipocama.Text
                 odep.TipoHabitacion = Me.Txttipohab.Text
@@ -54,4 +54,12 @@ Public Class Agregar_Departamento
         End Try
     End Sub
 
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles ckbxdesayuno.CheckedChanged
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+
+    End Sub
 End Class

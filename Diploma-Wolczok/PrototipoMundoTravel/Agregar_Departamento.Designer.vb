@@ -23,15 +23,10 @@ Partial Class Agregar_Departamento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.Txttipoaloj = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Txtserviciotv = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Txtdesayuno = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Txtservicioaireacond = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Txtsauna = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Txtprecioalquiler = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,7 +38,6 @@ Partial Class Agregar_Departamento
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Txtcochera = New System.Windows.Forms.TextBox()
         Me.Txtcantidadbañ = New System.Windows.Forms.TextBox()
         Me.Txtcantidadamb = New System.Windows.Forms.TextBox()
         Me.Txtnombre = New System.Windows.Forms.TextBox()
@@ -51,36 +45,35 @@ Partial Class Agregar_Departamento
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Txtubic = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Txttipohab = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Txttipocama = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Txtpiscina = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Txtmascotas = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Txtgimnasio = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Txtdescrip = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Txtconectividadwifi = New System.Windows.Forms.TextBox()
+        Me.Ckboxsauna = New System.Windows.Forms.CheckBox()
+        Me.Ckbxaireacond = New System.Windows.Forms.CheckBox()
+        Me.ckbxdesayuno = New System.Windows.Forms.CheckBox()
+        Me.ckbxtv = New System.Windows.Forms.CheckBox()
+        Me.Txttipoaloj = New System.Windows.Forms.TextBox()
+        Me.Txttipocama = New System.Windows.Forms.TextBox()
+        Me.Txttipohab = New System.Windows.Forms.TextBox()
+        Me.Ckbxcochera = New System.Windows.Forms.CheckBox()
+        Me.ckbxwifi = New System.Windows.Forms.CheckBox()
+        Me.Ckbgym = New System.Windows.Forms.CheckBox()
+        Me.ckbxmascotas = New System.Windows.Forms.CheckBox()
+        Me.ckbxpiscina = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(171, 337)
+        Me.Label18.Location = New System.Drawing.Point(170, 336)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(85, 13)
         Me.Label18.TabIndex = 88
         Me.Label18.Text = "Tipo Alojamiento"
-        '
-        'Txttipoaloj
-        '
-        Me.Txttipoaloj.Location = New System.Drawing.Point(174, 353)
-        Me.Txttipoaloj.Name = "Txttipoaloj"
-        Me.Txttipoaloj.Size = New System.Drawing.Size(100, 20)
-        Me.Txttipoaloj.TabIndex = 87
         '
         'Label19
         '
@@ -91,13 +84,6 @@ Partial Class Agregar_Departamento
         Me.Label19.TabIndex = 86
         Me.Label19.Text = "Servicio TV"
         '
-        'Txtserviciotv
-        '
-        Me.Txtserviciotv.Location = New System.Drawing.Point(174, 294)
-        Me.Txtserviciotv.Name = "Txtserviciotv"
-        Me.Txtserviciotv.Size = New System.Drawing.Size(100, 20)
-        Me.Txtserviciotv.TabIndex = 85
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -106,13 +92,6 @@ Partial Class Agregar_Departamento
         Me.Label15.Size = New System.Drawing.Size(96, 13)
         Me.Label15.TabIndex = 84
         Me.Label15.Text = "Servicio Desayuno"
-        '
-        'Txtdesayuno
-        '
-        Me.Txtdesayuno.Location = New System.Drawing.Point(174, 237)
-        Me.Txtdesayuno.Name = "Txtdesayuno"
-        Me.Txtdesayuno.Size = New System.Drawing.Size(100, 20)
-        Me.Txtdesayuno.TabIndex = 83
         '
         'Label14
         '
@@ -123,13 +102,6 @@ Partial Class Agregar_Departamento
         Me.Label14.TabIndex = 82
         Me.Label14.Text = "Servicio Aire Acondicionado"
         '
-        'Txtservicioaireacond
-        '
-        Me.Txtservicioaireacond.Location = New System.Drawing.Point(174, 179)
-        Me.Txtservicioaireacond.Name = "Txtservicioaireacond"
-        Me.Txtservicioaireacond.Size = New System.Drawing.Size(100, 20)
-        Me.Txtservicioaireacond.TabIndex = 81
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -138,13 +110,6 @@ Partial Class Agregar_Departamento
         Me.Label13.Size = New System.Drawing.Size(38, 13)
         Me.Label13.TabIndex = 80
         Me.Label13.Text = "Sauna"
-        '
-        'Txtsauna
-        '
-        Me.Txtsauna.Location = New System.Drawing.Point(174, 117)
-        Me.Txtsauna.Name = "Txtsauna"
-        Me.Txtsauna.Size = New System.Drawing.Size(100, 20)
-        Me.Txtsauna.TabIndex = 79
         '
         'Label12
         '
@@ -239,13 +204,6 @@ Partial Class Agregar_Departamento
         Me.Label4.TabIndex = 68
         Me.Label4.Text = "Nombre"
         '
-        'Txtcochera
-        '
-        Me.Txtcochera.Location = New System.Drawing.Point(13, 237)
-        Me.Txtcochera.Name = "Txtcochera"
-        Me.Txtcochera.Size = New System.Drawing.Size(100, 20)
-        Me.Txtcochera.TabIndex = 67
-        '
         'Txtcantidadbañ
         '
         Me.Txtcantidadbañ.Location = New System.Drawing.Point(14, 179)
@@ -279,7 +237,7 @@ Partial Class Agregar_Departamento
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(166, 510)
+        Me.Label20.Location = New System.Drawing.Point(177, 507)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(55, 13)
         Me.Label20.TabIndex = 104
@@ -287,7 +245,7 @@ Partial Class Agregar_Departamento
         '
         'Txtubic
         '
-        Me.Txtubic.Location = New System.Drawing.Point(173, 535)
+        Me.Txtubic.Location = New System.Drawing.Point(178, 531)
         Me.Txtubic.Name = "Txtubic"
         Me.Txtubic.Size = New System.Drawing.Size(100, 20)
         Me.Txtubic.TabIndex = 103
@@ -295,34 +253,20 @@ Partial Class Agregar_Departamento
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(166, 449)
+        Me.Label16.Location = New System.Drawing.Point(171, 449)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(82, 13)
         Me.Label16.TabIndex = 102
         Me.Label16.Text = "Tipo Habitacion"
         '
-        'Txttipohab
-        '
-        Me.Txttipohab.Location = New System.Drawing.Point(173, 474)
-        Me.Txttipohab.Name = "Txttipohab"
-        Me.Txttipohab.Size = New System.Drawing.Size(100, 20)
-        Me.Txttipohab.TabIndex = 101
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(175, 391)
+        Me.Label17.Location = New System.Drawing.Point(173, 391)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(58, 13)
         Me.Label17.TabIndex = 100
         Me.Label17.Text = "Tipo Cama"
-        '
-        'Txttipocama
-        '
-        Me.Txttipocama.Location = New System.Drawing.Point(173, 416)
-        Me.Txttipocama.Name = "Txttipocama"
-        Me.Txttipocama.Size = New System.Drawing.Size(100, 20)
-        Me.Txttipocama.TabIndex = 99
         '
         'Label11
         '
@@ -333,13 +277,6 @@ Partial Class Agregar_Departamento
         Me.Label11.TabIndex = 98
         Me.Label11.Text = "Piscina"
         '
-        'Txtpiscina
-        '
-        Me.Txtpiscina.Location = New System.Drawing.Point(18, 612)
-        Me.Txtpiscina.Name = "Txtpiscina"
-        Me.Txtpiscina.Size = New System.Drawing.Size(100, 20)
-        Me.Txtpiscina.TabIndex = 97
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -348,13 +285,6 @@ Partial Class Agregar_Departamento
         Me.Label10.Size = New System.Drawing.Size(53, 13)
         Me.Label10.TabIndex = 96
         Me.Label10.Text = "Mascotas"
-        '
-        'Txtmascotas
-        '
-        Me.Txtmascotas.Location = New System.Drawing.Point(18, 567)
-        Me.Txtmascotas.Name = "Txtmascotas"
-        Me.Txtmascotas.Size = New System.Drawing.Size(100, 20)
-        Me.Txtmascotas.TabIndex = 95
         '
         'Label9
         '
@@ -365,13 +295,6 @@ Partial Class Agregar_Departamento
         Me.Label9.TabIndex = 94
         Me.Label9.Text = "Gimnasio"
         '
-        'Txtgimnasio
-        '
-        Me.Txtgimnasio.Location = New System.Drawing.Point(17, 516)
-        Me.Txtgimnasio.Name = "Txtgimnasio"
-        Me.Txtgimnasio.Size = New System.Drawing.Size(100, 20)
-        Me.Txtgimnasio.TabIndex = 93
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -379,7 +302,7 @@ Partial Class Agregar_Departamento
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(63, 13)
         Me.Label8.TabIndex = 92
-        Me.Label8.Text = "Descriocion"
+        Me.Label8.Text = "Descripcion"
         '
         'Txtdescrip
         '
@@ -397,44 +320,149 @@ Partial Class Agregar_Departamento
         Me.Label7.TabIndex = 90
         Me.Label7.Text = "Conectividad Wifi"
         '
-        'Txtconectividadwifi
+        'Ckboxsauna
         '
-        Me.Txtconectividadwifi.Location = New System.Drawing.Point(17, 408)
-        Me.Txtconectividadwifi.Name = "Txtconectividadwifi"
-        Me.Txtconectividadwifi.Size = New System.Drawing.Size(100, 20)
-        Me.Txtconectividadwifi.TabIndex = 89
+        Me.Ckboxsauna.AutoSize = True
+        Me.Ckboxsauna.Location = New System.Drawing.Point(178, 117)
+        Me.Ckboxsauna.Name = "Ckboxsauna"
+        Me.Ckboxsauna.Size = New System.Drawing.Size(75, 17)
+        Me.Ckboxsauna.TabIndex = 105
+        Me.Ckboxsauna.Text = "CheckBox"
+        Me.Ckboxsauna.UseVisualStyleBackColor = True
+        '
+        'Ckbxaireacond
+        '
+        Me.Ckbxaireacond.AutoSize = True
+        Me.Ckbxaireacond.Location = New System.Drawing.Point(179, 179)
+        Me.Ckbxaireacond.Name = "Ckbxaireacond"
+        Me.Ckbxaireacond.Size = New System.Drawing.Size(75, 17)
+        Me.Ckbxaireacond.TabIndex = 106
+        Me.Ckbxaireacond.Text = "CheckBox"
+        Me.Ckbxaireacond.UseVisualStyleBackColor = True
+        '
+        'ckbxdesayuno
+        '
+        Me.ckbxdesayuno.AutoSize = True
+        Me.ckbxdesayuno.Location = New System.Drawing.Point(179, 239)
+        Me.ckbxdesayuno.Name = "ckbxdesayuno"
+        Me.ckbxdesayuno.Size = New System.Drawing.Size(75, 17)
+        Me.ckbxdesayuno.TabIndex = 107
+        Me.ckbxdesayuno.Text = "CheckBox"
+        Me.ckbxdesayuno.UseVisualStyleBackColor = True
+        '
+        'ckbxtv
+        '
+        Me.ckbxtv.AutoSize = True
+        Me.ckbxtv.Location = New System.Drawing.Point(179, 296)
+        Me.ckbxtv.Name = "ckbxtv"
+        Me.ckbxtv.Size = New System.Drawing.Size(75, 17)
+        Me.ckbxtv.TabIndex = 108
+        Me.ckbxtv.Text = "CheckBox"
+        Me.ckbxtv.UseVisualStyleBackColor = True
+        '
+        'Txttipoaloj
+        '
+        Me.Txttipoaloj.Location = New System.Drawing.Point(177, 358)
+        Me.Txttipoaloj.Name = "Txttipoaloj"
+        Me.Txttipoaloj.Size = New System.Drawing.Size(100, 20)
+        Me.Txttipoaloj.TabIndex = 112
+        '
+        'Txttipocama
+        '
+        Me.Txttipocama.Location = New System.Drawing.Point(174, 411)
+        Me.Txttipocama.Name = "Txttipocama"
+        Me.Txttipocama.Size = New System.Drawing.Size(100, 20)
+        Me.Txttipocama.TabIndex = 113
+        '
+        'Txttipohab
+        '
+        Me.Txttipohab.Location = New System.Drawing.Point(177, 473)
+        Me.Txttipohab.Name = "Txttipohab"
+        Me.Txttipohab.Size = New System.Drawing.Size(100, 20)
+        Me.Txttipohab.TabIndex = 114
+        '
+        'Ckbxcochera
+        '
+        Me.Ckbxcochera.AutoSize = True
+        Me.Ckbxcochera.Location = New System.Drawing.Point(15, 231)
+        Me.Ckbxcochera.Name = "Ckbxcochera"
+        Me.Ckbxcochera.Size = New System.Drawing.Size(75, 17)
+        Me.Ckbxcochera.TabIndex = 115
+        Me.Ckbxcochera.Text = "CheckBox"
+        Me.Ckbxcochera.UseVisualStyleBackColor = True
+        '
+        'ckbxwifi
+        '
+        Me.ckbxwifi.AutoSize = True
+        Me.ckbxwifi.Location = New System.Drawing.Point(12, 413)
+        Me.ckbxwifi.Name = "ckbxwifi"
+        Me.ckbxwifi.Size = New System.Drawing.Size(75, 17)
+        Me.ckbxwifi.TabIndex = 116
+        Me.ckbxwifi.Text = "CheckBox"
+        Me.ckbxwifi.UseVisualStyleBackColor = True
+        '
+        'Ckbgym
+        '
+        Me.Ckbgym.AutoSize = True
+        Me.Ckbgym.Location = New System.Drawing.Point(12, 512)
+        Me.Ckbgym.Name = "Ckbgym"
+        Me.Ckbgym.Size = New System.Drawing.Size(75, 17)
+        Me.Ckbgym.TabIndex = 117
+        Me.Ckbgym.Text = "CheckBox"
+        Me.Ckbgym.UseVisualStyleBackColor = True
+        '
+        'ckbxmascotas
+        '
+        Me.ckbxmascotas.AutoSize = True
+        Me.ckbxmascotas.Location = New System.Drawing.Point(12, 564)
+        Me.ckbxmascotas.Name = "ckbxmascotas"
+        Me.ckbxmascotas.Size = New System.Drawing.Size(75, 17)
+        Me.ckbxmascotas.TabIndex = 118
+        Me.ckbxmascotas.Text = "CheckBox"
+        Me.ckbxmascotas.UseVisualStyleBackColor = True
+        '
+        'ckbxpiscina
+        '
+        Me.ckbxpiscina.AutoSize = True
+        Me.ckbxpiscina.Location = New System.Drawing.Point(12, 606)
+        Me.ckbxpiscina.Name = "ckbxpiscina"
+        Me.ckbxpiscina.Size = New System.Drawing.Size(75, 17)
+        Me.ckbxpiscina.TabIndex = 119
+        Me.ckbxpiscina.Text = "CheckBox"
+        Me.ckbxpiscina.UseVisualStyleBackColor = True
         '
         'Agregar_Departamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(461, 655)
+        Me.Controls.Add(Me.ckbxpiscina)
+        Me.Controls.Add(Me.ckbxmascotas)
+        Me.Controls.Add(Me.Ckbgym)
+        Me.Controls.Add(Me.ckbxwifi)
+        Me.Controls.Add(Me.Ckbxcochera)
+        Me.Controls.Add(Me.Txttipohab)
+        Me.Controls.Add(Me.Txttipocama)
+        Me.Controls.Add(Me.Txttipoaloj)
+        Me.Controls.Add(Me.ckbxtv)
+        Me.Controls.Add(Me.ckbxdesayuno)
+        Me.Controls.Add(Me.Ckbxaireacond)
+        Me.Controls.Add(Me.Ckboxsauna)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Txtubic)
         Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.Txttipohab)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Txttipocama)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Txtpiscina)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Txtmascotas)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Txtgimnasio)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Txtdescrip)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Txtconectividadwifi)
         Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Txttipoaloj)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Txtserviciotv)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Txtdesayuno)
         Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Txtservicioaireacond)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Txtsauna)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Txtprecioalquiler)
         Me.Controls.Add(Me.Label3)
@@ -446,7 +474,6 @@ Partial Class Agregar_Departamento
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Txtcochera)
         Me.Controls.Add(Me.Txtcantidadbañ)
         Me.Controls.Add(Me.Txtcantidadamb)
         Me.Controls.Add(Me.Txtnombre)
@@ -458,15 +485,10 @@ Partial Class Agregar_Departamento
 
     End Sub
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Txttipoaloj As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Txtserviciotv As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents Txtdesayuno As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Txtservicioaireacond As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Txtsauna As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Txtprecioalquiler As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -478,7 +500,6 @@ Partial Class Agregar_Departamento
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Txtcochera As System.Windows.Forms.TextBox
     Friend WithEvents Txtcantidadbañ As System.Windows.Forms.TextBox
     Friend WithEvents Txtcantidadamb As System.Windows.Forms.TextBox
     Friend WithEvents Txtnombre As System.Windows.Forms.TextBox
@@ -486,17 +507,23 @@ Partial Class Agregar_Departamento
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Txtubic As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Txttipohab As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Txttipocama As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Txtpiscina As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Txtmascotas As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Txtgimnasio As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Txtdescrip As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Txtconectividadwifi As System.Windows.Forms.TextBox
+    Friend WithEvents Ckboxsauna As System.Windows.Forms.CheckBox
+    Friend WithEvents Ckbxaireacond As System.Windows.Forms.CheckBox
+    Friend WithEvents ckbxdesayuno As System.Windows.Forms.CheckBox
+    Friend WithEvents ckbxtv As System.Windows.Forms.CheckBox
+    Friend WithEvents Txttipoaloj As System.Windows.Forms.TextBox
+    Friend WithEvents Txttipocama As System.Windows.Forms.TextBox
+    Friend WithEvents Txttipohab As System.Windows.Forms.TextBox
+    Friend WithEvents Ckbxcochera As System.Windows.Forms.CheckBox
+    Friend WithEvents ckbxwifi As System.Windows.Forms.CheckBox
+    Friend WithEvents Ckbgym As System.Windows.Forms.CheckBox
+    Friend WithEvents ckbxmascotas As System.Windows.Forms.CheckBox
+    Friend WithEvents ckbxpiscina As System.Windows.Forms.CheckBox
 End Class

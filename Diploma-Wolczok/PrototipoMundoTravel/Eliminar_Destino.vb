@@ -12,6 +12,7 @@ Public Class Eliminar_Destino
         oListaDestinos = bllDestino.consultarDestinos
         For Each miDest As BE_Destino In oListaDestinos
             Me.CbxDestino.Items.Add(miDest)
+            CbxDestino.DisplayMember = "NombreCompleto"
         Next
     End Sub
 
@@ -26,5 +27,9 @@ Public Class Eliminar_Destino
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+        Me.Close()
     End Sub
 End Class

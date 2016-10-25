@@ -23,8 +23,8 @@ Partial Class Agregar_Destino
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Btnaceptar = New System.Windows.Forms.Button()
+        Me.btnsalir = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
@@ -35,40 +35,40 @@ Partial Class Agregar_Destino
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(22, 56)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(285, 21)
         Me.ComboBox1.TabIndex = 0
         '
-        'Button1
+        'Btnaceptar
         '
-        Me.Button1.Location = New System.Drawing.Point(47, 169)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btnaceptar.Location = New System.Drawing.Point(47, 169)
+        Me.Btnaceptar.Name = "Btnaceptar"
+        Me.Btnaceptar.Size = New System.Drawing.Size(75, 35)
+        Me.Btnaceptar.TabIndex = 1
+        Me.Btnaceptar.Text = "Agregar Destino"
+        Me.Btnaceptar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnsalir
         '
-        Me.Button2.Location = New System.Drawing.Point(164, 169)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnsalir.Location = New System.Drawing.Point(221, 169)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(76, 35)
+        Me.btnsalir.TabIndex = 2
+        Me.btnsalir.Text = "Salir"
+        Me.btnsalir.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 37)
+        Me.Label1.Location = New System.Drawing.Point(22, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 13)
+        Me.Label1.Size = New System.Drawing.Size(146, 13)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Localidad"
+        Me.Label1.Text = "Seleccion el destino deseado"
         '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(22, 108)
+        Me.CheckBox1.Location = New System.Drawing.Point(22, 113)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(120, 17)
         Me.CheckBox1.TabIndex = 4
@@ -79,11 +79,11 @@ Partial Class Agregar_Destino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 216)
+        Me.ClientSize = New System.Drawing.Size(345, 271)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnsalir)
+        Me.Controls.Add(Me.Btnaceptar)
         Me.Controls.Add(Me.ComboBox1)
         Me.Name = "Agregar_Destino"
         Me.Text = "Agregar_Destino"
@@ -93,8 +93,8 @@ Partial Class Agregar_Destino
     End Sub
 
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Btnaceptar As Button
+    Friend WithEvents btnsalir As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents CheckBox1 As CheckBox
 End Class
