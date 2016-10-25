@@ -151,22 +151,14 @@
     End Property
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Private _listaHabitaciones As New List(Of BE_Habitacion)
+    Public Property ListaHabitaciones() As List(Of BE_Habitacion)
+        Get
+            Return _listaHabitaciones
+        End Get
+        Set(ByVal value As List(Of BE_Habitacion))
+            _listaHabitaciones = value
+        End Set
+    End Property
 
 End Class

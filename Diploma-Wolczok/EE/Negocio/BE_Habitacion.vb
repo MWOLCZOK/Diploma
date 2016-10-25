@@ -1,7 +1,5 @@
 ﻿Public Class BE_Habitacion
 
-    Inherits BE_Alojamiento
-
     Private _cantidadcamas As Integer
     Public Property CantidadCamas() As Integer
         Get
@@ -13,7 +11,7 @@
     End Property
 
     Private _cantidadpersonas As Integer
-    Public Property NewProperty() As Integer
+    Public Property CantidadPersonas() As Integer
         Get
             Return _cantidadpersonas
         End Get
@@ -61,26 +59,5 @@
             _mesa = value
         End Set
     End Property
-
-    Private _serviciotv As Boolean
-    Public Property ServicioTV() As Boolean
-        Get
-            Return _serviciotv
-        End Get
-        Set(ByVal value As Boolean)
-            _serviciotv = value
-        End Set
-    End Property
-
-    Private _serviciowifi As Boolean
-    Public Property ServicioWifi() As Boolean
-        Get
-            Return _serviciowifi
-        End Get
-        Set(ByVal value As Boolean)
-            _serviciowifi = value
-        End Set
-    End Property
-
 
 End Class
