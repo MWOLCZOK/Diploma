@@ -81,6 +81,7 @@
     <Compile Include="BLL_Pago.vb" />
     <Compile Include="BLL_Pais.vb" />
     <Compile Include="BLL_Pasajero.vb" />
+    <Compile Include="BLL_Posada.vb" />
     <Compile Include="BLL_Provincia.vb" />
     <Compile Include="BLL_Reserva.vb" />
     <Compile Include="BLL_SesionObservada.vb" />
