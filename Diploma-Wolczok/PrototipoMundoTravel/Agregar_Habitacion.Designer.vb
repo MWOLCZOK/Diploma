@@ -29,20 +29,22 @@ Partial Class Agregar_Habitacion
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(23, 111)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(23, 148)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(121, 20)
         Me.NumericUpDown1.TabIndex = 0
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(23, 170)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(23, 207)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(121, 20)
         Me.NumericUpDown2.TabIndex = 1
@@ -67,7 +69,7 @@ Partial Class Agregar_Habitacion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 95)
+        Me.Label2.Location = New System.Drawing.Point(23, 132)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(99, 13)
         Me.Label2.TabIndex = 4
@@ -76,7 +78,7 @@ Partial Class Agregar_Habitacion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 154)
+        Me.Label3.Location = New System.Drawing.Point(20, 191)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(111, 13)
         Me.Label3.TabIndex = 5
@@ -84,18 +86,36 @@ Partial Class Agregar_Habitacion
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(229, 81)
+        Me.Button1.Location = New System.Drawing.Point(257, 127)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(26, 95)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(118, 20)
+        Me.TextBox1.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(23, 79)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Descripcion"
+        '
         'Agregar_Habitacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(392, 262)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -119,4 +139,6 @@ Partial Class Agregar_Habitacion
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

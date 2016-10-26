@@ -13,7 +13,7 @@ Public Class DAL_ReservaAlojamiento
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "ReservaAlojamiento")))
                 .Add(New SqlParameter("@ID_Habitacion", paramReservaAloja.Habitacion.ID))
-                .Add(New SqlParameter("@NumeroReserva", paramReservaAloja.NumeroReserva))
+                .Add(New SqlParameter("@NumeroReserva", Acceso.TraerID("NumeroReserva", "ReservaAlojamiento")))
                 .Add(New SqlParameter("@FechaInicio", paramReservaAloja.Fecha_Inicio))
                 .Add(New SqlParameter("@FechaFin", paramReservaAloja.Fecha_Fin))
                 .Add(New SqlParameter("@Estado", paramReservaAloja.Estado))
@@ -99,6 +99,7 @@ Public Class DAL_ReservaAlojamiento
             Throw ex
         End Try
     End Function
+
 
     Private Function formatearReservaAlojamiento(ByVal paramDataRow As DataRow) As BE_ReservaAlojamiento
         Dim oReservaAlojamiento As New BE_ReservaAlojamiento

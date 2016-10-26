@@ -18,8 +18,9 @@ Public Class Agregar_Habitacion
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim oHabitacion As New EE.BE_Habitacion
-        oHabitacion.CantidadPersonas = Me.NumericUpDown1.Value
-        oHabitacion.CantidadCamas = Me.NumericUpDown2.Value
+        oHabitacion.Descripcion = Me.TextBox1.Text
+        oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
+        oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
         oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
         Dim bllHabitacion As New BLL.BLL_Habitacion
         bllHabitacion.altaHabitacion(oHabitacion)

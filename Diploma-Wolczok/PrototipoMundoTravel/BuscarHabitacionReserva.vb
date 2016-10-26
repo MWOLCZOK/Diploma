@@ -43,7 +43,12 @@ Public Class BuscarHabitacionReserva
         oAlojamiento.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
         Dim bllAlojamiento As New BLL.BLL_Alojamiento
         oAlojamiento = bllAlojamiento.consultarAlojamiento(oAlojamiento)
-        Dim formularioSeleccionHabitacion As New SeleccionarHabitacionReserva(oAlojamiento)
+        Dim oReservaAlojamiento As New EE.BE_ReservaAlojamiento
+        oReservaAlojamiento.Fecha_Inicio = Me.DateTimePicker1.Value
+        oReservaAlojamiento.Fecha_Fin = Me.DateTimePicker2.Value
+        Dim oDestino As New BE_Destino
+        oDestino = DirectCast(Me.ComboBox1.SelectedItem, BE_Destino)
+        Dim formularioSeleccionHabitacion As New SeleccionarHabitacionReserva(oAlojamiento, oDestino, oReservaAlojamiento)
         formularioSeleccionHabitacion.Show()
         Me.Close()
     End Sub

@@ -10,6 +10,17 @@
         End Set
     End Property
 
+    Private _descripcion As String
+    Public Property Descripcion() As String
+        Get
+            Return _descripcion
+        End Get
+        Set(ByVal value As String)
+            _descripcion = value
+        End Set
+    End Property
+
+
     Private _cantidadcamas As Integer
     Public Property CantidadCamas() As Integer
         Get
@@ -30,45 +41,6 @@
         End Set
     End Property
 
-    Private _cocina As Boolean
-    Public Property Cocina() As Boolean
-        Get
-            Return _cocina
-        End Get
-        Set(ByVal value As Boolean)
-            _cocina = value
-        End Set
-    End Property
-
-    Private _escritorio As Boolean
-    Public Property Escritorio() As Boolean
-        Get
-            Return _escritorio
-        End Get
-        Set(ByVal value As Boolean)
-            _escritorio = value
-        End Set
-    End Property
-
-    Private _frigobar As Boolean
-    Public Property Frigobar() As Boolean
-        Get
-            Return _frigobar
-        End Get
-        Set(ByVal value As Boolean)
-            _frigobar = value
-        End Set
-    End Property
-
-    Private _mesa As Boolean
-    Public Property Mesa() As Boolean
-        Get
-            Return _mesa
-        End Get
-        Set(ByVal value As Boolean)
-            _mesa = value
-        End Set
-    End Property
 
     Private _Alojamiento As BE_Alojamiento
     Public Property Alojamiento() As BE_Alojamiento

@@ -133,6 +133,12 @@
     <Compile Include="BuscarHabitacionReserva.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DetalleReserva.Designer.vb">
+      <DependentUpon>DetalleReserva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleReserva.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Eliminar Pais.Designer.vb">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
     </Compile>
@@ -326,6 +332,9 @@
     <EmbeddedResource Include="BuscarHabitacionReserva.resx">
       <DependentUpon>BuscarHabitacionReserva.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetalleReserva.resx">
+      <DependentUpon>DetalleReserva.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Eliminar Pais.resx">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
     </EmbeddedResource>
@@ -426,9 +435,6 @@
       <Project>{0adb6d50-dbc9-4dfe-ae2a-6d19f03e94a3}</Project>
       <Name>BE</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

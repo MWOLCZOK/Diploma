@@ -10,10 +10,11 @@ Public Class DAL_Habitacion
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramHabitacion As BE_Habitacion = DirectCast(paramobjeto, BE_Habitacion)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Habitacion values (@ID, @ID_Alojamiento, @CantidadCamas, @CantidadPersonas, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Habitacion values (@ID, @ID_Alojamiento, @Descripcion, @CantidadCamas, @CantidadPersonas, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Habitacion")))
                 .Add(New SqlParameter("@ID_Alojamiento", paramHabitacion.Alojamiento.ID))
+                .Add(New SqlParameter("@Descripcion", paramHabitacion.Descripcion))
                 .Add(New SqlParameter("@CantidadCamas", paramHabitacion.CantidadCamas))
                 .Add(New SqlParameter("@CantidadPersonas", paramHabitacion.CantidadPersonas))
                 .Add(New SqlParameter("@BL", False))
@@ -43,10 +44,11 @@ Public Class DAL_Habitacion
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramHabitacion As BE_Habitacion = DirectCast(paramobjeto, BE_Habitacion)
-            Dim command As SqlCommand = Acceso.MiComando("Update Habitacion set ID_Alojamiento=@ID_Alojamiento, CantidadCamas=@CantidadCamas, CantidadPersonas=@CantidadPersonas where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Habitacion set ID_Alojamiento=@ID_Alojamiento, Descripcion=@Descripcion, CantidadCamas=@CantidadCamas, CantidadPersonas=@CantidadPersonas where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramHabitacion.ID))
                 .Add(New SqlParameter("@ID_Alojamiento", paramHabitacion.Alojamiento.ID))
+                .Add(New SqlParameter("@Descripcion", paramHabitacion.Descripcion))
                 .Add(New SqlParameter("@CantidadCamas", paramHabitacion.CantidadCamas))
                 .Add(New SqlParameter("@CantidadPersonas", paramHabitacion.CantidadPersonas))
             End With
@@ -117,6 +119,7 @@ Public Class DAL_Habitacion
     Public Function formatearHabitacion(ByVal paramDataRow As DataRow) As BE_Habitacion
         Dim oHabitacion As New BE_Habitacion
         oHabitacion.ID = paramDataRow.Item("ID")
+        oHabitacion.Descripcion = paramDataRow.Item("Descripcion")
         oHabitacion.CantidadCamas = paramDataRow.Item("CantidadCamas")
         oHabitacion.CantidadPersonas = paramDataRow.Item("CantidadPersonas")
         Return oHabitacion
