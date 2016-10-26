@@ -30,7 +30,7 @@ Public Class DAL_Hostel
                 .Add(New SqlParameter("@ServicioTV", paramHostel.ServicioTV))
                 .Add(New SqlParameter("@Cochera", DBNull.Value))
                 .Add(New SqlParameter("@Amoblado", DBNull.Value))
-                .Add(New SqlParameter("@Cocina", DBNull.Value))
+                .Add(New SqlParameter("@Cocina", paramHostel.Cocina))
                 .Add(New SqlParameter("@HabitacionPrivada", paramHostel.HabitacionPrivada))
                 .Add(New SqlParameter("@BL", False))
             End With

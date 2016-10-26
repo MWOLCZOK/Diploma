@@ -8,10 +8,11 @@ Public Class DAL_Alojamiento
         Try
             Dim milistaAlojamiento As New List(Of EE.BE_Alojamiento)
             Try
-                Dim consulta As String = ("Select * from Alojamiento where ID_Destino=@Destino")
+                Dim consulta As String = ("Select * from Alojamiento where ID_Destino=@Destino and BL=@BL")
                 Dim Command As SqlCommand = Acceso.MiComando(consulta)
                 With Command.Parameters
                     .Add(New SqlParameter("@Destino", paramDestino.ID))
+                    .Add(New SqlParameter("@BL", False))
                 End With
                 Dim dt As DataTable = Acceso.Lectura(Command)
                 For Each drow As DataRow In dt.Rows
@@ -21,12 +22,13 @@ Public Class DAL_Alojamiento
                 For Each miAlojamiento As BE_Alojamiento In milistaAlojamiento
                     Dim NuevaListaHabitacion As New List(Of EE.BE_Habitacion)
                     For Each paramHabitacion As EE.BE_Habitacion In miAlojamiento.ListaHabitaciones
-                        Dim consulta2 As String = ("Select * from Habitacion where ID=@ID_Habitacion and not exists (select * from reservaAlojamiento where (FechaInicio<@FechaInicio and FechaInicio<@FechaFin) or (FechaFin>@FechaInicio and FechaFin>@FechaFin))")
+                        Dim consulta2 As String = ("Select * from Habitacion where ID=@ID_Habitacion and BL=@BL and not exists (select * from reservaAlojamiento where (FechaInicio<@FechaInicio and FechaInicio<@FechaFin) or (FechaFin>@FechaInicio and FechaFin>@FechaFin))")
                         Dim Command2 As SqlCommand = Acceso.MiComando(consulta2)
                         With Command2.Parameters
                             .Add(New SqlParameter("@ID_Habitacion", paramHabitacion.ID))
                             .Add(New SqlParameter("@FechaInicio", paramFechaInicio))
                             .Add(New SqlParameter("@FechaFin", paramFechaFin))
+                            .Add(New SqlParameter("@BL", False))
                         End With
                         Dim dt2 As DataTable = Acceso.Lectura(Command2)
                         For Each drow2 As DataRow In dt2.Rows
@@ -44,6 +46,29 @@ Public Class DAL_Alojamiento
             Throw ex
         End Try
     End Function
+
+    Public Function consultarAlojamientos() As List(Of BE_Alojamiento)
+        Try
+            Dim milistaAlojamiento As New List(Of EE.BE_Alojamiento)
+            Try
+                Dim consulta As String = ("Select * from Alojamiento where BL=@BL")
+                Dim Command As SqlCommand = Acceso.MiComando(consulta)
+                With Command.Parameters
+                    .Add(New SqlParameter("@BL", False))
+                End With
+                Dim dt As DataTable = Acceso.Lectura(Command)
+                For Each drow As DataRow In dt.Rows
+                    milistaAlojamiento.Add(Me.formatearAlojamiento(drow))
+                Next
+                Return milistaAlojamiento
+            Catch ex As Exception
+                Throw ex
+            End Try
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 
     Private Function formatearAlojamiento(ByVal paramDataRow As DataRow) As BE_Alojamiento
         Dim oTipoAlojamiento As New BE_TipoAlojamiento

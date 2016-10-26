@@ -254,14 +254,14 @@ Public Class FormMenu
         AbrirForm(formpas)
     End Sub
 
-    Private Sub AgregarHotelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarHotelToolStripMenuItem.Click
- 
+    Private Sub AgregarHotelToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
 
     Private Sub EliminarDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarDepartamentoToolStripMenuItem.Click
-        '       Dim formdep As New Eliminar_Departamento
-        '     AbrirForm(formdep)
+        Dim formHabi As New Agregar_Habitacion
+        AbrirForm(formHabi)
     End Sub
 
     Private Sub AgregarDestinoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarDestinoToolStripMenuItem.Click

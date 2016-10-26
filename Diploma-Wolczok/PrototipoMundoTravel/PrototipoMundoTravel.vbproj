@@ -85,6 +85,12 @@
     <Compile Include="Agregar_Destino.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Agregar_Habitacion.Designer.vb">
+      <DependentUpon>Agregar_Habitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_Habitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Agregar_Idioma.Designer.vb">
       <DependentUpon>Agregar_Idioma.vb</DependentUpon>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Destino.resx">
       <DependentUpon>Agregar_Destino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_Habitacion.resx">
+      <DependentUpon>Agregar_Habitacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Idioma.resx">
       <DependentUpon>Agregar_Idioma.vb</DependentUpon>
