@@ -89,7 +89,7 @@
     <Compile Include="Negocio\BE_Pasajero.vb" />
     <Compile Include="Negocio\BE_Posada.vb" />
     <Compile Include="Negocio\BE_Provincia.vb" />
-    <Compile Include="Negocio\BE_RerservaAlojamiento.vb" />
+    <Compile Include="Negocio\BE_ReservaAlojamiento.vb" />
     <Compile Include="Negocio\BE_Reserva.vb" />
     <Compile Include="Negocio\BE_ReservaViaje.vb" />
     <Compile Include="Negocio\BE_ServicioVuelo.vb" />

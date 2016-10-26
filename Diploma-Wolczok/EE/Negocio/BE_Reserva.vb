@@ -1,5 +1,26 @@
 ﻿Public Class BE_Reserva
 
+    Private _id As Integer
+    Public Property ID() As Integer
+        Get
+            Return _id
+        End Get
+        Set(ByVal value As Integer)
+            _id = value
+        End Set
+    End Property
+
+    Private _nro_reserva As Integer
+    Public Property NumeroReserva() As Integer
+        Get
+            Return _nro_reserva
+        End Get
+        Set(ByVal value As Integer)
+            _nro_reserva = value
+        End Set
+    End Property
+
+
     Private _detalle As String
     Public Property Detalle() As String
         Get
@@ -21,38 +42,14 @@
         End Set
     End Property
 
-    Private _fecha_fin As Date
-    Public Property Fecha_Fin() As Date
+    Private _pasajero As EE.BE_Pasajero
+    Public Property Pasajero() As EE.BE_Pasajero
         Get
-            Return _fecha_fin
+            Return _pasajero
         End Get
-        Set(ByVal value As Date)
-            _fecha_fin = value
+        Set(ByVal value As EE.BE_Pasajero)
+            _pasajero = value
         End Set
     End Property
-
-    Private _fecha_inicio As Date
-    Public Property Fecha_Inicio() As Date
-        Get
-            Return _fecha_inicio
-        End Get
-        Set(ByVal value As Date)
-            _fecha_inicio = value
-        End Set
-    End Property
-
-    Private _nro_reserva As Integer
-    Public Property Nro_Reserva() As Integer
-        Get
-            Return _nro_reserva
-        End Get
-        Set(ByVal value As Integer)
-            _nro_reserva = value
-        End Set
-    End Property
-
-
-
-
 
 End Class
