@@ -3,11 +3,7 @@ Imports System.Data.SqlClient
 Imports System.Configuration
 
 Public Class DAL_Posada
-
     Implements Master
-
-
-
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramPosada As BE_Posada = DirectCast(paramobjeto, BE_Posada)
@@ -83,7 +79,6 @@ Public Class DAL_Posada
                 .Add(New SqlParameter("@Cocina", DBNull.Value))
                 .Add(New SqlParameter("@HabitacionPrivada", DBNull.Value))
             End With
-
             Acceso.Escritura(command)
             command.Dispose()
             Return True
