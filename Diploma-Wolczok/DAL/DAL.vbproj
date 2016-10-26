@@ -85,6 +85,7 @@
     <Compile Include="DAL_Provincia.vb" />
     <Compile Include="DAL_Prueba.vb" />
     <Compile Include="DAL_Reserva.vb" />
+    <Compile Include="DAL_TipoAlojamiento.vb" />
     <Compile Include="DAL_Viaje.vb" />
     <Compile Include="DAL_GestorPermiso.vb" />
     <Compile Include="Master.vb" />

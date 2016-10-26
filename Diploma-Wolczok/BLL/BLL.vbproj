@@ -85,6 +85,7 @@
     <Compile Include="BLL_Provincia.vb" />
     <Compile Include="BLL_Reserva.vb" />
     <Compile Include="BLL_SesionObservada.vb" />
+    <Compile Include="BLL_TipoAlojamiento.vb" />
     <Compile Include="BLL_Viaje.vb" />
     <Compile Include="Encriptadora.vb" />
     <Compile Include="Excepciones\CamposIncompletosException.vb" />

@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Negocio\BE_TipoAlojamiento.vb" />
     <Compile Include="Servicios\BE_BackupRestore.vb" />
     <Compile Include="Servicios\BE_Bitacora.vb" />
     <Compile Include="Servicios\BE_Idioma.vb" />
