@@ -84,26 +84,26 @@ Partial Class BuscarAlojamiento
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(294, 76)
+        Me.Button1.Location = New System.Drawing.Point(60, 341)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 39)
         Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 105)
+        Me.DataGridView1.Location = New System.Drawing.Point(24, 64)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(660, 240)
-        Me.DataGridView1.TabIndex = 7
+        Me.DataGridView1.Size = New System.Drawing.Size(682, 271)
+        Me.DataGridView1.TabIndex = 10
         '
         'BuscarAlojamiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(708, 357)
+        Me.ClientSize = New System.Drawing.Size(733, 392)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)

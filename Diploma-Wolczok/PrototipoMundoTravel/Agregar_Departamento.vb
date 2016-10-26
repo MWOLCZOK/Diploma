@@ -41,7 +41,7 @@ Public Class Agregar_Departamento
                 odep.ServicioAireAcond = Me.Ckbxaireacond.Checked
                 odep.Desayuno = Me.ckbxdesayuno.Checked
                 odep.ServicioTV = Me.ckbxtv.Checked
-                odep.TipoAlojamiento = Me.Txttipoaloj.Text
+                'odep.TipoAlojamiento = Me.Txttipoaloj.Text
                 odep.TipoCama = Me.Txttipocama.Text
                 odep.TipoHabitacion = Me.Txttipohab.Text
                 odep.Ubicacion = Me.Txtubic.Text

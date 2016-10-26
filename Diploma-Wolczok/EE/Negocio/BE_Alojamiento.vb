@@ -181,13 +181,13 @@
         End Set
     End Property
 
-    Private _tipoAlojamiento As BE_TipoAlojamiento
-    Public Property TipoAlojamiento() As BE_TipoAlojamiento
-        Get
-            Return _TipoAlojamiento
-        End Get
-        Set(ByVal value As BE_TipoAlojamiento)
-            _TipoAlojamiento = value
-        End Set
-    End Property
+    'Private _tipoAlojamiento As BE_TipoAlojamiento
+    'Public Property TipoAlojamiento() As BE_TipoAlojamiento
+    '    Get
+    '        Return _TipoAlojamiento
+    '    End Get
+    '    Set(ByVal value As BE_TipoAlojamiento)
+    '        _TipoAlojamiento = value
+    '    End Set
+    'End Property
 End Class
