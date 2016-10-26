@@ -10,6 +10,7 @@
         oListaDestino = bllDestino.consultarDestinos
         For Each miDestino As EE.BE_Destino In oListaDestino
             Me.ComboBox1.Items.Add(miDestino)
+            ComboBox1.DisplayMember = "NombreCompleto"
         Next
     End Sub
 

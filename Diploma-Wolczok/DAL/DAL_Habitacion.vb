@@ -121,7 +121,7 @@ Public Class DAL_Habitacion
         End Try
     End Function
 
-  
+
     Public Function formatearHabitacion(ByVal paramDataRow As DataRow) As BE_Habitacion
         Dim oHabitacion As New BE_Habitacion
         oHabitacion.ID = paramDataRow.Item("ID")

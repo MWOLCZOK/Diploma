@@ -81,6 +81,7 @@
     <Compile Include="DAL_Pago.vb" />
     <Compile Include="DAL_Pais.vb" />
     <Compile Include="DAL_Pasajero.vb" />
+    <Compile Include="DAL_Posada.vb" />
     <Compile Include="DAL_Provincia.vb" />
     <Compile Include="DAL_Prueba.vb" />
     <Compile Include="DAL_Reserva.vb" />
