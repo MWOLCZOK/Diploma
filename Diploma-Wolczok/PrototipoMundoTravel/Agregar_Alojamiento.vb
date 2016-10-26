@@ -27,50 +27,103 @@ Public Class Agregar_Alojamiento
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim oAlojamiento As New BE_Alojamiento
-        oAlojamiento.Destino = DirectCast(ComboBox1.SelectedItem, BE_Destino)
-        oAlojamiento.TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
-        oAlojamiento.Nombre = TextBox1.Text
-        oAlojamiento.Descripcion = Me.TextBox3.Text
-        oAlojamiento.Estrellas = Me.TextBox4.Text
-        oAlojamiento.Ubicacion = Me.TextBox5.Text
-        oAlojamiento.Ambientes = Me.TextBox6.Text
-        oAlojamiento.PrecioAlquiler = Me.TextBox7.Text
-        oAlojamiento.ConectividadWifi = Me.CheckBox2.Checked
-        oAlojamiento.Piscina = Me.CheckBox4.Checked
-        oAlojamiento.ServicioAireAcond = Me.CheckBox8.Checked
-        oAlojamiento.Desayuno = Me.CheckBox6.Checked
-        oAlojamiento.ServicioTV = Me.CheckBox5.Checked
-        If oAlojamiento.TipoAlojamiento.ID = 1 Then
+        Dim oTipoAlojamiento As New BE_TipoAlojamiento
+        oTipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        If oTipoAlojamiento.ID = 1 Then
             Dim oHostel As New BE_Hostel
-            oHostel = DirectCast(oAlojamiento, BE_Hostel)
-            Dim bllHostel As New BLL_Hostel
+            oHostel.Destino = DirectCast(ComboBox1.SelectedItem, BE_Destino)
+            oHostel.TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+            oHostel.Nombre = TextBox1.Text
+            oHostel.Descripcion = Me.TextBox3.Text
+            oHostel.Estrellas = Me.TextBox4.Text
+            oHostel.Ubicacion = Me.TextBox5.Text
+            oHostel.Ambientes = Me.TextBox6.Text
+            oHostel.PrecioAlquiler = Me.TextBox7.Text
+            oHostel.ConectividadWifi = Me.CheckBox2.Checked
+            oHostel.Piscina = Me.CheckBox4.Checked
+            oHostel.ServicioAireAcond = Me.CheckBox8.Checked
+            oHostel.Desayuno = Me.CheckBox6.Checked
+            oHostel.ServicioTV = Me.CheckBox5.Checked
             oHostel.Cocina = Me.CheckBox9.Checked
             oHostel.HabitacionPrivada = Me.CheckBox13.Checked
+            Dim bllHostel As New BLL_Hostel
             bllHostel.altaHostel(oHostel)
-        ElseIf oAlojamiento.TipoAlojamiento.ID = 2 Then
+        ElseIf otipoAlojamiento.ID = 2 Then
             Dim oHotel As New BE_Hotel
-            oHotel = DirectCast(oAlojamiento, BE_Hotel)
-            Dim bllHotel As New BLL_Hotel
+            oHotel.Destino = DirectCast(ComboBox1.SelectedItem, BE_Destino)
+            oHotel.TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+            oHotel.Nombre = TextBox1.Text
+            oHotel.Descripcion = Me.TextBox3.Text
+            oHotel.Estrellas = Me.TextBox4.Text
+            oHotel.Ubicacion = Me.TextBox5.Text
+            oHotel.Ambientes = Me.TextBox6.Text
+            oHotel.PrecioAlquiler = Me.TextBox7.Text
+            oHotel.ConectividadWifi = Me.CheckBox2.Checked
+            oHotel.Piscina = Me.CheckBox4.Checked
+            oHotel.ServicioAireAcond = Me.CheckBox8.Checked
+            oHotel.Desayuno = Me.CheckBox6.Checked
+            oHotel.ServicioTV = Me.CheckBox5.Checked
             oHotel.Gimnasio = Me.CheckBox1.Checked
             oHotel.Mascota = Me.CheckBox3.Checked
             oHotel.Sauna = Me.CheckBox7.Checked
             oHotel.Cochera = Me.CheckBox12.Checked
+            Dim bllHotel As New BLL_Hotel
             bllHotel.altaHotel(oHotel)
-        ElseIf oAlojamiento.TipoAlojamiento.ID = 3 Then
+        ElseIf oTipoAlojamiento.ID = 3 Then
             Dim oDepartamento As New BE_Departamento
-            oDepartamento = DirectCast(oAlojamiento, BE_Departamento)
+            oDepartamento.Destino = DirectCast(ComboBox1.SelectedItem, BE_Destino)
+            oDepartamento.TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+            oDepartamento.Nombre = TextBox1.Text
+            oDepartamento.Descripcion = Me.TextBox3.Text
+            oDepartamento.Estrellas = Me.TextBox4.Text
+            oDepartamento.Ubicacion = Me.TextBox5.Text
+            oDepartamento.Ambientes = Me.TextBox6.Text
+            oDepartamento.PrecioAlquiler = Me.TextBox7.Text
+            oDepartamento.ConectividadWifi = Me.CheckBox2.Checked
+            oDepartamento.Piscina = Me.CheckBox4.Checked
+            oDepartamento.ServicioAireAcond = Me.CheckBox8.Checked
+            oDepartamento.Desayuno = Me.CheckBox6.Checked
+            oDepartamento.ServicioTV = Me.CheckBox5.Checked
             Dim bllDepartamento As New BLL_Departamento
             oDepartamento.Mascota = Me.CheckBox3.Checked
             oDepartamento.Cochera = Me.CheckBox12.Checked
             oDepartamento.Cocina = Me.CheckBox9.Checked
             oDepartamento.Amoblado = Me.CheckBox11.Checked
             bllDepartamento.altadep(oDepartamento)
-        ElseIf oAlojamiento.TipoAlojamiento.ID = 4 Then
+        ElseIf oTipoAlojamiento.ID = 4 Then
             Dim oPosada As New BE_Posada
-            oPosada = DirectCast(oAlojamiento, BE_Posada)
+            oPosada.Destino = DirectCast(ComboBox1.SelectedItem, BE_Destino)
+            oPosada.TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+            oPosada.Nombre = TextBox1.Text
+            oPosada.Descripcion = Me.TextBox3.Text
+            oPosada.Estrellas = Me.TextBox4.Text
+            oPosada.Ubicacion = Me.TextBox5.Text
+            oPosada.Ambientes = Me.TextBox6.Text
+            oPosada.PrecioAlquiler = Me.TextBox7.Text
+            oPosada.ConectividadWifi = Me.CheckBox2.Checked
+            oPosada.Piscina = Me.CheckBox4.Checked
+            oPosada.ServicioAireAcond = Me.CheckBox8.Checked
+            oPosada.Desayuno = Me.CheckBox6.Checked
+            oPosada.ServicioTV = Me.CheckBox5.Checked
             Dim bllPosada As New BLL_Posada
             oPosada.Mascota = Me.CheckBox3.Checked
+            bllPosada.altaPosada(oPosada)
+        Else
+            'Dim oAlojamiento As New BE_Alojamiento
+            'oAlojamiento.Destino = DirectCast(ComboBox1.SelectedItem, BE_Destino)
+            'oAlojamiento.TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+            'oAlojamiento.Nombre = TextBox1.Text
+            'oAlojamiento.Descripcion = Me.TextBox3.Text
+            'oAlojamiento.Estrellas = Me.TextBox4.Text
+            'oAlojamiento.Ubicacion = Me.TextBox5.Text
+            'oAlojamiento.Ambientes = Me.TextBox6.Text
+            'oAlojamiento.PrecioAlquiler = Me.TextBox7.Text
+            'oAlojamiento.ConectividadWifi = Me.CheckBox2.Checked
+            'oAlojamiento.Piscina = Me.CheckBox4.Checked
+            'oAlojamiento.ServicioAireAcond = Me.CheckBox8.Checked
+            'oAlojamiento.Desayuno = Me.CheckBox6.Checked
+            'oAlojamiento.ServicioTV = Me.CheckBox5.Checked
+
         End If
     End Sub
 End Class

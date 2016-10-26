@@ -11,7 +11,7 @@ Public Class DAL_Hostel
             Dim paramHostel As BE_Hostel = DirectCast(paramobjeto, BE_Hostel)
             Dim command As SqlCommand = Acceso.MiComando("Insert into Alojamiento values (@ID, @ID_Destino, @ID_TipoAlojamiento, @Nombre, @Descripcion, @Estrellas, @Ubicacion, @Ambientes, @PrecioAlquiler, @ConectividadWifi, @Gimnasio, @Mascotas, @Piscina, @Sauna, @ServicioAireAcond, @ServicioDesayuno, @ServicioTV, @Cochera, @Amoblado, @Cocina,@HabitacionPrivada, @BL)")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Hotel")))
+                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Alojamiento")))
                 .Add(New SqlParameter("@ID_Destino", paramHostel.Destino.ID))
                 .Add(New SqlParameter("@ID_TipoAlojamiento", paramHostel.TipoAlojamiento.ID))
                 .Add(New SqlParameter("@Nombre", paramHostel.Nombre))
