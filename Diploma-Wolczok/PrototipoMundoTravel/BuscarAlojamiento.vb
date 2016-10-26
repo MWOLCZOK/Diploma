@@ -21,6 +21,8 @@
             Dim oListaAlojamiento As New List(Of EE.BE_Alojamiento)
             Dim bllAlojamiento As New BLL.BLL_Alojamiento
             oListaAlojamiento = bllAlojamiento.consultarAlojamiento(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Destino), Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
+            DataGridView1.DataSource = Nothing
+            DataGridView1.DataSource = oListaAlojamiento
         Catch ex As Exception
 
         End Try
