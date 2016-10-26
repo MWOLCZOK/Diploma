@@ -127,10 +127,10 @@
     <Compile Include="Agregar_Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarAlojamiento.Designer.vb">
-      <DependentUpon>BuscarAlojamiento.vb</DependentUpon>
+    <Compile Include="BuscarHabitacionReserva.Designer.vb">
+      <DependentUpon>BuscarHabitacionReserva.vb</DependentUpon>
     </Compile>
-    <Compile Include="BuscarAlojamiento.vb">
+    <Compile Include="BuscarHabitacionReserva.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Eliminar Pais.Designer.vb">
@@ -276,6 +276,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SeleccionarHabitacionReserva.Designer.vb">
+      <DependentUpon>SeleccionarHabitacionReserva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarHabitacionReserva.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SeleccionarIdioma.Designer.vb">
       <DependentUpon>SeleccionarIdioma.vb</DependentUpon>
     </Compile>
@@ -317,8 +323,8 @@
     <EmbeddedResource Include="Agregar_Usuario.resx">
       <DependentUpon>Agregar_Usuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarAlojamiento.resx">
-      <DependentUpon>BuscarAlojamiento.vb</DependentUpon>
+    <EmbeddedResource Include="BuscarHabitacionReserva.resx">
+      <DependentUpon>BuscarHabitacionReserva.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar Pais.resx">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
@@ -388,6 +394,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleccionarHabitacionReserva.resx">
+      <DependentUpon>SeleccionarHabitacionReserva.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionarIdioma.resx">
       <DependentUpon>SeleccionarIdioma.vb</DependentUpon>

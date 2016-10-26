@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BuscarAlojamiento
+Partial Class BuscarHabitacionReserva
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -30,21 +30,23 @@ Partial Class BuscarAlojamiento
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(24, 36)
+        Me.ComboBox1.Location = New System.Drawing.Point(24, 32)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(206, 21)
         Me.ComboBox1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 17)
+        Me.Label1.Location = New System.Drawing.Point(21, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 1
@@ -52,14 +54,14 @@ Partial Class BuscarAlojamiento
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(215, 36)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(268, 33)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(455, 36)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(506, 33)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker2.TabIndex = 3
@@ -67,7 +69,7 @@ Partial Class BuscarAlojamiento
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(212, 17)
+        Me.Label2.Location = New System.Drawing.Point(265, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 4
@@ -76,7 +78,7 @@ Partial Class BuscarAlojamiento
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(452, 17)
+        Me.Label3.Location = New System.Drawing.Point(503, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 5
@@ -84,7 +86,7 @@ Partial Class BuscarAlojamiento
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(60, 341)
+        Me.Button1.Location = New System.Drawing.Point(60, 344)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 39)
         Me.Button1.TabIndex = 6
@@ -96,14 +98,25 @@ Partial Class BuscarAlojamiento
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(24, 64)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(682, 271)
         Me.DataGridView1.TabIndex = 10
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(582, 345)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 39)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "Seleccionar"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'BuscarAlojamiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(733, 392)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
@@ -127,4 +140,5 @@ Partial Class BuscarAlojamiento
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Button2 As Button
 End Class

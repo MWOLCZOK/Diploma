@@ -70,6 +70,25 @@ Public Class DAL_Alojamiento
     End Function
 
 
+    Public Function consultarAlojamiento(ByVal paramAlojamiento As EE.BE_Alojamiento) As BE_Alojamiento
+        Try
+            Dim consulta As String = ("Select * from Alojamiento where ID=@ID and BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", paramAlojamiento.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return Me.formatearAlojamiento(dt.Rows(0))
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Private Function formatearAlojamiento(ByVal paramDataRow As DataRow) As BE_Alojamiento
         Dim oTipoAlojamiento As New BE_TipoAlojamiento
         oTipoAlojamiento.ID = paramDataRow.Item("ID_TipoAlojamiento")

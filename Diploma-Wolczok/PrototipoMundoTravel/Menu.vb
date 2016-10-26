@@ -275,7 +275,7 @@ Public Class FormMenu
     End Sub
 
     Private Sub BusquedaDeAlojamientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusquedaDeAlojamientoToolStripMenuItem.Click
-        Dim formalojamiento As New BuscarAlojamiento
+        Dim formalojamiento As New BuscarHabitacionReserva
         AbrirForm(formalojamiento)
     End Sub
 

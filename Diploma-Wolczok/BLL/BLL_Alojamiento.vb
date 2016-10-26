@@ -18,5 +18,14 @@
         End Try
     End Function
 
+    Public Function consultarAlojamiento(ByVal paramAlojamiento As EE.BE_Alojamiento) As EE.BE_Alojamiento
+        Try
+            Return dalAlojamiento.consultarAlojamiento(paramAlojamiento)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+
 
 End Class
