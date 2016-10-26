@@ -71,7 +71,6 @@ Public Class Agregar_Alojamiento
             oPosada = DirectCast(oAlojamiento, BE_Posada)
             Dim bllPosada As New BLL_Posada
             oPosada.Mascota = Me.CheckBox3.Checked
-
         End If
     End Sub
 End Class
