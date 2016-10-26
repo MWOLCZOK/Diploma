@@ -2,55 +2,27 @@
 
     Inherits BE_Alojamiento
 
-    Private _amoblado As Boolean
-    Public Property Amoblado() As Boolean
+
+    Private _cocina As Boolean
+    Public Property Cocina() As Boolean
         Get
-            Return _amoblado
+            Return _cocina
         End Get
         Set(ByVal value As Boolean)
-            _amoblado = value
+            _cocina = value
         End Set
     End Property
 
-    Private _cantidadpersonas As Integer
-    Public Property CantidadPersonas() As Integer
-        Get
-            Return _cantidadpersonas
-        End Get
-        Set(ByVal value As Integer)
-            _cantidadpersonas = value
-        End Set
-    End Property
-
-    Private _habitacionprivada As Boolean
+    Private _habitacionPrivada As Boolean
     Public Property HabitacionPrivada() As Boolean
         Get
-            Return _habitacionprivada
+            Return _habitacionPrivada
         End Get
         Set(ByVal value As Boolean)
-            _habitacionprivada = value
+            _habitacionPrivada = value
         End Set
     End Property
 
-    Private _lockers As Boolean
-    Public Property Lockers() As Boolean
-        Get
-            Return _lockers
-        End Get
-        Set(ByVal value As Boolean)
-            _lockers = value
-        End Set
-    End Property
-
-    Private _nombre As String
-    Public Property Nombre() As String
-        Get
-            Return _nombre
-        End Get
-        Set(ByVal value As String)
-            _nombre = value
-        End Set
-    End Property
 
 
 End Class

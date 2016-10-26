@@ -19,11 +19,11 @@ Public Class BLL_Hostel
         End Try
     End Sub
 
-    Public Function consultarHostels() As List(Of BE_Hostel)
-        Return _dalHostel.consultarHostels()
-    End Function
+    'Public Function consultarHostels() As List(Of BE_Hostel)
+    '    Return _dalHostel.consultarHostels()
+    'End Function
 
-    Public Function modificarLocalidad(ByVal paramHostel As BE_Hostel) As Boolean
+    Public Function modificarHostel(ByVal paramHostel As BE_Hostel) As Boolean
         Try
             Return _dalHostel.modificar(paramHostel)
         Catch ex As Exception

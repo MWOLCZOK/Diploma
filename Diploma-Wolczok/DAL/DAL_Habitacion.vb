@@ -10,16 +10,12 @@ Public Class DAL_Habitacion
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramHabitacion As BE_Habitacion = DirectCast(paramobjeto, BE_Habitacion)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Destino values (@ID, @ID_Alojamiento, @CantidadCamas, @CantidadPersonas, @Cocina, @Escritorio, @Frigobar, @Mesa, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Habitacion values (@ID, @ID_Alojamiento, @CantidadCamas, @CantidadPersonas, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Habitacion")))
                 .Add(New SqlParameter("@ID_Alojamiento", paramHabitacion.Alojamiento.ID))
                 .Add(New SqlParameter("@CantidadCamas", paramHabitacion.CantidadCamas))
                 .Add(New SqlParameter("@CantidadPersonas", paramHabitacion.CantidadPersonas))
-                .Add(New SqlParameter("@Cocina", paramHabitacion.Cocina))
-                .Add(New SqlParameter("@Escritorio", paramHabitacion.Escritorio))
-                .Add(New SqlParameter("@Frigobar", paramHabitacion.Frigobar))
-                .Add(New SqlParameter("@Mesa", paramHabitacion.Mesa))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -47,16 +43,12 @@ Public Class DAL_Habitacion
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramHabitacion As BE_Habitacion = DirectCast(paramobjeto, BE_Habitacion)
-            Dim command As SqlCommand = Acceso.MiComando("Update Habitacion set ID_Alojamiento=@ID_Alojamiento, CantidadCamas=@CantidadCamas, CantidadPersonas=@CantidadPersonas, Cocina=@Cocina, Escritorio=@Escritorio, Frigobar=@Frigobar where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Habitacion set ID_Alojamiento=@ID_Alojamiento, CantidadCamas=@CantidadCamas, CantidadPersonas=@CantidadPersonas where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramHabitacion.ID))
                 .Add(New SqlParameter("@ID_Alojamiento", paramHabitacion.Alojamiento.ID))
                 .Add(New SqlParameter("@CantidadCamas", paramHabitacion.CantidadCamas))
                 .Add(New SqlParameter("@CantidadPersonas", paramHabitacion.CantidadPersonas))
-                .Add(New SqlParameter("@Cocina", paramHabitacion.Cocina))
-                .Add(New SqlParameter("@Escritorio", paramHabitacion.Escritorio))
-                .Add(New SqlParameter("@Frigobar", paramHabitacion.Frigobar))
-                .Add(New SqlParameter("@Mesa", paramHabitacion.Mesa))
             End With
             Acceso.Escritura(command)
             command.Dispose()
@@ -127,10 +119,6 @@ Public Class DAL_Habitacion
         oHabitacion.ID = paramDataRow.Item("ID")
         oHabitacion.CantidadCamas = paramDataRow.Item("CantidadCamas")
         oHabitacion.CantidadPersonas = paramDataRow.Item("CantidadPersonas")
-        oHabitacion.Cocina = paramDataRow.Item("Cocina")
-        oHabitacion.Frigobar = paramDataRow.Item("Frigobar")
-        oHabitacion.Escritorio = paramDataRow.Item("Escritorio")
-        oHabitacion.Mesa = paramDataRow.Item("Mesa")
         Return oHabitacion
     End Function
 

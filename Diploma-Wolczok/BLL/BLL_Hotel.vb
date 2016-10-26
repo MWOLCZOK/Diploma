@@ -20,9 +20,9 @@ Public Class BLL_Hotel
         End Try
     End Sub
 
-    Public Function consultarHoteles() As List(Of BE_Hotel)
-        Return _dalHotel.consultarHosteles()
-    End Function
+    'Public Function consultarHoteles() As List(Of BE_Hotel)
+    '    Return _dalHotel.consultarHosteles()
+    'End Function
 
     Public Function modificarHotel(ByVal paramHotel As BE_Hotel) As Boolean
         Try

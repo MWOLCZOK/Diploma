@@ -2,41 +2,15 @@
 
     Inherits BE_Alojamiento
 
-    Private _distanciaciudad As Double
-    Public Property DistanciaCiudad() As Double
+
+    Private _mascota As Boolean
+    Public Property Mascota() As Boolean
         Get
-            Return _distanciaciudad
+            Return _mascota
         End Get
-        Set(ByVal value As Double)
-            _distanciaciudad = value
+        Set(ByVal value As Boolean)
+            _mascota = value
         End Set
     End Property
-
-    Private _hectareasverdes As Double
-    Public Property HectareasVerdes() As Double
-        Get
-            Return _hectareasverdes
-        End Get
-        Set(ByVal value As Double)
-            _hectareasverdes = value
-        End Set
-    End Property
-
-    Private _nombre As String
-    Public Property Nombre() As String
-        Get
-            Return _nombre
-        End Get
-        Set(ByVal value As String)
-            _nombre = value
-        End Set
-    End Property
-
-
-
-
-
-
-
 
 End Class

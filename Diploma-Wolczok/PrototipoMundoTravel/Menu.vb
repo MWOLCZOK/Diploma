@@ -255,14 +255,9 @@ Public Class FormMenu
     End Sub
 
     Private Sub AgregarHotelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarHotelToolStripMenuItem.Click
-        Dim forHot As New Agregar_Hotel
-        AbrirForm(forHot)
+ 
     End Sub
 
-    Private Sub AltaDeDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeDepartamentoToolStripMenuItem.Click
-        Dim formdep As New Agregar_Departamento
-        AbrirForm(formdep)
-    End Sub
 
     Private Sub EliminarDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarDepartamentoToolStripMenuItem.Click
         '       Dim formdep As New Eliminar_Departamento
@@ -282,5 +277,10 @@ Public Class FormMenu
     Private Sub BusquedaDeAlojamientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusquedaDeAlojamientoToolStripMenuItem.Click
         Dim formalojamiento As New BuscarAlojamiento
         AbrirForm(formalojamiento)
+    End Sub
+
+    Private Sub AltaDeDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeDepartamentoToolStripMenuItem.Click
+        Dim forHot As New Agregar_Alojamiento
+        AbrirForm(forHot)
     End Sub
 End Class

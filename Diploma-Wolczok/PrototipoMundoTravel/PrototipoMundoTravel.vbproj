@@ -73,28 +73,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agregar_Departamento.Designer.vb">
-      <DependentUpon>Agregar_Departamento.vb</DependentUpon>
+    <Compile Include="Agregar_Alojamiento.Designer.vb">
+      <DependentUpon>Agregar_Alojamiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Agregar_Departamento.vb">
+    <Compile Include="Agregar_Alojamiento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Agregar_Destino.Designer.vb">
       <DependentUpon>Agregar_Destino.vb</DependentUpon>
     </Compile>
     <Compile Include="Agregar_Destino.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Agregar_Hostel.Designer.vb">
-      <DependentUpon>Agregar_Hostel.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Agregar_Hostel.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Agregar_Hotel.Designer.vb">
-      <DependentUpon>Agregar_Hotel.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Agregar_Hotel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Agregar_Idioma.Designer.vb">
@@ -296,17 +284,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Agregar_Departamento.resx">
-      <DependentUpon>Agregar_Departamento.vb</DependentUpon>
+    <EmbeddedResource Include="Agregar_Alojamiento.resx">
+      <DependentUpon>Agregar_Alojamiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Destino.resx">
       <DependentUpon>Agregar_Destino.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Agregar_Hostel.resx">
-      <DependentUpon>Agregar_Hostel.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Agregar_Hotel.resx">
-      <DependentUpon>Agregar_Hotel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Idioma.resx">
       <DependentUpon>Agregar_Idioma.vb</DependentUpon>
