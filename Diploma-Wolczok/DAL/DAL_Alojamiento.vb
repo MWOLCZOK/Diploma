@@ -46,55 +46,120 @@ Public Class DAL_Alojamiento
     End Function
 
     Private Function formatearAlojamiento(ByVal paramDataRow As DataRow) As BE_Alojamiento
-        Dim oAlojamiento As New BE_Alojamiento
-        oAlojamiento.ID = paramDataRow.Item("ID")
-        Dim oDestino As New BE_Destino
-        oDestino.ID = paramDataRow.Item("ID_Destino")
-        oAlojamiento.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
         Dim oTipoAlojamiento As New BE_TipoAlojamiento
         oTipoAlojamiento.ID = paramDataRow.Item("ID_TipoAlojamiento")
-        oAlojamiento.TipoAlojamiento = (New DAL.DAL_TipoAlojamiento).consultarTipoAlojamiento(oTipoAlojamiento)
-        oAlojamiento.Descripcion = paramDataRow.Item("Descripcion")
-        oAlojamiento.Piscina = paramDataRow.Item("Piscina")
-        oAlojamiento.PrecioAlquiler = paramDataRow.Item("PrecioAlquiler")
-        oAlojamiento.ServicioAireAcond = paramDataRow.Item("ServicioAireAcond")
-        oAlojamiento.Desayuno = paramDataRow.Item("ServicioDesayuno")
-        oAlojamiento.ServicioTV = paramDataRow.Item("ServicioTV")
-        oAlojamiento.TipoAlojamiento = paramDataRow.Item("TipoAlojamiento")
-        oAlojamiento.Ubicacion = paramDataRow.Item("Ubicacion")
-        oAlojamiento.Nombre = paramDataRow.Item("Nombre")
-        Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
-        oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oAlojamiento)
-        oAlojamiento.ListaHabitaciones = oListaHabitaciones
-        If oAlojamiento.TipoAlojamiento.ID = 1 Then
+        If oTipoAlojamiento.ID = 1 Then
             Dim oHostel As New BE_Hostel
-            oHostel = DirectCast(oAlojamiento, BE_Hostel)
+            oHostel.ID = paramDataRow.Item("ID")
+            Dim oDestino As New BE_Destino
+            oDestino.ID = paramDataRow.Item("ID_Destino")
+            oHostel.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
+            oHostel.TipoAlojamiento = (New DAL.DAL_TipoAlojamiento).consultarTipoAlojamiento(oTipoAlojamiento)
+            oHostel.Descripcion = paramDataRow.Item("Descripcion")
+            oHostel.Piscina = paramDataRow.Item("Piscina")
+            oHostel.PrecioAlquiler = paramDataRow.Item("PrecioAlquiler")
+            oHostel.ServicioAireAcond = paramDataRow.Item("ServicioAireAcond")
+            oHostel.Desayuno = paramDataRow.Item("ServicioDesayuno")
+            oHostel.ServicioTV = paramDataRow.Item("ServicioTV")
+            oHostel.Ubicacion = paramDataRow.Item("Ubicacion")
+            oHostel.Nombre = paramDataRow.Item("Nombre")
+            oHostel.Estrellas = paramDataRow.Item("Estrellas")
+            Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+            oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oHostel)
+            oHostel.ListaHabitaciones = oListaHabitaciones
             oHostel.Cocina = paramDataRow.Item("Cocina")
             oHostel.HabitacionPrivada = paramDataRow.Item("HabitacionPrivada")
             Return oHostel
-        ElseIf oAlojamiento.TipoAlojamiento.ID = 2 Then
+        ElseIf oTipoAlojamiento.ID = 2 Then
             Dim oHotel As New BE_Hotel
-            oHotel = DirectCast(oAlojamiento, BE_Hotel)
+            oHotel.ID = paramDataRow.Item("ID")
+            Dim oDestino As New BE_Destino
+            oDestino.ID = paramDataRow.Item("ID_Destino")
+            oHotel.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
+            oHotel.TipoAlojamiento = (New DAL.DAL_TipoAlojamiento).consultarTipoAlojamiento(oTipoAlojamiento)
+            oHotel.Descripcion = paramDataRow.Item("Descripcion")
+            oHotel.Piscina = paramDataRow.Item("Piscina")
+            oHotel.PrecioAlquiler = paramDataRow.Item("PrecioAlquiler")
+            oHotel.ServicioAireAcond = paramDataRow.Item("ServicioAireAcond")
+            oHotel.Desayuno = paramDataRow.Item("ServicioDesayuno")
+            oHotel.ServicioTV = paramDataRow.Item("ServicioTV")
+            oHotel.Ubicacion = paramDataRow.Item("Ubicacion")
+            oHotel.Nombre = paramDataRow.Item("Nombre")
+            oHotel.Estrellas = paramDataRow.Item("Estrellas")
+            Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+            oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oHotel)
+            oHotel.ListaHabitaciones = oListaHabitaciones
             oHotel.Gimnasio = paramDataRow.Item("Gimnasio")
             oHotel.Mascota = paramDataRow.Item("Mascotas")
             oHotel.Sauna = paramDataRow.Item("Sauna")
             oHotel.Cochera = paramDataRow.Item("Cochera")
             Return oHotel
-        ElseIf oAlojamiento.TipoAlojamiento.ID = 3 Then
+        ElseIf oTipoAlojamiento.ID = 3 Then
             Dim oDepartamento As New BE_Departamento
-            oDepartamento = DirectCast(oAlojamiento, BE_Departamento)
+            oDepartamento.ID = paramDataRow.Item("ID")
+            Dim oDestino As New BE_Destino
+            oDestino.ID = paramDataRow.Item("ID_Destino")
+            oDepartamento.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
+            oDepartamento.TipoAlojamiento = (New DAL.DAL_TipoAlojamiento).consultarTipoAlojamiento(oTipoAlojamiento)
+            oDepartamento.Descripcion = paramDataRow.Item("Descripcion")
+            oDepartamento.Piscina = paramDataRow.Item("Piscina")
+            oDepartamento.PrecioAlquiler = paramDataRow.Item("PrecioAlquiler")
+            oDepartamento.ServicioAireAcond = paramDataRow.Item("ServicioAireAcond")
+            oDepartamento.Desayuno = paramDataRow.Item("ServicioDesayuno")
+            oDepartamento.ServicioTV = paramDataRow.Item("ServicioTV")
+            oDepartamento.Ubicacion = paramDataRow.Item("Ubicacion")
+            oDepartamento.Nombre = paramDataRow.Item("Nombre")
+            oDepartamento.Estrellas = paramDataRow.Item("Estrellas")
+            Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+            oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oDepartamento)
+            oDepartamento.ListaHabitaciones = oListaHabitaciones
             oDepartamento.Mascota = paramDataRow.Item("Mascotas")
             oDepartamento.Cochera = paramDataRow.Item("Cochera")
             oDepartamento.Cocina = paramDataRow.Item("Cocina")
             oDepartamento.Amoblado = paramDataRow.Item("Amoblado")
             Return oDepartamento
-        ElseIf oAlojamiento.TipoAlojamiento.ID = 4 Then
+        ElseIf oTipoAlojamiento.ID = 4 Then
             Dim oPosada As New BE_Posada
-            oPosada = DirectCast(oAlojamiento, BE_Posada)
+            oPosada.ID = paramDataRow.Item("ID")
+            Dim oDestino As New BE_Destino
+            oDestino.ID = paramDataRow.Item("ID_Destino")
+            oPosada.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
+            oPosada.TipoAlojamiento = (New DAL.DAL_TipoAlojamiento).consultarTipoAlojamiento(oTipoAlojamiento)
+            oPosada.Descripcion = paramDataRow.Item("Descripcion")
+            oPosada.Piscina = paramDataRow.Item("Piscina")
+            oPosada.PrecioAlquiler = paramDataRow.Item("PrecioAlquiler")
+            oPosada.ServicioAireAcond = paramDataRow.Item("ServicioAireAcond")
+            oPosada.Desayuno = paramDataRow.Item("ServicioDesayuno")
+            oPosada.ServicioTV = paramDataRow.Item("ServicioTV")
+            oPosada.Ubicacion = paramDataRow.Item("Ubicacion")
+            oPosada.Nombre = paramDataRow.Item("Nombre")
+            oPosada.Estrellas = paramDataRow.Item("Estrellas")
+            Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+            oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oPosada)
+            oPosada.ListaHabitaciones = oListaHabitaciones
             oPosada.Mascota = paramDataRow.Item("Mascotas")
             Return oPosada
+        Else
+            Dim oAlojamiento As New EE.BE_Alojamiento
+            oAlojamiento.ID = paramDataRow.Item("ID")
+            Dim oDestino As New BE_Destino
+            oDestino.ID = paramDataRow.Item("ID_Destino")
+            oAlojamiento.Destino = (New DAL.DAL_Destino).consultarDestino(oDestino)
+            oAlojamiento.TipoAlojamiento = (New DAL.DAL_TipoAlojamiento).consultarTipoAlojamiento(oTipoAlojamiento)
+            oAlojamiento.Descripcion = paramDataRow.Item("Descripcion")
+            oAlojamiento.Piscina = paramDataRow.Item("Piscina")
+            oAlojamiento.PrecioAlquiler = paramDataRow.Item("PrecioAlquiler")
+            oAlojamiento.ServicioAireAcond = paramDataRow.Item("ServicioAireAcond")
+            oAlojamiento.Desayuno = paramDataRow.Item("ServicioDesayuno")
+            oAlojamiento.ServicioTV = paramDataRow.Item("ServicioTV")
+            oAlojamiento.Ubicacion = paramDataRow.Item("Ubicacion")
+            oAlojamiento.Nombre = paramDataRow.Item("Nombre")
+            oAlojamiento.Estrellas = paramDataRow.Item("Estrellas")
+            Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
+            oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oAlojamiento)
+            oAlojamiento.ListaHabitaciones = oListaHabitaciones
+            Return oAlojamiento
         End If
-        Return oAlojamiento
     End Function
 
 End Class
