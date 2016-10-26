@@ -52,4 +52,17 @@
         End Set
     End Property
 
+    Private _puntaje As Double
+    Public Property puntaje() As Double
+        Get
+            Return _puntaje
+        End Get
+        Set(ByVal value As Double)
+            _puntaje = value
+        End Set
+    End Property
+
+
+
+
 End Class

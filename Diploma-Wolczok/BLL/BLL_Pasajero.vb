@@ -34,5 +34,4 @@ Public Class BLL_Pasajero
         Return _dalpasajero.consultarPasajeros()
     End Function
 
-
 End Class

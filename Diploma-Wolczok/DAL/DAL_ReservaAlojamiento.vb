@@ -9,7 +9,7 @@ Public Class DAL_ReservaAlojamiento
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into ReservaAlojamiento values (@ID, @ID_Habitacion, @NumeroReserva, @FechaInicio, @FechaFin, @Estado, @Detalle,  @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into ReservaAlojamiento values (@ID, @ID_Habitacion, @NumeroReserva, @FechaInicio, @FechaFin, @Estado, @Detalle, @Puntaje, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "ReservaAlojamiento")))
                 .Add(New SqlParameter("@ID_Habitacion", paramReservaAloja.Habitacion.ID))
@@ -18,6 +18,7 @@ Public Class DAL_ReservaAlojamiento
                 .Add(New SqlParameter("@FechaFin", paramReservaAloja.Fecha_Fin))
                 .Add(New SqlParameter("@Estado", paramReservaAloja.Estado))
                 .Add(New SqlParameter("@Detalle", paramReservaAloja.Detalle))
+                .Add(New SqlParameter("@Puntaje", paramReservaAloja.puntaje))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -45,7 +46,7 @@ Public Class DAL_ReservaAlojamiento
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
-            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set ID_Habitacion=@ID_Habitacion, NumeroReserva=@NumeroReserva, FechaInicio=@FechaInicio, FechaFin=@FechaFin, Estado=@Estado, Detalle=@Detalle where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set ID_Habitacion=@ID_Habitacion, NumeroReserva=@NumeroReserva, FechaInicio=@FechaInicio, FechaFin=@FechaFin, Estado=@Estado, Detalle=@Detalle, Puntaje@Puntaje where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "ReservaAlojamiento")))
                 .Add(New SqlParameter("@ID_Habitacion", paramReservaAloja.Habitacion.ID))
@@ -54,6 +55,7 @@ Public Class DAL_ReservaAlojamiento
                 .Add(New SqlParameter("@FechaFin", paramReservaAloja.Fecha_Fin))
                 .Add(New SqlParameter("@Estado", paramReservaAloja.Estado))
                 .Add(New SqlParameter("@Detalle", paramReservaAloja.Detalle))
+                .Add(New SqlParameter("@Puntaje", paramReservaAloja.puntaje))
             End With
             Acceso.Escritura(command)
             command.Dispose()
@@ -100,6 +102,24 @@ Public Class DAL_ReservaAlojamiento
         End Try
     End Function
 
+    Public Function retornarPuntaje(ByVal idCoeficiente As Integer) As Double
+        Try
+            Dim consulta As String = ("Select coeficiente from Puntaje where ID=@ID")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", idCoeficiente))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return CDbl(dt.Rows(0).Item(0))
+            Else
+                Return 1
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Function
+
 
     Private Function formatearReservaAlojamiento(ByVal paramDataRow As DataRow) As BE_ReservaAlojamiento
         Dim oReservaAlojamiento As New BE_ReservaAlojamiento
@@ -112,6 +132,8 @@ Public Class DAL_ReservaAlojamiento
         oReservaAlojamiento.Fecha_Fin = paramDataRow.Item("FechaFin")
         oReservaAlojamiento.Detalle = paramDataRow.Item("Detalle")
         oReservaAlojamiento.Estado = paramDataRow.Item("Estado")
+        oReservaAlojamiento.puntaje = paramDataRow.Item("Puntaje")
+
         Return oReservaAlojamiento
     End Function
 End Class
