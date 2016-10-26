@@ -1,7 +1,7 @@
 ﻿Imports EE
 
 Public Class BLL_TipoAlojamiento
-    Dim dalTipoAlojamiento As DAL.dal_TipoAlojamiento
+    Dim dalTipoAlojamiento As New DAL.DAL_TipoAlojamiento
 
     Public Sub altaTipoAlojamiento(ByVal paramTipoAlojamiento As BE_TipoAlojamiento)
         Try

@@ -45,7 +45,6 @@ Public Class DAL_Alojamiento
         End Try
     End Function
 
-
     Private Function formatearAlojamiento(ByVal paramDataRow As DataRow) As BE_Hotel
         Dim oAlojamiento As New BE_Hotel
         oAlojamiento.ID = paramDataRow.Item("ID")
@@ -55,8 +54,6 @@ Public Class DAL_Alojamiento
         'falta el tipo de Alojamiento
 
         'fin
-        oAlojamiento.Categoria = paramDataRow.Item("Categoria")
-        oAlojamiento.ConectividadWIFI = paramDataRow.Item("ConectividadWIFI")
         oAlojamiento.Descripcion = paramDataRow.Item("Descripcion")
         oAlojamiento.Gimnasio = paramDataRow.Item("Gimnasio")
         oAlojamiento.Mascota = paramDataRow.Item("Mascotas")
@@ -67,13 +64,8 @@ Public Class DAL_Alojamiento
         oAlojamiento.Desayuno = paramDataRow.Item("ServicioDesayuno")
         oAlojamiento.ServicioTV = paramDataRow.Item("ServicioTV")
         oAlojamiento.TipoAlojamiento = paramDataRow.Item("TipoAlojamiento")
-        oAlojamiento.TipoCama = paramDataRow.Item("TipoCama")
-        oAlojamiento.TipoHabitacion = paramDataRow.Item("TipoHabitacion")
         oAlojamiento.Ubicacion = paramDataRow.Item("Ubicacion")
-        oAlojamiento.ActividadesFamiliares = paramDataRow.Item("ActividadesFamiliares")
-        oAlojamiento.CantidadEstrellas = paramDataRow.Item("CantidadEstrellas")
         oAlojamiento.Nombre = paramDataRow.Item("Nombre")
-        oAlojamiento.TipoHotel = paramDataRow.Item("TipoHotel")
         Dim oListaHabitaciones As New List(Of EE.BE_Habitacion)
         oListaHabitaciones = (New DAL.DAL_Habitacion).ConsultarHabitaciones(oAlojamiento)
         oAlojamiento.ListaHabitaciones = oListaHabitaciones

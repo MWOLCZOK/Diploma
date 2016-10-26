@@ -26,9 +26,9 @@ Public Class BLL_Departamento
         Return _daldepar.modificar(paramdep)
     End Function
 
-    Public Function consultardep() As List(Of BE_Departamento)
-        Return _daldepar.consultarDepartamentos
-    End Function
+    'Public Function consultardep() As List(Of BE_Departamento)
+    '    Return _daldepar.consultarDepartamentos
+    'End Function
 
 
 

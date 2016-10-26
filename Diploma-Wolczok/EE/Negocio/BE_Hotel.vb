@@ -3,47 +3,46 @@
     Inherits BE_Alojamiento
 
 
-    Private _actividadesfamiliares As String
-    Public Property ActividadesFamiliares() As String
+    Private _gimnasio As Boolean
+    Public Property Gimnasio() As Boolean
         Get
-            Return _actividadesfamiliares
+            Return _gimnasio
         End Get
-        Set(ByVal value As String)
-            _actividadesfamiliares = value
-        End Set
-    End Property
-
-    Private _cantidadestrellas As Integer
-    Public Property CantidadEstrellas() As Integer
-        Get
-            Return _cantidadestrellas
-        End Get
-        Set(ByVal value As Integer)
-            _cantidadestrellas = value
+        Set(ByVal value As Boolean)
+            _gimnasio = value
         End Set
     End Property
 
 
-    Private _nombre As String
-    Public Property Nombre() As String
+    Private _mascota As Boolean
+    Public Property Mascota() As Boolean
         Get
-            Return _nombre
+            Return _mascota
         End Get
-        Set(ByVal value As String)
-            _nombre = value
+        Set(ByVal value As Boolean)
+            _mascota = value
         End Set
     End Property
 
-    Private _tipohotel As String
-    Public Property TipoHotel() As String
+    Private _sauna As Boolean
+    Public Property Sauna() As Boolean
         Get
-            Return _tipohotel
+            Return _sauna
         End Get
-        Set(ByVal value As String)
-            _tipohotel = value
+        Set(ByVal value As Boolean)
+            _sauna = value
         End Set
     End Property
 
+    Private _cochera As Boolean
+    Public Property Cochera() As Boolean
+        Get
+            Return _cochera
+        End Get
+        Set(ByVal value As Boolean)
+            _cochera = value
+        End Set
+    End Property
 
 
 End Class
