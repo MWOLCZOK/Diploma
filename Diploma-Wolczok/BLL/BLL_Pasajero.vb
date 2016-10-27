@@ -34,4 +34,15 @@ Public Class BLL_Pasajero
         Return _dalpasajero.consultarPasajeros()
     End Function
 
+
+    Public Function consultarPasajeroporDNI(ByVal paramPasajaero As BE_Pasajero) As List(Of BE_Pasajero)
+        Return _dalpasajero.consultarPasajeroporDNI(paramPasajaero)
+    End Function
+
+    Public Function consultarPasajero(ByVal paramPasajaero As BE_Pasajero) As BE_Pasajero
+        Return _dalpasajero.consultarPasajero(paramPasajaero)
+    End Function
+
+
+
 End Class

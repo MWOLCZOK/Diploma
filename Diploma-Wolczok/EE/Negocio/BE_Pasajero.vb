@@ -31,6 +31,14 @@
         End Set
     End Property
 
+    Private _nombreCompleto As String
+    Public ReadOnly Property NombreCompleto() As String
+        Get
+            Return Me.Apellido & ", " & Me.Nombre
+        End Get
+
+    End Property
+
     Private _correoelectronico As String
     Public Property CorreoElectronico() As String
         Get
@@ -73,8 +81,6 @@
         End Set
     End Property
 
-
-
     Private _puntajeviaje As Double
     Public Property PuntajeViaje() As Double
         Get
@@ -95,34 +101,5 @@
         End Set
     End Property
 
-    'Private _reserva As BE_Reserva
-    'Public Property Reserva() As BE_Reserva
-    '    Get
-    '        Return _reserva
-    '    End Get
-    '    Set(ByVal value As BE_Reserva)
-    '        _reserva = value
-    '    End Set
-    'End Property
-
-    Private _reserva As Integer
-    Public Property Reserva() As Integer
-        Get
-            Return _reserva
-        End Get
-        Set(ByVal value As Integer)
-            _reserva = value
-        End Set
-    End Property
-
-    'Public Overrides Function ToString() As String
-    '    Return Me.Nombre And Me.Apellido
-    'End Function
-
-    Public ReadOnly Property NombreApellido As String
-        Get
-            Return Nombre & " " & Apellido
-        End Get
-    End Property
 
 End Class

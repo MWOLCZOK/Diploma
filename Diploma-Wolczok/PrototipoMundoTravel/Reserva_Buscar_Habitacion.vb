@@ -1,7 +1,7 @@
 ﻿Imports EE
 Imports BLL
 
-Public Class SeleccionarHabitacionReserva
+Public Class Reserva_Buscar_Habitacion
 
     Protected Friend reservaAlojamiento As EE.BE_ReservaAlojamiento
     Protected Friend reservaDestino As EE.BE_Destino
@@ -47,9 +47,7 @@ Public Class SeleccionarHabitacionReserva
         oReservaAlojamiento.Estado = True
         oReservaAlojamiento.Habitacion = oHabitacion
         oReservaAlojamiento.Detalle = "Prueba"
-        Dim bllReserva As New BLL_Reserva
-        bllReserva.altaReserva(oReservaAlojamiento)
-        Dim formularioSeleccionHabitacion As New DetalleReserva(Alojamiento, reservaDestino, oReservaAlojamiento)
+        Dim formularioSeleccionHabitacion As New Reserva_Buscar_Pasajero(Alojamiento, reservaDestino, oReservaAlojamiento)
         formularioSeleccionHabitacion.Show()
         Me.Close()
     End Sub

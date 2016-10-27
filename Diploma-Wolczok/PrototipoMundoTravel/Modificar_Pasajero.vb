@@ -49,7 +49,6 @@ Public Class Modificar_Pasajero
             Me.Txtpuntajealoj.Text = NuevoPas.PuntajeAlojamiento
             Me.Txtpuntajeviaje.Text = NuevoPas.PuntajeViaje
             Me.Txttelefono.Text = NuevoPas.Telefono
-            Me.Txtreserva.Text = NuevoPas.Reserva
         End If
 
     End Sub
@@ -71,7 +70,6 @@ Public Class Modificar_Pasajero
                     pasmodificar.PuntajeAlojamiento = Txtpuntajealoj.Text
                     pasmodificar.PuntajeViaje = Txtpuntajeviaje.Text
                     pasmodificar.Telefono = Txttelefono.Text
-                    pasmodificar.Reserva = Txtreserva.Text
                     GestorPas.modificarPasajero(pasmodificar)
                     Iniciar()
                     MessageBox.Show("Se ha modificado el pasajero de manera satisfactoria")

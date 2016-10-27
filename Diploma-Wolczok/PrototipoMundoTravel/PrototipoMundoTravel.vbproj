@@ -127,16 +127,16 @@
     <Compile Include="Agregar_Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarHabitacionReserva.Designer.vb">
-      <DependentUpon>BuscarHabitacionReserva.vb</DependentUpon>
+    <Compile Include="Reserva_Buscar_Alojamiento.Designer.vb">
+      <DependentUpon>Reserva_Buscar_Alojamiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="BuscarHabitacionReserva.vb">
+    <Compile Include="Reserva_Buscar_Alojamiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetalleReserva.Designer.vb">
-      <DependentUpon>DetalleReserva.vb</DependentUpon>
+    <Compile Include="Reserva_Buscar_Pasajero.Designer.vb">
+      <DependentUpon>Reserva_Buscar_Pasajero.vb</DependentUpon>
     </Compile>
-    <Compile Include="DetalleReserva.vb">
+    <Compile Include="Reserva_Buscar_Pasajero.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Eliminar Pais.Designer.vb">
@@ -282,10 +282,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SeleccionarHabitacionReserva.Designer.vb">
-      <DependentUpon>SeleccionarHabitacionReserva.vb</DependentUpon>
+    <Compile Include="Reserva_Buscar_Habitacion.Designer.vb">
+      <DependentUpon>Reserva_Buscar_Habitacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="SeleccionarHabitacionReserva.vb">
+    <Compile Include="Reserva_Buscar_Habitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reserva_Detalle.Designer.vb">
+      <DependentUpon>Reserva_Detalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reserva_Detalle.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SeleccionarIdioma.Designer.vb">
@@ -329,11 +335,11 @@
     <EmbeddedResource Include="Agregar_Usuario.resx">
       <DependentUpon>Agregar_Usuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarHabitacionReserva.resx">
-      <DependentUpon>BuscarHabitacionReserva.vb</DependentUpon>
+    <EmbeddedResource Include="Reserva_Buscar_Alojamiento.resx">
+      <DependentUpon>Reserva_Buscar_Alojamiento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetalleReserva.resx">
-      <DependentUpon>DetalleReserva.vb</DependentUpon>
+    <EmbeddedResource Include="Reserva_Buscar_Pasajero.resx">
+      <DependentUpon>Reserva_Buscar_Pasajero.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar Pais.resx">
       <DependentUpon>Eliminar Pais.vb</DependentUpon>
@@ -404,8 +410,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeleccionarHabitacionReserva.resx">
-      <DependentUpon>SeleccionarHabitacionReserva.vb</DependentUpon>
+    <EmbeddedResource Include="Reserva_Buscar_Habitacion.resx">
+      <DependentUpon>Reserva_Buscar_Habitacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reserva_Detalle.resx">
+      <DependentUpon>Reserva_Detalle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionarIdioma.resx">
       <DependentUpon>SeleccionarIdioma.vb</DependentUpon>

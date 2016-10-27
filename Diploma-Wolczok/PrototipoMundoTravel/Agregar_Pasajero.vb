@@ -32,7 +32,6 @@ Public Class Agregar_Pasajero
                 oPasajero.PuntajeAlojamiento = Txtpuntajealoj.Text
                 oPasajero.PuntajeViaje = Txtpuntajeviaje.Text
                 oPasajero.Telefono = Txttelefono.Text
-                oPasajero.Reserva = Txtreserva.Text
                 bllPasajero.Altapasajero(oPasajero)
                 MsgBox("Se ha agregado correctamente el pasajero")
             Else

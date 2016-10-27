@@ -1,7 +1,7 @@
 ﻿Imports BLL
 Imports EE
 
-Public Class BuscarHabitacionReserva
+Public Class Reserva_Buscar_Alojamiento
 
     Private Sub BuscarAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarCombos()
@@ -48,7 +48,7 @@ Public Class BuscarHabitacionReserva
         oReservaAlojamiento.Fecha_Fin = Me.DateTimePicker2.Value
         Dim oDestino As New BE_Destino
         oDestino = DirectCast(Me.ComboBox1.SelectedItem, BE_Destino)
-        Dim formularioSeleccionHabitacion As New SeleccionarHabitacionReserva(oAlojamiento, oDestino, oReservaAlojamiento)
+        Dim formularioSeleccionHabitacion As New Reserva_Buscar_Habitacion(oAlojamiento, oDestino, oReservaAlojamiento)
         formularioSeleccionHabitacion.Show()
         Me.Close()
     End Sub
