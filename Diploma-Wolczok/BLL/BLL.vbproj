@@ -83,6 +83,7 @@
     <Compile Include="BLL_Pasajero.vb" />
     <Compile Include="BLL_Posada.vb" />
     <Compile Include="BLL_Provincia.vb" />
+    <Compile Include="BLL_Puntaje.vb" />
     <Compile Include="BLL_Reserva.vb" />
     <Compile Include="BLL_SesionObservada.vb" />
     <Compile Include="BLL_TipoAlojamiento.vb" />

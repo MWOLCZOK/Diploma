@@ -66,6 +66,7 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ModificarPuntajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -247,7 +248,7 @@ Partial Class FormMenu
         '
         'AdministracionToolStripMenuItem
         '
-        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarUsuarioToolStripMenuItem, Me.ModificarUsuariosToolStripMenuItem, Me.EliminarUsuarioToolStripMenuItem, Me.AgregarPerfilToolStripMenuItem, Me.ModificarPerfilesToolStripMenuItem, Me.EliminarPermisoToolStripMenuItem, Me.VisualizarBitToolStripMenuItem, Me.RealizarBackupToolStripMenuItem1, Me.RealizarRestoreToolStripMenuItem1, Me.EliminarIdiomaToolStripMenuItem, Me.CrearPaisToolStripMenuItem})
+        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarUsuarioToolStripMenuItem, Me.ModificarUsuariosToolStripMenuItem, Me.EliminarUsuarioToolStripMenuItem, Me.AgregarPerfilToolStripMenuItem, Me.ModificarPerfilesToolStripMenuItem, Me.EliminarPermisoToolStripMenuItem, Me.VisualizarBitToolStripMenuItem, Me.RealizarBackupToolStripMenuItem1, Me.RealizarRestoreToolStripMenuItem1, Me.EliminarIdiomaToolStripMenuItem, Me.CrearPaisToolStripMenuItem, Me.ModificarPuntajeToolStripMenuItem})
         Me.AdministracionToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdministracionToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AdministracionToolStripMenuItem.Name = "AdministracionToolStripMenuItem"
@@ -362,6 +363,12 @@ Partial Class FormMenu
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
+        'ModificarPuntajeToolStripMenuItem
+        '
+        Me.ModificarPuntajeToolStripMenuItem.Name = "ModificarPuntajeToolStripMenuItem"
+        Me.ModificarPuntajeToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ModificarPuntajeToolStripMenuItem.Text = "Modificar Puntaje"
+        '
         'FormMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -424,4 +431,5 @@ Partial Class FormMenu
     Friend WithEvents EliminarDepartamentoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarDestinoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarDestinoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModificarPuntajeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

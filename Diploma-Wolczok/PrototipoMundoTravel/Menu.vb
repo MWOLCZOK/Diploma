@@ -283,4 +283,9 @@ Public Class FormMenu
         Dim forHot As New Agregar_Alojamiento
         AbrirForm(forHot)
     End Sub
+
+    Private Sub ModificarPuntajeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModificarPuntajeToolStripMenuItem.Click
+        Dim formpuntaje As New Modificar_Puntaje
+        AbrirForm(formpuntaje)
+    End Sub
 End Class
