@@ -20,15 +20,11 @@ Public Class Eliminar_Pasajero
             Dim Listapas = Gestorpas.consultarPasajeros()
             For Each pas In Listapas
                 Cbxpas.Items.Add(pas)
-                Cbxpas.DisplayMember = "Nombre"
+                Cbxpas.DisplayMember = "NombreCompleto"
             Next
         Catch ex As Exception
         End Try
     End Sub
-
-
-
-
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
         Try

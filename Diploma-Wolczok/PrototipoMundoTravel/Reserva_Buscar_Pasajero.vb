@@ -35,6 +35,7 @@ Public Class Reserva_Buscar_Pasajero
                 Me.DataGridView2.DataSource = Nothing
                 Me.DataGridView2.DataSource = listaPAsajeros
                 DataGridView2.ReadOnly = True
+                DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             End If
         Catch ex As Exception
 
@@ -44,16 +45,21 @@ Public Class Reserva_Buscar_Pasajero
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim oPasajero As New EE.BE_Pasajero
-        oPasajero.ID = CInt(Me.DataGridView2.SelectedRows.Item(0).Cells(0).Value)
-        Dim bblPäsajero As New BLL.BLL_Pasajero
-        oPasajero = bblPäsajero.consultarPasajero(oPasajero)
-        reservaAlojamiento.Pasajero = oPasajero
-        Dim bllReserva As New BLL_Reserva
-        bllReserva.altaReserva(reservaAlojamiento)
-        Dim formularioSeleccionHabitacion As New Reserva_Detalle(Alojamiento, reservaDestino, reservaAlojamiento)
-        formularioSeleccionHabitacion.Show()
-        Me.Close()
+        Try
+            Dim oPasajero As New EE.BE_Pasajero
+            oPasajero.ID = CInt(Me.DataGridView2.SelectedRows.Item(0).Cells(0).Value)
+            Dim bblPäsajero As New BLL.BLL_Pasajero
+            oPasajero = bblPäsajero.consultarPasajero(oPasajero)
+            reservaAlojamiento.Pasajero = oPasajero
+            Dim bllReserva As New BLL_Reserva
+            bllReserva.altaReserva(reservaAlojamiento)
+            Dim formularioSeleccionHabitacion As New Reserva_Detalle(Alojamiento, reservaDestino, reservaAlojamiento)
+            formularioSeleccionHabitacion.Show()
+            Me.Close()
+        Catch ex As Exception
+            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+        End Try
+       
     End Sub
 
     Private Sub Reserva_Buscar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load

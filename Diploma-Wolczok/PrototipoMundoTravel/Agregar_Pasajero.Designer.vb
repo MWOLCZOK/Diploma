@@ -34,19 +34,13 @@ Partial Class Agregar_Pasajero
         Me.Txtapellido = New System.Windows.Forms.TextBox()
         Me.Txtnombre = New System.Windows.Forms.TextBox()
         Me.Btn_agregarpasajero = New System.Windows.Forms.Button()
-        Me.Txtpuntajealoj = New System.Windows.Forms.TextBox()
-        Me.Txtpuntajeviaje = New System.Windows.Forms.TextBox()
         Me.Txttelefono = New System.Windows.Forms.TextBox()
-        Me.Txtreserva = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Btnsalir
         '
-        Me.Btnsalir.Location = New System.Drawing.Point(157, 264)
+        Me.Btnsalir.Location = New System.Drawing.Point(195, 215)
         Me.Btnsalir.Name = "Btnsalir"
         Me.Btnsalir.Size = New System.Drawing.Size(87, 36)
         Me.Btnsalir.TabIndex = 38
@@ -102,123 +96,69 @@ Partial Class Agregar_Pasajero
         '
         Me.Txtdomicilio.Location = New System.Drawing.Point(15, 289)
         Me.Txtdomicilio.Name = "Txtdomicilio"
-        Me.Txtdomicilio.Size = New System.Drawing.Size(100, 20)
+        Me.Txtdomicilio.Size = New System.Drawing.Size(151, 20)
         Me.Txtdomicilio.TabIndex = 32
         '
         'Txtdni
         '
         Me.Txtdni.Location = New System.Drawing.Point(16, 231)
         Me.Txtdni.Name = "Txtdni"
-        Me.Txtdni.Size = New System.Drawing.Size(100, 20)
+        Me.Txtdni.Size = New System.Drawing.Size(150, 20)
         Me.Txtdni.TabIndex = 31
         '
         'Txtcorreo
         '
         Me.Txtcorreo.Location = New System.Drawing.Point(17, 174)
         Me.Txtcorreo.Name = "Txtcorreo"
-        Me.Txtcorreo.Size = New System.Drawing.Size(100, 20)
+        Me.Txtcorreo.Size = New System.Drawing.Size(149, 20)
         Me.Txtcorreo.TabIndex = 30
         '
         'Txtapellido
         '
         Me.Txtapellido.Location = New System.Drawing.Point(17, 110)
         Me.Txtapellido.Name = "Txtapellido"
-        Me.Txtapellido.Size = New System.Drawing.Size(100, 20)
+        Me.Txtapellido.Size = New System.Drawing.Size(149, 20)
         Me.Txtapellido.TabIndex = 29
         '
         'Txtnombre
         '
         Me.Txtnombre.Location = New System.Drawing.Point(16, 52)
         Me.Txtnombre.Name = "Txtnombre"
-        Me.Txtnombre.Size = New System.Drawing.Size(100, 20)
+        Me.Txtnombre.Size = New System.Drawing.Size(150, 20)
         Me.Txtnombre.TabIndex = 28
         '
         'Btn_agregarpasajero
         '
-        Me.Btn_agregarpasajero.Location = New System.Drawing.Point(157, 194)
+        Me.Btn_agregarpasajero.Location = New System.Drawing.Point(195, 145)
         Me.Btn_agregarpasajero.Name = "Btn_agregarpasajero"
         Me.Btn_agregarpasajero.Size = New System.Drawing.Size(87, 36)
         Me.Btn_agregarpasajero.TabIndex = 27
         Me.Btn_agregarpasajero.Text = "Agregar Pasajero"
         Me.Btn_agregarpasajero.UseVisualStyleBackColor = True
         '
-        'Txtpuntajealoj
-        '
-        Me.Txtpuntajealoj.Location = New System.Drawing.Point(15, 349)
-        Me.Txtpuntajealoj.Name = "Txtpuntajealoj"
-        Me.Txtpuntajealoj.Size = New System.Drawing.Size(100, 20)
-        Me.Txtpuntajealoj.TabIndex = 39
-        '
-        'Txtpuntajeviaje
-        '
-        Me.Txtpuntajeviaje.Location = New System.Drawing.Point(17, 419)
-        Me.Txtpuntajeviaje.Name = "Txtpuntajeviaje"
-        Me.Txtpuntajeviaje.Size = New System.Drawing.Size(100, 20)
-        Me.Txtpuntajeviaje.TabIndex = 40
-        '
         'Txttelefono
         '
-        Me.Txttelefono.Location = New System.Drawing.Point(17, 488)
+        Me.Txttelefono.Location = New System.Drawing.Point(17, 361)
         Me.Txttelefono.Name = "Txttelefono"
-        Me.Txttelefono.Size = New System.Drawing.Size(100, 20)
+        Me.Txttelefono.Size = New System.Drawing.Size(149, 20)
         Me.Txttelefono.TabIndex = 41
-        '
-        'Txtreserva
-        '
-        Me.Txtreserva.Location = New System.Drawing.Point(16, 540)
-        Me.Txtreserva.Name = "Txtreserva"
-        Me.Txtreserva.Size = New System.Drawing.Size(100, 20)
-        Me.Txtreserva.TabIndex = 42
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 324)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 13)
-        Me.Label3.TabIndex = 43
-        Me.Label3.Text = "Puntaje Alojamiento"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(14, 388)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(69, 13)
-        Me.Label7.TabIndex = 44
-        Me.Label7.Text = "Puntaje Viaje"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(13, 453)
+        Me.Label8.Location = New System.Drawing.Point(13, 326)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(49, 13)
         Me.Label8.TabIndex = 45
         Me.Label8.Text = "Telefono"
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(13, 511)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(47, 13)
-        Me.Label9.TabIndex = 46
-        Me.Label9.Text = "Reserva"
-        '
         'Agregar_Pasajero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(343, 583)
-        Me.Controls.Add(Me.Label9)
+        Me.ClientSize = New System.Drawing.Size(308, 405)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Txtreserva)
         Me.Controls.Add(Me.Txttelefono)
-        Me.Controls.Add(Me.Txtpuntajeviaje)
-        Me.Controls.Add(Me.Txtpuntajealoj)
         Me.Controls.Add(Me.Btnsalir)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label6)
@@ -249,12 +189,6 @@ Partial Class Agregar_Pasajero
     Friend WithEvents Txtapellido As System.Windows.Forms.TextBox
     Friend WithEvents Txtnombre As System.Windows.Forms.TextBox
     Friend WithEvents Btn_agregarpasajero As System.Windows.Forms.Button
-    Friend WithEvents Txtpuntajealoj As System.Windows.Forms.TextBox
-    Friend WithEvents Txtpuntajeviaje As System.Windows.Forms.TextBox
     Friend WithEvents Txttelefono As System.Windows.Forms.TextBox
-    Friend WithEvents Txtreserva As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

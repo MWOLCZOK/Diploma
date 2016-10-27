@@ -11,7 +11,7 @@ Public Class DAL_Pasajero
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim parampasajero As BE_Pasajero = DirectCast(paramobjeto, BE_Pasajero)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Pasajero values (@ID, @Nombre, @Apellido, @Correoelectronico, @Dni, @Domicilio, @Puntajealojamiento, @Puntajeviaje, @Telefono, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Pasajero values (@ID, @Nombre, @Apellido, @Correoelectronico, @Dni, @Domicilio, @Telefono, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pasajero")))
                 .Add(New SqlParameter("@Nombre", parampasajero.Nombre))
@@ -19,8 +19,8 @@ Public Class DAL_Pasajero
                 .Add(New SqlParameter("@Correoelectronico", parampasajero.CorreoElectronico))
                 .Add(New SqlParameter("@DNI", parampasajero.DNI))
                 .Add(New SqlParameter("@Domicilio", parampasajero.Domicilio))
-                .Add(New SqlParameter("@Puntajealojamiento", parampasajero.PuntajeAlojamiento))
-                .Add(New SqlParameter("@Puntajeviaje", parampasajero.PuntajeViaje))
+                '.Add(New SqlParameter("@Puntajealojamiento", parampasajero.PuntajeAlojamiento))
+                '.Add(New SqlParameter("@Puntajeviaje", parampasajero.PuntajeViaje))
                 .Add(New SqlParameter("@Telefono", parampasajero.Telefono))
                 .Add(New SqlParameter("@BL", False))
             End With
@@ -50,7 +50,7 @@ Public Class DAL_Pasajero
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim parampasajero As BE_Pasajero = DirectCast(paramobjeto, BE_Pasajero)
-            Dim command As SqlCommand = Acceso.MiComando("Update Pasajero set Nombre=@Nombre, Apellido=@Apellido, Correoelectronico=@Correoelectronico, DNI=@DNI, Domicilio=@Domicilio, Puntajealojamiento=@Puntajealojamiento, Puntajeviaje=@Puntajeviaje, Telefono=@Telefono where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Pasajero set Nombre=@Nombre, Apellido=@Apellido, Correoelectronico=@Correoelectronico, DNI=@DNI, Domicilio=@Domicilio,Telefono=@Telefono where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", parampasajero.ID))
                 .Add(New SqlParameter("@Nombre", parampasajero.Nombre))
@@ -58,8 +58,6 @@ Public Class DAL_Pasajero
                 .Add(New SqlParameter("@Correoelectronico", parampasajero.CorreoElectronico))
                 .Add(New SqlParameter("@DNI", parampasajero.DNI))
                 .Add(New SqlParameter("@Domicilio", parampasajero.Domicilio))
-                .Add(New SqlParameter("@Puntajealojamiento", parampasajero.PuntajeAlojamiento))
-                .Add(New SqlParameter("@Puntajeviaje", parampasajero.PuntajeViaje))
                 .Add(New SqlParameter("@Telefono", parampasajero.Telefono))
             End With
             Acceso.Escritura(command)
@@ -138,8 +136,6 @@ Public Class DAL_Pasajero
         oPasajero.CorreoElectronico = paramDataRow.Item("Correoelectronico")
         oPasajero.DNI = paramDataRow.Item("DNI")
         oPasajero.Domicilio = paramDataRow.Item("Domicilio")
-        oPasajero.PuntajeAlojamiento = paramDataRow.Item("Puntajealojamiento")
-        oPasajero.PuntajeViaje = paramDataRow.Item("Puntajeviaje")
         oPasajero.Telefono = paramDataRow.Item("Telefono")
         Return oPasajero
     End Function

@@ -52,5 +52,9 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtUsuario.Text = "admin"
+        txtPassword.Text = "admin"
     End Sub
+
+
 End Class

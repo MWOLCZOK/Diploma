@@ -36,14 +36,8 @@ Partial Class Modificar_Pasajero
         Me.lblidioma = New System.Windows.Forms.Label()
         Me.Cbxpasajero = New System.Windows.Forms.ComboBox()
         Me.lblpais = New System.Windows.Forms.Label()
-        Me.Txtpuntajealoj = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Txtpuntajeviaje = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Txttelefono = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Txtreserva = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Txtdomicilio
@@ -94,7 +88,7 @@ Partial Class Modificar_Pasajero
         '
         'btnsalir
         '
-        Me.btnsalir.Location = New System.Drawing.Point(168, 521)
+        Me.btnsalir.Location = New System.Drawing.Point(164, 387)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(75, 23)
         Me.btnsalir.TabIndex = 56
@@ -103,7 +97,7 @@ Partial Class Modificar_Pasajero
         '
         'btnmodificar
         '
-        Me.btnmodificar.Location = New System.Drawing.Point(58, 521)
+        Me.btnmodificar.Location = New System.Drawing.Point(54, 387)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(81, 23)
         Me.btnmodificar.TabIndex = 55
@@ -162,42 +156,10 @@ Partial Class Modificar_Pasajero
         Me.lblpais.TabIndex = 49
         Me.lblpais.Text = "Seleccionar Pasajero"
         '
-        'Txtpuntajealoj
-        '
-        Me.Txtpuntajealoj.Location = New System.Drawing.Point(31, 348)
-        Me.Txtpuntajealoj.Name = "Txtpuntajealoj"
-        Me.Txtpuntajealoj.Size = New System.Drawing.Size(254, 20)
-        Me.Txtpuntajealoj.TabIndex = 63
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(28, 332)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 13)
-        Me.Label3.TabIndex = 64
-        Me.Label3.Text = "Puntaje Alojamiento"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 379)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 13)
-        Me.Label4.TabIndex = 66
-        Me.Label4.Text = "Puntaje Viaje"
-        '
-        'Txtpuntajeviaje
-        '
-        Me.Txtpuntajeviaje.Location = New System.Drawing.Point(31, 395)
-        Me.Txtpuntajeviaje.Name = "Txtpuntajeviaje"
-        Me.Txtpuntajeviaje.Size = New System.Drawing.Size(254, 20)
-        Me.Txtpuntajeviaje.TabIndex = 65
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 428)
+        Me.Label5.Location = New System.Drawing.Point(28, 331)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 68
@@ -205,40 +167,18 @@ Partial Class Modificar_Pasajero
         '
         'Txttelefono
         '
-        Me.Txttelefono.Location = New System.Drawing.Point(31, 444)
+        Me.Txttelefono.Location = New System.Drawing.Point(31, 347)
         Me.Txttelefono.Name = "Txttelefono"
         Me.Txttelefono.Size = New System.Drawing.Size(254, 20)
         Me.Txttelefono.TabIndex = 67
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(28, 470)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(47, 13)
-        Me.Label6.TabIndex = 70
-        Me.Label6.Text = "Reserva"
-        '
-        'Txtreserva
-        '
-        Me.Txtreserva.Location = New System.Drawing.Point(31, 486)
-        Me.Txtreserva.Name = "Txtreserva"
-        Me.Txtreserva.Size = New System.Drawing.Size(254, 20)
-        Me.Txtreserva.TabIndex = 69
         '
         'Modificar_Pasajero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(313, 556)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Txtreserva)
+        Me.ClientSize = New System.Drawing.Size(313, 421)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Txttelefono)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Txtpuntajeviaje)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Txtpuntajealoj)
         Me.Controls.Add(Me.Txtdomicilio)
         Me.Controls.Add(Me.Txtdni)
         Me.Controls.Add(Me.Txtcorreo)
@@ -273,12 +213,6 @@ Partial Class Modificar_Pasajero
     Friend WithEvents lblidioma As System.Windows.Forms.Label
     Friend WithEvents Cbxpasajero As System.Windows.Forms.ComboBox
     Friend WithEvents lblpais As System.Windows.Forms.Label
-    Friend WithEvents Txtpuntajealoj As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Txtpuntajeviaje As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Txttelefono As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Txtreserva As System.Windows.Forms.TextBox
 End Class

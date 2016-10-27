@@ -20,13 +20,18 @@ Public Class Reserva_Detalle
     End Sub
 
     Private Sub iniciar(ByVal paramAlojamiento As BE_Alojamiento, ByVal paramDestino As BE_Destino, ByVal paramReservaAlojamiento As BE_ReservaAlojamiento)
-        reservaAlojamiento = paramReservaAlojamiento
-        reservaDestino = paramDestino
-        Alojamiento = paramAlojamiento
-        Me.TextBox1.Text = paramAlojamiento.Nombre
-        Me.TextBox2.Text = paramReservaAlojamiento.Fecha_Inicio.Date
-        Me.TextBox3.Text = paramReservaAlojamiento.Fecha_Fin.Date
-        Me.TextBox4.Text = paramDestino.NombreCompleto
+        Try
+            reservaAlojamiento = paramReservaAlojamiento
+            reservaDestino = paramDestino
+            Alojamiento = paramAlojamiento
+            Me.TextBox1.Text = paramAlojamiento.Nombre
+            Me.TextBox2.Text = paramReservaAlojamiento.Fecha_Inicio.Date
+            Me.TextBox3.Text = paramReservaAlojamiento.Fecha_Fin.Date
+            Me.TextBox4.Text = paramDestino.NombreCompleto
+        Catch ex As Exception
+            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+        End Try
+       
     End Sub
 
     Private Sub Reserva_Detalle_Load(sender As Object, e As EventArgs) Handles MyBase.Load

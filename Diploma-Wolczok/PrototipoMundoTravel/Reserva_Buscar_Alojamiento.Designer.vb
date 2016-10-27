@@ -28,9 +28,9 @@ Partial Class Reserva_Buscar_Alojamiento
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btnbuscar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Btnseleccionar = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,9 +49,9 @@ Partial Class Reserva_Buscar_Alojamiento
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(21, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Destinos"
         '
         'DateTimePicker1
         '
@@ -74,27 +74,27 @@ Partial Class Reserva_Buscar_Alojamiento
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(265, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(65, 13)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "Fecha Inicio"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(503, 17)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(54, 13)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "Fecha Fin"
         '
-        'Button1
+        'Btnbuscar
         '
-        Me.Button1.Location = New System.Drawing.Point(314, 72)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 39)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btnbuscar.Location = New System.Drawing.Point(314, 72)
+        Me.Btnbuscar.Name = "Btnbuscar"
+        Me.Btnbuscar.Size = New System.Drawing.Size(100, 39)
+        Me.Btnbuscar.TabIndex = 6
+        Me.Btnbuscar.Text = "Buscar"
+        Me.Btnbuscar.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -102,21 +102,21 @@ Partial Class Reserva_Buscar_Alojamiento
         Me.DataGridView1.Location = New System.Drawing.Point(24, 127)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(682, 316)
+        Me.DataGridView1.Size = New System.Drawing.Size(723, 325)
         Me.DataGridView1.TabIndex = 10
         '
-        'Button2
+        'Btnseleccionar
         '
-        Me.Button2.Location = New System.Drawing.Point(442, 455)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 39)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Seleccionar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Btnseleccionar.Location = New System.Drawing.Point(442, 470)
+        Me.Btnseleccionar.Name = "Btnseleccionar"
+        Me.Btnseleccionar.Size = New System.Drawing.Size(100, 39)
+        Me.Btnseleccionar.TabIndex = 11
+        Me.Btnseleccionar.Text = "Seleccionar"
+        Me.Btnseleccionar.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(204, 455)
+        Me.Button3.Location = New System.Drawing.Point(204, 470)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(100, 39)
         Me.Button3.TabIndex = 12
@@ -127,11 +127,11 @@ Partial Class Reserva_Buscar_Alojamiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(733, 506)
+        Me.ClientSize = New System.Drawing.Size(772, 521)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Btnseleccionar)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Btnbuscar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DateTimePicker2)
@@ -151,8 +151,8 @@ Partial Class Reserva_Buscar_Alojamiento
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Btnbuscar As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Btnseleccionar As Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

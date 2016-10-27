@@ -70,27 +70,6 @@
         End Set
     End Property
 
-
-    Private _puntajealojamiento As Double
-    Public Property PuntajeAlojamiento() As Double
-        Get
-            Return _puntajealojamiento
-        End Get
-        Set(ByVal value As Double)
-            _puntajealojamiento = value
-        End Set
-    End Property
-
-    Private _puntajeviaje As Double
-    Public Property PuntajeViaje() As Double
-        Get
-            Return _puntajeviaje
-        End Get
-        Set(ByVal value As Double)
-            _puntajeviaje = value
-        End Set
-    End Property
-
     Private _telefono As Double
     Public Property Telefono() As Double
         Get
@@ -101,5 +80,9 @@
         End Set
     End Property
 
+
+    Public Overrides Function ToString() As String
+        Return Me.NombreCompleto
+    End Function
 
 End Class

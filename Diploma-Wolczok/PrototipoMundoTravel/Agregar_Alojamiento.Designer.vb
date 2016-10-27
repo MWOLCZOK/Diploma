@@ -52,10 +52,12 @@ Partial Class Agregar_Alojamiento
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(12, 47)
         Me.ComboBox1.Name = "ComboBox1"
@@ -82,6 +84,7 @@ Partial Class Agregar_Alojamiento
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(12, 104)
         Me.ComboBox2.Name = "ComboBox2"
@@ -187,7 +190,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox10
         '
         Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(313, 286)
+        Me.CheckBox10.Location = New System.Drawing.Point(313, 221)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(64, 17)
         Me.CheckBox10.TabIndex = 35
@@ -197,7 +200,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox11
         '
         Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(313, 221)
+        Me.CheckBox11.Location = New System.Drawing.Point(163, 278)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(73, 17)
         Me.CheckBox11.TabIndex = 34
@@ -207,7 +210,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox12
         '
         Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(313, 254)
+        Me.CheckBox12.Location = New System.Drawing.Point(12, 310)
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.Size = New System.Drawing.Size(66, 17)
         Me.CheckBox12.TabIndex = 33
@@ -217,7 +220,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox5
         '
         Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(163, 322)
+        Me.CheckBox5.Location = New System.Drawing.Point(313, 250)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(96, 17)
         Me.CheckBox5.TabIndex = 32
@@ -227,7 +230,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox6
         '
         Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(163, 286)
+        Me.CheckBox6.Location = New System.Drawing.Point(163, 250)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(74, 17)
         Me.CheckBox6.TabIndex = 31
@@ -237,7 +240,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox7
         '
         Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(163, 221)
+        Me.CheckBox7.Location = New System.Drawing.Point(12, 344)
         Me.CheckBox7.Name = "CheckBox7"
         Me.CheckBox7.Size = New System.Drawing.Size(57, 17)
         Me.CheckBox7.TabIndex = 30
@@ -247,7 +250,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox8
         '
         Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(163, 254)
+        Me.CheckBox8.Location = New System.Drawing.Point(163, 218)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(118, 17)
         Me.CheckBox8.TabIndex = 29
@@ -257,7 +260,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(13, 322)
+        Me.CheckBox4.Location = New System.Drawing.Point(13, 250)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(60, 17)
         Me.CheckBox4.TabIndex = 28
@@ -267,7 +270,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(13, 286)
+        Me.CheckBox3.Location = New System.Drawing.Point(12, 278)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(109, 17)
         Me.CheckBox3.TabIndex = 27
@@ -287,7 +290,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(13, 254)
+        Me.CheckBox1.Location = New System.Drawing.Point(313, 310)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(69, 17)
         Me.CheckBox1.TabIndex = 25
@@ -297,7 +300,7 @@ Partial Class Agregar_Alojamiento
         'CheckBox9
         '
         Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(313, 322)
+        Me.CheckBox9.Location = New System.Drawing.Point(163, 310)
         Me.CheckBox9.Name = "CheckBox9"
         Me.CheckBox9.Size = New System.Drawing.Size(59, 17)
         Me.CheckBox9.TabIndex = 36
@@ -306,28 +309,38 @@ Partial Class Agregar_Alojamiento
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(194, 387)
+        Me.Button1.Location = New System.Drawing.Point(68, 384)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(80, 37)
         Me.Button1.TabIndex = 37
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Aceptar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'CheckBox13
         '
         Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(12, 354)
+        Me.CheckBox13.Location = New System.Drawing.Point(313, 278)
         Me.CheckBox13.Name = "CheckBox13"
         Me.CheckBox13.Size = New System.Drawing.Size(116, 17)
         Me.CheckBox13.TabIndex = 38
         Me.CheckBox13.Text = "Habitacion Privada"
         Me.CheckBox13.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(278, 384)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(74, 37)
+        Me.Button2.TabIndex = 39
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Agregar_Alojamiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(460, 451)
+        Me.ClientSize = New System.Drawing.Size(460, 433)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CheckBox13)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CheckBox9)
@@ -394,4 +407,5 @@ Partial Class Agregar_Alojamiento
     Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents CheckBox13 As System.Windows.Forms.CheckBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

@@ -40,4 +40,8 @@
         End Get
     End Property
 
+    Public Overrides Function ToString() As String
+        Return Me.Localidad.Descripcion & ", " & Me.Localidad.Provincia.Descripcion & ", " & Me.Localidad.Provincia.Pais.Descripcion
+    End Function
+
 End Class

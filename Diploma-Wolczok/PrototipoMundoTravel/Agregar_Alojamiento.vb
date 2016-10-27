@@ -4,12 +4,20 @@ Imports BLL
 Public Class Agregar_Alojamiento
 
     Private Sub Agregar_Alojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarCombos()
+        Try
+            cargarCombos()
+            ocultar()
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
     Private Sub cargarCombos()
-        Dim oListaDestinos As New List(Of BE_Destino)
+        Try
+
+            Dim oListaDestinos As New List(Of BE_Destino)
         Dim bllDestino As New BLL_Destino
         oListaDestinos = bllDestino.consultarDestinos
         For Each miDest As BE_Destino In oListaDestinos
@@ -23,7 +31,11 @@ Public Class Agregar_Alojamiento
         For Each miTipoAloja As BE_TipoAlojamiento In oListaTipoAlojamiento
             Me.ComboBox2.Items.Add(miTipoAloja)
             ComboBox2.DisplayMember = "Descripcion"
-        Next
+            Next
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -125,5 +137,157 @@ Public Class Agregar_Alojamiento
             'oAlojamiento.ServicioTV = Me.CheckBox5.Checked
 
         End If
+    End Sub
+
+    Public Sub ocultar()
+        CheckBox3.Hide()
+        CheckBox12.Hide()
+        CheckBox11.Hide()
+        CheckBox9.Hide()
+        CheckBox13.Hide()
+        CheckBox1.Hide()
+        CheckBox7.Hide()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+
+        Dim oTipoAlojamiento As New BE_TipoAlojamiento
+        oTipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        If oTipoAlojamiento.ID = 1 Then
+
+            CheckBox13.Show()
+            CheckBox9.Show()
+
+            CheckBox3.Hide()
+            CheckBox12.Hide()
+            CheckBox11.Hide()
+            CheckBox1.Hide()
+            CheckBox3.Hide()
+            CheckBox7.Hide()
+
+
+
+
+        ElseIf oTipoAlojamiento.ID = 2 Then
+
+            CheckBox1.Show()
+            CheckBox3.Show()
+            CheckBox7.Show()
+            CheckBox12.Show()
+
+
+            CheckBox11.Hide()
+            CheckBox9.Hide()
+
+
+
+
+
+
+        ElseIf oTipoAlojamiento.ID = 3 Then
+            CheckBox3.Show()
+            CheckBox12.Show()
+            CheckBox11.Show()
+            CheckBox9.Show()
+
+
+            CheckBox13.Hide()
+
+
+            CheckBox1.Hide()
+            CheckBox7.Hide()
+
+
+        ElseIf oTipoAlojamiento.ID = 4 Then
+            CheckBox3.Show()
+
+            CheckBox12.Hide()
+            CheckBox11.Hide()
+            CheckBox9.Hide()
+            CheckBox13.Hide()
+            CheckBox1.Hide()
+            CheckBox7.Hide()
+
+
+        End If
+
+
+
+
+        'Dim opcion As Integer = 4
+
+        'Select Case opcion
+
+        '    Case 1
+        '        Dim posada As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '        'posada.ID = "4"
+        '        CheckBox3.Show()
+
+        '    Case 2
+        '        Dim depart As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '        depart.ID = "3"
+        '        CheckBox3.Show()
+        '        CheckBox12.Show()
+        '        CheckBox11.Show()
+        '        CheckBox9.Show()
+
+        '    Case 3
+        '        Dim hotel As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '        hotel.ID = "2"
+        '        CheckBox1.Show()
+        '        CheckBox3.Show()
+        '        CheckBox7.Show()
+        '        CheckBox12.Show()
+
+        '    Case Else
+        '        Dim hostel As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '        hostel.ID = "1"
+        '        CheckBox3.Show()
+        '        CheckBox12.Show()
+        '        CheckBox11.Show()
+        '        CheckBox9.Show()
+        'End Select
+
+
+
+        'If 
+        '    Dim posada As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '    posada.ID = "4"
+        '    CheckBox3.Show()
+
+        'ElseIf 
+
+        '    Dim depart As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '    depart.ID = "3"
+        '    CheckBox3.Show()
+        '    CheckBox12.Show()
+        '    CheckBox11.Show()
+        '    CheckBox9.Show()
+
+        'ElseIf 
+        '    Dim hotel As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '    hotel.ID = "2"
+        '    CheckBox1.Show()
+        '    CheckBox3.Show()
+        '    CheckBox7.Show()
+        '    CheckBox12.Show()
+
+        'ElseIf 
+
+        '    Dim hostel As BE_TipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
+        '    hostel.ID = "1"
+        '    CheckBox3.Show()
+        '    CheckBox12.Show()
+        '    CheckBox11.Show()
+        '    CheckBox9.Show()
+
+
+        'End If
+
+
     End Sub
 End Class

@@ -9,7 +9,7 @@ Public Class Agregar_Pasajero
 
     Private Function validarformulario() As Boolean
         Try
-            If Me.Txtnombre.Text = "" Or Me.Txtapellido.Text = "" Or Me.Txtcorreo.Text = "" Or Me.Txtdni.Text = "" Or Me.Txtdomicilio.Text = "" Or Me.Txtpuntajealoj.Text = "" Or Me.Txtpuntajeviaje.Text = "" Or Me.Txttelefono.Text = "" Or Me.Txtreserva.Text = "" Then Return False
+            If Me.Txtnombre.Text = "" Or Me.Txtapellido.Text = "" Or Me.Txtcorreo.Text = "" Or Me.Txtdni.Text = "" Or Me.Txtdomicilio.Text = "" Or Me.Txttelefono.Text = "" Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -29,8 +29,6 @@ Public Class Agregar_Pasajero
                 oPasajero.CorreoElectronico = Txtcorreo.Text
                 oPasajero.DNI = Txtdni.Text
                 oPasajero.Domicilio = Txtdomicilio.Text
-                oPasajero.PuntajeAlojamiento = Txtpuntajealoj.Text
-                oPasajero.PuntajeViaje = Txtpuntajeviaje.Text
                 oPasajero.Telefono = Txttelefono.Text
                 bllPasajero.Altapasajero(oPasajero)
                 MsgBox("Se ha agregado correctamente el pasajero")

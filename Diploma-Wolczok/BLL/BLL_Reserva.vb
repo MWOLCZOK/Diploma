@@ -14,7 +14,7 @@ Public Class BLL_Reserva
             paramReservaAlojamiento.puntaje = valor2
             _dalReservaAlojamiento.alta(paramReservaAlojamiento)
         Catch ex As Exception
-
+            Throw ex
         End Try
     End Sub
 
@@ -30,7 +30,7 @@ Public Class BLL_Reserva
         Try
             Return _dalReservaAlojamiento.retornarPuntaje(idCoeficiente)
         Catch ex As Exception
-
+            Throw ex
         End Try
     End Function
 
