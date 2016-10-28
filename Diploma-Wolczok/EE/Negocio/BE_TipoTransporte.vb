@@ -1,5 +1,4 @@
-﻿Public Class BE_CategoriaAsiento
-
+﻿Public Class BE_TipoTransporte
     Private _id As Integer
     Public Property ID() As Integer
         Get
