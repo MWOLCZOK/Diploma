@@ -65,7 +65,9 @@ Public Class DAL_Asiento
         Dim oCategoriaAciento As New BE_CategoriaAsiento
         oCategoriaAciento.ID = paramDataRow.Item("ID_CategoriaAsiento")
         oAsiento.CategoriaAsiento = (New DAL.DAL_CategoriaAsiento).consultarCategoriaAsiento(oCategoriaAciento)
-        oAsiento.Transporte = paramDataRow.Item("ID_Transporte")
+        Dim oTransporte As New BE_Transporte
+        oTransporte.ID = paramDataRow.Item("ID_Transporte")
+        oAsiento.Transporte = (New DAL.DAL_Transporte).consultarTransporte(oTransporte)
         Return oAsiento
     End Function
 

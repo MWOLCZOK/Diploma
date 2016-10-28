@@ -3,7 +3,7 @@ Imports DAL
 
 
 Public Class BLL_Reserva
-    Dim _dalReservaVuelo As New DAL.DAL_ReservaVuelo
+    Dim _dalReservaVuelo As New DAL.DAL_ReservaViaje
     Dim _dalReservaAlojamiento As New DAL.DAL_ReservaAlojamiento
 
     Public Sub altaReserva(ByVal paramReservaAlojamiento As EE.BE_ReservaAlojamiento)
