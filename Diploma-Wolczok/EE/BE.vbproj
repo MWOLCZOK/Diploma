@@ -12,6 +12,21 @@
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,27 +79,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BE_Puntaje.vb" />
+    <Compile Include="Negocio\BE_Puntaje.vb" />
+    <Compile Include="Negocio\BE_Asiento.vb" />
     <Compile Include="Negocio\BE_TipoAlojamiento.vb" />
+    <Compile Include="Negocio\BE_TipoTransporte.vb" />
+    <Compile Include="Negocio\BE_Viaje.vb" />
     <Compile Include="Servicios\BE_BackupRestore.vb" />
     <Compile Include="Servicios\BE_Bitacora.vb" />
     <Compile Include="Servicios\BE_Idioma.vb" />
     <Compile Include="Servicios\BE_TipoBitacora.vb" />
     <Compile Include="Servicios\BE_Palabras.vb" />
     <Compile Include="Negocio\BE_Alojamiento.vb" />
-    <Compile Include="Negocio\BE_Asiento.vb" />
-    <Compile Include="Negocio\BE_Avion.vb" />
     <Compile Include="Negocio\BE_CategoriaAsiento.vb" />
     <Compile Include="Negocio\BE_ComprobantePago.vb" />
     <Compile Include="Negocio\BE_Departamento.vb" />
     <Compile Include="Negocio\BE_Destino.vb" />
-    <Compile Include="Negocio\BE_EmpresaMicro.vb" />
+    <Compile Include="Negocio\BE_EmpresaTransporte.vb" />
     <Compile Include="Negocio\BE_Habitacion.vb" />
     <Compile Include="Negocio\BE_Hostel.vb" />
     <Compile Include="Negocio\BE_Hotel.vb" />
-    <Compile Include="Negocio\BE_LineaAerea.vb" />
     <Compile Include="Negocio\BE_Localidad.vb" />
-    <Compile Include="Negocio\BE_Micro.vb" />
     <Compile Include="Negocio\BE_Pago.vb" />
     <Compile Include="Negocio\BE_Pais.vb" />
     <Compile Include="Negocio\BE_Pasajero.vb" />
@@ -93,13 +107,10 @@
     <Compile Include="Negocio\BE_ReservaAlojamiento.vb" />
     <Compile Include="Negocio\BE_Reserva.vb" />
     <Compile Include="Negocio\BE_ReservaViaje.vb" />
-    <Compile Include="Negocio\BE_ServicioVuelo.vb" />
     <Compile Include="Negocio\BE_Transporte.vb" />
-    <Compile Include="Negocio\BE_Viaje.vb" />
     <Compile Include="Negocio\BE_Voucher.vb" />
     <Compile Include="Negocio\BE_VoucherAlojamiento.vb" />
     <Compile Include="Negocio\BE_VoucherViaje.vb" />
-    <Compile Include="Negocio\BE_Vuelo.vb" />
     <Compile Include="Servicios\BE_GrupoPermiso.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -140,6 +151,23 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

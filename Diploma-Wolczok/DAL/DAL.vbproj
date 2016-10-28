@@ -67,8 +67,10 @@
   <ItemGroup>
     <Compile Include="Acceso.vb" />
     <Compile Include="DAL_Alojamiento.vb" />
+    <Compile Include="DAL_Asiento.vb" />
     <Compile Include="DAL_BackupRestore.vb" />
     <Compile Include="DAL_Bitacora.vb" />
+    <Compile Include="DAL_CategoriaAsiento.vb" />
     <Compile Include="DAL_Departamento.vb" />
     <Compile Include="DAL_Destino.vb" />
     <Compile Include="DAL_DigitoVerificador.vb" />

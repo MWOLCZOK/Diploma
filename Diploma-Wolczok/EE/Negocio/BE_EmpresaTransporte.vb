@@ -1,21 +1,31 @@
-﻿Public Class BE_EmpresaMicro
+﻿Public Class BE_EmpresaTransporte
 
-    Private _añofundacion As Integer
-    Public Property AñoFundacion() As Integer
+    Private _ID As Integer
+    Public Property ID() As Integer
         Get
-            Return _añofundacion
+            Return _ID
         End Get
         Set(ByVal value As Integer)
-            _añofundacion = value
+            _ID = value
         End Set
     End Property
 
-    Private _cuil As Integer
-    Public Property CUIL() As Integer
+    Private _nombnre As String
+    Public Property Nombre() As String
+        Get
+            Return _nombnre
+        End Get
+        Set(ByVal value As String)
+            _nombnre = value
+        End Set
+    End Property
+
+    Private _cuil As String
+    Public Property CUIL() As String
         Get
             Return _cuil
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _cuil = value
         End Set
     End Property
@@ -31,7 +41,7 @@
     End Property
 
     Private _mailcontacto As String
-    Public Property MailContacto() As String
+    Public Property Mail() As String
         Get
             Return _mailcontacto
         End Get
@@ -49,17 +59,5 @@
             _telefono = value
         End Set
     End Property
-
-    Private _micro As BE_Micro
-    Public Property Micro() As BE_Micro
-        Get
-            Return _micro
-        End Get
-        Set(ByVal value As BE_Micro)
-            _micro = value
-        End Set
-    End Property
-
-
 
 End Class
