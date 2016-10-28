@@ -28,6 +28,8 @@ Public Class Reserva_Detalle
             Me.TextBox2.Text = paramReservaAlojamiento.Fecha_Inicio.Date
             Me.TextBox3.Text = paramReservaAlojamiento.Fecha_Fin.Date
             Me.TextBox4.Text = paramDestino.NombreCompleto
+            Me.TextBox5.Text = paramReservaAlojamiento.Habitacion.Descripcion
+            Me.TextBox6.Text = paramReservaAlojamiento.Habitacion.ID
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
@@ -36,5 +38,15 @@ Public Class Reserva_Detalle
 
     Private Sub Reserva_Detalle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim formulariobuscaralojamiento As New Reserva_Buscar_Alojamiento()
+        formulariobuscaralojamiento.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
     End Sub
 End Class
