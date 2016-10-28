@@ -17,11 +17,24 @@ Public Class Reserva_Detalle_Viaje
         reservaDestino = oDestino
         reservaOrigen = oOrigen
         reservaTransporte = oViaje.Transporte
+        iniciar()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
+    Private Sub iniciar()
+        Me.Txtdestino.Text = reservaDestino.NombreCompleto
+        Me.Txtempresatrans.Text = viaje.Transporte.Empresa.Nombre
+        Me.Txtfechaviaje.Text = viaje.FechaHoraSalida
+        Me.Txttipotrans.Text = reservaTransporte.TipoTransporte.ToString
+        Me.Txtorigen.Text = reservaOrigen.NombreCompleto
+        Me.TextBox1.Text = reservaViaje.Asiento.NumeroAsiento
+    End Sub
 
     Private Sub Reserva_Detalle_Viaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
     End Sub
 End Class
