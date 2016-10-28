@@ -91,6 +91,7 @@
     <Compile Include="DAL_ReservaViaje.vb" />
     <Compile Include="DAL_ReservaAlojamiento.vb" />
     <Compile Include="DAL_TipoAlojamiento.vb" />
+    <Compile Include="DAL_Tipotransporte.vb" />
     <Compile Include="DAL_Transporte.vb" />
     <Compile Include="DAL_Viaje.vb" />
     <Compile Include="DAL_GestorPermiso.vb" />
