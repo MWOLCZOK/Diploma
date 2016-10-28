@@ -1,7 +1,7 @@
 ﻿Public Class BE_Asiento
 
     Private _id As Integer
-    Public Property Asiento() As Integer
+    Public Property ID() As Integer
         Get
             Return _id
         End Get
