@@ -28,7 +28,6 @@ Public Class DAL_Tipotransporte
             Dim milistaAsiento As New List(Of BE_TipoTransporte)
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                '.Add(New SqlParameter("@ID", oTipotransporte.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)
@@ -49,12 +48,12 @@ Public Class DAL_Tipotransporte
         Return oTipotransporte
     End Function
 
-    Public Function consultarTipotransporte(ByVal oTipotransporte As BE_TipoTransporte) As BE_TipoTransporte
+    Public Function consultarTipotransporte(ByVal paramTipotrans) As BE_TipoTransporte
         Try
             Dim consulta As String = ("Select * from TipoTransporte where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", oTipotransporte.ID))
+                .Add(New SqlParameter("@ID", paramTipotrans.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)

@@ -39,6 +39,7 @@ Partial Class FormMenu
         Me.ModificarLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReservaBuscarViajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaDeAlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,7 +68,6 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ReservaBuscarViajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -109,74 +109,80 @@ Partial Class FormMenu
         'BusquedaDeViajesToolStripMenuItem
         '
         Me.BusquedaDeViajesToolStripMenuItem.Name = "BusquedaDeViajesToolStripMenuItem"
-        Me.BusquedaDeViajesToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.BusquedaDeViajesToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.BusquedaDeViajesToolStripMenuItem.Text = "Busqueda de Viajes"
         '
         'AltaDePaisToolStripMenuItem
         '
         Me.AltaDePaisToolStripMenuItem.Name = "AltaDePaisToolStripMenuItem"
-        Me.AltaDePaisToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.AltaDePaisToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.AltaDePaisToolStripMenuItem.Text = "Alta de Pais"
         '
         'ModificarPaisToolStripMenuItem
         '
         Me.ModificarPaisToolStripMenuItem.Name = "ModificarPaisToolStripMenuItem"
-        Me.ModificarPaisToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ModificarPaisToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.ModificarPaisToolStripMenuItem.Text = "Modificar Pais"
         '
         'EliminarPaisToolStripMenuItem
         '
         Me.EliminarPaisToolStripMenuItem.Name = "EliminarPaisToolStripMenuItem"
-        Me.EliminarPaisToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.EliminarPaisToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.EliminarPaisToolStripMenuItem.Text = "Eliminar Pais"
         '
         'AltaDeProvinciaToolStripMenuItem
         '
         Me.AltaDeProvinciaToolStripMenuItem.Name = "AltaDeProvinciaToolStripMenuItem"
-        Me.AltaDeProvinciaToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.AltaDeProvinciaToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.AltaDeProvinciaToolStripMenuItem.Text = "Alta de Provincia"
         '
         'ModificarProvinciaToolStripMenuItem
         '
         Me.ModificarProvinciaToolStripMenuItem.Name = "ModificarProvinciaToolStripMenuItem"
-        Me.ModificarProvinciaToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ModificarProvinciaToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.ModificarProvinciaToolStripMenuItem.Text = "Modificar Provincia"
         '
         'EliminarProvinciaToolStripMenuItem
         '
         Me.EliminarProvinciaToolStripMenuItem.Name = "EliminarProvinciaToolStripMenuItem"
-        Me.EliminarProvinciaToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.EliminarProvinciaToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.EliminarProvinciaToolStripMenuItem.Text = "Eliminar Provincia"
         '
         'AltaDeLocalidadToolStripMenuItem
         '
         Me.AltaDeLocalidadToolStripMenuItem.Name = "AltaDeLocalidadToolStripMenuItem"
-        Me.AltaDeLocalidadToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.AltaDeLocalidadToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.AltaDeLocalidadToolStripMenuItem.Text = "Alta de Localidad"
         '
         'EliminarLocalidadToolStripMenuItem
         '
         Me.EliminarLocalidadToolStripMenuItem.Name = "EliminarLocalidadToolStripMenuItem"
-        Me.EliminarLocalidadToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.EliminarLocalidadToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.EliminarLocalidadToolStripMenuItem.Text = "Eliminar Localidad"
         '
         'ModificarLocalidadToolStripMenuItem
         '
         Me.ModificarLocalidadToolStripMenuItem.Name = "ModificarLocalidadToolStripMenuItem"
-        Me.ModificarLocalidadToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ModificarLocalidadToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.ModificarLocalidadToolStripMenuItem.Text = "Modificar Localidad"
         '
         'AgregarDestinoToolStripMenuItem
         '
         Me.AgregarDestinoToolStripMenuItem.Name = "AgregarDestinoToolStripMenuItem"
-        Me.AgregarDestinoToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.AgregarDestinoToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.AgregarDestinoToolStripMenuItem.Text = "Alta de Destino"
         '
         'EliminarDestinoToolStripMenuItem
         '
         Me.EliminarDestinoToolStripMenuItem.Name = "EliminarDestinoToolStripMenuItem"
-        Me.EliminarDestinoToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.EliminarDestinoToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.EliminarDestinoToolStripMenuItem.Text = "Eliminar Destino"
+        '
+        'ReservaBuscarViajeToolStripMenuItem
+        '
+        Me.ReservaBuscarViajeToolStripMenuItem.Name = "ReservaBuscarViajeToolStripMenuItem"
+        Me.ReservaBuscarViajeToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
+        Me.ReservaBuscarViajeToolStripMenuItem.Text = "Buscar Viaje"
         '
         'AlojamientoToolStripMenuItem
         '
@@ -369,12 +375,6 @@ Partial Class FormMenu
         Me.Label1.Size = New System.Drawing.Size(72, 24)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
-        '
-        'ReservaBuscarViajeToolStripMenuItem
-        '
-        Me.ReservaBuscarViajeToolStripMenuItem.Name = "ReservaBuscarViajeToolStripMenuItem"
-        Me.ReservaBuscarViajeToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
-        Me.ReservaBuscarViajeToolStripMenuItem.Text = "Buscar Viaje"
         '
         'FormMenu
         '

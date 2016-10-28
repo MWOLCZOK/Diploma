@@ -3,7 +3,7 @@ Imports EE
 
 Public Class BLL_TipoTransporte
 
-    Dim _daltipotransporte As New DAL_tipotransporte
+    Dim _daltipotransporte As New DAL_Tipotransporte
 
     Public Sub altatipotransporte(ByVal oTipotransporte As BE_TipoTransporte)
         Try
@@ -29,12 +29,16 @@ Public Class BLL_TipoTransporte
         End Try
     End Function
 
-    Public Function consultarTipotransporte(ByVal oTipotransporte As BE_TipoTransporte, ByVal paramFechaInicio As Date, ByVal paramFechaFin As Date) As BE_TipoTransporte
-        Return _daltipotransporte.consultarTipotransporte(oTipotransporte)
+    Public Function consultarTipotransporte(ByVal paramTipotrans As BE_TipoTransporte) As BE_TipoTransporte
+        Return _daltipotransporte.consultarTipotransporte(paramTipotrans)
     End Function
 
-    Public Function consultarTipotransportes() As List(Of BE_TipoTransporte)
-        Return _daltipotransporte.consultarTipotransportes()
+    Public Function consultarTipoTransportes() As List(Of BE_TipoTransporte)
+        Try
+            Return _daltipotransporte.consultarTipotransportes()
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Function
 
 

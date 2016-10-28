@@ -145,6 +145,12 @@
     <Compile Include="Reserva_Buscar_Alojamiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reserva_Buscar_Asientos.Designer.vb">
+      <DependentUpon>Reserva_Buscar_Asientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reserva_Buscar_Asientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reserva_Buscar_Pasajero.Designer.vb">
       <DependentUpon>Reserva_Buscar_Pasajero.vb</DependentUpon>
     </Compile>
@@ -312,6 +318,12 @@
     <Compile Include="Reserva_Detalle.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reserva_Detalle_Viaje.Designer.vb">
+      <DependentUpon>Reserva_Detalle_Viaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reserva_Detalle_Viaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SeleccionarIdioma.Designer.vb">
       <DependentUpon>SeleccionarIdioma.vb</DependentUpon>
     </Compile>
@@ -361,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reserva_Buscar_Alojamiento.resx">
       <DependentUpon>Reserva_Buscar_Alojamiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reserva_Buscar_Asientos.resx">
+      <DependentUpon>Reserva_Buscar_Asientos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reserva_Buscar_Pasajero.resx">
       <DependentUpon>Reserva_Buscar_Pasajero.vb</DependentUpon>
@@ -442,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reserva_Detalle.resx">
       <DependentUpon>Reserva_Detalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reserva_Detalle_Viaje.resx">
+      <DependentUpon>Reserva_Detalle_Viaje.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionarIdioma.resx">
       <DependentUpon>SeleccionarIdioma.vb</DependentUpon>
