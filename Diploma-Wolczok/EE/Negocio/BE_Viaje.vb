@@ -70,4 +70,35 @@
         End Set
     End Property
 
+
+    Private _cena As Boolean
+    Public Property Cena() As Boolean
+        Get
+            Return _cena
+        End Get
+        Set(ByVal value As Boolean)
+            _cena = value
+        End Set
+    End Property
+
+    Private _almuerzo As Boolean
+    Public Property Almuerzo() As Boolean
+        Get
+            Return _almuerzo
+        End Get
+        Set(ByVal value As Boolean)
+            _almuerzo = value
+        End Set
+    End Property
+
+    Private _cafeteria As Boolean
+    Public Property Cafeteria() As Boolean
+        Get
+            Return _cafeteria
+        End Get
+        Set(ByVal value As Boolean)
+            _cafeteria = value
+        End Set
+    End Property
+
 End Class
