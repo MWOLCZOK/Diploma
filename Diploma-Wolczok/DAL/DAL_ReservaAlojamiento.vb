@@ -135,7 +135,9 @@ Public Class DAL_ReservaAlojamiento
         oReservaAlojamiento.Detalle = paramDataRow.Item("Detalle")
         oReservaAlojamiento.Estado = paramDataRow.Item("Estado")
         oReservaAlojamiento.puntaje = paramDataRow.Item("Puntaje")
-
+        Dim oPasajero As New BE_Pasajero
+        oPasajero.ID = paramDataRow.Item("ID_Pasajero")
+        oReservaAlojamiento.Pasajero = (New DAL.DAL_Pasajero).consultarPasajero(oPasajero)
         Return oReservaAlojamiento
     End Function
 End Class

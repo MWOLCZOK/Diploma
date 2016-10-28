@@ -3,8 +3,12 @@ Imports System.Data.SqlClient
 Imports System.Configuration
 Imports DAL
 
-Public Class DAL_Asiento
+Public Class DAL_Tipotransporte
+
     Implements Master
+
+
+
 
     Public Sub alta(paramobjeto As Object) Implements Master.alta
 
@@ -18,18 +22,19 @@ Public Class DAL_Asiento
 
     End Function
 
-    Public Function consultarAsientos(ByVal oTransporte As BE_Transporte) As List(Of BE_Asiento)
+
+    Public Function consultarTipotransportes(ByVal oTipotransporte As BE_TipoTransporte) As List(Of BE_TipoTransporte)
         Try
-            Dim consulta As String = ("Select * from Asiento where BL=@BL")
-            Dim milistaAsiento As New List(Of BE_Asiento)
+            Dim consulta As String = ("Select * from Empresatransporte where BL=@BL")
+            Dim milistaAsiento As New List(Of BE_TipoTransporte)
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", oTransporte.ID))
+                .Add(New SqlParameter("@ID", oTipotransporte.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)
             For Each drow As DataRow In dt.Rows
-                milistaAsiento.Add(Me.formatearAsiento(drow))
+                milistaAsiento.Add(Me.formatearTipotransporte(drow))
             Next
             Return milistaAsiento
         Catch ex As Exception
@@ -37,17 +42,25 @@ Public Class DAL_Asiento
         End Try
     End Function
 
-    Public Function consultarAsiento(ByVal oAsiento As EE.BE_Asiento) As EE.BE_Asiento
+
+    Private Function formatearTipotransporte(ByVal paramDataRow As DataRow) As BE_TipoTransporte
+        Dim oTipotransporte As New BE_TipoTransporte
+        oTipotransporte.ID = paramDataRow.Item("ID")
+        oTipotransporte.Descripcion = paramDataRow.Item("Descripcion")
+        Return oTipotransporte
+    End Function
+
+    Public Function consultarTipotransporte(ByVal oTipotransporte As BE_TipoTransporte) As BE_TipoTransporte
         Try
             Dim consulta As String = ("Select * from Asiento where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", oAsiento.ID))
+                .Add(New SqlParameter("@ID", oTipotransporte.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)
             If dt.Rows.Count = 1 Then
-                Return Me.formatearAsiento(dt.Rows(0))
+                Return Me.formatearTipotransporte(dt.Rows(0))
             Else
                 Return Nothing
             End If
@@ -57,16 +70,6 @@ Public Class DAL_Asiento
     End Function
 
 
-    Private Function formatearAsiento(ByVal paramDataRow As DataRow) As BE_Asiento
-        Dim oAsiento As New BE_Asiento
-        oAsiento.ID = paramDataRow.Item("ID")
-        oAsiento.Fila = paramDataRow.Item("Fila")
-        oAsiento.NumeroAsiento = paramDataRow.Item("NumeroAsiento")
-        Dim oCategoriaAciento As New BE_CategoriaAsiento
-        oCategoriaAciento.ID = paramDataRow.Item("ID_CategoriaAsiento")
-        oAsiento.CategoriaAsiento = (New DAL.DAL_CategoriaAsiento).consultarCategoriaAsiento(oCategoriaAciento)
-        oAsiento.Transporte = paramDataRow.Item("ID_Transporte")
-        Return oAsiento
-    End Function
+
 
 End Class
