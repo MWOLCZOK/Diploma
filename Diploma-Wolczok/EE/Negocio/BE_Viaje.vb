@@ -20,22 +20,23 @@
         End Set
     End Property
 
-    Private _fechaHoraLlegada As DateTime
-    Public Property FechaHoraLlegada() As DateTime
+    Private _fechaHoraLlegada As Date
+    Public Property FechaHoraLlegada() As Date
         Get
             Return _fechaHoraLlegada
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As Date)
             _fechaHoraLlegada = value
         End Set
     End Property
 
-    Private _fechaHoraSalida As DateTime
-    Public Property FechaHoraSalida() As DateTime
+
+    Private _fechaHoraSalida As Date
+    Public Property FechaHoraSalida() As Date
         Get
             Return _fechaHoraSalida
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As Date)
             _fechaHoraSalida = value
         End Set
     End Property

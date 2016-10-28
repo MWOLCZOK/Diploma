@@ -8,26 +8,22 @@ Public Class DAL_Viaje
     Implements Master
 
     Public Function consultarviajes(ByVal paramOrigen As EE.BE_Destino, ByVal paramDestino As EE.BE_Destino, ByVal paramFechaSalida As Date, ByVal paramTipoTransporte As EE.BE_TipoTransporte)
+        Dim milistaViajes As New List(Of EE.BE_Viaje)
         Try
-            Dim milistaViajes As New List(Of EE.BE_Viaje)
-            Try
-                Dim consulta As String = ("select V.*, TT.ID as ID_TipoTransporte from viaje as V, TipoTransporte as TT, Transporte as T where V.ID_Transporte = T.ID and T.ID_TipoTransporte=TT.ID and ID_Transporte=@ID_TipoTransporte and ID_Destino=@Destino and ID_Origen=@Origen and BL=@BL")
-                Dim Command As SqlCommand = Acceso.MiComando(consulta)
-                With Command.Parameters
-                    .Add(New SqlParameter("@Destino", paramDestino.ID))
-                    .Add(New SqlParameter("@Origen", paramOrigen.ID))
-                    .Add(New SqlParameter("@Fecha", paramFechaSalida))
-                    .Add(New SqlParameter("@TipoTransporte", paramTipoTransporte.ID))
-                    .Add(New SqlParameter("@BL", False))
-                End With
-                Dim dt As DataTable = Acceso.Lectura(Command)
-                For Each drow As DataRow In dt.Rows
-                    milistaViajes.Add(Me.formatearViaje(drow))
-                Next
-                Return milistaViajes
-            Catch ex As Exception
-                Throw ex
-            End Try
+            Dim consulta As String = ("select V.*, TT.ID as ID_TipoTransporte from viaje as V, TipoTransporte as TT, Transporte as T where V.ID_Transporte = T.ID and T.ID_TipoTransporte=TT.ID and ID_Transporte=@ID_TipoTransporte and ID_Destino=@Destino and ID_Origen=@Origen and V.BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@Destino", paramDestino.ID))
+                .Add(New SqlParameter("@Origen", paramOrigen.ID))
+                .Add(New SqlParameter("@Fecha", paramFechaSalida.Date))
+                .Add(New SqlParameter("@ID_TipoTransporte", paramTipoTransporte.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                milistaViajes.Add(Me.formatearViaje(drow))
+            Next
+            Return milistaViajes
         Catch ex As Exception
             Throw ex
         End Try
@@ -72,7 +68,7 @@ Public Class DAL_Viaje
                 .Add(New SqlParameter("@ID_Destino", paramViaje.Destino.ID))
                 .Add(New SqlParameter("@Almuerzo", paramViaje.Almuerzo))
                 .Add(New SqlParameter("@Cafeteria", paramViaje.Cafeteria))
-                .Add(New SqlParameter("@Cena", paramViaje.cena))
+                .Add(New SqlParameter("@Cena", paramViaje.Cena))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)

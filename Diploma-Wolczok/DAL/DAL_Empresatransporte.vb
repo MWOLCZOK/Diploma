@@ -53,7 +53,7 @@ Public Class DAL_Empresatransporte
 
     Public Function consultarTransporte(ByVal oEmpresatrans As BE_EmpresaTransporte) As BE_EmpresaTransporte
         Try
-            Dim consulta As String = ("Select * from Asiento where ID=@ID and BL=@BL")
+            Dim consulta As String = ("Select * from EmpresaTransporte where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
                 .Add(New SqlParameter("@ID", oEmpresatrans.ID))

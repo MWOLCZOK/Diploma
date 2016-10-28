@@ -2,22 +2,41 @@
 Imports BLL
 
 Public Class Reserva_Buscar_Pasajero
-
+    Protected Friend flag As Boolean
     Protected Friend reservaAlojamiento As EE.BE_ReservaAlojamiento
     Protected Friend reservaDestino As EE.BE_Destino
     Protected Friend Alojamiento As EE.BE_Alojamiento
+    Protected Friend viaje As BE_Viaje
+    Protected Friend reservaViaje As EE.BE_ReservaViaje
+    Protected Friend reservaOrigen As EE.BE_Destino
+    Protected Friend reservaTransporte As EE.BE_Transporte
 
+    Sub New(ByVal oViaje As BE_Viaje, ByVal oReservaViaje As BE_ReservaViaje, ByVal oOrigen As BE_Destino, ByVal oDestino As BE_Destino)
+
+        ' Llamada necesaria para el diseñador.
+        InitializeComponent()
+        viaje = oViaje
+        reservaViaje = oReservaViaje
+        reservaDestino = oDestino
+        reservaOrigen = oOrigen
+        reservaTransporte = oViaje.Transporte
+        flag = True
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
 
     Sub New(ByVal paramAlojamiento As BE_Alojamiento, ByVal paramDestino As BE_Destino, ByVal paramReservaAlojamiento As BE_ReservaAlojamiento)
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        iniciar(paramAlojamiento, paramDestino, paramReservaAlojamiento)
-
+        iniciarAlojamiento(paramAlojamiento, paramDestino, paramReservaAlojamiento)
+        flag = False
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
-    Private Sub iniciar(ByVal paramAlojamiento As BE_Alojamiento, ByVal paramDestino As BE_Destino, ByVal paramReservaAlojamiento As BE_ReservaAlojamiento)
+
+
+
+    Private Sub iniciarAlojamiento(ByVal paramAlojamiento As BE_Alojamiento, ByVal paramDestino As BE_Destino, ByVal paramReservaAlojamiento As BE_ReservaAlojamiento)
         reservaAlojamiento = paramReservaAlojamiento
         reservaDestino = paramDestino
         Alojamiento = paramAlojamiento
@@ -46,16 +65,30 @@ Public Class Reserva_Buscar_Pasajero
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Dim oPasajero As New EE.BE_Pasajero
-            oPasajero.ID = CInt(Me.DataGridView2.SelectedRows.Item(0).Cells(0).Value)
-            Dim bblPäsajero As New BLL.BLL_Pasajero
-            oPasajero = bblPäsajero.consultarPasajero(oPasajero)
-            reservaAlojamiento.Pasajero = oPasajero
-            Dim bllReserva As New BLL_Reserva
-            bllReserva.altaReserva(reservaAlojamiento)
-            Dim formularioSeleccionHabitacion As New Reserva_Detalle(Alojamiento, reservaDestino, reservaAlojamiento)
-            formularioSeleccionHabitacion.Show()
-            Me.Close()
+            If flag = True Then
+                Dim oPasajero As New EE.BE_Pasajero
+                oPasajero.ID = CInt(Me.DataGridView2.SelectedRows.Item(0).Cells(0).Value)
+                Dim bblPäsajero As New BLL.BLL_Pasajero
+                oPasajero = bblPäsajero.consultarPasajero(oPasajero)
+                reservaViaje.Pasajero = oPasajero
+                Dim bllReserva As New BLL_Reserva
+                bllReserva.altaReserva(reservaViaje)
+                Dim formularioViajeFINAL As New Reserva_Detalle_Viaje(viaje, reservaViaje, reservaOrigen, reservaDestino)
+                formularioViajeFINAL.Show()
+                Me.Close()
+            Else
+                Dim oPasajero As New EE.BE_Pasajero
+                oPasajero.ID = CInt(Me.DataGridView2.SelectedRows.Item(0).Cells(0).Value)
+                Dim bblPäsajero As New BLL.BLL_Pasajero
+                oPasajero = bblPäsajero.consultarPasajero(oPasajero)
+                reservaAlojamiento.Pasajero = oPasajero
+                Dim bllReserva As New BLL_Reserva
+                bllReserva.altaReserva(reservaAlojamiento)
+                Dim formularioSeleccionHabitacion As New Reserva_Detalle(Alojamiento, reservaDestino, reservaAlojamiento)
+                formularioSeleccionHabitacion.Show()
+                Me.Close()
+            End If
+
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try

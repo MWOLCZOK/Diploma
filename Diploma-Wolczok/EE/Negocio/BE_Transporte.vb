@@ -50,4 +50,8 @@
         End Set
     End Property
 
+
+    Public Overrides Function ToString() As String
+        Return Descripcion
+    End Function
 End Class

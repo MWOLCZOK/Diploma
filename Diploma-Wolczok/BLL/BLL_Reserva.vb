@@ -20,7 +20,9 @@ Public Class BLL_Reserva
 
     Public Sub altaReserva(ByVal paramReservaVuelo As EE.BE_ReservaViaje)
         Try
-
+            Dim valor2 = retornarPuntaje(2)
+            paramReservaVuelo.puntaje = valor2
+            _dalReservaVuelo.alta(paramReservaVuelo)
         Catch ex As Exception
 
         End Try

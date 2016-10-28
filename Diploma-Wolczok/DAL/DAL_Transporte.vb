@@ -84,7 +84,7 @@ Public Class DAL_Transporte
         oEmpresa.ID = paramDataRow.Item("ID_Empresa")
         oTransporte.Empresa = (New DAL.DAL_Empresatransporte).consultarTransporte(oEmpresa)
         Dim oTipoTransporte As New BE_TipoTransporte
-        oTipoTransporte = paramDataRow.Item("ID_TipoTransporte")
+        oTipoTransporte.ID = paramDataRow.Item("ID_TipoTransporte")
         oTransporte.TipoTransporte = (New DAL.dal_TipoTransporte).consultarTipoTransporte(oTipoTransporte)
         Return oTransporte
     End Function

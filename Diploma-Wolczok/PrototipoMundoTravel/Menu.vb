@@ -293,4 +293,9 @@ Public Class FormMenu
         Dim formreservaviaje As New Reserva_Buscar_Viaje
         AbrirForm(formreservaviaje)
     End Sub
+
+    Private Sub BusquedaDeViajesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BusquedaDeViajesToolStripMenuItem.Click
+        Dim formreservaviaje As New Reserva_Buscar_Viaje
+        AbrirForm(formreservaviaje)
+    End Sub
 End Class
