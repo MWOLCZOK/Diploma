@@ -3,7 +3,7 @@ Imports EE
 
 Public Class BLL_TipoTransporte
 
-    Dim _daltipotransporte As New DAL_Tipotransporte
+    Dim _daltipotransporte As New DAL_tipotransporte
 
     Public Sub altatipotransporte(ByVal oTipotransporte As BE_TipoTransporte)
         Try

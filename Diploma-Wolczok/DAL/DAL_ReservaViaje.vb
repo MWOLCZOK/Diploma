@@ -137,7 +137,6 @@ Public Class DAL_ReservaViaje
         oReservaViaje.Detalle = paramDataRow.Item("Detalle")
         oReservaViaje.Estado = paramDataRow.Item("Estado")
         oReservaViaje.puntaje = paramDataRow.Item("Puntaje")
-
         Return oReservaViaje
     End Function
 End Class
