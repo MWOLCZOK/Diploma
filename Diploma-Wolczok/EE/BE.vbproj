@@ -79,7 +79,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BE_Puntaje.vb" />
+    <Compile Include="Negocio\BE_Puntaje.vb" />
     <Compile Include="Negocio\BE_Asiento.vb" />
     <Compile Include="Negocio\BE_TipoAlojamiento.vb" />
     <Compile Include="Negocio\BE_TipoTransporte.vb" />
