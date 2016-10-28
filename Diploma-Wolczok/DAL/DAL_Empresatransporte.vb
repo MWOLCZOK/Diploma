@@ -42,7 +42,6 @@ Public Class DAL_Empresatransporte
     End Function
 
 
-
     Private Function formatearEmpresatransporte(ByVal paramDataRow As DataRow) As BE_EmpresaTransporte
         Dim oEmpresatransporte As New BE_EmpresaTransporte
         oEmpresatransporte.ID = paramDataRow.Item("ID")
