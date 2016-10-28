@@ -74,6 +74,7 @@
     <Compile Include="DAL_Departamento.vb" />
     <Compile Include="DAL_Destino.vb" />
     <Compile Include="DAL_DigitoVerificador.vb" />
+    <Compile Include="DAL_Empresatransporte.vb" />
     <Compile Include="DAL_Habitacion.vb" />
     <Compile Include="DAL_Hostel.vb" />
     <Compile Include="DAL_Hotel.vb" />
