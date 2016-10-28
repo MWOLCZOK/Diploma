@@ -288,4 +288,9 @@ Public Class FormMenu
         Dim formpuntaje As New Modificar_Puntaje
         AbrirForm(formpuntaje)
     End Sub
+
+    Private Sub ReservaBuscarViajeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservaBuscarViajeToolStripMenuItem.Click
+        Dim formreservaviaje As New Reserva_Buscar_Viaje
+        AbrirForm(formreservaviaje)
+    End Sub
 End Class

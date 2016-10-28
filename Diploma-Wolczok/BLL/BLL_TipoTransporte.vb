@@ -29,12 +29,12 @@ Public Class BLL_TipoTransporte
         End Try
     End Function
 
-    Public Function consultarTipotransporte(ByVal oTipotransporte As BE_TipoTransporte) As BE_TipoTransporte
+    Public Function consultarTipotransporte(ByVal oTipotransporte As BE_TipoTransporte, ByVal paramFechaInicio As Date, ByVal paramFechaFin As Date) As BE_TipoTransporte
         Return _daltipotransporte.consultarTipotransporte(oTipotransporte)
     End Function
 
-    Public Function consultarTipotransportes(ByVal oTipotransporte As BE_TipoTransporte) As List(Of BE_TipoTransporte)
-        Return _daltipotransporte.consultarTipotransportes(oTipotransporte)
+    Public Function consultarTipotransportes() As List(Of BE_TipoTransporte)
+        Return _daltipotransporte.consultarTipotransportes()
     End Function
 
 
