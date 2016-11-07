@@ -67,10 +67,11 @@ Partial Class FormMenu
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SeleccionarIdioma = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.VisualizarPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -364,6 +365,19 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
+        'PagosToolStripMenuItem
+        '
+        Me.PagosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarPagoToolStripMenuItem, Me.VisualizarPagosToolStripMenuItem})
+        Me.PagosToolStripMenuItem.Name = "PagosToolStripMenuItem"
+        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(51, 22)
+        Me.PagosToolStripMenuItem.Text = "Pagos"
+        '
+        'AgregarPagoToolStripMenuItem
+        '
+        Me.AgregarPagoToolStripMenuItem.Name = "AgregarPagoToolStripMenuItem"
+        Me.AgregarPagoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.AgregarPagoToolStripMenuItem.Text = "Agregar Pago"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -385,18 +399,11 @@ Partial Class FormMenu
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
-        'PagosToolStripMenuItem
+        'VisualizarPagosToolStripMenuItem
         '
-        Me.PagosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarPagoToolStripMenuItem})
-        Me.PagosToolStripMenuItem.Name = "PagosToolStripMenuItem"
-        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(51, 22)
-        Me.PagosToolStripMenuItem.Text = "Pagos"
-        '
-        'AgregarPagoToolStripMenuItem
-        '
-        Me.AgregarPagoToolStripMenuItem.Name = "AgregarPagoToolStripMenuItem"
-        Me.AgregarPagoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AgregarPagoToolStripMenuItem.Text = "Agregar Pago"
+        Me.VisualizarPagosToolStripMenuItem.Name = "VisualizarPagosToolStripMenuItem"
+        Me.VisualizarPagosToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.VisualizarPagosToolStripMenuItem.Text = "Visualizar Pagos"
         '
         'FormMenu
         '
@@ -465,4 +472,5 @@ Partial Class FormMenu
     Friend WithEvents AgregarViajeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PagosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VisualizarPagosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

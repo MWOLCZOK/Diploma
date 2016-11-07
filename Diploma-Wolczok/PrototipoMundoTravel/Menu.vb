@@ -308,4 +308,9 @@ Public Class FormMenu
         Dim formpago As New Agregar_Pago
         AbrirForm(formpago)
     End Sub
+
+    Private Sub VisualizarPagosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarPagosToolStripMenuItem.Click
+        Dim formvisualizarpagos As New Visualizar_Pagos
+        AbrirForm(formvisualizarpagos)
+    End Sub
 End Class
