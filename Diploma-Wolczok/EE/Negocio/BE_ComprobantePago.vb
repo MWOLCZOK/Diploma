@@ -63,12 +63,12 @@
     End Property
 
 
-    Private _pago As BE_Pago
-    Public Property Pago() As BE_Pago
+    Private _pago As BE_PagoViaje
+    Public Property Pago() As BE_PagoViaje
         Get
             Return _pago
         End Get
-        Set(ByVal value As BE_Pago)
+        Set(ByVal value As BE_PagoViaje)
             _pago = value
         End Set
     End Property

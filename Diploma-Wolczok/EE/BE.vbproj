@@ -79,6 +79,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BE_Finpago.vb" />
+    <Compile Include="BE_Metodopago.vb" />
+    <Compile Include="Micro.vb" />
     <Compile Include="Negocio\BE_Puntaje.vb" />
     <Compile Include="Negocio\BE_Asiento.vb" />
     <Compile Include="Negocio\BE_TipoAlojamiento.vb" />
@@ -99,7 +102,7 @@
     <Compile Include="Negocio\BE_Hostel.vb" />
     <Compile Include="Negocio\BE_Hotel.vb" />
     <Compile Include="Negocio\BE_Localidad.vb" />
-    <Compile Include="Negocio\BE_Pago.vb" />
+    <Compile Include="Negocio\BE_PagoViaje.vb" />
     <Compile Include="Negocio\BE_Pais.vb" />
     <Compile Include="Negocio\BE_Pasajero.vb" />
     <Compile Include="Negocio\BE_Posada.vb" />

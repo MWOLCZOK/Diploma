@@ -36,7 +36,7 @@ Partial Class Agregar_Pais
         '
         'Btn_agregarpais
         '
-        Me.Btn_agregarpais.Location = New System.Drawing.Point(153, 209)
+        Me.Btn_agregarpais.Location = New System.Drawing.Point(147, 160)
         Me.Btn_agregarpais.Name = "Btn_agregarpais"
         Me.Btn_agregarpais.Size = New System.Drawing.Size(87, 36)
         Me.Btn_agregarpais.TabIndex = 1
@@ -109,7 +109,7 @@ Partial Class Agregar_Pais
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(153, 279)
+        Me.Button1.Location = New System.Drawing.Point(147, 230)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(87, 36)
         Me.Button1.TabIndex = 14
@@ -120,7 +120,7 @@ Partial Class Agregar_Pais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(275, 353)
+        Me.ClientSize = New System.Drawing.Size(253, 300)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)

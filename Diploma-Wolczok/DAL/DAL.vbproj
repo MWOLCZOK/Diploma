@@ -75,13 +75,15 @@
     <Compile Include="DAL_Destino.vb" />
     <Compile Include="DAL_DigitoVerificador.vb" />
     <Compile Include="DAL_Empresatransporte.vb" />
+    <Compile Include="DAL_Findepago.vb" />
     <Compile Include="DAL_Habitacion.vb" />
     <Compile Include="DAL_Hostel.vb" />
     <Compile Include="DAL_Hotel.vb" />
     <Compile Include="DAL_Idioma.vb" />
     <Compile Include="DAL_Localidad.vb" />
     <Compile Include="DAL_Master.vb" />
-    <Compile Include="DAL_Pago.vb" />
+    <Compile Include="DAL_Metodopago.vb" />
+    <Compile Include="DAL_PagoViaje.vb" />
     <Compile Include="DAL_Pais.vb" />
     <Compile Include="DAL_Pasajero.vb" />
     <Compile Include="DAL_Posada.vb" />

@@ -74,6 +74,7 @@
     <Compile Include="BLL_Destino.vb" />
     <Compile Include="BLL_DigitoVerificador.vb" />
     <Compile Include="BLL_EmpresaTransporte.vb" />
+    <Compile Include="BLL_Finpago.vb" />
     <Compile Include="BLL_GestorNegocio.vb" />
     <Compile Include="BLL_GestorVoucher.vb" />
     <Compile Include="BLL_Habitacion.vb" />
@@ -82,7 +83,9 @@
     <Compile Include="BLL_Idioma.vb" />
     <Compile Include="BLL_Iobservador.vb" />
     <Compile Include="BLL_Localidad.vb" />
+    <Compile Include="BLL_Metodopago.vb" />
     <Compile Include="BLL_Pago.vb" />
+    <Compile Include="BLL_PagoViaje.vb" />
     <Compile Include="BLL_Pais.vb" />
     <Compile Include="BLL_Pasajero.vb" />
     <Compile Include="BLL_Posada.vb" />

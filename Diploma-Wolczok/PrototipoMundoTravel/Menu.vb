@@ -298,4 +298,14 @@ Public Class FormMenu
         Dim formreservaviaje As New Reserva_Buscar_Viaje
         AbrirForm(formreservaviaje)
     End Sub
+
+    Private Sub AgregarViajeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarViajeToolStripMenuItem.Click
+        Dim formnuevoviaje As New Agregar_Viaje
+        AbrirForm(formnuevoviaje)
+    End Sub
+
+    Private Sub AgregarPagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarPagoToolStripMenuItem.Click
+        Dim formpago As New Agregar_Pago
+        AbrirForm(formpago)
+    End Sub
 End Class

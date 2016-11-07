@@ -1,11 +1,13 @@
 ﻿Public Class BLL_Viaje
+
+
     Dim dalViaje As New DAL.DAL_Viaje
 
 
 
     Public Function consultarviajes(ByVal paramOrigen As EE.BE_Destino, ByVal paramDestino As EE.BE_Destino, ByVal paramFechaSalida As Date, ByVal paramTipoTransporte As EE.BE_TipoTransporte)
         Try
-         
+
             Return dalViaje.consultarViajes(paramOrigen, paramDestino, paramFechaSalida, paramTipoTransporte)
         Catch ex As Exception
             Throw ex
