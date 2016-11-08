@@ -4,19 +4,6 @@ Imports System.Configuration
 Imports DAL
 
 Public Class DAL_Asiento
-    Implements Master
-
-    Public Sub alta(paramobjeto As Object) Implements Master.alta
-
-    End Sub
-
-    Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar
-
-    End Sub
-
-    Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
-
-    End Function
 
     Public Function consultarAsientos(ByVal oTransporte As BE_Transporte) As List(Of BE_Asiento)
         Try
