@@ -34,10 +34,10 @@ Public Class BLL_EmpresaTransporte
         Return _dalempresatrans.consultarTransporte(oEmpresatrans)
     End Function
 
-    Public Function consultarEmpresastransp(ByVal oEmpresatrans As BE_EmpresaTransporte) As List(Of BE_EmpresaTransporte)
-        Return _dalempresatrans.consultarTransportes(oEmpresatrans)
-    End Function
 
+    Public Function consultarEmpresastransp() As List(Of BE_EmpresaTransporte)
+        Return _dalempresatrans.consultarTransportes()
+    End Function
 
 
 

@@ -26,7 +26,7 @@ Public Class Visualizar_Pagos
                 Dim oPagoviaje As New BE_PagoViaje
                 oPasajero.DNI = Me.TextBox9.Text
                 oReservaviaje.Pasajero = oPasajero
-                oReservaviaje.
+                '             oReservaviaje.
                 Dim oListapagoviaje As New List(Of BE_PagoViaje)
                 Dim bllPagoviaje As New BLL_PagoViaje
                 oListapagoviaje = bllPagoviaje.consultarPagosViajes(oPagoviaje)

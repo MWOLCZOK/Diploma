@@ -19,13 +19,12 @@ Public Class DAL_Empresatransporte
     End Function
 
 
-    Public Function consultarTransportes(ByVal oEmpresatrans As BE_EmpresaTransporte) As List(Of BE_EmpresaTransporte)
+    Public Function consultarTransportes() As List(Of BE_EmpresaTransporte)
         Try
             Dim consulta As String = ("Select * from Empresatransporte where BL=@BL")
             Dim milistaAsiento As New List(Of BE_EmpresaTransporte)
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", oEmpresatrans.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)

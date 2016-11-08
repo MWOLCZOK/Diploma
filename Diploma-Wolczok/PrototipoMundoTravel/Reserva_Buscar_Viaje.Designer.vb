@@ -39,7 +39,7 @@ Partial Class Reserva_Buscar_Viaje
         '
         'Btncancelar
         '
-        Me.Btncancelar.Location = New System.Drawing.Point(219, 489)
+        Me.Btncancelar.Location = New System.Drawing.Point(177, 490)
         Me.Btncancelar.Name = "Btncancelar"
         Me.Btncancelar.Size = New System.Drawing.Size(100, 39)
         Me.Btncancelar.TabIndex = 16
@@ -48,7 +48,7 @@ Partial Class Reserva_Buscar_Viaje
         '
         'Btnseleccionar
         '
-        Me.Btnseleccionar.Location = New System.Drawing.Point(457, 489)
+        Me.Btnseleccionar.Location = New System.Drawing.Point(415, 490)
         Me.Btnseleccionar.Name = "Btnseleccionar"
         Me.Btnseleccionar.Size = New System.Drawing.Size(100, 39)
         Me.Btnseleccionar.TabIndex = 15
@@ -58,15 +58,15 @@ Partial Class Reserva_Buscar_Viaje
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(39, 146)
+        Me.DataGridView1.Location = New System.Drawing.Point(26, 149)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(723, 325)
+        Me.DataGridView1.Size = New System.Drawing.Size(629, 325)
         Me.DataGridView1.TabIndex = 14
         '
         'Btnbuscar
         '
-        Me.Btnbuscar.Location = New System.Drawing.Point(568, 75)
+        Me.Btnbuscar.Location = New System.Drawing.Point(555, 49)
         Me.Btnbuscar.Name = "Btnbuscar"
         Me.Btnbuscar.Size = New System.Drawing.Size(100, 39)
         Me.Btnbuscar.TabIndex = 13
@@ -114,7 +114,7 @@ Partial Class Reserva_Buscar_Viaje
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(60, 40)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(206, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(200, 21)
         Me.ComboBox1.TabIndex = 17
         '
         'Cbxorigen
@@ -123,7 +123,7 @@ Partial Class Reserva_Buscar_Viaje
         Me.Cbxorigen.FormattingEnabled = True
         Me.Cbxorigen.Location = New System.Drawing.Point(60, 91)
         Me.Cbxorigen.Name = "Cbxorigen"
-        Me.Cbxorigen.Size = New System.Drawing.Size(206, 21)
+        Me.Cbxorigen.Size = New System.Drawing.Size(200, 21)
         Me.Cbxorigen.TabIndex = 23
         '
         'Label4
@@ -139,16 +139,16 @@ Partial Class Reserva_Buscar_Viaje
         '
         Me.Cbxdestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cbxdestino.FormattingEnabled = True
-        Me.Cbxdestino.Location = New System.Drawing.Point(298, 91)
+        Me.Cbxdestino.Location = New System.Drawing.Point(304, 93)
         Me.Cbxdestino.Name = "Cbxdestino"
-        Me.Cbxdestino.Size = New System.Drawing.Size(206, 21)
+        Me.Cbxdestino.Size = New System.Drawing.Size(200, 21)
         Me.Cbxdestino.TabIndex = 25
         '
         'Reserva_Buscar_Viaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(801, 551)
+        Me.ClientSize = New System.Drawing.Size(688, 551)
         Me.Controls.Add(Me.Cbxdestino)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Cbxorigen)

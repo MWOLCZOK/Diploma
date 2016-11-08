@@ -50,6 +50,17 @@
         End Set
     End Property
 
+    Private _listaAsientos As New List(Of EE.BE_Asiento)
+    Public Property Asientos() As List(Of EE.BE_Asiento)
+        Get
+            Return _listaAsientos
+        End Get
+        Set(ByVal value As List(Of EE.BE_Asiento))
+            _listaAsientos = value
+        End Set
+    End Property
+
+
 
     Public Overrides Function ToString() As String
         Return Descripcion

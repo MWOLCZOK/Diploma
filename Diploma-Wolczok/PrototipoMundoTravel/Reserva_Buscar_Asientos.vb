@@ -9,7 +9,6 @@ Public Class Reserva_Buscar_Asientos
     Protected Friend reservaTransporte As EE.BE_Transporte
 
     Sub New(ByVal oViaje As BE_Viaje, ByVal oReservaViaje As BE_ReservaViaje, ByVal oOrigen As BE_Destino, ByVal oDestino As BE_Destino)
-
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
         viaje = oViaje
@@ -35,9 +34,6 @@ Public Class Reserva_Buscar_Asientos
         DataGridView1.ReadOnly = True
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
-    Private Sub Reserva_Buscar_Asientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub Btnaceptar_Click(sender As Object, e As EventArgs) Handles Btnaceptar.Click
         Try
@@ -54,5 +50,10 @@ Public Class Reserva_Buscar_Asientos
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+
     End Sub
 End Class

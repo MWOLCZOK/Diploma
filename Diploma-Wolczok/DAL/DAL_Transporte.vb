@@ -6,7 +6,22 @@ Public Class DAL_Transporte
     Implements Master
 
     Public Sub alta(paramobjeto As Object) Implements Master.alta
+        Try
+            Dim paramTransporte As BE_Transporte = DirectCast(paramobjeto, BE_Transporte)
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Transporte values (@ID, @ID_Empresa, @ID_TipoTransporte, @Modelo, @Descripcion, @BL)")
+            With command.Parameters
+                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Transporte")))
+                .Add(New SqlParameter("@ID_Empresa", paramTransporte.Empresa.ID))
+                .Add(New SqlParameter("@ID_TipoTransporte", paramTransporte.TipoTransporte.ID))
+                .Add(New SqlParameter("@Modelo", paramTransporte.Modelo))
+                .Add(New SqlParameter("@Descripcion", paramTransporte.Descripcion))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Acceso.Escritura(command)
+            command.Dispose()
+        Catch ex As Exception
 
+        End Try
     End Sub
 
     Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar

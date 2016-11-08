@@ -95,6 +95,7 @@
     <Compile Include="BLL_SesionObservada.vb" />
     <Compile Include="BLL_TipoAlojamiento.vb" />
     <Compile Include="BLL_TipoTransporte.vb" />
+    <Compile Include="BLL_Transporte.vb" />
     <Compile Include="BLL_Viaje.vb" />
     <Compile Include="Encriptadora.vb" />
     <Compile Include="Excepciones\CamposIncompletosException.vb" />
