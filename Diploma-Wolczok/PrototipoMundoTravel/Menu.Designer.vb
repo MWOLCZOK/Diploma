@@ -69,9 +69,9 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VisualizarPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.VisualizarPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -192,7 +192,7 @@ Partial Class FormMenu
         '
         Me.AgregarViajeToolStripMenuItem.Name = "AgregarViajeToolStripMenuItem"
         Me.AgregarViajeToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
-        Me.AgregarViajeToolStripMenuItem.Text = "Agregar Viaje"
+        Me.AgregarViajeToolStripMenuItem.Text = "Agregar Transporte"
         '
         'AlojamientoToolStripMenuItem
         '
@@ -378,6 +378,12 @@ Partial Class FormMenu
         Me.AgregarPagoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.AgregarPagoToolStripMenuItem.Text = "Agregar Pago"
         '
+        'VisualizarPagosToolStripMenuItem
+        '
+        Me.VisualizarPagosToolStripMenuItem.Name = "VisualizarPagosToolStripMenuItem"
+        Me.VisualizarPagosToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.VisualizarPagosToolStripMenuItem.Text = "Visualizar Pagos"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -398,12 +404,6 @@ Partial Class FormMenu
         Me.Label1.Size = New System.Drawing.Size(72, 24)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
-        '
-        'VisualizarPagosToolStripMenuItem
-        '
-        Me.VisualizarPagosToolStripMenuItem.Name = "VisualizarPagosToolStripMenuItem"
-        Me.VisualizarPagosToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.VisualizarPagosToolStripMenuItem.Text = "Visualizar Pagos"
         '
         'FormMenu
         '

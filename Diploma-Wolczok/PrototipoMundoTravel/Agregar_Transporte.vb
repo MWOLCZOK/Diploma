@@ -15,6 +15,7 @@ Public Class Agregar_Transporte
 
     Private Sub iniciar()
         cargarComboTipoTransporte()
+        cargarComboEmpresas()
     End Sub
 
 
@@ -43,66 +44,13 @@ Public Class Agregar_Transporte
             oTransporte.TipoTransporte = DirectCast(Cbxtipotransporte.SelectedItem, BE_TipoTransporte)
             oTransporte.Empresa = DirectCast(ComboBox1.SelectedItem, BE_EmpresaTransporte)
             oTransporte.Descripcion = Me.TextBox1.Text
+            oTransporte.Modelo = Me.TextBox2.Text
             Dim bllTransporte As New BLL_Transporte
-            oTransporte.Asientos = obtenerAsientos()
+            oTransporte.Asientos = bllTransporte.obtenerAsientos(Me.NumericUpDown1.Value, Me.NumericUpDown2.Value, Me.NumericUpDown3.Value, Me.NumericUpDown4.Value, Me.NumericUpDown5.Value)
             bllTransporte.altaTransporte(oTransporte)
         Catch ex As Exception
 
         End Try
     End Sub
 
-    Private Function obtenerAsientos() As List(Of EE.BE_Asiento)
-        Dim NumeroAsiento As Integer = 0
-        Dim cantidadEjecutiva As Integer = 0
-        Dim cantidadPremium As Integer = 0
-        Dim cantidadPrimera As Integer = 0
-        Dim cantidadTurista As Integer = 0
-        cantidadEjecutiva = Me.NumericUpDown1.Value
-        cantidadPremium = Me.NumericUpDown2.Value
-        cantidadPrimera = Me.NumericUpDown3.Value
-        cantidadTurista = Me.NumericUpDown4.Value
-        Dim listaAsientos As New List(Of EE.BE_Asiento)
-        'CARGO LOS EJECUTIVOS
-        For i = 0 To cantidadEjecutiva
-            Dim oCategoriaAsiento As New BE_CategoriaAsiento
-            oCategoriaAsiento.ID = 1
-            Dim oAsiento As New BE_Asiento
-            oAsiento.CategoriaAsiento = oCategoriaAsiento
-            oAsiento.NumeroAsiento = NumeroAsiento
-            NumeroAsiento += 1
-            listaAsientos.Add(oAsiento)
-        Next
-        'CARGO LOS PREMIUM
-        For i = 0 To cantidadPremium
-            Dim oCategoriaAsiento As New BE_CategoriaAsiento
-            oCategoriaAsiento.ID = 2
-            Dim oAsiento As New BE_Asiento
-            oAsiento.CategoriaAsiento = oCategoriaAsiento
-            oAsiento.NumeroAsiento = NumeroAsiento
-            NumeroAsiento += 1
-            listaAsientos.Add(oAsiento)
-        Next
-        'CARGO LOS DE PRIMERA
-        For i = 0 To cantidadPrimera
-            Dim oCategoriaAsiento As New BE_CategoriaAsiento
-            oCategoriaAsiento.ID = 3
-            Dim oAsiento As New BE_Asiento
-            oAsiento.CategoriaAsiento = oCategoriaAsiento
-            oAsiento.NumeroAsiento = NumeroAsiento
-            NumeroAsiento += 1
-            listaAsientos.Add(oAsiento)
-        Next
-        'CARGO LOS TURISTA
-        For i = 0 To cantidadTurista
-            Dim oCategoriaAsiento As New BE_CategoriaAsiento
-            oCategoriaAsiento.ID = 4
-            Dim oAsiento As New BE_Asiento
-            oAsiento.CategoriaAsiento = oCategoriaAsiento
-            oAsiento.NumeroAsiento = NumeroAsiento
-            NumeroAsiento += 1
-            listaAsientos.Add(oAsiento)
-        Next
-        Return listaAsientos
-
-    End Function
 End Class

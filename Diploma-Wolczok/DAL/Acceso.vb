@@ -130,6 +130,19 @@ Public Class Acceso
         End Try
     End Function
 
+    Shared Function TraerUltimoID(ByRef IDGenerico As String, ByRef TablaGenerica As String) As Integer
+        Try
+            Dim ID As Integer
+            Dim Command As SqlCommand = Acceso.MiComando("select Max(" & IDGenerico & ") as IDretorno from " & TablaGenerica)
+            Dim DataTabla = Acceso.Lectura(Command)
+            For Each row As DataRow In DataTabla.Rows
+                ID = row.Item(0)
+            Next
+            Return ID
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
 
 

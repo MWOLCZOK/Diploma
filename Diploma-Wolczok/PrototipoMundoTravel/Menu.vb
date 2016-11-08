@@ -300,7 +300,7 @@ Public Class FormMenu
     End Sub
 
     Private Sub AgregarViajeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarViajeToolStripMenuItem.Click
-        Dim formnuevoviaje As New Agregar_Viaje
+        Dim formnuevoviaje As New Agregar_Transporte
         AbrirForm(formnuevoviaje)
     End Sub
 

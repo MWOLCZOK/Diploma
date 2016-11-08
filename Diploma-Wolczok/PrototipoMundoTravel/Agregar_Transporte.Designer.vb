@@ -40,10 +40,13 @@ Partial Class Agregar_Transporte
         Me.Btnaceptar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -117,7 +120,7 @@ Partial Class Agregar_Transporte
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(266, 126)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(266, 102)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(120, 20)
         Me.NumericUpDown2.TabIndex = 33
@@ -125,7 +128,7 @@ Partial Class Agregar_Transporte
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(263, 104)
+        Me.Label5.Location = New System.Drawing.Point(263, 80)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(76, 13)
         Me.Label5.TabIndex = 32
@@ -133,7 +136,7 @@ Partial Class Agregar_Transporte
         '
         'NumericUpDown3
         '
-        Me.NumericUpDown3.Location = New System.Drawing.Point(266, 197)
+        Me.NumericUpDown3.Location = New System.Drawing.Point(266, 152)
         Me.NumericUpDown3.Name = "NumericUpDown3"
         Me.NumericUpDown3.Size = New System.Drawing.Size(120, 20)
         Me.NumericUpDown3.TabIndex = 35
@@ -141,7 +144,7 @@ Partial Class Agregar_Transporte
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(263, 175)
+        Me.Label6.Location = New System.Drawing.Point(263, 130)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 13)
         Me.Label6.TabIndex = 34
@@ -149,7 +152,7 @@ Partial Class Agregar_Transporte
         '
         'NumericUpDown4
         '
-        Me.NumericUpDown4.Location = New System.Drawing.Point(266, 268)
+        Me.NumericUpDown4.Location = New System.Drawing.Point(266, 207)
         Me.NumericUpDown4.Name = "NumericUpDown4"
         Me.NumericUpDown4.Size = New System.Drawing.Size(120, 20)
         Me.NumericUpDown4.TabIndex = 37
@@ -157,7 +160,7 @@ Partial Class Agregar_Transporte
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(263, 246)
+        Me.Label7.Location = New System.Drawing.Point(263, 185)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 13)
         Me.Label7.TabIndex = 36
@@ -197,11 +200,29 @@ Partial Class Agregar_Transporte
         Me.TextBox2.Size = New System.Drawing.Size(179, 20)
         Me.TextBox2.TabIndex = 41
         '
+        'NumericUpDown5
+        '
+        Me.NumericUpDown5.Location = New System.Drawing.Point(266, 268)
+        Me.NumericUpDown5.Name = "NumericUpDown5"
+        Me.NumericUpDown5.Size = New System.Drawing.Size(120, 20)
+        Me.NumericUpDown5.TabIndex = 43
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(263, 246)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(84, 13)
+        Me.Label9.TabIndex = 42
+        Me.Label9.Text = "Asientos por Fila"
+        '
         'Agregar_Transporte
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(431, 383)
+        Me.ClientSize = New System.Drawing.Size(431, 384)
+        Me.Controls.Add(Me.NumericUpDown5)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Button1)
@@ -226,6 +247,7 @@ Partial Class Agregar_Transporte
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -249,4 +271,6 @@ Partial Class Agregar_Transporte
     Friend WithEvents Btnaceptar As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents NumericUpDown5 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

@@ -19,6 +19,19 @@ Public Class DAL_Transporte
             End With
             Acceso.Escritura(command)
             command.Dispose()
+            For Each oAsiento As BE_Asiento In paramTransporte.Asientos
+                Dim command2 As SqlCommand = Acceso.MiComando("Insert into Asiento values (@ID, @ID_Transporte, @Fila, @Numeroasiento, @ID_categoriaasiento, @BL)")
+                With command2.Parameters
+                    .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Asiento")))
+                    .Add(New SqlParameter("@ID_Transporte", Acceso.TraerUltimoID("ID", "Transporte")))
+                    .Add(New SqlParameter("@Fila", oAsiento.Fila))
+                    .Add(New SqlParameter("@Numeroasiento", oAsiento.NumeroAsiento))
+                    .Add(New SqlParameter("@ID_categoriaasiento", oAsiento.CategoriaAsiento.ID))
+                    .Add(New SqlParameter("@BL", False))
+                End With
+                Acceso.Escritura(command2)
+                command2.Dispose()
+            Next
         Catch ex As Exception
 
         End Try
