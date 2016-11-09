@@ -32,7 +32,7 @@ Public Class Agregar_Idioma
 
     End Sub
 
-    Private Sub btncrear_Click(sender As Object, e As EventArgs) Handles btncrear.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If Not String.IsNullOrWhiteSpace(TxtNombre.Text) Then
                 If Not IsNothing(CbxCultura.SelectedItem) Then
@@ -45,7 +45,7 @@ Public Class Agregar_Idioma
                                 IdiomaNuevo.Cultura = Cultura
                             End If
                         Next
-                        IdiomaNuevo.Editable = True
+                        IdiomaNuevo.editable = True
                         Dim Palabras As List(Of EE.BE_Palabras) = New List(Of EE.BE_Palabras)
                         For Each Pala As DataGridViewRow In DgVIdioma.Rows
                             If Not String.IsNullOrWhiteSpace(Pala.Cells(3).Value) Then
@@ -67,5 +67,9 @@ Public Class Agregar_Idioma
 
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

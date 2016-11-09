@@ -22,70 +22,57 @@ Partial Class Agregar_Idioma
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Idioma))
         Me.CbxCultura = New System.Windows.Forms.ComboBox()
         Me.lblcultura = New System.Windows.Forms.Label()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.lblnombre = New System.Windows.Forms.Label()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btncrear = New System.Windows.Forms.Button()
         Me.DgVIdioma = New System.Windows.Forms.DataGridView()
         Me.ID_Control = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Palabra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Traduccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         CType(Me.DgVIdioma, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CbxCultura
         '
         Me.CbxCultura.FormattingEnabled = True
-        Me.CbxCultura.Location = New System.Drawing.Point(342, 39)
+        Me.CbxCultura.Location = New System.Drawing.Point(431, 42)
         Me.CbxCultura.Name = "CbxCultura"
-        Me.CbxCultura.Size = New System.Drawing.Size(173, 21)
+        Me.CbxCultura.Size = New System.Drawing.Size(234, 21)
         Me.CbxCultura.TabIndex = 14
         '
         'lblcultura
         '
         Me.lblcultura.AutoSize = True
-        Me.lblcultura.Location = New System.Drawing.Point(408, 24)
+        Me.lblcultura.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblcultura.ForeColor = System.Drawing.Color.White
+        Me.lblcultura.Location = New System.Drawing.Point(428, 24)
         Me.lblcultura.Name = "lblcultura"
-        Me.lblcultura.Size = New System.Drawing.Size(40, 13)
+        Me.lblcultura.Size = New System.Drawing.Size(53, 15)
         Me.lblcultura.TabIndex = 13
         Me.lblcultura.Text = "Cultura"
         '
         'TxtNombre
         '
-        Me.TxtNombre.Location = New System.Drawing.Point(128, 40)
+        Me.TxtNombre.Location = New System.Drawing.Point(18, 42)
         Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(202, 20)
+        Me.TxtNombre.Size = New System.Drawing.Size(234, 20)
         Me.TxtNombre.TabIndex = 12
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(208, 24)
+        Me.lblnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblnombre.ForeColor = System.Drawing.Color.White
+        Me.lblnombre.Location = New System.Drawing.Point(15, 24)
         Me.lblnombre.Name = "lblnombre"
-        Me.lblnombre.Size = New System.Drawing.Size(44, 13)
+        Me.lblnombre.Size = New System.Drawing.Size(58, 15)
         Me.lblnombre.TabIndex = 11
         Me.lblnombre.Text = "Nombre"
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(393, 444)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 32)
-        Me.btnsalir.TabIndex = 10
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btncrear
-        '
-        Me.btncrear.Location = New System.Drawing.Point(229, 444)
-        Me.btncrear.Name = "btncrear"
-        Me.btncrear.Size = New System.Drawing.Size(75, 32)
-        Me.btncrear.TabIndex = 9
-        Me.btncrear.Text = "Crear"
-        Me.btncrear.UseVisualStyleBackColor = True
         '
         'DgVIdioma
         '
@@ -96,20 +83,22 @@ Partial Class Agregar_Idioma
         Me.DgVIdioma.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgVIdioma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgVIdioma.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Control, Me.Codigo, Me.Palabra, Me.Traduccion})
-        Me.DgVIdioma.Location = New System.Drawing.Point(-6, 71)
+        Me.DgVIdioma.Location = New System.Drawing.Point(18, 99)
         Me.DgVIdioma.MultiSelect = False
         Me.DgVIdioma.Name = "DgVIdioma"
         Me.DgVIdioma.RowHeadersVisible = False
-        Me.DgVIdioma.Size = New System.Drawing.Size(714, 363)
+        Me.DgVIdioma.Size = New System.Drawing.Size(647, 310)
         Me.DgVIdioma.TabIndex = 8
         '
         'ID_Control
         '
+        Me.ID_Control.FillWeight = 30.0!
         Me.ID_Control.HeaderText = "ID_Control"
         Me.ID_Control.Name = "ID_Control"
         '
         'Codigo
         '
+        Me.Codigo.FillWeight = 50.0!
         Me.Codigo.HeaderText = "Codigo"
         Me.Codigo.Name = "Codigo"
         '
@@ -123,18 +112,42 @@ Partial Class Agregar_Idioma
         Me.Traduccion.HeaderText = "Traduccion"
         Me.Traduccion.Name = "Traduccion"
         '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(399, 431)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 46
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(129, 431)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(150, 30)
+        Me.btnAgregar.TabIndex = 47
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = False
+        '
         'Agregar_Idioma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(703, 500)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(683, 500)
+        Me.Controls.Add(Me.btnAgregar)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxCultura)
         Me.Controls.Add(Me.lblcultura)
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.lblnombre)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btncrear)
         Me.Controls.Add(Me.DgVIdioma)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Idioma"
         Me.Text = "Agregar_Idioma"
         CType(Me.DgVIdioma, System.ComponentModel.ISupportInitialize).EndInit()
@@ -147,9 +160,9 @@ Partial Class Agregar_Idioma
     Friend WithEvents lblcultura As Label
     Friend WithEvents TxtNombre As TextBox
     Friend WithEvents lblnombre As Label
-    Friend WithEvents btnsalir As Button
-    Friend WithEvents btncrear As Button
     Friend WithEvents DgVIdioma As DataGridView
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnAgregar As Button
     Friend WithEvents ID_Control As DataGridViewTextBoxColumn
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Palabra As DataGridViewTextBoxColumn

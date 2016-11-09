@@ -16,13 +16,22 @@ Public Class Agregar_Habitacion
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim oHabitacion As New EE.BE_Habitacion
-        oHabitacion.Descripcion = Me.TextBox1.Text
-        oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
-        oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
-        oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
-        Dim bllHabitacion As New BLL.BLL_Habitacion
-        bllHabitacion.altaHabitacion(oHabitacion)
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            Dim oHabitacion As New EE.BE_Habitacion
+            oHabitacion.Descripcion = Me.TextBox1.Text
+            oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
+            oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
+            oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
+            Dim bllHabitacion As New BLL.BLL_Habitacion
+            bllHabitacion.altaHabitacion(oHabitacion)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

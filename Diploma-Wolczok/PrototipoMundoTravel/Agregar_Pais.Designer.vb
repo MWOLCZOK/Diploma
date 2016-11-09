@@ -22,129 +22,146 @@ Partial Class Agregar_Pais
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Btn_agregarpais = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Pais))
         Me.Txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Txtidiomapais = New System.Windows.Forms.TextBox()
-        Me.Txtpoblacionpais = New System.Windows.Forms.TextBox()
         Me.Txtzonahorariapais = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.lblIdioma = New System.Windows.Forms.Label()
+        Me.lblPoblacionTotal = New System.Windows.Forms.Label()
+        Me.lblZonaHoraria = New System.Windows.Forms.Label()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Btn_agregarpais
-        '
-        Me.Btn_agregarpais.Location = New System.Drawing.Point(147, 160)
-        Me.Btn_agregarpais.Name = "Btn_agregarpais"
-        Me.Btn_agregarpais.Size = New System.Drawing.Size(87, 36)
-        Me.Btn_agregarpais.TabIndex = 1
-        Me.Btn_agregarpais.Text = "Agregar Pais"
-        Me.Btn_agregarpais.UseVisualStyleBackColor = True
         '
         'Txtdescripcion
         '
-        Me.Txtdescripcion.Location = New System.Drawing.Point(12, 67)
+        Me.Txtdescripcion.Location = New System.Drawing.Point(20, 61)
         Me.Txtdescripcion.Name = "Txtdescripcion"
-        Me.Txtdescripcion.Size = New System.Drawing.Size(100, 20)
+        Me.Txtdescripcion.Size = New System.Drawing.Size(219, 20)
         Me.Txtdescripcion.TabIndex = 2
         '
         'Txtidiomapais
         '
-        Me.Txtidiomapais.Location = New System.Drawing.Point(13, 125)
+        Me.Txtidiomapais.Location = New System.Drawing.Point(291, 61)
         Me.Txtidiomapais.Name = "Txtidiomapais"
-        Me.Txtidiomapais.Size = New System.Drawing.Size(100, 20)
+        Me.Txtidiomapais.Size = New System.Drawing.Size(240, 20)
         Me.Txtidiomapais.TabIndex = 3
-        '
-        'Txtpoblacionpais
-        '
-        Me.Txtpoblacionpais.Location = New System.Drawing.Point(13, 189)
-        Me.Txtpoblacionpais.Name = "Txtpoblacionpais"
-        Me.Txtpoblacionpais.Size = New System.Drawing.Size(100, 20)
-        Me.Txtpoblacionpais.TabIndex = 4
         '
         'Txtzonahorariapais
         '
-        Me.Txtzonahorariapais.Location = New System.Drawing.Point(12, 246)
+        Me.Txtzonahorariapais.Location = New System.Drawing.Point(291, 135)
         Me.Txtzonahorariapais.Name = "Txtzonahorariapais"
-        Me.Txtzonahorariapais.Size = New System.Drawing.Size(100, 20)
+        Me.Txtzonahorariapais.Size = New System.Drawing.Size(240, 20)
         Me.Txtzonahorariapais.TabIndex = 5
         '
-        'Label2
+        'lblNombre
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 13)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Nombre de Pais"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(16, 38)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 15)
+        Me.lblNombre.TabIndex = 8
+        Me.lblNombre.Text = "Nombre"
         '
-        'Label4
+        'lblIdioma
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(10, 99)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(38, 13)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Idioma"
+        Me.lblIdioma.AutoSize = True
+        Me.lblIdioma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIdioma.ForeColor = System.Drawing.Color.White
+        Me.lblIdioma.Location = New System.Drawing.Point(288, 34)
+        Me.lblIdioma.Name = "lblIdioma"
+        Me.lblIdioma.Size = New System.Drawing.Size(51, 15)
+        Me.lblIdioma.TabIndex = 10
+        Me.lblIdioma.Text = "Idioma"
         '
-        'Label5
+        'lblPoblacionTotal
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 163)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 13)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Poblacion Total"
+        Me.lblPoblacionTotal.AutoSize = True
+        Me.lblPoblacionTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoblacionTotal.ForeColor = System.Drawing.Color.White
+        Me.lblPoblacionTotal.Location = New System.Drawing.Point(17, 114)
+        Me.lblPoblacionTotal.Name = "lblPoblacionTotal"
+        Me.lblPoblacionTotal.Size = New System.Drawing.Size(107, 15)
+        Me.lblPoblacionTotal.TabIndex = 11
+        Me.lblPoblacionTotal.Text = "Poblacion Total"
         '
-        'Label6
+        'lblZonaHoraria
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(10, 221)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 13)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Zona Horaria"
+        Me.lblZonaHoraria.AutoSize = True
+        Me.lblZonaHoraria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblZonaHoraria.ForeColor = System.Drawing.Color.White
+        Me.lblZonaHoraria.Location = New System.Drawing.Point(288, 114)
+        Me.lblZonaHoraria.Name = "lblZonaHoraria"
+        Me.lblZonaHoraria.Size = New System.Drawing.Size(91, 15)
+        Me.lblZonaHoraria.TabIndex = 12
+        Me.lblZonaHoraria.Text = "Zona Horaria"
         '
-        'Button1
+        'btnAgregar
         '
-        Me.Button1.Location = New System.Drawing.Point(147, 230)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(87, 36)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Salir"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(89, 200)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(150, 30)
+        Me.btnAgregar.TabIndex = 49
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(291, 200)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 48
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(20, 136)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(219, 20)
+        Me.NumericUpDown1.TabIndex = 50
         '
         'Agregar_Pais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(253, 300)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(553, 283)
+        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.btnAgregar)
+        Me.Controls.Add(Me.btnSalir)
+        Me.Controls.Add(Me.lblZonaHoraria)
+        Me.Controls.Add(Me.lblPoblacionTotal)
+        Me.Controls.Add(Me.lblIdioma)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Txtzonahorariapais)
-        Me.Controls.Add(Me.Txtpoblacionpais)
         Me.Controls.Add(Me.Txtidiomapais)
         Me.Controls.Add(Me.Txtdescripcion)
-        Me.Controls.Add(Me.Btn_agregarpais)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Pais"
         Me.Text = "Agregar_Pais"
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Btn_agregarpais As System.Windows.Forms.Button
     Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
     Friend WithEvents Txtidiomapais As System.Windows.Forms.TextBox
-    Friend WithEvents Txtpoblacionpais As System.Windows.Forms.TextBox
     Friend WithEvents Txtzonahorariapais As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents lblNombre As System.Windows.Forms.Label
+    Friend WithEvents lblIdioma As System.Windows.Forms.Label
+    Friend WithEvents lblPoblacionTotal As System.Windows.Forms.Label
+    Friend WithEvents lblZonaHoraria As System.Windows.Forms.Label
+    Friend WithEvents btnAgregar As Button
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents NumericUpDown1 As NumericUpDown
 End Class

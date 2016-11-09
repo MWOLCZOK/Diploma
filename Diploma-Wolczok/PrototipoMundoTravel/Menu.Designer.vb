@@ -24,8 +24,6 @@ Partial Class FormMenu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMenu))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CargaDePromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViajesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaDeViajesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDePaisToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,8 +36,8 @@ Partial Class FormMenu
         Me.EliminarLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarViajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaDeAlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,12 +61,12 @@ Partial Class FormMenu
         Me.EliminarIdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CrearPaisToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarPuntajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SeleccionarIdioma = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VisualizarPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SeleccionarIdioma = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
@@ -78,31 +76,16 @@ Partial Class FormMenu
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PromocionesToolStripMenuItem, Me.ViajesToolStripMenuItem, Me.AlojamientoToolStripMenuItem, Me.PasajerosToolStripMenuItem, Me.CancelacionesToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.PagosToolStripMenuItem, Me.OpcionesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViajesToolStripMenuItem, Me.AlojamientoToolStripMenuItem, Me.PasajerosToolStripMenuItem, Me.CancelacionesToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.PagosToolStripMenuItem, Me.OpcionesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(867, 26)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'PromocionesToolStripMenuItem
-        '
-        Me.PromocionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CargaDePromocionesToolStripMenuItem})
-        Me.PromocionesToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PromocionesToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
-        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
-        Me.PromocionesToolStripMenuItem.Text = "Promociones"
-        '
-        'CargaDePromocionesToolStripMenuItem
-        '
-        Me.CargaDePromocionesToolStripMenuItem.Name = "CargaDePromocionesToolStripMenuItem"
-        Me.CargaDePromocionesToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
-        Me.CargaDePromocionesToolStripMenuItem.Text = "Carga de Promociones"
-        '
         'ViajesToolStripMenuItem
         '
-        Me.ViajesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BusquedaDeViajesToolStripMenuItem, Me.AltaDePaisToolStripMenuItem, Me.ModificarPaisToolStripMenuItem, Me.EliminarPaisToolStripMenuItem, Me.AltaDeProvinciaToolStripMenuItem, Me.ModificarProvinciaToolStripMenuItem, Me.EliminarProvinciaToolStripMenuItem, Me.AltaDeLocalidadToolStripMenuItem, Me.EliminarLocalidadToolStripMenuItem, Me.ModificarLocalidadToolStripMenuItem, Me.AgregarDestinoToolStripMenuItem, Me.AgregarViajeToolStripMenuItem, Me.EliminarDestinoToolStripMenuItem})
+        Me.ViajesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BusquedaDeViajesToolStripMenuItem, Me.AgregarDestinoToolStripMenuItem, Me.AgregarViajeToolStripMenuItem, Me.EliminarDestinoToolStripMenuItem, Me.AltaDePaisToolStripMenuItem, Me.ModificarPaisToolStripMenuItem, Me.EliminarPaisToolStripMenuItem, Me.AltaDeProvinciaToolStripMenuItem, Me.ModificarProvinciaToolStripMenuItem, Me.EliminarProvinciaToolStripMenuItem, Me.AltaDeLocalidadToolStripMenuItem, Me.ModificarLocalidadToolStripMenuItem, Me.EliminarLocalidadToolStripMenuItem})
         Me.ViajesToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ViajesToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ViajesToolStripMenuItem.Name = "ViajesToolStripMenuItem"
@@ -175,17 +158,17 @@ Partial Class FormMenu
         Me.AgregarDestinoToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.AgregarDestinoToolStripMenuItem.Text = "Alta de Destino"
         '
-        'EliminarDestinoToolStripMenuItem
-        '
-        Me.EliminarDestinoToolStripMenuItem.Name = "EliminarDestinoToolStripMenuItem"
-        Me.EliminarDestinoToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
-        Me.EliminarDestinoToolStripMenuItem.Text = "Eliminar Destino"
-        '
         'AgregarViajeToolStripMenuItem
         '
         Me.AgregarViajeToolStripMenuItem.Name = "AgregarViajeToolStripMenuItem"
         Me.AgregarViajeToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.AgregarViajeToolStripMenuItem.Text = "Agregar Transporte"
+        '
+        'EliminarDestinoToolStripMenuItem
+        '
+        Me.EliminarDestinoToolStripMenuItem.Name = "EliminarDestinoToolStripMenuItem"
+        Me.EliminarDestinoToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
+        Me.EliminarDestinoToolStripMenuItem.Text = "Eliminar Destino"
         '
         'AlojamientoToolStripMenuItem
         '
@@ -337,6 +320,27 @@ Partial Class FormMenu
         Me.ModificarPuntajeToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ModificarPuntajeToolStripMenuItem.Text = "Modificar Puntaje"
         '
+        'PagosToolStripMenuItem
+        '
+        Me.PagosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarPagoToolStripMenuItem, Me.VisualizarPagosToolStripMenuItem})
+        Me.PagosToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PagosToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.PagosToolStripMenuItem.Name = "PagosToolStripMenuItem"
+        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(53, 22)
+        Me.PagosToolStripMenuItem.Text = "Pagos"
+        '
+        'AgregarPagoToolStripMenuItem
+        '
+        Me.AgregarPagoToolStripMenuItem.Name = "AgregarPagoToolStripMenuItem"
+        Me.AgregarPagoToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.AgregarPagoToolStripMenuItem.Text = "Agregar Pago"
+        '
+        'VisualizarPagosToolStripMenuItem
+        '
+        Me.VisualizarPagosToolStripMenuItem.Name = "VisualizarPagosToolStripMenuItem"
+        Me.VisualizarPagosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.VisualizarPagosToolStripMenuItem.Text = "Visualizar Pagos"
+        '
         'OpcionesToolStripMenuItem
         '
         Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SeleccionarIdioma, Me.CerrarSesiónToolStripMenuItem})
@@ -357,27 +361,6 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
         Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
-        '
-        'PagosToolStripMenuItem
-        '
-        Me.PagosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarPagoToolStripMenuItem, Me.VisualizarPagosToolStripMenuItem})
-        Me.PagosToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PagosToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.PagosToolStripMenuItem.Name = "PagosToolStripMenuItem"
-        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(53, 22)
-        Me.PagosToolStripMenuItem.Text = "Pagos"
-        '
-        'AgregarPagoToolStripMenuItem
-        '
-        Me.AgregarPagoToolStripMenuItem.Name = "AgregarPagoToolStripMenuItem"
-        Me.AgregarPagoToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.AgregarPagoToolStripMenuItem.Text = "Agregar Pago"
-        '
-        'VisualizarPagosToolStripMenuItem
-        '
-        Me.VisualizarPagosToolStripMenuItem.Name = "VisualizarPagosToolStripMenuItem"
-        Me.VisualizarPagosToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.VisualizarPagosToolStripMenuItem.Text = "Visualizar Pagos"
         '
         'PictureBox1
         '
@@ -432,8 +415,6 @@ Partial Class FormMenu
     Friend WithEvents VisualizarBitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents PromocionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CargaDePromocionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViajesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BusquedaDeViajesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlojamientoToolStripMenuItem As ToolStripMenuItem

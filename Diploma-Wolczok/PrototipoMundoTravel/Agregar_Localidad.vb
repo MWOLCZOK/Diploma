@@ -21,31 +21,9 @@ Public Class Agregar_Localidad
 
 
 
-    Private Sub Btn_agregarlocalidad_Click(sender As Object, e As EventArgs) Handles Btn_agregarlocalidad.Click
-        Try
-            If validarFormulario() = True Then
-                Dim oLoc As New BE_Localidad
-                Dim bllLoc As New BLL_Localidad
-                oLoc.Descripcion = Me.Txtdescripcion.Text
-                oLoc.CantidadBarrios = Me.Txtcantidadbarrios.Text
-                oLoc.Habitantes = Me.Txthabitantes.Text
-                Dim oProvincia As New BE_Provincia
-                oProvincia.ID = DirectCast(ComboBox1.SelectedItem, BE_Provincia).ID
-                oLoc.Provincia = oProvincia
-                bllLoc.altalocalidad(oLoc)
-           Else
-                Throw New Exception
-            End If
-        Catch ex As Exception
-            MsgBox("Error")
-        End Try
-
-    End Sub
-
-
     Private Function validarFormulario() As Boolean
         Try
-            If Me.Txtdescripcion.Text = "" Or Me.Txtcantidadbarrios.Text = "" Or Me.Txthabitantes.Text = "" Then Return False
+            If Me.Txtdescripcion.Text = "" Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -53,14 +31,27 @@ Public Class Agregar_Localidad
 
     End Function
 
-
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
-
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            If validarFormulario() = True Then
+                Dim oLoc As New BE_Localidad
+                Dim bllLoc As New BLL_Localidad
+                oLoc.Descripcion = Me.Txtdescripcion.Text
+                oLoc.CantidadBarrios = Me.NumericUpDown1.Value
+                oLoc.Habitantes = Me.NumericUpDown2.Value
+                Dim oProvincia As New BE_Provincia
+                oProvincia.ID = DirectCast(ComboBox1.SelectedItem, BE_Provincia).ID
+                oLoc.Provincia = oProvincia
+                bllLoc.altalocalidad(oLoc)
+            Else
+                Throw New Exception
+            End If
+        Catch ex As Exception
+            MsgBox("Error")
+        End Try
     End Sub
 End Class

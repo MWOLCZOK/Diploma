@@ -4,7 +4,26 @@ Imports BLL
 
 Public Class Agregar_Pais
 
-    Private Sub Btn_agregarpais_Click(sender As Object, e As EventArgs) Handles Btn_agregarpais.Click
+
+    Private Function validarFormulario() As Boolean
+        Try
+            If Me.Txtdescripcion.Text = "" Or Me.Txtidiomapais.Text = "" Or Me.Txtpoblacionpais.Text = "" Or Me.Txtzonahorariapais.Text = "" Then Return False
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Private Sub Agregar_Pais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If validarFormulario() = True Then
                 Dim oPais As New BE_Pais
@@ -20,23 +39,5 @@ Public Class Agregar_Pais
         Catch ex As Exception
             MsgBox("Error")
         End Try
-
-    End Sub
-
-    Private Function validarFormulario() As Boolean
-        Try
-            If Me.Txtdescripcion.Text = "" Or Me.Txtidiomapais.Text = "" Or Me.Txtpoblacionpais.Text = "" Or Me.Txtzonahorariapais.Text = "" Then Return False
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
-
-    Private Sub Agregar_Pais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
     End Sub
 End Class
