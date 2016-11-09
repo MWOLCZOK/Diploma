@@ -81,7 +81,7 @@ Public Class DAL_PagoViaje
     End Function
 
 
-    Public Function consultarPagosviajes(ByVal oPagoViajes As BE_PagoViaje) As List(Of BE_PagoViaje)
+    Public Function consultarPagosviajes(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_PagoViaje)
         Try
             Dim consulta As String = ("Select * from PagoViaje where BL=@BL")
             Dim miListaPagosviajes As New List(Of BE_PagoViaje)

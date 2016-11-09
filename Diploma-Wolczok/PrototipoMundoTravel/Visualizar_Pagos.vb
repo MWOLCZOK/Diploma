@@ -24,14 +24,16 @@ Public Class Visualizar_Pagos
                 Dim oPasajero As New BE_Pasajero
                 Dim oReservaviaje As New BE_ReservaViaje
                 Dim oPagoviaje As New BE_PagoViaje
-                oPasajero.DNI = Me.TextBox9.Text
-                oReservaviaje.Pasajero = oPasajero
-                '             oReservaviaje. la puta madre.
-                Dim oListapagoviaje As New List(Of BE_PagoViaje)
-                Dim bllPagoviaje As New BLL_PagoViaje
-                oListapagoviaje = bllPagoviaje.consultarPagosViajes(oPagoviaje)
+
+                Dim bllPagoViaje As New BLL_PagoViaje
+
+                oReservaviaje.PagoViaje = bllPagoViaje.consultarpagoviaje(oPagoviaje)
+
+
+
+
                 Me.DataGridView1.DataSource = Nothing
-                Me.DataGridView1.DataSource = oListapagoviaje
+                Me.DataGridView1.DataSource =
                 DataGridView1.ReadOnly = True
                 DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             End If

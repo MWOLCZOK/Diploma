@@ -22,5 +22,16 @@
         End Set
     End Property
 
+    Private _pago As BE_PagoViaje
+    Public Property PagoViaje() As BE_PagoViaje
+        Get
+            Return _pago
+        End Get
+        Set(ByVal value As BE_PagoViaje)
+            _pago = value
+        End Set
+    End Property
+
+
 
 End Class
