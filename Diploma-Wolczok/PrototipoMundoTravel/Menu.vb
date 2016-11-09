@@ -289,7 +289,7 @@ Public Class FormMenu
         AbrirForm(formpuntaje)
     End Sub
 
-    Private Sub ReservaBuscarViajeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservaBuscarViajeToolStripMenuItem.Click
+    Private Sub ReservaBuscarViajeToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim formreservaviaje As New Reserva_Buscar_Viaje
         AbrirForm(formreservaviaje)
     End Sub
@@ -312,5 +312,9 @@ Public Class FormMenu
     Private Sub VisualizarPagosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarPagosToolStripMenuItem.Click
         Dim formvisualizarpagos As New Visualizar_Pagos
         AbrirForm(formvisualizarpagos)
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

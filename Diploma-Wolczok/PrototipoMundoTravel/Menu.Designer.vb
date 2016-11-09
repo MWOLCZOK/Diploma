@@ -39,7 +39,6 @@ Partial Class FormMenu
         Me.ModificarLocalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarDestinoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReservaBuscarViajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarViajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaDeAlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -79,7 +78,7 @@ Partial Class FormMenu
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PromocionesToolStripMenuItem, Me.ViajesToolStripMenuItem, Me.AlojamientoToolStripMenuItem, Me.PasajerosToolStripMenuItem, Me.CancelacionesToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.PagosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PromocionesToolStripMenuItem, Me.ViajesToolStripMenuItem, Me.AlojamientoToolStripMenuItem, Me.PasajerosToolStripMenuItem, Me.CancelacionesToolStripMenuItem, Me.AdministracionToolStripMenuItem, Me.PagosToolStripMenuItem, Me.OpcionesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(867, 26)
@@ -103,7 +102,7 @@ Partial Class FormMenu
         '
         'ViajesToolStripMenuItem
         '
-        Me.ViajesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BusquedaDeViajesToolStripMenuItem, Me.AltaDePaisToolStripMenuItem, Me.ModificarPaisToolStripMenuItem, Me.EliminarPaisToolStripMenuItem, Me.AltaDeProvinciaToolStripMenuItem, Me.ModificarProvinciaToolStripMenuItem, Me.EliminarProvinciaToolStripMenuItem, Me.AltaDeLocalidadToolStripMenuItem, Me.EliminarLocalidadToolStripMenuItem, Me.ModificarLocalidadToolStripMenuItem, Me.AgregarDestinoToolStripMenuItem, Me.EliminarDestinoToolStripMenuItem, Me.ReservaBuscarViajeToolStripMenuItem, Me.AgregarViajeToolStripMenuItem})
+        Me.ViajesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BusquedaDeViajesToolStripMenuItem, Me.AltaDePaisToolStripMenuItem, Me.ModificarPaisToolStripMenuItem, Me.EliminarPaisToolStripMenuItem, Me.AltaDeProvinciaToolStripMenuItem, Me.ModificarProvinciaToolStripMenuItem, Me.EliminarProvinciaToolStripMenuItem, Me.AltaDeLocalidadToolStripMenuItem, Me.EliminarLocalidadToolStripMenuItem, Me.ModificarLocalidadToolStripMenuItem, Me.AgregarDestinoToolStripMenuItem, Me.AgregarViajeToolStripMenuItem, Me.EliminarDestinoToolStripMenuItem})
         Me.ViajesToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ViajesToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ViajesToolStripMenuItem.Name = "ViajesToolStripMenuItem"
@@ -181,12 +180,6 @@ Partial Class FormMenu
         Me.EliminarDestinoToolStripMenuItem.Name = "EliminarDestinoToolStripMenuItem"
         Me.EliminarDestinoToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.EliminarDestinoToolStripMenuItem.Text = "Eliminar Destino"
-        '
-        'ReservaBuscarViajeToolStripMenuItem
-        '
-        Me.ReservaBuscarViajeToolStripMenuItem.Name = "ReservaBuscarViajeToolStripMenuItem"
-        Me.ReservaBuscarViajeToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
-        Me.ReservaBuscarViajeToolStripMenuItem.Text = "Buscar Viaje"
         '
         'AgregarViajeToolStripMenuItem
         '
@@ -368,8 +361,10 @@ Partial Class FormMenu
         'PagosToolStripMenuItem
         '
         Me.PagosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarPagoToolStripMenuItem, Me.VisualizarPagosToolStripMenuItem})
+        Me.PagosToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PagosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.PagosToolStripMenuItem.Name = "PagosToolStripMenuItem"
-        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(51, 22)
+        Me.PagosToolStripMenuItem.Size = New System.Drawing.Size(53, 22)
         Me.PagosToolStripMenuItem.Text = "Pagos"
         '
         'AgregarPagoToolStripMenuItem
@@ -468,7 +463,6 @@ Partial Class FormMenu
     Friend WithEvents AgregarDestinoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarDestinoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarPuntajeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReservaBuscarViajeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarViajeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PagosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
