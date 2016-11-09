@@ -140,8 +140,7 @@ Public Class DAL_ReservaViaje
         oReservaViaje.Estado = paramDataRow.Item("Estado")
         oReservaViaje.puntaje = paramDataRow.Item("Puntaje")
         Dim oPago As New BE_PagoViaje
-        oPago.ID = CInt(paramDataRow.Item("ID_Pago"))
-        oReservaViaje.PagoViaje = (New DAL_PagoViaje).consultarPagoviaje(oPago)
+        oReservaViaje.Pagoviaje = (New DAL_PagoViaje).consultarPagosviajes(oReservaViaje)
         Return oReservaViaje
     End Function
 
