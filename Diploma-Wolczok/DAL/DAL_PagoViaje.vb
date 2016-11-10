@@ -75,7 +75,7 @@ Public Class DAL_PagoViaje
             oPagoviaje.Fecha = paramDataRow.Item("Fecha")
             Dim oMetodopago As New BE_Metodopago
             oMetodopago.ID = paramDataRow.Item("ID_Metodopago")
-            oMetodopago.Descripcion = paramDataRow.Item("Descripcion")
+            oMetodopago.Descripcion = paramDataRow.Item("Metodopago")
             oPagoviaje.Monto = paramDataRow.Item("Monto")
             oPagoviaje.Finpago = paramDataRow.Item("Finpago")
             oPagoviaje.Descripcion = paramDataRow.Item("Descripcion")
