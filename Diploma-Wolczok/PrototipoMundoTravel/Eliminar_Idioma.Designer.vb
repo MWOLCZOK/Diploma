@@ -48,6 +48,7 @@ Partial Class Eliminar_Idioma
         '
         'CbxIdioma
         '
+        Me.CbxIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxIdioma.FormattingEnabled = True
         Me.CbxIdioma.Location = New System.Drawing.Point(12, 104)
         Me.CbxIdioma.Name = "CbxIdioma"

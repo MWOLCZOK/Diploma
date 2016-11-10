@@ -51,7 +51,7 @@ Public Class Agregar_Pago
             oPagoviaje.Fecha = Me.DateTimePicker1.Value
             oPagoviaje.Monto = Me.Txtmontopago.Text
             oPagoviaje.Finpago = Me.CheckBox1.Checked
-            oPagoviaje.Detalle = Me.Txtdescripcion.Text
+            oPagoviaje.Descripcion = Me.Txtdescripcion.Text
             oPagoviaje.ID_Reservaviaje = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
             bllPagoviaje.altapagoviaje(oPagoviaje)
         Catch ex As Exception

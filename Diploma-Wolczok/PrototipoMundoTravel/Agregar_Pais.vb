@@ -7,7 +7,7 @@ Public Class Agregar_Pais
 
     Private Function validarFormulario() As Boolean
         Try
-            If Me.Txtdescripcion.Text = "" Or Me.Txtidiomapais.Text = "" Or Me.Txtpoblacionpais.Text = "" Or Me.Txtzonahorariapais.Text = "" Then Return False
+            If Me.Txtdescripcion.Text = "" Or Me.Txtidiomapais.Text = "" Or Me.Txtzonahorariapais.Text = "" Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -30,7 +30,7 @@ Public Class Agregar_Pais
                 Dim bllPais As New BLL_Pais
                 oPais.Descripcion = Me.Txtdescripcion.Text
                 oPais.Idioma = Me.Txtidiomapais.Text
-                oPais.Poblacion_total = Me.Txtpoblacionpais.Text
+                'oPais.Poblacion_total = Me.Txtpoblacionpais.Text
                 oPais.Zonahoraria = Me.Txtzonahorariapais.Text
                 bllPais.AltaPais(oPais)
             Else

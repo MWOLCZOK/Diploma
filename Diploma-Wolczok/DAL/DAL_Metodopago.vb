@@ -32,6 +32,25 @@ Public Class DAL_Metodopago
         Return oMetodopago
     End Function
 
+    Public Function Consultar(ByVal oMetodopago As BE_Metodopago) As BE_Metodopago
+        Try
+            Dim consulta As String = ("Select * from MetodoPago where ID=@ID and BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", oMetodopago.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return Me.formatearMetodoPago(dt.Rows(0))
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 
 
 

@@ -64,7 +64,7 @@
     End Property
 
     Private _detalle As String
-    Public Property Detalle() As String
+    Public Property Descripcion() As String
         Get
             Return _detalle
         End Get
@@ -73,7 +73,10 @@
         End Set
     End Property
 
+    Public Overrides Function ToString() As String
+        Return Me.Descripcion & ", " & Me.ID
 
+    End Function
 
 
 End Class
