@@ -1,8 +1,18 @@
 ﻿Imports System.Globalization
+Imports BLL
+Imports EE
 
 Public Class Agregar_Idioma
+    Implements BLL_Iobservador
+
     Private Sub Agregar_Idioma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
+        Try
+            iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub iniciar()
@@ -71,5 +81,10 @@ Public Class Agregar_Idioma
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
     End Sub
 End Class

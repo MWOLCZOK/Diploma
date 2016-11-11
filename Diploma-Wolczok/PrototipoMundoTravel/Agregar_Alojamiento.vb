@@ -2,10 +2,14 @@
 Imports BLL
 
 Public Class Agregar_Alojamiento
+    Implements BLL_Iobservador
 
     Private Sub Agregar_Alojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+        SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
             cargarCombos()
+
             ocultar()
         Catch ex As Exception
 
@@ -193,4 +197,11 @@ Public Class Agregar_Alojamiento
 
         End Try
     End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+
 End Class

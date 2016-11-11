@@ -4,6 +4,7 @@ Imports BLL
 
 Public Class Agregar_Pais
 
+    Implements BLL_Iobservador
 
     Private Function validarFormulario() As Boolean
         Try
@@ -15,7 +16,12 @@ Public Class Agregar_Pais
     End Function
 
     Private Sub Agregar_Pais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As Exception
 
+        End Try
     End Sub
 
 
@@ -39,5 +45,11 @@ Public Class Agregar_Pais
         Catch ex As Exception
             MsgBox("Error")
         End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
     End Sub
 End Class

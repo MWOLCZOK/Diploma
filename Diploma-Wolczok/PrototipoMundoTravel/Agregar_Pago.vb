@@ -4,14 +4,18 @@ Imports BLL
 
 
 Public Class Agregar_Pago
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
+    Implements BLL_Iobservador
 
     Private Sub Agregar_Pago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Cargarcombos()
-        ocultar()
+        Try
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+            Cargarcombos()
+            ocultar()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Public Sub Cargarcombos()
@@ -43,22 +47,6 @@ Public Class Agregar_Pago
     End Sub
 
 
-    Private Sub Btn_agregarpais_Click(sender As Object, e As EventArgs) Handles Btn_agregarpais.Click
-        Try
-            Dim oPagoviaje As New BE_PagoViaje
-            Dim bllPagoviaje As New BLL_PagoViaje
-            oPagoviaje.Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
-            oPagoviaje.Fecha = Me.DateTimePicker1.Value
-            oPagoviaje.Monto = Me.Txtmontopago.Text
-            oPagoviaje.Finpago = Me.CheckBox1.Checked
-            oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
-            oPagoviaje.Reservaviaje = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
-            bllPagoviaje.altapagoviaje(oPagoviaje)
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
     Public Sub ocultar()
         Txtdescripcion.Hide()
         Label2.Hide()
@@ -80,6 +68,32 @@ Public Class Agregar_Pago
             Txtdescripcion.Show()
             Label2.Show()
         End If
+
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Try
+            Dim oPagoviaje As New BE_PagoViaje
+            Dim bllPagoviaje As New BLL_PagoViaje
+            oPagoviaje.Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
+            oPagoviaje.Fecha = Today.Date
+            oPagoviaje.Monto = Me.Txtmontopago.Text
+            oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
+            oPagoviaje.Reservaviaje = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+            bllPagoviaje.altapagoviaje(oPagoviaje)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
 
     End Sub
 End Class

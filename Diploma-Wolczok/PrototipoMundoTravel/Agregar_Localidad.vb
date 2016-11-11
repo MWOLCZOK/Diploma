@@ -2,9 +2,18 @@
 Imports BLL
 
 Public Class Agregar_Localidad
+    Implements BLL_Iobservador
+
 
     Private Sub Agregar_Localidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarCombos()
+        Try
+            cargarCombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 
@@ -53,5 +62,11 @@ Public Class Agregar_Localidad
         Catch ex As Exception
             MsgBox("Error")
         End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
     End Sub
 End Class

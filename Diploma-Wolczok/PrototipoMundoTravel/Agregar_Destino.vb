@@ -1,9 +1,18 @@
 ﻿Imports EE
+Imports BLL
 
 Public Class Agregar_Destino
+    Implements BLL.BLL_Iobservador
 
     Private Sub Agregar_Destino_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarcombos()
+        Try
+            cargarcombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub cargarcombos()
@@ -31,5 +40,11 @@ Public Class Agregar_Destino
         Catch ex As Exception
             MsgBox("Error")
         End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL.BLL_SesionObservada) Implements BLL.BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
     End Sub
 End Class

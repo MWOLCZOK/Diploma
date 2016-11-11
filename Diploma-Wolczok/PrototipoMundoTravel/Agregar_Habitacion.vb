@@ -2,8 +2,17 @@
 Imports BLL
 
 Public Class Agregar_Habitacion
+    Implements BLL_Iobservador
+
     Private Sub Agregar_Habitacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        llenarCombos()
+        Try
+            llenarCombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub llenarCombos()
@@ -33,5 +42,11 @@ Public Class Agregar_Habitacion
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
     End Sub
 End Class

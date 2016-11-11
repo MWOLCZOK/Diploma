@@ -2,9 +2,11 @@
 Imports EE
 
 Public Class Agregar_Pasajero
+    Implements BLL_Iobservador
 
     Private Sub Agregar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Private Function validarformulario() As Boolean
@@ -19,7 +21,12 @@ Public Class Agregar_Pasajero
 
 
 
-    Private Sub Btn_agregarpasajero_Click(sender As Object, e As EventArgs) Handles Btn_agregarpasajero.Click
+    Private Sub Btn_agregarpasajero_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If validarformulario() = True Then
                 Dim oPasajero As New BE_Pasajero
@@ -41,7 +48,13 @@ Public Class Agregar_Pasajero
         End Try
     End Sub
 
-    Private Sub Btnsalir_Click(sender As Object, e As EventArgs) Handles Btnsalir.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
     End Sub
 End Class
