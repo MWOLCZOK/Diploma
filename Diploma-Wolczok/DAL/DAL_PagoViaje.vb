@@ -16,12 +16,12 @@ Public Class DAL_PagoViaje
             Dim command As SqlCommand = Acceso.MiComando("Insert into PagoViaje values (@ID, @ID_Reserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @Descripcion, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "PagoViaje")))
-                .Add(New SqlParameter("@ID_Reserva", parampago.ID_Reservaviaje.ID))
+                .Add(New SqlParameter("@ID_Reserva", parampago.Reservaviaje.ID))
                 .Add(New SqlParameter("@Fecha", parampago.Fecha))
-                .Add(New SqlParameter("@ID_Metodopago", parampago.ID_Metodopago.ID))
+                .Add(New SqlParameter("@ID_Metodopago", parampago.Metodopago.ID))
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
-                .Add(New SqlParameter("@Descripcion", parampago.Descripcion))
+                .Add(New SqlParameter("@Descripcion", parampago.NumeroTarjeta))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -51,12 +51,12 @@ Public Class DAL_PagoViaje
             Dim command As SqlCommand = Acceso.MiComando("Update PagoViaje set ID=@ID, ID_Reserva=@ID_Reserva, Fecha=@Fecha, ID_Metodopago=@ID_Metodopago, Monto=@Monto, finpago=@finpago,Descripcion=@Descripcion where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
-                .Add(New SqlParameter("@ID_Reserva", parampago.ID_Reservaviaje.ID))
+                .Add(New SqlParameter("@ID_Reserva", parampago.Reservaviaje.ID))
                 .Add(New SqlParameter("@Fecha", parampago.Fecha))
-                .Add(New SqlParameter("@ID_Metodopago", parampago.ID_Metodopago.ID))
+                .Add(New SqlParameter("@ID_Metodopago", parampago.Metodopago.ID))
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
-                .Add(New SqlParameter("@Descripcion", parampago.Descripcion))
+                .Add(New SqlParameter("@Descripcion", parampago.NumeroTarjeta))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -70,15 +70,17 @@ Public Class DAL_PagoViaje
         Try
             Dim oPagoviaje As New BE_PagoViaje
             oPagoviaje.ID = paramDataRow.Item("ID")
-            Dim oReservaViaje As New BE_ReservaViaje
-            oReservaViaje.ID = CInt(paramDataRow.Item("ID_Reserva"))
+            Dim oReservaviaje As New BE_ReservaViaje
+            oReservaviaje.ID = paramDataRow.Item("ID_Reserva")
+            'oPagoviaje.Reservaviaje = (New DAL_ReservaViaje).consultarReserva(oReservaviaje)
             oPagoviaje.Fecha = paramDataRow.Item("Fecha")
             Dim oMetodopago As New BE_Metodopago
             oMetodopago.ID = paramDataRow.Item("ID_Metodopago")
-            oMetodopago.Descripcion = paramDataRow.Item("Metodopago")
+            oPagoviaje.Metodopago = (New DAL_Metodopago).ConsultarMetodopago(oMetodopago)
             oPagoviaje.Monto = paramDataRow.Item("Monto")
             oPagoviaje.Finpago = paramDataRow.Item("Finpago")
-            oPagoviaje.Descripcion = paramDataRow.Item("Descripcion")
+            oPagoviaje.NumeroTarjeta = paramDataRow.Item("Numerotarjeta")
+            oMetodopago.Descripcion = paramDataRow.Item("Metodopago")
             Return oPagoviaje
         Catch ex As Exception
 
@@ -100,25 +102,6 @@ Public Class DAL_PagoViaje
                 miListaPagosviajes.Add(Me.formatearPagoviaje(drow))
             Next
             Return miListaPagosviajes
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
-
-    Public Function consultarPagoviaje(ByVal oPagoviaje As BE_PagoViaje) As BE_PagoViaje
-        Try
-            Dim consulta As String = ("Select * from PagoViaje where ID=@ID and BL=@BL")
-            Dim Command As SqlCommand = Acceso.MiComando(consulta)
-            With Command.Parameters
-                .Add(New SqlParameter("@ID", oPagoviaje.ID))
-                .Add(New SqlParameter("@BL", False))
-            End With
-            Dim dt As DataTable = Acceso.Lectura(Command)
-            If dt.Rows.Count = 1 Then
-                Return Me.formatearPagoviaje(dt.Rows(0))
-            Else
-                Return Nothing
-            End If
         Catch ex As Exception
             Throw ex
         End Try

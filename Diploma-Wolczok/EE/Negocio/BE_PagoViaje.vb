@@ -10,15 +10,16 @@
         End Set
     End Property
 
-    Private _idreserva As BE_ReservaViaje
-    Public Property ID_Reservaviaje() As BE_ReservaViaje
+    Private _reservaviaje As BE_ReservaViaje
+    Public Property Reservaviaje() As BE_ReservaViaje
         Get
-            Return _idreserva
+            Return _reservaviaje
         End Get
         Set(ByVal value As BE_ReservaViaje)
-            _idreserva = value
+            _reservaviaje = value
         End Set
     End Property
+
 
 
     Private _fecha As Date
@@ -31,15 +32,16 @@
         End Set
     End Property
 
-    Private _idmetodopago As BE_Metodopago
-    Public Property ID_Metodopago() As BE_Metodopago
+    Private _metodopago As BE_Metodopago
+    Public Property Metodopago() As BE_Metodopago
         Get
-            Return _idmetodopago
+            Return _metodopago
         End Get
         Set(ByVal value As BE_Metodopago)
-            _idmetodopago = value
+            _metodopago = value
         End Set
     End Property
+
 
     Private _monto As Integer
     Public Property Monto() As Integer
@@ -64,7 +66,7 @@
     End Property
 
     Private _detalle As String
-    Public Property Descripcion() As String
+    Public Property NumeroTarjeta() As String
         Get
             Return _detalle
         End Get
@@ -73,8 +75,9 @@
         End Set
     End Property
 
+
     Public Overrides Function ToString() As String
-        Return Me.Descripcion & ", " & Me.ID
+        Return Me.NumeroTarjeta
 
     End Function
 

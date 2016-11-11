@@ -32,7 +32,7 @@ Public Class DAL_Metodopago
         Return oMetodopago
     End Function
 
-    Public Function Consultar(ByVal oMetodopago As BE_Metodopago) As BE_Metodopago
+    Public Function ConsultarMetodopago(ByVal oMetodopago As BE_Metodopago) As BE_Metodopago
         Try
             Dim consulta As String = ("Select * from MetodoPago where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)

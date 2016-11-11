@@ -47,12 +47,12 @@ Public Class Agregar_Pago
         Try
             Dim oPagoviaje As New BE_PagoViaje
             Dim bllPagoviaje As New BLL_PagoViaje
-            oPagoviaje.ID_Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
+            oPagoviaje.Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
             oPagoviaje.Fecha = Me.DateTimePicker1.Value
             oPagoviaje.Monto = Me.Txtmontopago.Text
             oPagoviaje.Finpago = Me.CheckBox1.Checked
-            oPagoviaje.Descripcion = Me.Txtdescripcion.Text
-            oPagoviaje.ID_Reservaviaje = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+            oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
+            oPagoviaje.Reservaviaje = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
             bllPagoviaje.altapagoviaje(oPagoviaje)
         Catch ex As Exception
 

@@ -6,7 +6,7 @@ Imports BLL
 Public Class Visualizar_Pagos
 
     Private Sub Visualizar_Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.DataGridView1.DataSource = Nothing
     End Sub
 
 
@@ -26,27 +26,49 @@ Public Class Visualizar_Pagos
                 Dim oPagoviaje As New BE_PagoViaje
                 oPasajero.DNI = Me.TextBox9.Text
                 oReservaviaje.Pasajero = oPasajero
-                'oReservaviaje.Pagoviaje
-
 
 
                 Dim bllPagoViaje As New BLL_PagoViaje
                 Dim oListapago As New List(Of BE_PagoViaje)
                 oListapago = bllPagoViaje.consultarPagosViajes(oReservaviaje)
 
-
-
-
-
-
-                Me.DataGridView1.DataSource = Nothing
+              
+                Dim listColumns As New List(Of String)
+                listColumns.Add("Fecha")
+                listColumns.Add("Metodopago")
+                listColumns.Add("Monto")
+                listColumns.Add("Numerotarjeta")
+                LlenarTabla(DataGridView1, listColumns)
+                'DataGridView1.DataSource = oListaAlojamiento
                 Me.DataGridView1.DataSource = oListapago
                 DataGridView1.ReadOnly = True
-                DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+                'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
+
+
+
             End If
         Catch ex As Exception
 
         End Try
 
     End Sub
+
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
 End Class
