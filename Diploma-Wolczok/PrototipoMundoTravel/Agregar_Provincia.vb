@@ -3,10 +3,12 @@ Imports EE
 
 
 Public Class Agregar_Provincia
+    Implements BLL_Iobservador
 
     Private Sub Agregar_Provincia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarCombos()
-
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Private Sub cargarCombos()
@@ -22,20 +24,24 @@ Public Class Agregar_Provincia
 
     Private Function validarformulario() As Boolean
         Try
-            If Me.Txtdescripcion.Text = "" Or Me.Txthabitantes.Text = "" Or Me.Txtregion.Text = "" Or Me.Txtsuperficieterrestre.Text = "" Then Return False
+            If Me.Txtdescripcion.Text = "" Or Me.Txtregion.Text = "" Or Me.Txtsuperficieterrestre.Text = "" Then Return False
             Return True
         Catch ex As Exception
             Return False
         End Try
     End Function
 
-    Private Sub Btn_agregarprovincia_Click(sender As Object, e As EventArgs) Handles Btn_agregarprovincia.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If validarformulario() = True Then
                 Dim oProvincia As New BE_Provincia
                 Dim bllProvincia As New BLL_Provincia
                 oProvincia.Descripcion = Txtdescripcion.Text
-                oProvincia.Habitantes = Txthabitantes.Text
+                oProvincia.Habitantes = NumericUpDown1.Value
                 oProvincia.Region = Txtregion.Text
                 oProvincia.SuperficieTerrestre = Txtsuperficieterrestre.Text
                 Dim oPais As New BE_Pais
@@ -52,9 +58,9 @@ Public Class Agregar_Provincia
         End Try
     End Sub
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
 
     End Sub
 End Class

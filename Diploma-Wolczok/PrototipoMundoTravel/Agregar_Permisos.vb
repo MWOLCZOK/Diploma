@@ -1,8 +1,15 @@
-﻿Public Class Agregar_Permisos
+﻿Imports EE
+Imports BLL
+
+
+Public Class Agregar_Permisos
+    Implements BLL_Iobservador
 
     Private Sub gestionPermisos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             ControladorPermisos.CargarPermisos(Tree)
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
         Catch ex As Exception
 
         End Try
@@ -20,11 +27,17 @@
 
         End If
     End Sub
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub btncrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If Not String.IsNullOrWhiteSpace(txtnombre.Text) Then
                 Dim Perfil As New EE.BE_GrupoPermiso
@@ -40,6 +53,11 @@
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
 
     End Sub
 End Class

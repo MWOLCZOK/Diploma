@@ -2,15 +2,13 @@
 Imports BLL
 
 Public Class Agregar_Transporte
+    Implements BLL_Iobservador
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
-
-    End Sub
 
     Private Sub Agregar_Transporte_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         iniciar()
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Private Sub iniciar()
@@ -38,7 +36,11 @@ Public Class Agregar_Transporte
         Next
     End Sub
 
-    Private Sub Btnaceptar_Click(sender As Object, e As EventArgs) Handles Btnaceptar.Click
+    Private Sub Btnaceptar_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             Dim oTransporte As New BE_Transporte
             oTransporte.TipoTransporte = DirectCast(Cbxtipotransporte.SelectedItem, BE_TipoTransporte)
@@ -53,4 +55,13 @@ Public Class Agregar_Transporte
         End Try
     End Sub
 
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
+    End Sub
 End Class
