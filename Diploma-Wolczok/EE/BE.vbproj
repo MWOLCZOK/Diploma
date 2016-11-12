@@ -79,8 +79,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BE_Cancelacion.vb" />
     <Compile Include="BE_Finpago.vb" />
     <Compile Include="BE_Metodopago.vb" />
+    <Compile Include="BE_Tiporeserva.vb" />
     <Compile Include="Micro.vb" />
     <Compile Include="Negocio\BE_Puntaje.vb" />
     <Compile Include="Negocio\BE_Asiento.vb" />
