@@ -317,4 +317,9 @@ Public Class FormMenu
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub CancelarReservaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelarReservaToolStripMenuItem.Click
+        Dim formCancelacion As New Cancelacion
+        AbrirForm(formCancelacion)
+    End Sub
 End Class

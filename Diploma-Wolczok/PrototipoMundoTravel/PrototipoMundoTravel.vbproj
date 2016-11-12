@@ -145,6 +145,12 @@
     <Compile Include="Agregar_Viaje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cancelacion.Designer.vb">
+      <DependentUpon>Cancelacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cancelacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modificar_EmpresaTransporte.Designer.vb">
       <DependentUpon>Modificar_EmpresaTransporte.vb</DependentUpon>
     </Compile>
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Viaje.resx">
       <DependentUpon>Agregar_Viaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cancelacion.resx">
+      <DependentUpon>Cancelacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar_EmpresaTransporte.resx">
       <DependentUpon>Modificar_EmpresaTransporte.vb</DependentUpon>

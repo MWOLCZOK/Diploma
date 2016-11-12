@@ -44,9 +44,13 @@ Public Class BLL_Reserva
         End Try
     End Function
 
+    Public Function consultarReservaViajeporDNI(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_ReservaViaje)
+        Try
+            Return _dalReservaVuelo.consultarReservaviaje(oReservaviaje)
+        Catch ex As Exception
 
-
-
+        End Try
+    End Function
 
 
 End Class
