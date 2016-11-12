@@ -22,7 +22,13 @@ Public Class Eliminar_Pais
         End Try
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Try
             If Not IsNothing(CbxPais.SelectedItem) Then
                 Dim GestorPais As BLL_Pais = New BLL_Pais
@@ -37,19 +43,5 @@ Public Class Eliminar_Pais
         Catch ex As Exception
 
         End Try
-
-    End Sub
-
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
-        Me.Close()
-
-    End Sub
-
-    Private Sub CbxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxPais.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub lblusuario_Click(sender As Object, e As EventArgs) Handles lblusuario.Click
-
     End Sub
 End Class

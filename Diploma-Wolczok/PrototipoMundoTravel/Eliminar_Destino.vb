@@ -16,7 +16,11 @@ Public Class Eliminar_Destino
         Next
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Try
             If Not IsNothing(CbxDestino.SelectedItem) Then
                 Dim bllDestino As New BLL_Destino
@@ -27,9 +31,5 @@ Public Class Eliminar_Destino
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
-        Me.Close()
     End Sub
 End Class

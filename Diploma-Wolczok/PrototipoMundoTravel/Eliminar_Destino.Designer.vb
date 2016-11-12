@@ -22,55 +22,62 @@ Partial Class Eliminar_Destino
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btneliminar = New System.Windows.Forms.Button()
         Me.CbxDestino = New System.Windows.Forms.ComboBox()
         Me.lblusuario = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(155, 148)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnsalir.TabIndex = 35
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btneliminar
-        '
-        Me.btneliminar.Location = New System.Drawing.Point(41, 148)
-        Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(81, 23)
-        Me.btneliminar.TabIndex = 34
-        Me.btneliminar.Text = "Eliminar"
-        Me.btneliminar.UseVisualStyleBackColor = True
         '
         'CbxDestino
         '
         Me.CbxDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxDestino.FormattingEnabled = True
-        Me.CbxDestino.Location = New System.Drawing.Point(15, 108)
+        Me.CbxDestino.Location = New System.Drawing.Point(41, 110)
         Me.CbxDestino.Name = "CbxDestino"
-        Me.CbxDestino.Size = New System.Drawing.Size(254, 21)
+        Me.CbxDestino.Size = New System.Drawing.Size(344, 21)
         Me.CbxDestino.TabIndex = 33
         '
         'lblusuario
         '
         Me.lblusuario.AutoSize = True
-        Me.lblusuario.Location = New System.Drawing.Point(89, 92)
+        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblusuario.ForeColor = System.Drawing.Color.White
+        Me.lblusuario.Location = New System.Drawing.Point(38, 82)
         Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(102, 13)
+        Me.lblusuario.Size = New System.Drawing.Size(136, 15)
         Me.lblusuario.TabIndex = 32
         Me.lblusuario.Text = "Seleccionar Destino"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(41, 186)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(150, 30)
+        Me.btnEliminar.TabIndex = 63
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(235, 186)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(150, 30)
+        Me.Button2.TabIndex = 62
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Eliminar_Destino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btneliminar)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(444, 262)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CbxDestino)
         Me.Controls.Add(Me.lblusuario)
         Me.Name = "Eliminar_Destino"
@@ -80,8 +87,8 @@ Partial Class Eliminar_Destino
 
     End Sub
 
-    Friend WithEvents btnsalir As Button
-    Friend WithEvents btneliminar As Button
     Friend WithEvents CbxDestino As ComboBox
     Friend WithEvents lblusuario As Label
+    Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

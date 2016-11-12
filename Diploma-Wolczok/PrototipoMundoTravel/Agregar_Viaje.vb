@@ -2,9 +2,12 @@
 Imports BLL
 
 Public Class Agregar_Viaje
+    Implements BLL_Iobservador
 
     Private Sub Agregar_Viaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarCombos()
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Private Sub cargarCombos()
@@ -23,10 +26,10 @@ Public Class Agregar_Viaje
                 Me.Cbxdestino.Items.Add(miDest2)
                 Cbxdestino.DisplayMember = "NombreCompleto"
             Next
-            Dim oListatipotrans As New List(Of BE_TipoTransporte)
-            Dim blltipotrans As New BLL_TipoTransporte
-            oListatipotrans = blltipotrans.consultarTipoTransportes
-            For Each tipotrans As BE_TipoTransporte In oListatipotrans
+            Dim oListatipotrans As New List(Of BE_Transporte)
+            Dim blltipotrans As New BLL_Transporte
+            oListatipotrans = blltipotrans.consultarTransportes
+            For Each tipotrans As BE_Transporte In oListatipotrans
                 Me.Cbxtipotransporte.Items.Add(tipotrans)
                 Cbxtipotransporte.DisplayMember = "Descripcion"
             Next
@@ -37,11 +40,11 @@ Public Class Agregar_Viaje
     End Sub
 
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
 
-
-
-
-    Private Sub Btnaceptar_Click(sender As Object, e As EventArgs) Handles Btnaceptar.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         'Try
         '    Dim oTipotrans As New BE_TipoTransporte
         '    oTipotrans = DirectCast(Cbxtipotransporte.SelectedItem, BE_TipoTransporte)
@@ -66,7 +69,9 @@ Public Class Agregar_Viaje
 
     End Sub
 
-    Private Sub Btnsalir_Click(sender As Object, e As EventArgs) Handles Btnsalir.Click
-        Me.Close()
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
     End Sub
 End Class
