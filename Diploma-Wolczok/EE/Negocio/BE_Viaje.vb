@@ -102,4 +102,14 @@
         End Set
     End Property
 
+    Public Overrides Function ToString() As String
+        Return Me.Destino.Localidad.NombreCompleto
+    End Function
+
+    'Public Overrides Function ToString() As String
+    '    Return Me.Origen.Localidad.NombreCompleto
+    'End Function
+
+
+
 End Class

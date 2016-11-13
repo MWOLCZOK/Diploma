@@ -50,4 +50,8 @@
         End Set
     End Property
 
+    Public Overrides Function ToString() As String
+        Return NumeroAsiento
+    End Function
+
 End Class

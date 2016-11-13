@@ -13,8 +13,20 @@ Public Class Cancelacion
                 Dim bllReservaViaje As New BLL_Reserva
                 Dim oListareserva As New List(Of BE_ReservaViaje)
                 oListareserva = bllReservaViaje.consultarReservaViajeporDNI(oPasajero)
-                Me.DataGridView1.DataSource = Nothing
-                Me.DataGridView1.DataSource = oListareserva
+                DataGridView1.Columns.Clear()
+                DataGridView1.Rows.Clear()
+                DataGridView1.Columns.Add("viaje", "Viaje")
+                DataGridView1.Columns.Add("asiento", "Numero de Asiento")
+                'DataGridView1.Columns.Add("ID", "Identificador de Reserva")
+                DataGridView1.Columns.Add("NumeroReserva", "Numero de Reserva")
+                DataGridView1.Columns.Add("Detalle", "Detalle de Reserva")
+                DataGridView1.Columns.Add("Estado", "Estado")
+                DataGridView1.Columns.Add("Pasajero", "Nombre y Apellido Pasajero")
+                DataGridView1.Columns.Add("Puntaje", "Puntaje Acumulado")
+                For Each item In oListareserva
+                    DataGridView1.Rows.Add(item.viaje, item.Asiento, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
+                Next
+            
             End If
 
 
@@ -25,5 +37,9 @@ Public Class Cancelacion
 
     Private Sub Cancelacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridView1.DataSource = Nothing
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
     End Sub
 End Class
