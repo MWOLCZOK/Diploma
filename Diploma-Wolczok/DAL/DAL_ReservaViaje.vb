@@ -114,7 +114,7 @@ Public Class DAL_ReservaViaje
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)
-           For Each drow As DataRow In dt.Rows
+            For Each drow As DataRow In dt.Rows
                 miListaReservaviaje.Add(Me.formatearReservaViaje(drow))
             Next
             Return miListaReservaviaje
@@ -143,24 +143,24 @@ Public Class DAL_ReservaViaje
         End Try
     End Function
 
-    'Public Function consultarReservaviajeporPasajero(ByVal oPasajero As BE_Pasajero) As BE_Pasajero
-    '    Try
-    '        Dim consulta As String = ("Select * from ReservaViaje where ID=@ID and BL=@BL")
-    '        Dim Command As SqlCommand = Acceso.MiComando(consulta)
-    '        With Command.Parameters
-    '            .Add(New SqlParameter("@ID", oPasajero.ID))
-    '            .Add(New SqlParameter("@BL", False))
-    '        End With
-    '        Dim dt As DataTable = Acceso.Lectura(Command)
-    '        If dt.Rows.Count = 1 Then
-    '            Return Me.formatearReservaViaje(dt.Rows(0))
-    '        Else
-    '            Return Nothing
-    '        End If
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-    'End Function
+    Public Function consultarReservaviajeporPasajero(ByVal oPasajero As BE_Pasajero) As List(Of BE_ReservaViaje)
+        Try
+            Dim consulta As String = ("Select * from ReservaViaje where BL=@BL")
+            Dim miListaReservaviaje As New List(Of BE_ReservaViaje)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", oPasajero.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                miListaReservaviaje.Add(Me.formatearReservaViaje(drow))
+            Next
+            Return miListaReservaviaje
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
 
 

@@ -7,6 +7,8 @@ Public Class Visualizar_Pagos
 
     Private Sub Visualizar_Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DataGridView1.DataSource = Nothing
+
+
     End Sub
 
 
@@ -39,7 +41,10 @@ Public Class Visualizar_Pagos
                 listColumns.Add("Monto")
                 listColumns.Add("Numerotarjeta")
                 LlenarTabla(DataGridView1, listColumns)
-                'DataGridView1.DataSource = oListaAlojamiento
+
+
+
+
                 Me.DataGridView1.DataSource = oListapago
                 DataGridView1.ReadOnly = True
                 'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
