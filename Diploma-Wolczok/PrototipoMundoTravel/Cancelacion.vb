@@ -15,6 +15,7 @@ Public Class Cancelacion
                 oListareserva = bllReservaViaje.consultarReservaViajeporDNI(oPasajero)
                 DataGridView1.Columns.Clear()
                 DataGridView1.Rows.Clear()
+                DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 DataGridView1.Columns.Add("viaje", "Destino")
                 DataGridView1.Columns.Add("asiento", "Numero de Asiento")
                 'DataGridView1.Columns.Add("ID", "Identificador de Reserva")
