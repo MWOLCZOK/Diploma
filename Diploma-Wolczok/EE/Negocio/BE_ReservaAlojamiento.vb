@@ -32,5 +32,18 @@
         End Set
     End Property
 
+    Private _montoAlquiler As Double
+    Public Property MontoAlquiler() As Double
+        Get
+            Return _montoAlquiler
+        End Get
+        Set(ByVal value As Double)
+            _montoAlquiler = value
+        End Set
+    End Property
+
+
+
+
 
 End Class

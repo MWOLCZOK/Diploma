@@ -53,4 +53,72 @@ Public Class BLL_Reserva
     End Function
 
 
+    Public Function calcularPunitorios(ByVal paramReserva As BE_ReservaViaje) As BE_Cancelacion
+        Try
+            Dim cantidadDiasFaltantes As Integer = 0
+            'CALCULA LA CANTIDAD DE DIAS QUE HAY HASTA LA FECHA DE SALIDA
+            cantidadDiasFaltantes = DateDiff(DateInterval.Day, paramReserva.viaje.FechaHoraSalida, Today)
+            'LLAMAR A BLL.CANCELACION.OBTENERPUNITORIOS(CANTIDADDIASFALTANTES)
+            'EL VALOR QUE DEVUELVE ES EL % DE RETENCIÓN
+            Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
+
+            'OBTENGO EL MONTO TOTAL
+            Dim montoTotal As Double = paramReserva.viaje.Precio
+
+            'CALCULAR EL MONTO DE RETENCION POR PUNITORIO
+            Dim montoRetencion As Double = 0
+            montoRetencion = montoTotal * porcentajeRetencion
+
+            'CALCULAR EL MONTO DEVUELTO AL PASAJERO
+            Dim montoDevuelto As Double = 0
+            montoDevuelto = montoTotal - montoDevuelto
+
+            Dim oCancelacion As New BE_Cancelacion
+            oCancelacion.MontoDevuelto = montoDevuelto
+            oCancelacion.MontoRetenido = montoRetencion
+            oCancelacion.PorcentajeRetencion = porcentajeRetencion
+            oCancelacion.MontoTotal = montoTotal
+            oCancelacion.Reserva = paramReserva
+
+            Return oCancelacion
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+    Public Function calcularPunitorios(ByVal paramReserva As BE_ReservaAlojamiento) As BE_Cancelacion
+        Try
+            Dim cantidadDiasFaltantes As Integer = 0
+            'CALCULA LA CANTIDAD DE DIAS QUE HAY HASTA LA FECHA DE SALIDA
+            cantidadDiasFaltantes = DateDiff(DateInterval.Day, paramReserva.Fecha_Inicio, Today)
+            'LLAMAR A BLL.CANCELACION.OBTENERPUNITORIOS(CANTIDADDIASFALTANTES)
+            'EL VALOR QUE DEVUELVE ES EL % DE RETENCIÓN
+            Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
+
+            'OBTENGO EL MONTO TOTAL
+            Dim montoTotal As Double = paramReserva.MontoAlquiler
+
+            'CALCULAR EL MONTO DE RETENCION POR PUNITORIO
+            Dim montoRetencion As Double = 0
+            montoRetencion = montoTotal * porcentajeRetencion
+
+            'CALCULAR EL MONTO DEVUELTO AL PASAJERO
+            Dim montoDevuelto As Double = 0
+            montoDevuelto = montoTotal - montoDevuelto
+
+            Dim oCancelacion As New BE_Cancelacion
+            oCancelacion.MontoDevuelto = montoDevuelto
+            oCancelacion.MontoRetenido = montoRetencion
+            oCancelacion.PorcentajeRetencion = porcentajeRetencion
+            oCancelacion.MontoTotal = montoTotal
+            oCancelacion.Reserva = paramReserva
+
+            Return oCancelacion
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+
+
 End Class

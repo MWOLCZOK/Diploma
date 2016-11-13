@@ -10,12 +10,12 @@
         End Set
     End Property
 
-    Private _reserva As BE_ReservaViaje
-    Public Property Reserva() As BE_ReservaViaje
+    Private _reserva As BE_Reserva
+    Public Property Reserva() As BE_Reserva
         Get
             Return _reserva
         End Get
-        Set(ByVal value As BE_ReservaViaje)
+        Set(ByVal value As BE_Reserva)
             _reserva = value
         End Set
     End Property
@@ -69,6 +69,18 @@
             _montototal = value
         End Set
     End Property
+
+    Private _porcentajeRetencion As Double
+    Public Property PorcentajeRetencion() As Double
+        Get
+            Return _porcentajeRetencion
+        End Get
+        Set(ByVal value As Double)
+            _porcentajeRetencion = value
+        End Set
+    End Property
+
+
 
     Private _descripcionmotivocancel As String
     Public Property DescripcionMotivoCancelacion() As String

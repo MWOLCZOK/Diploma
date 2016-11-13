@@ -2,6 +2,8 @@
 Imports BLL
 
 Public Class Cancelacion
+    Dim bllCancel As New BLL.BLL_Cancelacion
+    Protected Friend paramCancelacion As EE.BE_Cancelacion
 
     Private Sub Txtdni_TextChanged(sender As Object, e As EventArgs) Handles Txtdni.TextChanged
         Try
@@ -42,5 +44,29 @@ Public Class Cancelacion
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            Dim oCancel As New BE_Cancelacion
+            Dim bllReserva As New BLL.BLL_Reserva
+            '  oCancel = bllReserva.calcularPunitorios()
+            paramCancelacion = oCancel
+            'CARGAS LOS TEXTBOX CON LOS VALORES DE LA POSIBLE CANCELACION
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            Dim ocancel As BE_Cancelacion = paramCancelacion
+            ocancel.Fechacancelacion = Today
+            '        ocancel.DescripcionMotivoCancelacion =
+            bllCancel.alta(ocancel)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
