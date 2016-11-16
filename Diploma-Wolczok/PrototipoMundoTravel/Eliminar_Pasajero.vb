@@ -7,7 +7,7 @@ Public Class Eliminar_Pasajero
         iniciar()
     End Sub
 
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
@@ -26,12 +26,14 @@ Public Class Eliminar_Pasajero
         End Try
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
         Try
             If Not IsNothing(Cbxpas.SelectedItem) Then
                 Dim Gestorpas As New BLL_Pasajero
                 Dim Nuevopas As New BE_Pasajero
                 Nuevopas = DirectCast(Cbxpas.SelectedItem, BE_Pasajero)
+
                 Gestorpas.eliminarPasajero(Nuevopas)
                 If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_34"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     iniciar()
@@ -43,7 +45,7 @@ Public Class Eliminar_Pasajero
         End Try
     End Sub
 
-    Private Sub Cbxpas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbxpas.SelectedIndexChanged
-
+    Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

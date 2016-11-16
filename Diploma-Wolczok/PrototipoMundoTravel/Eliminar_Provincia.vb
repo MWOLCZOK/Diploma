@@ -25,14 +25,23 @@ Public Class Eliminar_Provincia
     End Sub
 
 
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+
+
+    End Sub
+
+
+    Private Sub btnEliminar_Click_1(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
         Try
             If Not IsNothing(CbxProvincia.SelectedItem) Then
                 Dim GestorProv As BLL_Provincia = New BLL_Provincia
                 Dim NuevaProv As BE_Provincia = New BE_Provincia
                 NuevaProv = DirectCast(CbxProvincia.SelectedItem, BE_Provincia)
                 GestorProv.eliminarprovincia(NuevaProv)
+
                 If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_33"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     iniciar()
                     MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_32"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -42,13 +51,7 @@ Public Class Eliminar_Provincia
         Catch ex As Exception
 
         End Try
-
-
-
     End Sub
 
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
-        Me.Close()
 
-    End Sub
 End Class

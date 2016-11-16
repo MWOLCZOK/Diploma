@@ -3,12 +3,32 @@
 Public Class Form_Backup
 
     Implements BLL_Iobservador
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        FolderBrowserDialog1.ShowDialog()
-        TextBox3.Text = FolderBrowserDialog1.SelectedPath
+
+    Private Sub Form_Backup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles BtnRealizarBackup.Click
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        FolderBrowserDialog1.ShowDialog()
+        TextBox3.Text = FolderBrowserDialog1.SelectedPath
+
+
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+
+
+
+    Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
         Try
             Dim oBack As New EE.BE_BackupRestore(TextBox3.Text, TextBox2.Text)
             Dim bBack As New BLL.BLL_BackupRestore()
@@ -22,14 +42,5 @@ Public Class Form_Backup
         End Try
     End Sub
 
-    Private Sub Form_Backup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
-    End Sub
-
-    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
-        Dim MiTraductor As New ControladorTraductor
-        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
-    End Sub
 
 End Class
