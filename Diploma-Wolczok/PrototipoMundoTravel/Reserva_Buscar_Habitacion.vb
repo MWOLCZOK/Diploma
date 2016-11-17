@@ -38,27 +38,28 @@ Public Class Reserva_Buscar_Habitacion
         End Try
     End Sub
 
-    Private Sub SeleccionarHabitacionReserva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
             Dim oHabitacion As New EE.BE_Habitacion
             oHabitacion.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
             Dim bllHabitacion As New BLL.BLL_Habitacion
             oHabitacion = bllHabitacion.ConsultarHabitacion(oHabitacion)
             Dim oReservaAlojamiento As New EE.BE_ReservaAlojamiento
-            oReservaAlojamiento = reservaAlojamiento
-            oReservaAlojamiento.Estado = True
-            oReservaAlojamiento.Habitacion = oHabitacion
-            oReservaAlojamiento.Detalle = "Prueba"
-            Dim formularioSeleccionHabitacion As New Reserva_Buscar_Pasajero(Alojamiento, reservaDestino, oReservaAlojamiento)
-            formularioSeleccionHabitacion.Show()
-            Me.Close()
+        oReservaAlojamiento = reservaAlojamiento
+        oReservaAlojamiento.Estado = True
+        oReservaAlojamiento.Habitacion = oHabitacion
+        oReservaAlojamiento.Detalle = "Prueba"
+        Dim formularioSeleccionHabitacion As New Reserva_Buscar_Pasajero(Alojamiento, reservaDestino, oReservaAlojamiento)
+        formularioSeleccionHabitacion.Show()
+        Me.Close()
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+        MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
-       
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

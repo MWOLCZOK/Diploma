@@ -63,7 +63,19 @@ Public Class Reserva_Buscar_Pasajero
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+
+
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+
+
         Try
             If flag = True Then
                 Dim oPasajero As New EE.BE_Pasajero
@@ -92,10 +104,7 @@ Public Class Reserva_Buscar_Pasajero
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
-       
     End Sub
 
-    Private Sub Reserva_Buscar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class

@@ -7,18 +7,8 @@ Public Class Visualizar_Pagos
 
     Private Sub Visualizar_Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DataGridView1.DataSource = Nothing
-
-
     End Sub
 
-
-
-
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
-    End Sub
 
     Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
         Try
@@ -75,5 +65,12 @@ Public Class Visualizar_Pagos
         dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+
+    End Sub
 End Class

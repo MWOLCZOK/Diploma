@@ -23,7 +23,30 @@
         ComboBox2.Items.Add(EE.BE_TipoBitacora.Restore)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+    Private Sub EstablecerGrid()
+        Me.dgvBitacora.Columns.Remove("ID_Bitacora")
+        Me.dgvBitacora.Columns("Codigo").Name = "Column_Codigo"
+        Me.dgvBitacora.Columns("Fecha").Name = "Column_Fecha"
+        Me.dgvBitacora.Columns("Usuario").Name = "Column_Usuario"
+        Me.dgvBitacora.Columns("Detalle").Name = "Column_Detalle"
+        '    Me.dgvBitacora.Columns("Column_Codigo").HeaderText = ControladorTraductor.TraducirMensaje("Column_Codigo")
+        '   Me.dgvBitacora.Columns("Column_Fecha").HeaderText = ControladorTraductor.TraducirMensaje("Column_Fecha")
+        '  Me.dgvBitacora.Columns("Column_Usuario").HeaderText = ControladorTraductor.TraducirMensaje("Column_Usuario")
+        '  Me.dgvBitacora.Columns("Column_Detalle").HeaderText = ControladorTraductor.TraducirMensaje("Column_Detalle")
+    End Sub
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim gestorbitacora As New BLL.BLL_Bitacora
         If IsNothing(ComboBox1.SelectedItem) Then
             If IsNothing(ComboBox2.SelectedItem) Then
@@ -48,24 +71,7 @@
         End If
     End Sub
 
-
-    Private Sub EstablecerGrid()
-        Me.DgvBitacora.Columns.Remove("ID_Bitacora")
-        Me.DgvBitacora.Columns("Codigo").Name = "Column_Codigo"
-        Me.DgvBitacora.Columns("Fecha").Name = "Column_Fecha"
-        Me.DgvBitacora.Columns("Usuario").Name = "Column_Usuario"
-        Me.DgvBitacora.Columns("Detalle").Name = "Column_Detalle"
-        '    Me.dgvBitacora.Columns("Column_Codigo").HeaderText = ControladorTraductor.TraducirMensaje("Column_Codigo")
-        '   Me.dgvBitacora.Columns("Column_Fecha").HeaderText = ControladorTraductor.TraducirMensaje("Column_Fecha")
-        '  Me.dgvBitacora.Columns("Column_Usuario").HeaderText = ControladorTraductor.TraducirMensaje("Column_Usuario")
-        '  Me.dgvBitacora.Columns("Column_Detalle").HeaderText = ControladorTraductor.TraducirMensaje("Column_Detalle")
-    End Sub
-
-    Private Sub dgvBitacora_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBitacora.CellContentClick
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
-
     End Sub
 End Class
