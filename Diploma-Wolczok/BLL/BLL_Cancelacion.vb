@@ -9,7 +9,7 @@ Public Class BLL_Cancelacion
     Public Sub alta(ByVal paramCancelacion As BE_Cancelacion)
         Try
             '   LA DESCRIPCION VIENE EN EL OBJETO DESDE EL FORMULARIO
-           
+
             '   ACTUALIZAR EL ESTADO DE LA RESERVA
 
 

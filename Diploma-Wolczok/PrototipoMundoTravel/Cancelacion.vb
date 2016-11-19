@@ -29,7 +29,7 @@ Public Class Cancelacion
                 For Each item In oListareserva
                     DataGridView1.Rows.Add(item.viaje, item.Asiento, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
                 Next
-            
+
             End If
 
 
