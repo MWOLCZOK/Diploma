@@ -22,66 +22,74 @@ Partial Class Eliminar_Idioma
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btneliminar = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Idioma))
         Me.CbxIdioma = New System.Windows.Forms.ComboBox()
         Me.lblidioma = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(155, 145)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 29)
-        Me.btnsalir.TabIndex = 19
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btneliminar
-        '
-        Me.btneliminar.Location = New System.Drawing.Point(49, 144)
-        Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(75, 30)
-        Me.btneliminar.TabIndex = 18
-        Me.btneliminar.Text = "Eliminar"
-        Me.btneliminar.UseVisualStyleBackColor = True
         '
         'CbxIdioma
         '
         Me.CbxIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxIdioma.FormattingEnabled = True
-        Me.CbxIdioma.Location = New System.Drawing.Point(12, 104)
+        Me.CbxIdioma.Location = New System.Drawing.Point(41, 107)
         Me.CbxIdioma.Name = "CbxIdioma"
-        Me.CbxIdioma.Size = New System.Drawing.Size(260, 21)
+        Me.CbxIdioma.Size = New System.Drawing.Size(344, 21)
         Me.CbxIdioma.TabIndex = 17
         '
         'lblidioma
         '
         Me.lblidioma.AutoSize = True
-        Me.lblidioma.Location = New System.Drawing.Point(88, 88)
+        Me.lblidioma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblidioma.ForeColor = System.Drawing.Color.White
+        Me.lblidioma.Location = New System.Drawing.Point(38, 78)
         Me.lblidioma.Name = "lblidioma"
-        Me.lblidioma.Size = New System.Drawing.Size(97, 13)
+        Me.lblidioma.Size = New System.Drawing.Size(131, 15)
         Me.lblidioma.TabIndex = 16
         Me.lblidioma.Text = "Seleccionar Idioma"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(41, 179)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(150, 30)
+        Me.btnEliminar.TabIndex = 65
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(235, 179)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 64
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'Eliminar_Idioma
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btneliminar)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(444, 262)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxIdioma)
         Me.Controls.Add(Me.lblidioma)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Idioma"
         Me.Text = "Eliminar_Idioma"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnsalir As Button
-    Friend WithEvents btneliminar As Button
     Friend WithEvents CbxIdioma As ComboBox
     Friend WithEvents lblidioma As Label
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnSalir As Button
 End Class

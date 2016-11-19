@@ -22,64 +22,73 @@ Partial Class Eliminar_Usuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btneliminar = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Usuario))
         Me.CbxUsuario = New System.Windows.Forms.ComboBox()
         Me.lblusuario = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(155, 147)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnsalir.TabIndex = 27
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btneliminar
-        '
-        Me.btneliminar.Location = New System.Drawing.Point(41, 147)
-        Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(81, 23)
-        Me.btneliminar.TabIndex = 26
-        Me.btneliminar.Text = "Eliminar"
-        Me.btneliminar.UseVisualStyleBackColor = True
         '
         'CbxUsuario
         '
         Me.CbxUsuario.FormattingEnabled = True
-        Me.CbxUsuario.Location = New System.Drawing.Point(15, 107)
+        Me.CbxUsuario.Location = New System.Drawing.Point(47, 105)
         Me.CbxUsuario.Name = "CbxUsuario"
-        Me.CbxUsuario.Size = New System.Drawing.Size(254, 21)
+        Me.CbxUsuario.Size = New System.Drawing.Size(344, 21)
         Me.CbxUsuario.TabIndex = 25
         '
         'lblusuario
         '
         Me.lblusuario.AutoSize = True
-        Me.lblusuario.Location = New System.Drawing.Point(89, 91)
+        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblusuario.ForeColor = System.Drawing.Color.White
+        Me.lblusuario.Location = New System.Drawing.Point(44, 82)
         Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(102, 13)
+        Me.lblusuario.Size = New System.Drawing.Size(137, 15)
         Me.lblusuario.TabIndex = 24
         Me.lblusuario.Text = "Seleccionar Usuario"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(47, 173)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(150, 30)
+        Me.btnEliminar.TabIndex = 73
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(241, 173)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 72
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'Eliminar_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btneliminar)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(444, 262)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxUsuario)
         Me.Controls.Add(Me.lblusuario)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Usuario"
         Me.Text = "Eliminar Usuario"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnsalir As System.Windows.Forms.Button
-    Friend WithEvents btneliminar As System.Windows.Forms.Button
     Friend WithEvents CbxUsuario As System.Windows.Forms.ComboBox
     Friend WithEvents lblusuario As System.Windows.Forms.Label
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnSalir As Button
 End Class

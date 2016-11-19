@@ -27,7 +27,8 @@ Public Class Eliminar_Localidad
     End Sub
 
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
         Try
             If Not IsNothing(CbxLoc.SelectedItem) Then
                 Dim GestorLoc As New BLL_Localidad
@@ -42,9 +43,10 @@ Public Class Eliminar_Localidad
         Catch ex As Exception
 
         End Try
+
     End Sub
 
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
 End Class

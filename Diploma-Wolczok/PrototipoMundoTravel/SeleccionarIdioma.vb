@@ -33,12 +33,7 @@ Public Class FormSeleccionar_Idioma
         End Try
     End Sub
 
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles Btnsalir.Click
-        Me.Close()
-    End Sub
-
-
-    Private Sub btnseleccionar_Click(sender As Object, e As EventArgs) Handles Btnseleccionar.Click
+    Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
             If Not IsNothing(CbxIdioma.SelectedItem) Then
                 Dim Idioma As BE_Idioma = DirectCast(CbxIdioma.SelectedItem, BE_Idioma)
@@ -58,7 +53,7 @@ Public Class FormSeleccionar_Idioma
         End Try
     End Sub
 
-    Private Sub CbxIdioma_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxIdioma.SelectedIndexChanged
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

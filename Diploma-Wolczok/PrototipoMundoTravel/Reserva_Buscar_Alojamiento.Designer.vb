@@ -28,10 +28,10 @@ Partial Class Reserva_Buscar_Alojamiento
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Btnbuscar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Btnseleccionar = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,11 +47,13 @@ Partial Class Reserva_Buscar_Alojamiento
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(21, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 13)
+        Me.Label1.Size = New System.Drawing.Size(56, 15)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Destinos"
+        Me.Label1.Text = "Destino"
         '
         'DateTimePicker1
         '
@@ -72,66 +74,77 @@ Partial Class Reserva_Buscar_Alojamiento
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(265, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 13)
+        Me.Label2.Size = New System.Drawing.Size(85, 15)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Fecha Inicio"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(503, 17)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 13)
+        Me.Label3.Size = New System.Drawing.Size(70, 15)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Fecha Fin"
-        '
-        'Btnbuscar
-        '
-        Me.Btnbuscar.Location = New System.Drawing.Point(314, 72)
-        Me.Btnbuscar.Name = "Btnbuscar"
-        Me.Btnbuscar.Size = New System.Drawing.Size(100, 39)
-        Me.Btnbuscar.TabIndex = 6
-        Me.Btnbuscar.Text = "Buscar"
-        Me.Btnbuscar.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 127)
+        Me.DataGridView1.Location = New System.Drawing.Point(24, 122)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(723, 325)
+        Me.DataGridView1.Size = New System.Drawing.Size(682, 325)
         Me.DataGridView1.TabIndex = 10
         '
-        'Btnseleccionar
+        'btnBuscar
         '
-        Me.Btnseleccionar.Location = New System.Drawing.Point(442, 470)
-        Me.Btnseleccionar.Name = "Btnseleccionar"
-        Me.Btnseleccionar.Size = New System.Drawing.Size(100, 39)
-        Me.Btnseleccionar.TabIndex = 11
-        Me.Btnseleccionar.Text = "Seleccionar"
-        Me.Btnseleccionar.UseVisualStyleBackColor = True
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.Location = New System.Drawing.Point(292, 74)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(150, 30)
+        Me.btnBuscar.TabIndex = 52
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnSalir
         '
-        Me.Button3.Location = New System.Drawing.Point(204, 470)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(100, 39)
-        Me.Button3.TabIndex = 12
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(174, 470)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 67
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeleccionar.Location = New System.Drawing.Point(396, 470)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(150, 30)
+        Me.btnSeleccionar.TabIndex = 68
+        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.UseVisualStyleBackColor = False
         '
         'Reserva_Buscar_Alojamiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 521)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Btnseleccionar)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(732, 521)
+        Me.Controls.Add(Me.btnSeleccionar)
+        Me.Controls.Add(Me.btnSalir)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Btnbuscar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DateTimePicker2)
@@ -151,8 +164,8 @@ Partial Class Reserva_Buscar_Alojamiento
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Btnbuscar As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Btnseleccionar As Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnSeleccionar As Button
 End Class

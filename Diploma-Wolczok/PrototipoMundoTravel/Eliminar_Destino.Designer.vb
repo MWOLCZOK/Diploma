@@ -22,6 +22,7 @@ Partial Class Eliminar_Destino
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Destino))
         Me.CbxDestino = New System.Windows.Forms.ComboBox()
         Me.lblusuario = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -80,6 +81,7 @@ Partial Class Eliminar_Destino
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CbxDestino)
         Me.Controls.Add(Me.lblusuario)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Destino"
         Me.Text = "Eliminar_Destino"
         Me.ResumeLayout(False)
