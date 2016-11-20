@@ -107,4 +107,7 @@ Public Class Reserva_Buscar_Pasajero
     End Sub
 
 
+    Private Sub Reserva_Buscar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

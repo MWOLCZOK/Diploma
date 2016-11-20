@@ -6,6 +6,8 @@ Public Class BLL_Reserva
     Dim _dalReservaVuelo As New DAL.DAL_ReservaViaje
     Dim _dalReservaAlojamiento As New DAL.DAL_ReservaAlojamiento
 
+
+
     Public Sub altaReserva(ByVal paramReservaAlojamiento As EE.BE_ReservaAlojamiento)
         Try
             Dim valor1 = DateDiff(DateInterval.Day, paramReservaAlojamiento.Fecha_Inicio, paramReservaAlojamiento.Fecha_Fin)
@@ -55,12 +57,29 @@ Public Class BLL_Reserva
 
     Public Function calcularPunitorios(ByVal paramReserva As BE_ReservaViaje) As BE_Cancelacion
         Try
-            Dim cantidadDiasFaltantes As Integer = 0
+            Dim cantidadDiasFaltantes As Double = 0
+            Dim porcentajeRetencion As Integer = 0
             'CALCULA LA CANTIDAD DE DIAS QUE HAY HASTA LA FECHA DE SALIDA
             cantidadDiasFaltantes = DateDiff(DateInterval.Day, paramReserva.viaje.FechaHoraSalida, Today)
             'LLAMAR A BLL.CANCELACION.OBTENERPUNITORIOS(CANTIDADDIASFALTANTES)
             'EL VALOR QUE DEVUELVE ES EL % DE RETENCIÓN
-            Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
+
+            If cantidadDiasFaltantes <= 10 Then
+                porcentajeRetencion = 0.5
+
+            ElseIf cantidadDiasFaltantes >= 11 <= 30 Then
+                porcentajeRetencion = 0.35
+
+            ElseIf cantidadDiasFaltantes >= 31 <= 60 Then
+                porcentajeRetencion = 0.2
+
+            ElseIf cantidadDiasFaltantes >= 61 <= 90 Then
+                porcentajeRetencion = 0.1
+
+            ElseIf cantidadDiasFaltantes >= 91 Then
+                porcentajeRetencion = 0
+            End If
+            'Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
 
             'OBTENGO EL MONTO TOTAL
             Dim montoTotal As Double = paramReserva.viaje.Precio
@@ -79,8 +98,9 @@ Public Class BLL_Reserva
             oCancelacion.PorcentajeRetencion = porcentajeRetencion
             oCancelacion.MontoTotal = montoTotal
             oCancelacion.Reserva = paramReserva
-
+            oCancelacion.Fechacancelacion = Today
             Return oCancelacion
+
         Catch ex As Exception
 
         End Try
@@ -89,11 +109,30 @@ Public Class BLL_Reserva
     Public Function calcularPunitorios(ByVal paramReserva As BE_ReservaAlojamiento) As BE_Cancelacion
         Try
             Dim cantidadDiasFaltantes As Integer = 0
+            Dim porcentajeRetencion As Double = 0
+
             'CALCULA LA CANTIDAD DE DIAS QUE HAY HASTA LA FECHA DE SALIDA
             cantidadDiasFaltantes = DateDiff(DateInterval.Day, paramReserva.Fecha_Inicio, Today)
             'LLAMAR A BLL.CANCELACION.OBTENERPUNITORIOS(CANTIDADDIASFALTANTES)
             'EL VALOR QUE DEVUELVE ES EL % DE RETENCIÓN
-            Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
+
+            If cantidadDiasFaltantes <= 10 Then
+                porcentajeRetencion = 0.5
+
+            ElseIf cantidadDiasFaltantes >= 11 <= 30 Then
+                porcentajeRetencion = 0.35
+
+            ElseIf cantidadDiasFaltantes >= 31 <= 60 Then
+                porcentajeRetencion = 0.2
+
+            ElseIf cantidadDiasFaltantes >= 61 <= 90 Then
+                porcentajeRetencion = 0.1
+
+            ElseIf cantidadDiasFaltantes >= 91 Then
+                porcentajeRetencion = 0
+            End If
+
+            'Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
 
             'OBTENGO EL MONTO TOTAL
             Dim montoTotal As Double = paramReserva.MontoAlquiler
@@ -112,12 +151,14 @@ Public Class BLL_Reserva
             oCancelacion.PorcentajeRetencion = porcentajeRetencion
             oCancelacion.MontoTotal = montoTotal
             oCancelacion.Reserva = paramReserva
-
             Return oCancelacion
+
         Catch ex As Exception
 
         End Try
     End Function
+
+   
 
 
 
