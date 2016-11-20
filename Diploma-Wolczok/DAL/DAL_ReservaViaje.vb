@@ -165,7 +165,7 @@ Public Class DAL_ReservaViaje
 
     Public Function ConsultarReservaviajeID(ByVal oReservaviaje As BE_ReservaViaje) As BE_ReservaViaje
         Try
-            Dim consulta As String = ("Select * from Habitacion where ID=@ID and BL=@BL")
+            Dim consulta As String = ("Select * from ReservaViaje where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
                 .Add(New SqlParameter("@ID", oReservaviaje.ID))
@@ -181,8 +181,6 @@ Public Class DAL_ReservaViaje
             Throw ex
         End Try
     End Function
-
-
 
 
 

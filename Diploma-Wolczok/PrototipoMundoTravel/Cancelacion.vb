@@ -17,7 +17,8 @@ Public Class Cancelacion
                 oListareserva = bllReservaViaje.consultarReservaViajeporDNI(oPasajero)
                 DataGridView1.Columns.Clear()
                 DataGridView1.Rows.Clear()
-                'DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                'DataGridView1.DataSource = oListareserva
+                DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 DataGridView1.Columns.Add("viaje", "Destino")
                 DataGridView1.Columns.Add("asiento", "Numero de Asiento")
                 'DataGridView1.Columns.Add("ID", "Identificador de Reserva")
@@ -50,10 +51,11 @@ Public Class Cancelacion
         Try
             Dim bllReserva As New BLL.BLL_Reserva
             Dim oReserva As New BE_ReservaViaje
-            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(2).Value)
             oReserva = bllReserva.consultarReservaviajeID(oReserva)
             Dim oCancel As New BE_Cancelacion
             oCancel = bllReserva.calcularPunitorios(oReserva)
+
             Me.Txtmontoretenido.Text = oCancel.MontoRetenido
             Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
             Me.Txtmontototal.Text = oCancel.MontoTotal
