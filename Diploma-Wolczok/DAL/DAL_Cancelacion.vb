@@ -16,7 +16,7 @@ Public Class DAL_Cancelacion
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pais")))
                 .Add(New SqlParameter("@ID_Reserva", paramCancelacion.Reserva.ID))
-                .Add(New SqlParameter("@ID_Tiporeserva", paramCancelacion.Tiporeserva.ID))
+                .Add(New SqlParameter("@ID_Tiporeserva", paramCancelacion.Tiporeserva))
                 .Add(New SqlParameter("@Fechacancelacion", paramCancelacion.Fechacancelacion))
                 .Add(New SqlParameter("@MontoDevuelto", paramCancelacion.MontoDevuelto))
                 .Add(New SqlParameter("@MontoRetenido", paramCancelacion.MontoRetenido))

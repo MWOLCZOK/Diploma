@@ -15,13 +15,13 @@ Public Class Visualizar_Pagos
             If TextBox9.Text.Length >= 3 Then
                 Dim oPasajero As New BE_Pasajero
                 Dim oReservaviaje As New BE_ReservaViaje
-                Dim oPagoviaje As New BE_PagoViaje
+                Dim oPagoviaje As New BE_Pago
                 oPasajero.DNI = Me.TextBox9.Text
                 oReservaviaje.Pasajero = oPasajero
 
 
                 Dim bllPagoViaje As New BLL_PagoViaje
-                Dim oListapago As New List(Of BE_PagoViaje)
+                Dim oListapago As New List(Of BE_Pago)
                 oListapago = bllPagoViaje.consultarPagosViajes(oReservaviaje)
 
               

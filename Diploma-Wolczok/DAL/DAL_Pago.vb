@@ -4,7 +4,7 @@ Imports System.Configuration
 Imports DAL
 
 
-Public Class DAL_PagoViaje
+Public Class DAL_Pago
 
     Implements Master
 
@@ -12,16 +12,17 @@ Public Class DAL_PagoViaje
 
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
-            Dim parampago As BE_PagoViaje = DirectCast(paramobjeto, BE_PagoViaje)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into PagoViaje values (@ID, @ID_Reserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @Descripcion, @BL)")
+            Dim parampago As BE_Pago = DirectCast(paramobjeto, BE_Pago)
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @NumeroTarjeta, @BL)")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "PagoViaje")))
-                .Add(New SqlParameter("@ID_Reserva", parampago.Reservaviaje.ID))
+                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
+                .Add(New SqlParameter("@ID_Reserva", parampago.Reserva.ID))
+                .Add(New SqlParameter("@TipoReserva", parampago.Reserva.TipoReserva))
                 .Add(New SqlParameter("@Fecha", parampago.Fecha))
                 .Add(New SqlParameter("@ID_Metodopago", parampago.Metodopago.ID))
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
-                .Add(New SqlParameter("@Descripcion", parampago.NumeroTarjeta))
+                .Add(New SqlParameter("@NumeroTarjeta", parampago.NumeroTarjeta))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -32,8 +33,8 @@ Public Class DAL_PagoViaje
 
     Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar
         Try
-            Dim paramPagoviaje As BE_PagoViaje = DirectCast(paramobjeto, BE_PagoViaje)
-            Dim command As SqlCommand = Acceso.MiComando("Update PagoViaje set BL=@BL where ID=@ID")
+            Dim paramPagoviaje As BE_Pago = DirectCast(paramobjeto, BE_Pago)
+            Dim command As SqlCommand = Acceso.MiComando("Update Pago set BL=@BL where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramPagoviaje.ID))
                 .Add(New SqlParameter("@BL", True))
@@ -47,11 +48,12 @@ Public Class DAL_PagoViaje
 
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
-            Dim parampago As BE_PagoViaje = DirectCast(paramobjeto, BE_PagoViaje)
-            Dim command As SqlCommand = Acceso.MiComando("Update PagoViaje set ID=@ID, ID_Reserva=@ID_Reserva, Fecha=@Fecha, ID_Metodopago=@ID_Metodopago, Monto=@Monto, finpago=@finpago,Descripcion=@Descripcion where ID=@ID")
+            Dim parampago As BE_Pago = DirectCast(paramobjeto, BE_Pago)
+            Dim command As SqlCommand = Acceso.MiComando("Update Pago set ID=@ID, ID_Reserva=@ID_Reserva, ID_TipoReserva=@ID_TipoReserva,Fecha=@Fecha, ID_Metodopago=@ID_Metodopago, Monto=@Monto, finpago=@finpago,Descripcion=@Descripcion where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
-                .Add(New SqlParameter("@ID_Reserva", parampago.Reservaviaje.ID))
+                .Add(New SqlParameter("@ID_Reserva", parampago.Reserva.ID))
+                .Add(New SqlParameter("@ID_TipoReserva", parampago.Reserva.TipoReserva))
                 .Add(New SqlParameter("@Fecha", parampago.Fecha))
                 .Add(New SqlParameter("@ID_Metodopago", parampago.Metodopago.ID))
                 .Add(New SqlParameter("@Monto", parampago.Monto))
@@ -66,14 +68,15 @@ Public Class DAL_PagoViaje
     End Function
 
 
-    Private Function formatearPagoviaje(ByVal paramDataRow As DataRow) As BE_PagoViaje
+    Private Function formatearPagoviaje(ByVal paramDataRow As DataRow) As BE_Pago
         Try
-            Dim oPagoviaje As New BE_PagoViaje
+            Dim oPagoviaje As New BE_Pago
             oPagoviaje.ID = paramDataRow.Item("ID")
             Dim oReservaviaje As New BE_ReservaViaje
             oReservaviaje.ID = paramDataRow.Item("ID_Reserva")
             'oPagoviaje.Reservaviaje = (New DAL_ReservaViaje).consultarReserva(oReservaviaje)
             oPagoviaje.Fecha = paramDataRow.Item("Fecha")
+            oPagoviaje.TipoReserva = paramDataRow.Item("TipoReserva")
             Dim oMetodopago As New BE_Metodopago
             oMetodopago.ID = paramDataRow.Item("ID_Metodopago")
             oPagoviaje.Metodopago = (New DAL_Metodopago).ConsultarMetodopago(oMetodopago)
@@ -85,14 +88,14 @@ Public Class DAL_PagoViaje
         Catch ex As Exception
 
         End Try
-       
+
     End Function
 
 
-    Public Function consultarPagosviajes(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_PagoViaje)
+    Public Function consultarPagosviajes(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_Pago)
         Try
-            Dim consulta As String = ("Select * from PagoViaje where BL=@BL")
-            Dim miListaPagosviajes As New List(Of BE_PagoViaje)
+            Dim consulta As String = ("Select * from Pago where BL=@BL")
+            Dim miListaPagosviajes As New List(Of BE_Pago)
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
                 .Add(New SqlParameter("@BL", False))

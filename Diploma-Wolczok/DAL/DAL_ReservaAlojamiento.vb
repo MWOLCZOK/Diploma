@@ -9,12 +9,13 @@ Public Class DAL_ReservaAlojamiento
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into ReservaAlojamiento values (@ID, @ID_Habitacion, @ID_Pasajero, @NumeroReserva, @FechaInicio, @FechaFin, @Estado, @Detalle, @Puntaje, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into ReservaAlojamiento values (@ID, @ID_Habitacion, @ID_Pasajero, @NumeroReserva, @MontoReserva, @FechaInicio, @FechaFin, @Estado, @Detalle, @Puntaje, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "ReservaAlojamiento")))
                 .Add(New SqlParameter("@ID_Habitacion", paramReservaAloja.Habitacion.ID))
                 .Add(New SqlParameter("@ID_Pasajero", paramReservaAloja.Pasajero.ID))
                 .Add(New SqlParameter("@NumeroReserva", Acceso.TraerID("NumeroReserva", "ReservaAlojamiento")))
+                .Add(New SqlParameter("@MontoReserva", paramReservaAloja.MontoAlquiler))
                 .Add(New SqlParameter("@FechaInicio", paramReservaAloja.Fecha_Inicio))
                 .Add(New SqlParameter("@FechaFin", paramReservaAloja.Fecha_Fin))
                 .Add(New SqlParameter("@Estado", paramReservaAloja.Estado))
@@ -47,12 +48,13 @@ Public Class DAL_ReservaAlojamiento
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
-            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set ID_Habitacion=@ID_Habitacion, ID_Pasajero=@ID_Pasajero, NumeroReserva=@NumeroReserva, FechaInicio=@FechaInicio, FechaFin=@FechaFin, Estado=@Estado, Detalle=@Detalle, Puntaje@Puntaje where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set ID_Habitacion=@ID_Habitacion, ID_Pasajero=@ID_Pasajero, NumeroReserva=@NumeroReserva, MontoReserva=@MontoReserva, FechaInicio=@FechaInicio, FechaFin=@FechaFin, Estado=@Estado, Detalle=@Detalle, Puntaje@Puntaje where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "ReservaAlojamiento")))
                 .Add(New SqlParameter("@ID_Habitacion", paramReservaAloja.Habitacion.ID))
                 .Add(New SqlParameter("@ID_Pasajero", paramReservaAloja.Pasajero.ID))
                 .Add(New SqlParameter("@NumeroReserva", paramReservaAloja.NumeroReserva))
+                .Add(New SqlParameter("@MontoReserva", paramReservaAloja.MontoAlquiler))
                 .Add(New SqlParameter("@FechaInicio", paramReservaAloja.Fecha_Inicio))
                 .Add(New SqlParameter("@FechaFin", paramReservaAloja.Fecha_Fin))
                 .Add(New SqlParameter("@Estado", paramReservaAloja.Estado))
@@ -128,6 +130,7 @@ Public Class DAL_ReservaAlojamiento
         oReservaAlojamiento.ID = paramDataRow.Item("ID")
         Dim oHabitacion As New BE_Habitacion
         oHabitacion.ID = paramDataRow.Item("ID_Habitacion")
+        oReservaAlojamiento.TipoReserva = TipoReserva.Alojamiento
         oReservaAlojamiento.NumeroReserva = paramDataRow.Item("NumeroReserva")
         oReservaAlojamiento.Habitacion = (New DAL.DAL_Habitacion).ConsultarHabitacion(oHabitacion)
         oReservaAlojamiento.Fecha_Inicio = paramDataRow.Item("FechaInicio")

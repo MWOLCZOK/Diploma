@@ -51,14 +51,6 @@ Public Class Reserva_Buscar_Alojamiento
       
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-
-    End Sub
 
     'Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
     '    Dim cantidad As Integer = list.Count

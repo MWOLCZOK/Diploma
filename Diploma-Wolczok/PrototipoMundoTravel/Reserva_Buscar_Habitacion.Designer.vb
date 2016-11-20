@@ -22,6 +22,7 @@ Partial Class Reserva_Buscar_Habitacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Habitacion))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -33,13 +34,17 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 108)
+        Me.DataGridView1.Location = New System.Drawing.Point(24, 133)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(610, 256)
@@ -52,8 +57,9 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TextBox1.Location = New System.Drawing.Point(113, 29)
+        Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(284, 14)
+        Me.TextBox1.Size = New System.Drawing.Size(284, 20)
         Me.TextBox1.TabIndex = 15
         '
         'Label1
@@ -85,8 +91,9 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TextBox2.Location = New System.Drawing.Point(530, 29)
+        Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(104, 14)
+        Me.TextBox2.Size = New System.Drawing.Size(104, 20)
         Me.TextBox2.TabIndex = 17
         '
         'Label3
@@ -107,8 +114,9 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TextBox3.Location = New System.Drawing.Point(530, 64)
+        Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(104, 14)
+        Me.TextBox3.Size = New System.Drawing.Size(104, 20)
         Me.TextBox3.TabIndex = 19
         '
         'Label4
@@ -129,8 +137,9 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TextBox4.Location = New System.Drawing.Point(113, 64)
+        Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(284, 14)
+        Me.TextBox4.Size = New System.Drawing.Size(284, 20)
         Me.TextBox4.TabIndex = 21
         '
         'btnSeleccionar
@@ -155,12 +164,37 @@ Partial Class Reserva_Buscar_Habitacion
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(24, 98)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(121, 15)
+        Me.Label5.TabIndex = 72
+        Me.Label5.Text = "Cantidad de Dias:"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.TextBox5.Location = New System.Drawing.Point(151, 98)
+        Me.TextBox5.Multiline = True
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(55, 20)
+        Me.TextBox5.TabIndex = 71
+        '
         'Reserva_Buscar_Habitacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(653, 461)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Label4)
@@ -172,6 +206,7 @@ Partial Class Reserva_Buscar_Habitacion
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Habitacion"
         Me.Text = "SeleccionarHabitacionReserva"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -190,4 +225,6 @@ Partial Class Reserva_Buscar_Habitacion
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents btnSeleccionar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
 End Class

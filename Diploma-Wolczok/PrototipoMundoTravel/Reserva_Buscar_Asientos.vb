@@ -41,6 +41,7 @@ Public Class Reserva_Buscar_Asientos
             oReservaViaje = reservaViaje
             Dim oAsiento As New BE_Asiento
             oAsiento.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+
             Dim bllAsiento As New BLL.BLL_Asiento
 
             oReservaViaje.Asiento = bllAsiento.consultarAsientos(oAsiento)
