@@ -196,11 +196,12 @@ Public Class DAL_ReservaViaje
         Dim oViaje As New BE_Viaje
         oViaje.ID = paramDataRow.Item("ID_Viaje")
         oReservaViaje.viaje = (New DAL.DAL_Viaje).consultarViaje(oViaje)
+        oReservaViaje.TipoReserva = TipoReserva.Viaje
         oReservaViaje.NumeroReserva = paramDataRow.Item("NumeroReserva")
         oReservaViaje.Detalle = paramDataRow.Item("Detalle")
         oReservaViaje.Estado = paramDataRow.Item("Estado")
         oReservaViaje.puntaje = paramDataRow.Item("Puntaje")
-        oReservaViaje.Pagoviaje = (New DAL_PagoViaje).consultarPagosviajes(oReservaViaje)
+        oReservaViaje.Pagoviaje = (New DAL_Pago).consultarPagosviajes(oReservaViaje)
         Return oReservaViaje
     End Function
 

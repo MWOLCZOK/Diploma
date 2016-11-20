@@ -1,4 +1,4 @@
-﻿Public Class BE_PagoViaje
+﻿Public Class BE_Pago
 
     Private _id As Integer
     Public Property ID() As Integer
@@ -10,13 +10,23 @@
         End Set
     End Property
 
-    Private _reservaviaje As BE_ReservaViaje
-    Public Property Reservaviaje() As BE_ReservaViaje
+    Private _reserva As BE_Reserva
+    Public Property Reserva() As BE_Reserva
         Get
-            Return _reservaviaje
+            Return _reserva
         End Get
-        Set(ByVal value As BE_ReservaViaje)
-            _reservaviaje = value
+        Set(ByVal value As BE_Reserva)
+            _reserva = value
+        End Set
+    End Property
+
+    Private _tipoReserva As TipoReserva
+    Public Property TipoReserva() As TipoReserva
+        Get
+            Return _tipoReserva
+        End Get
+        Set(ByVal value As TipoReserva)
+            _tipoReserva = value
         End Set
     End Property
 

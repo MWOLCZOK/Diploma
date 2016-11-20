@@ -73,13 +73,13 @@ Public Class Agregar_Pago
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            Dim oPagoviaje As New BE_PagoViaje
+            Dim oPagoviaje As New BE_Pago
             Dim bllPagoviaje As New BLL_PagoViaje
             oPagoviaje.Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
             oPagoviaje.Fecha = Today.Date
             oPagoviaje.Monto = Me.Txtmontopago.Text
             oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
-            oPagoviaje.Reservaviaje = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+            oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
             bllPagoviaje.altapagoviaje(oPagoviaje)
         Catch ex As Exception
 

@@ -62,7 +62,44 @@
         End Set
     End Property
 
+    Private _tipoReserva As TipoReserva
+    Public Property TipoReserva() As TipoReserva
+        Get
+            Return _tipoReserva
+        End Get
+        Set(ByVal value As TipoReserva)
+            _tipoReserva = value
+        End Set
+    End Property
 
 
+    Private _Pago As New List(Of BE_Pago)
+    Public Property Pagoviaje() As List(Of BE_Pago)
+        Get
+            Return _pago
+        End Get
+        Set(ByVal value As List(Of BE_Pago))
+            _pago = value
+        End Set
+    End Property
+
+    Private _montoReserva As Double
+    Public Property MontoReserva() As Double
+        Get
+            If Me.GetType() Is GetType(BE_ReservaAlojamiento) Then
+                Return DirectCast(Me, BE_ReservaAlojamiento).MontoAlquiler
+            Else
+                Return DirectCast(Me, BE_ReservaViaje).viaje.Precio
+            End If
+        End Get
+        Set(ByVal value As Double)
+            _montoReserva = value
+        End Set
+    End Property
 
 End Class
+
+Public Enum TipoReserva
+    Viaje = 1
+    Alojamiento = 2
+End Enum

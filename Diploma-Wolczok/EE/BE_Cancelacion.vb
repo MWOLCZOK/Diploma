@@ -20,12 +20,12 @@
         End Set
     End Property
 
-    Private _tiporeserva As BE_Tiporeserva
-    Public Property Tiporeserva() As BE_Tiporeserva
+    Private _tiporeserva As TipoReserva
+    Public Property Tiporeserva() As TipoReserva
         Get
             Return _tiporeserva
         End Get
-        Set(ByVal value As BE_Tiporeserva)
+        Set(ByVal value As TipoReserva)
             _tiporeserva = value
         End Set
     End Property
