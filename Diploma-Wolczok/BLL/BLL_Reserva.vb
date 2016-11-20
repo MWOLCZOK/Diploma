@@ -68,6 +68,9 @@ Public Class BLL_Reserva
             Dim cantidadDiasFaltantes As Double = 0
             Dim porcentajeRetencion As Integer = 0
             'CALCULA LA CANTIDAD DE DIAS QUE HAY HASTA LA FECHA DE SALIDA
+            Dim montoRetencion As Double = 0
+            Dim montoDevuelto As Double = 0
+
             cantidadDiasFaltantes = DateDiff(DateInterval.Day, paramReserva.viaje.FechaHoraSalida, Today)
             'LLAMAR A BLL.CANCELACION.OBTENERPUNITORIOS(CANTIDADDIASFALTANTES)
             'EL VALOR QUE DEVUELVE ES EL % DE RETENCIÓN
@@ -87,17 +90,15 @@ Public Class BLL_Reserva
             ElseIf cantidadDiasFaltantes >= 91 Then
                 porcentajeRetencion = 0
             End If
-            'Dim porcentajeRetencion As Double = 0.2 'reemplazarlo
-
-            'OBTENGO EL MONTO TOTAL
+            
             Dim montoTotal As Double = paramReserva.viaje.Precio
 
-            'CALCULAR EL MONTO DE RETENCION POR PUNITORIO
-            Dim montoRetencion As Double = 0
+
+
             montoRetencion = montoTotal * porcentajeRetencion
 
-            'CALCULAR EL MONTO DEVUELTO AL PASAJERO
-            Dim montoDevuelto As Double = 0
+
+
             montoDevuelto = montoTotal - montoDevuelto
 
             Dim oCancelacion As New BE_Cancelacion

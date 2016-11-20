@@ -19,16 +19,16 @@ Public Class Cancelacion
                 DataGridView1.Rows.Clear()
                 'DataGridView1.DataSource = oListareserva
                 DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                DataGridView1.Columns.Add("ID", "Identificador de Reserva")
                 DataGridView1.Columns.Add("viaje", "Destino")
                 DataGridView1.Columns.Add("asiento", "Numero de Asiento")
-                'DataGridView1.Columns.Add("ID", "Identificador de Reserva")
                 DataGridView1.Columns.Add("NumeroReserva", "Numero de Reserva")
                 DataGridView1.Columns.Add("Detalle", "Detalle de Reserva")
                 DataGridView1.Columns.Add("Estado", "Estado")
                 DataGridView1.Columns.Add("Pasajero", "Pasajero")
                 DataGridView1.Columns.Add("Puntaje", "Puntaje Acumulado")
                 For Each item In oListareserva
-                    DataGridView1.Rows.Add(item.viaje, item.Asiento, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
+                    DataGridView1.Rows.Add(item.ID, item.viaje, item.Asiento, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
                 Next
 
             End If
@@ -51,7 +51,7 @@ Public Class Cancelacion
         Try
             Dim bllReserva As New BLL.BLL_Reserva
             Dim oReserva As New BE_ReservaViaje
-            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(2).Value)
+            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
             oReserva = bllReserva.consultarReservaviajeID(oReserva)
             Dim oCancel As New BE_Cancelacion
             oCancel = bllReserva.calcularPunitorios(oReserva)
@@ -59,7 +59,7 @@ Public Class Cancelacion
             Me.Txtmontoretenido.Text = oCancel.MontoRetenido
             Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
             Me.Txtmontototal.Text = oCancel.MontoTotal
-            Me.Txtdecrmotivo.Text = oCancel.DescripcionMotivoCancelacion
+
 
         Catch ex As Exception
 
