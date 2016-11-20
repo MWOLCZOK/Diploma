@@ -163,6 +163,27 @@ Public Class DAL_ReservaViaje
     End Function
 
 
+    Public Function ConsultarReservaviajeID(ByVal oReservaviaje As BE_ReservaViaje) As BE_ReservaViaje
+        Try
+            Dim consulta As String = ("Select * from Habitacion where ID=@ID and BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", oReservaviaje.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return Me.formatearReservaViaje(dt.Rows(0))
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
+
 
 
     Private Function formatearReservaViaje(ByVal paramDataRow As DataRow) As BE_ReservaViaje

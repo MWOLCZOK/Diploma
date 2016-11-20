@@ -62,4 +62,8 @@ Public Class Reserva_Buscar_Habitacion
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
+
+    Private Sub Reserva_Buscar_Habitacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

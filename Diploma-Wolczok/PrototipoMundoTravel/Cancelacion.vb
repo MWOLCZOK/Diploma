@@ -17,17 +17,17 @@ Public Class Cancelacion
                 oListareserva = bllReservaViaje.consultarReservaViajeporDNI(oPasajero)
                 DataGridView1.Columns.Clear()
                 DataGridView1.Rows.Clear()
-                DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                'DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 DataGridView1.Columns.Add("viaje", "Destino")
                 DataGridView1.Columns.Add("asiento", "Numero de Asiento")
-                DataGridView1.Columns.Add("ID", "Identificador de Reserva")
+                'DataGridView1.Columns.Add("ID", "Identificador de Reserva")
                 DataGridView1.Columns.Add("NumeroReserva", "Numero de Reserva")
                 DataGridView1.Columns.Add("Detalle", "Detalle de Reserva")
                 DataGridView1.Columns.Add("Estado", "Estado")
                 DataGridView1.Columns.Add("Pasajero", "Pasajero")
                 DataGridView1.Columns.Add("Puntaje", "Puntaje Acumulado")
                 For Each item In oListareserva
-                    DataGridView1.Rows.Add(item.viaje, item.Asiento, item.ID, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
+                    DataGridView1.Rows.Add(item.viaje, item.Asiento, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
                 Next
 
             End If
@@ -48,23 +48,12 @@ Public Class Cancelacion
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btncalcpuni.Click
         Try
-            Dim oCancel As New BE_Cancelacion
-
             Dim bllReserva As New BLL.BLL_Reserva
-
-
             Dim oReserva As New BE_ReservaViaje
-
-            'Dim oHabitacion As New EE.BE_Habitacion
-            'oHabitacion.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-
-
-            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(2).Value)
+            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            oReserva = bllReserva.consultarReservaviajeID(oReserva)
+            Dim oCancel As New BE_Cancelacion
             oCancel = bllReserva.calcularPunitorios(oReserva)
-
-            'paramCancelacion = oCancel
-            'CARGAS LOS TEXTBOX CON LOS VALORES DE LA POSIBLE CANCELACION
-
             Me.Txtmontoretenido.Text = oCancel.MontoRetenido
             Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
             Me.Txtmontototal.Text = oCancel.MontoTotal
