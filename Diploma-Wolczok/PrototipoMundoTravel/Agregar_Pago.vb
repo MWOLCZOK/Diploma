@@ -25,7 +25,13 @@ Public Class Agregar_Pago
             oListareservaviaje = bllReservaviaje.consultarReservaViaje
             For Each miReserva As BE_ReservaViaje In oListareservaviaje
                 Me.Cbxreserva.Items.Add(miReserva)
-                Cbxreserva.DisplayMember = "Numeroreserva"
+                Cbxreserva.DisplayMember = "ID"
+            Next
+            Dim oListaReservaAloja As New List(Of BE_ReservaAlojamiento)
+            oListaReservaAloja = bllReservaviaje.consultarReservaAlojamiento()
+            For Each miReserva As BE_ReservaAlojamiento In oListaReservaAloja
+                Me.Cbxreserva.Items.Add(miReserva)
+                Cbxreserva.DisplayMember = "ID"
             Next
             Dim oListametodopago As New List(Of BE_Metodopago)
             Dim bllMetodopago As New BLL_Metodopago
@@ -79,7 +85,13 @@ Public Class Agregar_Pago
             oPagoviaje.Fecha = Today.Date
             oPagoviaje.Monto = Me.Txtmontopago.Text
             oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
-            oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+            Dim oreserva As EE.BE_Reserva = DirectCast(Cbxreserva.SelectedItem, BE_Reserva)
+            If oreserva.TipoReserva = TipoReserva.Alojamiento Then
+                oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaAlojamiento)
+            Else
+                oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+            End If
+
             bllPagoviaje.altapagoviaje(oPagoviaje)
         Catch ex As Exception
 

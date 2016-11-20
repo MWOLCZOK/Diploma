@@ -10,9 +10,7 @@ Public Class BLL_PagoViaje
     Public Sub altapagoviaje(ByVal paramPagoViaje As BE_Pago)
         Try
             Dim listaPago As New List(Of EE.BE_Pago)
-            'Dim bllPago As New BLL.BLL_PagoViaje
             listaPago = consultarPagosViajes(paramPagoViaje.Reserva)
-            'bllPago.consultarPagosViajes(paramPagoViaje.Reservaviaje)
             paramPagoViaje.Finpago = calcularUltimoPago(listaPago, paramPagoViaje)
             _dalpagoviaje.alta(paramPagoViaje)
         Catch ex As Exception

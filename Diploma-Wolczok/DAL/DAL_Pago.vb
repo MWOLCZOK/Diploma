@@ -13,16 +13,16 @@ Public Class DAL_Pago
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim parampago As BE_Pago = DirectCast(paramobjeto, BE_Pago)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @Descripcion, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @NumeroTarjeta, @BL)")
             With command.Parameters
-                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "PagoViaje")))
+                .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
                 .Add(New SqlParameter("@ID_Reserva", parampago.Reserva.ID))
-                .Add(New SqlParameter("@ID_TipoReserva", parampago.Reserva.TipoReserva))
+                .Add(New SqlParameter("@TipoReserva", parampago.Reserva.TipoReserva))
                 .Add(New SqlParameter("@Fecha", parampago.Fecha))
                 .Add(New SqlParameter("@ID_Metodopago", parampago.Metodopago.ID))
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
-                .Add(New SqlParameter("@Descripcion", parampago.NumeroTarjeta))
+                .Add(New SqlParameter("@NumeroTarjeta", parampago.NumeroTarjeta))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
