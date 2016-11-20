@@ -1,4 +1,5 @@
-﻿Public Class visualizarBitacora
+﻿
+Public Class visualizarBitacora
 
     Private Sub visualizarBitacora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarCombos()
@@ -73,5 +74,46 @@
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnExportar.Click
+        Dim excel As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.Application()
+        Dim workbook As Microsoft.Office.Interop.Excel.Workbook = excel.Workbooks.Add(Type.Missing)
+        Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = Nothing
+        Try
+            worksheet = workbook.ActiveSheet
+            worksheet.Name = "Bitacora MundoTravel"
+            Dim cellRowIndex As Integer = 1
+            Dim cellColumnIndex As Integer = 1
+            'Loop through each row and read value from each column.
+            For i As Integer = 0 To dgvBitacora.Rows.Count - 2
+                For j As Integer = 0 To dgvBitacora.Columns.Count - 1
+                    ' Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
+                    If cellRowIndex = 1 Then
+                        worksheet.Cells(cellRowIndex, cellColumnIndex) = dgvBitacora.Columns(j).HeaderText
+                    Else
+                        worksheet.Cells(cellRowIndex, cellColumnIndex) = dgvBitacora.Rows(i).Cells(j).Value.ToString()
+                    End If
+                    cellColumnIndex += 1
+                Next
+                cellColumnIndex = 1
+                cellRowIndex += 1
+            Next
+            'Getting the location and file name of the excel to save from user.
+            Dim saveDialog As New SaveFileDialog()
+            saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+            saveDialog.FilterIndex = 2
+
+            If saveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                workbook.SaveAs(saveDialog.FileName)
+            End If
+        Catch ex As System.Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            excel.Quit()
+            workbook = Nothing
+            excel = Nothing
+        End Try
+
     End Sub
 End Class
