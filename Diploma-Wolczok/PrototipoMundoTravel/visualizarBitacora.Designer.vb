@@ -33,6 +33,7 @@ Partial Class visualizarBitacora
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnExportar = New System.Windows.Forms.Button()
         CType(Me.dgvBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -136,12 +137,23 @@ Partial Class visualizarBitacora
         '
         Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(319, 422)
+        Me.btnSalir.Location = New System.Drawing.Point(478, 412)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(150, 30)
         Me.btnSalir.TabIndex = 50
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnExportar
+        '
+        Me.btnExportar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnExportar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportar.Location = New System.Drawing.Point(163, 412)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(150, 30)
+        Me.btnExportar.TabIndex = 52
+        Me.btnExportar.Text = "Exportar a Excel"
+        Me.btnExportar.UseVisualStyleBackColor = False
         '
         'visualizarBitacora
         '
@@ -149,6 +161,7 @@ Partial Class visualizarBitacora
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(807, 488)
+        Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Label4)
@@ -178,4 +191,5 @@ Partial Class visualizarBitacora
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents btnExportar As System.Windows.Forms.Button
 End Class
