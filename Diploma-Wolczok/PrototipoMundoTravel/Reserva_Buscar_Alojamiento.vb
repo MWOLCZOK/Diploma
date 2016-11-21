@@ -76,7 +76,7 @@ Public Class Reserva_Buscar_Alojamiento
             Dim oAlojamiento As New EE.BE_Alojamiento
             oAlojamiento = TryCast(Me.DataGridView1.SelectedRows.Item(0).DataBoundItem, BE_Alojamiento)
             Dim bllAlojamiento As New BLL.BLL_Alojamiento
-         
+
             Dim oReservaAlojamiento As New EE.BE_ReservaAlojamiento
             oReservaAlojamiento.Fecha_Inicio = Me.DateTimePicker1.Value
             oReservaAlojamiento.Fecha_Fin = Me.DateTimePicker2.Value
