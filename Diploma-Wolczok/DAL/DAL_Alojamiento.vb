@@ -23,7 +23,7 @@ Public Class DAL_Alojamiento
                 For Each miAlojamiento As BE_Alojamiento In milistaAlojamiento
                     Dim NuevaListaHabitacion As New List(Of EE.BE_Habitacion)
                     For Each paramHabitacion As EE.BE_Habitacion In miAlojamiento.ListaHabitaciones
-                        Dim consulta2 As String = ("Select * from Habitacion where ID=@ID_Habitacion and BL=@BL and not exists (select * from reservaAlojamiento where (FechaInicio<@FechaInicio and FechaInicio<@FechaFin) or (FechaFin>@FechaInicio and FechaFin>@FechaFin))")
+                        Dim consulta2 As String = "Select * from Habitacion where ID=@ID_Habitacion and BL=@BL and ID not in (select ID_Habitacion from reservaAlojamiento where FechaInicio between @FechaInicio and @FechaFin or FechaFin  between @FechaInicio and @FechaFin)"
                         Dim Command2 As SqlCommand = Acceso.MiComando(consulta2)
                         With Command2.Parameters
                             .Add(New SqlParameter("@ID_Habitacion", paramHabitacion.ID))
