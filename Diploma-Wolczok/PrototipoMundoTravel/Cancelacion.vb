@@ -3,6 +3,7 @@ Imports BLL
 
 Public Class Cancelacion
     Dim bllCancel As New BLL.BLL_Cancelacion
+
     Protected Friend paramCancelacion As EE.BE_Cancelacion
 
     Private Sub Txtdni_TextChanged(sender As Object, e As EventArgs) Handles Txtdni.TextChanged
@@ -68,10 +69,22 @@ Public Class Cancelacion
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Btncancelares.Click
         Try
-            Dim ocancel As BE_Cancelacion = paramCancelacion
+            Dim ocancel As New BE_Cancelacion
+            Dim oReserva As New BE_ReservaViaje
+            Dim bllReserva As New BLL_Reserva
+            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            oReserva = bllReserva.consultarReservaviajeID(oReserva)
+            ocancel.Tiporeserva = oReserva.TipoReserva
             ocancel.Fechacancelacion = Today
-            '        ocancel.DescripcionMotivoCancelacion =
+
+            ocancel.MontoDevuelto = Me.Txtmontodevuelto.Text
+            ocancel.MontoRetenido = Me.Txtmontoretenido.Text
+            ocancel.MontoTotal = Me.Txtmontototal.Text
+            ocancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
+
+
             bllCancel.alta(ocancel)
+
         Catch ex As Exception
 
         End Try

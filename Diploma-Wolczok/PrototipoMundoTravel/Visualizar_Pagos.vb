@@ -26,6 +26,8 @@ Public Class Visualizar_Pagos
 
               
                 Dim listColumns As New List(Of String)
+                listColumns.Add("Reserva")
+                listColumns.Add("TipoReserva")
                 listColumns.Add("Fecha")
                 listColumns.Add("Metodopago")
                 listColumns.Add("Monto")

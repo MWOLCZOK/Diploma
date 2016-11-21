@@ -13,7 +13,7 @@ Public Class DAL_Pago
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim parampago As BE_Pago = DirectCast(paramobjeto, BE_Pago)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @NumeroTarjeta, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @NumeroTarjeta,@Estado, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
                 .Add(New SqlParameter("@ID_Reserva", parampago.Reserva.ID))
@@ -23,6 +23,7 @@ Public Class DAL_Pago
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
                 .Add(New SqlParameter("@NumeroTarjeta", parampago.NumeroTarjeta))
+                .Add(New SqlParameter("@Estado", parampago.Estado))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -46,10 +47,28 @@ Public Class DAL_Pago
         End Try
     End Sub
 
+    Public Sub actualizarpagocancel(paramobjeto As Object)
+        Try
+            Dim paramPagoviaje As BE_Pago = DirectCast(paramobjeto, BE_Pago)
+            Dim command As SqlCommand = Acceso.MiComando("Update Pago set BL=@BL, Estado=@Estado where ID=@ID")
+            With command.Parameters
+                .Add(New SqlParameter("@ID", paramPagoviaje.ID))
+                .Add(New SqlParameter("@Estado", True))
+                .Add(New SqlParameter("@BL", True))
+            End With
+            Acceso.Escritura(command)
+            command.Dispose()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
+    End Sub
+
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim parampago As BE_Pago = DirectCast(paramobjeto, BE_Pago)
-            Dim command As SqlCommand = Acceso.MiComando("Update Pago set ID=@ID, ID_Reserva=@ID_Reserva, ID_TipoReserva=@ID_TipoReserva,Fecha=@Fecha, ID_Metodopago=@ID_Metodopago, Monto=@Monto, finpago=@finpago,Descripcion=@Descripcion where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Pago set ID=@ID, ID_Reserva=@ID_Reserva, ID_TipoReserva=@ID_TipoReserva,Fecha=@Fecha, ID_Metodopago=@ID_Metodopago, Monto=@Monto, finpago=@finpago,Descripcion=@Descripcion, Estado=@Estado where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
                 .Add(New SqlParameter("@ID_Reserva", parampago.Reserva.ID))
@@ -59,6 +78,7 @@ Public Class DAL_Pago
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
                 .Add(New SqlParameter("@Descripcion", parampago.NumeroTarjeta))
+                .Add(New SqlParameter("@Estado", parampago.Estado))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -72,18 +92,19 @@ Public Class DAL_Pago
         Try
             Dim oPagoviaje As New BE_Pago
             oPagoviaje.ID = paramDataRow.Item("ID")
-            Dim oReservaviaje As New BE_ReservaViaje
+            Dim oReservaviaje As New BE_Reserva
             oReservaviaje.ID = paramDataRow.Item("ID_Reserva")
             'oPagoviaje.Reservaviaje = (New DAL_ReservaViaje).consultarReserva(oReservaviaje)
             oPagoviaje.Fecha = paramDataRow.Item("Fecha")
             oPagoviaje.TipoReserva = paramDataRow.Item("TipoReserva")
+            oPagoviaje.Reserva = oReservaviaje
             Dim oMetodopago As New BE_Metodopago
             oMetodopago.ID = paramDataRow.Item("ID_Metodopago")
             oPagoviaje.Metodopago = (New DAL_Metodopago).ConsultarMetodopago(oMetodopago)
             oPagoviaje.Monto = paramDataRow.Item("Monto")
             oPagoviaje.Finpago = paramDataRow.Item("Finpago")
             oPagoviaje.NumeroTarjeta = paramDataRow.Item("Numerotarjeta")
-            oMetodopago.Descripcion = paramDataRow.Item("Metodopago")
+            oPagoviaje.Estado = paramDataRow.Item("Estado")
             Return oPagoviaje
         Catch ex As Exception
 

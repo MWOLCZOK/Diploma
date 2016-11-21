@@ -44,6 +44,26 @@ Public Class DAL_ReservaViaje
         End Try
     End Sub
 
+    Public Sub actualizarreservaviajecancel(paramobjeto As Object)
+        Try
+            Dim paramReservaViaje As BE_ReservaViaje = DirectCast(paramobjeto, BE_ReservaViaje)
+            Dim command As SqlCommand = Acceso.MiComando("Update ReservaViaje set BL=@BL, Estado=@Estado where ID=@ID")
+            With command.Parameters
+                .Add(New SqlParameter("@ID", paramReservaViaje.ID))
+                .Add(New SqlParameter("@Estado", True))
+                .Add(New SqlParameter("@BL", True))
+            End With
+            Acceso.Escritura(command)
+            command.Dispose()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+
+
+
+
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramReservaViaje As BE_ReservaViaje = DirectCast(paramobjeto, BE_ReservaViaje)

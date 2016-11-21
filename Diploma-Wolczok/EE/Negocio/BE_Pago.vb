@@ -85,6 +85,17 @@
         End Set
     End Property
 
+    Private _estado As Boolean
+    Public Property Estado() As Boolean
+        Get
+            Return _estado
+        End Get
+        Set(ByVal value As Boolean)
+            _estado = value
+        End Set
+    End Property
+
+
 
     Public Overrides Function ToString() As String
         Return Me.NumeroTarjeta

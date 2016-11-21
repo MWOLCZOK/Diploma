@@ -45,6 +45,24 @@ Public Class DAL_ReservaAlojamiento
         End Try
     End Sub
 
+    Public Sub actualizarreservaalojacancel(paramobjeto As Object)
+        Try
+            Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
+            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set BL=@BL, Estado=@Estado where ID=@ID")
+            With command.Parameters
+                .Add(New SqlParameter("@ID", paramReservaAloja.ID))
+                .Add(New SqlParameter("@Estado", True))
+                .Add(New SqlParameter("@BL", True))
+            End With
+            Acceso.Escritura(command)
+            command.Dispose()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+
+
     Public Function modificar(paramobjeto As Object) As Boolean Implements Master.modificar
         Try
             Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)

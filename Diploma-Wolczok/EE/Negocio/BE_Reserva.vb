@@ -97,6 +97,10 @@
         End Set
     End Property
 
+    Public Overrides Function ToString() As String
+        Return Me.ID
+    End Function
+
 End Class
 
 Public Enum TipoReserva

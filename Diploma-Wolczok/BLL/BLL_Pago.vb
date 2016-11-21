@@ -13,6 +13,16 @@ Public Class BLL_PagoViaje
             listaPago = consultarPagosViajes(paramPagoViaje.Reserva)
             paramPagoViaje.Finpago = calcularUltimoPago(listaPago, paramPagoViaje)
             _dalpagoviaje.alta(paramPagoViaje)
+            If paramPagoViaje.Finpago = True Then
+                ' ACA VA EL ALTA DE VOUCHER, LLAMAR A BLL VOUCHER.ALTA ( LLAMAR A ALTA DALVOUCHER)
+                '_DALVOUCHER.ALTA(PARAMPAGOVIAJE.RESERVA), LE PASO UNA RESERVA
+
+                ' PARA LA DALVOUCHER
+                'FECHA EMISION = TODAY (PARA LA DAL)
+                'ID_RESERVA = PARAMRESREVA.ID (PARA LA DAL)
+                'TIPORESERVA = PARAMPAGOVIAJE.RESREVA.TIPORESERVA (PARA LA DAL)
+
+            End If
         Catch ex As Exception
         End Try
     End Sub
@@ -59,7 +69,7 @@ Public Class BLL_PagoViaje
 
     Public Function consultarPagosViajes(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_Pago)
         Try
-            Return _dalpagoviaje.consultarPagosviajes(oReservaviaje)
+            Return _dalpagoviaje.consultarPagosviajes(oReservaviaje) ' este consultar pagosviajes es pagos (todos)
         Catch ex As Exception
 
         End Try
