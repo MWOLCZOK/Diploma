@@ -10,7 +10,7 @@ Public Class DAL_Viaje
     Public Function consultarviajes(ByVal paramOrigen As EE.BE_Destino, ByVal paramDestino As EE.BE_Destino, ByVal paramFechaSalida As Date, ByVal paramTipoTransporte As EE.BE_TipoTransporte)
         Dim milistaViajes As New List(Of EE.BE_Viaje)
         Try
-            Dim consulta As String = ("select V.*, TT.ID as ID_TipoTransporte from viaje as V, TipoTransporte as TT, Transporte as T where V.ID_Transporte = T.ID and T.ID_TipoTransporte=TT.ID and ID_Transporte=@ID_TipoTransporte and ID_Destino=@Destino and ID_Origen=@Origen and V.BL=@BL")
+            Dim consulta As String = ("select V.*, TT.ID as ID_TipoTransporte from viaje as V, TipoTransporte as TT, Transporte as T where V.ID_Transporte = T.ID and T.ID_TipoTransporte=TT.ID and ID_Transporte=@ID_TipoTransporte and ID_Destino=@Destino and ID_Origen=@Origen and V.BL=@BL and CONVERT(date, V.Fechahorasalida) = Convert(date, @Fecha)")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
                 .Add(New SqlParameter("@Destino", paramDestino.ID))

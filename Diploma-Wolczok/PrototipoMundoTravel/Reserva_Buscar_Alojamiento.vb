@@ -74,9 +74,9 @@ Public Class Reserva_Buscar_Alojamiento
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
             Dim oAlojamiento As New EE.BE_Alojamiento
-            oAlojamiento.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            oAlojamiento = TryCast(Me.DataGridView1.SelectedRows.Item(0).DataBoundItem, BE_Alojamiento)
             Dim bllAlojamiento As New BLL.BLL_Alojamiento
-            oAlojamiento = bllAlojamiento.consultarAlojamiento(oAlojamiento)
+         
             Dim oReservaAlojamiento As New EE.BE_ReservaAlojamiento
             oReservaAlojamiento.Fecha_Inicio = Me.DateTimePicker1.Value
             oReservaAlojamiento.Fecha_Fin = Me.DateTimePicker2.Value

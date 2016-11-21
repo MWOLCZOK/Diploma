@@ -50,7 +50,7 @@ Public Class Reserva_Buscar_Viaje
             Dim oOrigen As BE_Destino = DirectCast(Cbxorigen.SelectedItem, BE_Destino)
             Dim oDestino As BE_Destino = DirectCast(Cbxdestino.SelectedItem, BE_Destino)
             Dim oTipoTransrpote As BE_TipoTransporte = DirectCast(ComboBox1.SelectedItem, BE_TipoTransporte)
-            oListaViaje = bllViaje.consultarviajes(oOrigen, oDestino, Me.DateTimePicker1.Value, oTipoTransrpote)
+            oListaViaje = bllViaje.consultarviajes(oOrigen, oDestino, Me.DateTimePicker1.Value.ToShortDateString, oTipoTransrpote)
             DataGridView1.DataSource = Nothing
             DataGridView1.DataSource = oListaViaje
             DataGridView1.ReadOnly = True
@@ -85,4 +85,5 @@ Public Class Reserva_Buscar_Viaje
     Private Sub Btncancelar_Click(sender As Object, e As EventArgs) Handles Btncancelar.Click
         Me.Close()
     End Sub
+
 End Class
