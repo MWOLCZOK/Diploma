@@ -21,9 +21,9 @@ Public Class BLL_Cancelacion
 
             '   AGREGAR DATOS DE LA CANCELACION
             _cancelacion.alta(paramCancelacion)
-            _dalpago.actualizarpagocancel(paramCancelacion)
-            _dalreservaaloja.actualizarreservaalojacancel(paramCancelacion)
-            _dalreservaviaje.actualizarreservaviajecancel(paramCancelacion)
+            '_dalpago.actualizarpagocancel(paramCancelacion)
+            '_dalreservaaloja.actualizarreservaalojacancel(paramCancelacion)
+            '_dalreservaviaje.actualizarreservaviajecancel(paramCancelacion)
 
         Catch ex As Exception
         End Try
