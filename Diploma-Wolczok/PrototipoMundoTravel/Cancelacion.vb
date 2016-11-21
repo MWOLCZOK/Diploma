@@ -4,7 +4,7 @@ Imports BLL
 Public Class Cancelacion
     Dim bllCancel As New BLL.BLL_Cancelacion
 
-    Protected Friend paramCancelacion As EE.BE_Cancelacion
+    'Protected Friend paramCancelacion As EE.BE_Cancelacion
 
     Private Sub Txtdni_TextChanged(sender As Object, e As EventArgs) Handles Txtdni.TextChanged
         Try
@@ -54,11 +54,11 @@ Public Class Cancelacion
             Dim oReserva As New BE_ReservaViaje
             oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
             oReserva = bllReserva.consultarReservaviajeID(oReserva)
-            Dim oCancel As BE_Cancelacion = paramCancelacion
-            paramCancelacion = bllReserva.calcularPunitorios(oReserva)
-            Me.Txtmontoretenido.Text = paramCancelacion.MontoRetenido
-            Me.Txtmontodevuelto.Text = paramCancelacion.MontoDevuelto
-            Me.Txtmontototal.Text = paramCancelacion.MontoTotal
+            Dim oCancel As BE_Cancelacion
+            oCancel = bllReserva.calcularPunitorios(oReserva)
+            Me.Txtmontoretenido.Text = oCancel.MontoRetenido
+            Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
+            Me.Txtmontototal.Text = oCancel.MontoTotal
 
         Catch ex As Exception
 
@@ -67,18 +67,18 @@ Public Class Cancelacion
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Btncancelares.Click
         Try
-            'Dim ocancel As BE_Cancelacion = paramCancelacion
             Dim oReserva As New BE_ReservaViaje
             Dim bllReserva As New BLL_Reserva
             oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
             oReserva = bllReserva.consultarReservaviajeID(oReserva)
-            paramCancelacion.Tiporeserva = oReserva.TipoReserva
-            paramCancelacion.Fechacancelacion = Today
-            'paramCancelacion.MontoDevuelto = Me.Txtmontodevuelto.Text
-            'paramCancelacion.MontoRetenido = Me.Txtmontoretenido.Text
-            'paramCancelacion.MontoTotal = Me.Txtmontototal.Text
-            paramCancelacion.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
-            bllCancel.alta(paramCancelacion)
+            Dim oCancel As New BE_Cancelacion
+            oCancel.Tiporeserva = oReserva.TipoReserva
+            oCancel.Fechacancelacion = Today
+            oCancel.MontoDevuelto = Me.Txtmontodevuelto.Text
+            oCancel.MontoRetenido = Me.Txtmontoretenido.Text
+            oCancel.MontoTotal = Me.Txtmontototal.Text
+            oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
+            bllCancel.alta(oCancel)
         Catch ex As Exception
 
         End Try
