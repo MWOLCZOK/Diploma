@@ -14,14 +14,12 @@ Public Class BLL_PagoViaje
             paramPagoViaje.Finpago = calcularUltimoPago(listaPago, paramPagoViaje)
             _dalpagoviaje.alta(paramPagoViaje)
             If paramPagoViaje.Finpago = True Then
-                ' ACA VA EL ALTA DE VOUCHER, LLAMAR A BLL VOUCHER.ALTA ( LLAMAR A ALTA DALVOUCHER)
-                '_DALVOUCHER.ALTA(PARAMPAGOVIAJE.RESERVA), LE PASO UNA RESERVA
-
-                ' PARA LA DALVOUCHER
-                'FECHA EMISION = TODAY (PARA LA DAL)
-                'ID_RESERVA = PARAMRESREVA.ID (PARA LA DAL)
-                'TIPORESERVA = PARAMPAGOVIAJE.RESREVA.TIPORESERVA (PARA LA DAL)
-
+                Dim _bllVoucher As New BLL.BLL_Voucher
+                Dim oVoucher As New EE.BE_Voucher
+                oVoucher.FechaEmision = Today
+                oVoucher.Reserva = paramPagoViaje.Reserva
+                oVoucher.TipoReserva = paramPagoViaje.TipoReserva
+                _bllVoucher.altaVoucher(oVoucher)
             End If
         Catch ex As Exception
         End Try

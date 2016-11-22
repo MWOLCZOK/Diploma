@@ -97,6 +97,7 @@
     <Compile Include="DAL_Transporte.vb" />
     <Compile Include="DAL_Viaje.vb" />
     <Compile Include="DAL_GestorPermiso.vb" />
+    <Compile Include="DAL_Voucher.vb" />
     <Compile Include="Master.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
