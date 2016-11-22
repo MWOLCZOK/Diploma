@@ -77,6 +77,7 @@ Public Class Cancelacion
             oCancel.MontoDevuelto = Me.Txtmontodevuelto.Text
             oCancel.MontoRetenido = Me.Txtmontoretenido.Text
             oCancel.MontoTotal = Me.Txtmontototal.Text
+            oCancel.Reserva = oReserva
             oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
             bllCancel.alta(oCancel)
         Catch ex As Exception
