@@ -116,8 +116,6 @@
     <Compile Include="Negocio\BE_ReservaViaje.vb" />
     <Compile Include="Negocio\BE_Transporte.vb" />
     <Compile Include="Negocio\BE_Voucher.vb" />
-    <Compile Include="Negocio\BE_VoucherAlojamiento.vb" />
-    <Compile Include="Negocio\BE_VoucherViaje.vb" />
     <Compile Include="Servicios\BE_GrupoPermiso.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

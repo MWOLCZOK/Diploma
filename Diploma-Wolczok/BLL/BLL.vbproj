@@ -96,6 +96,7 @@
     <Compile Include="BLL_TipoTransporte.vb" />
     <Compile Include="BLL_Transporte.vb" />
     <Compile Include="BLL_Viaje.vb" />
+    <Compile Include="BLL_Voucher.vb" />
     <Compile Include="Encriptadora.vb" />
     <Compile Include="Excepciones\CamposIncompletosException.vb" />
     <Compile Include="Excepciones\PasswordIncorrectoException.vb" />

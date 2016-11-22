@@ -327,4 +327,9 @@ Public Class FormMenu
         Dim formViaje As New Agregar_Viaje
         AbrirForm(formViaje)
     End Sub
+
+    Private Sub VisualizarPasajerosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarPasajerosToolStripMenuItem.Click
+        Dim vPasajeros As New visualizarPasajeros
+        AbrirForm(vPasajeros)
+    End Sub
 End Class
