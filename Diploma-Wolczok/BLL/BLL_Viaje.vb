@@ -31,4 +31,12 @@
         End Try
     End Function
 
+    Public Sub altaViaje(ByVal oViaje As EE.BE_Viaje)
+        Try
+            dalViaje.alta(oViaje)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class

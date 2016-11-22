@@ -45,28 +45,26 @@ Public Class Agregar_Viaje
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        'Try
-        '    Dim oTipotrans As New BE_TipoTransporte
-        '    oTipotrans = DirectCast(Cbxtipotransporte.SelectedItem, BE_TipoTransporte)
-        '    If oTipotrans.ID = 1 Then
-        '        Dim oOrigen As BE_Destino = DirectCast(Cbxorigen.SelectedItem, BE_Destino)
-        '        Dim oDestino As BE_Destino = DirectCast(Cbxdestino.SelectedItem, BE_Destino)
-        '        Dim oMicro As New BE_Transporte
-        '        oMicro.Empresa.Nombre = Me.Txtnombreemp.Text
-        '        oMicro.Empresa.Descripcion = Me.Txtdescripcion.Text
-        '        oMicro.Empresa.CUIL = Me.Txtcuil.Text
-        '        oMicro.Empresa.Mail = Me.Txtmail.Text
-        '        oMicro.Empresa.Telefono = Me.Txttelefono.Text
-        '        Dim oViaje As New BE_Viaje
-        '        oViaje.Cena = Me.Cbxcena.Checked
-        '        oViaje.Cafeteria = Me.Cbxcafeteria.Checked
-        '        oViaje.Almuerzo = Me.Cbxalmuerzo.Checked
-        '        oViaje.FechaHoraSalida = Me.Fechainicio.Value
-        '        oViaje.FechaHoraLlegada = Me.Fechafin.Value
-        '        oViaje.Precio = Txtprecio.Text
-        '        Dim bllviaje As New BLL_Viaje
-        '        bllviaje.
+        Try
+            Dim oViaje As New EE.BE_Viaje
+            Dim oOrigen As New EE.BE_Destino
+            oOrigen = DirectCast(Cbxorigen.SelectedItem, BE_Destino)
+            Dim oDestino As New EE.BE_Destino
+            oDestino = DirectCast(Cbxdestino.SelectedItem, BE_Destino)
+            oViaje.Destino = oDestino
+            oViaje.Origen = oOrigen
+            oViaje.Precio = Txtprecio.Text
+            oViaje.Almuerzo = Cbxalmuerzo.Checked
+            oViaje.Cafeteria = Cbxcafeteria.Checked
+            oViaje.Cena = Cbxcena.Checked
+            oViaje.Transporte = DirectCast(Cbxtipotransporte.SelectedItem, BE_Transporte)
+            oViaje.FechaHoraSalida = Fechainicio.Value
+            oViaje.FechaHoraLlegada = Fechafin.Value
+            Dim bllViaje As New BLL.BLL_Viaje
+            bllViaje.altaVaije(oViaje)
+        Catch ex As Exception
 
+        End Try
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma

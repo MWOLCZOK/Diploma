@@ -180,7 +180,6 @@ Partial Class Agregar_Viaje
         '
         'Fechafin
         '
-        Me.Fechafin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Fechafin.Location = New System.Drawing.Point(431, 128)
         Me.Fechafin.Name = "Fechafin"
         Me.Fechafin.Size = New System.Drawing.Size(180, 20)
@@ -188,7 +187,6 @@ Partial Class Agregar_Viaje
         '
         'Fechainicio
         '
-        Me.Fechainicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Fechainicio.Location = New System.Drawing.Point(222, 128)
         Me.Fechainicio.Name = "Fechainicio"
         Me.Fechainicio.Size = New System.Drawing.Size(180, 20)
