@@ -3,8 +3,8 @@
 
 
 
-    Public Function consultarAsientos(ByVal oTransporte As EE.BE_Transporte) As List(Of EE.BE_Asiento)
-        Return dalAsiento.consultarAsientos(oTransporte)
+    Public Function consultarAsientos(ByVal oViaje As EE.BE_Viaje) As List(Of EE.BE_Asiento)
+        Return dalAsiento.consultarAsientos(oViaje)
     End Function
 
 

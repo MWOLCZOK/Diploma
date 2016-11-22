@@ -28,7 +28,7 @@ Public Class Reserva_Buscar_Asientos
         Me.Txttipotrans.Text = viaje.Transporte.TipoTransporte.Descripcion
         Dim oListaAsiento As New List(Of EE.BE_Asiento)
         Dim bllAsiento As New BLL.BLL_Asiento
-        oListaAsiento = bllAsiento.consultarAsientos(reservaTransporte)
+        oListaAsiento = bllAsiento.consultarAsientos(viaje)
         DataGridView1.DataSource = Nothing
         DataGridView1.DataSource = oListaAsiento
         DataGridView1.ReadOnly = True
@@ -57,4 +57,5 @@ Public Class Reserva_Buscar_Asientos
         Me.Close()
 
     End Sub
+
 End Class

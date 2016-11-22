@@ -34,8 +34,9 @@ Partial Class Reserva_Detalle_Viaje
         Me.Txtempresatrans = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnGenerarPDF = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnFinalizarCompra = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label6
@@ -134,31 +135,47 @@ Partial Class Reserva_Detalle_Viaje
         Me.TextBox1.Size = New System.Drawing.Size(99, 20)
         Me.TextBox1.TabIndex = 45
         '
-        'Button1
+        'btnGenerarPDF
         '
-        Me.Button1.Location = New System.Drawing.Point(95, 307)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(83, 37)
-        Me.Button1.TabIndex = 47
-        Me.Button1.Text = "Volver a Compra"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnGenerarPDF.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnGenerarPDF.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerarPDF.Location = New System.Drawing.Point(254, 295)
+        Me.btnGenerarPDF.Name = "btnGenerarPDF"
+        Me.btnGenerarPDF.Size = New System.Drawing.Size(150, 30)
+        Me.btnGenerarPDF.TabIndex = 78
+        Me.btnGenerarPDF.Text = "Generar PDF"
+        Me.btnGenerarPDF.UseVisualStyleBackColor = False
         '
-        'Button2
+        'Button3
         '
-        Me.Button2.Location = New System.Drawing.Point(254, 307)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(79, 37)
-        Me.Button2.TabIndex = 48
-        Me.Button2.Text = "Finalizar Compra"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(65, 295)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(150, 30)
+        Me.Button3.TabIndex = 77
+        Me.Button3.Text = "Volver a Comprar"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'btnFinalizarCompra
+        '
+        Me.btnFinalizarCompra.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnFinalizarCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFinalizarCompra.Location = New System.Drawing.Point(443, 295)
+        Me.btnFinalizarCompra.Name = "btnFinalizarCompra"
+        Me.btnFinalizarCompra.Size = New System.Drawing.Size(150, 30)
+        Me.btnFinalizarCompra.TabIndex = 76
+        Me.btnFinalizarCompra.Text = "Finalizar Compra"
+        Me.btnFinalizarCompra.UseVisualStyleBackColor = False
         '
         'Reserva_Detalle_Viaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(453, 389)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(673, 389)
+        Me.Controls.Add(Me.btnGenerarPDF)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnFinalizarCompra)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label6)
@@ -189,6 +206,7 @@ Partial Class Reserva_Detalle_Viaje
     Friend WithEvents Txtempresatrans As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnGenerarPDF As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents btnFinalizarCompra As Button
 End Class

@@ -322,4 +322,9 @@ Public Class FormMenu
         Dim formCancelacion As New Cancelacion
         AbrirForm(formCancelacion)
     End Sub
+
+    Private Sub AgregarViajeToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AgregarViajeToolStripMenuItem1.Click
+        Dim formViaje As New Agregar_Viaje
+        AbrirForm(formViaje)
+    End Sub
 End Class

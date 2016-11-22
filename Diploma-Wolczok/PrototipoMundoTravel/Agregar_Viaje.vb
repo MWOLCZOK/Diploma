@@ -61,7 +61,7 @@ Public Class Agregar_Viaje
             oViaje.FechaHoraSalida = Fechainicio.Value
             oViaje.FechaHoraLlegada = Fechafin.Value
             Dim bllViaje As New BLL.BLL_Viaje
-            bllViaje.altaVaije(oViaje)
+            bllViaje.altaViaje(oViaje)
         Catch ex As Exception
 
         End Try

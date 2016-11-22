@@ -86,11 +86,7 @@
     Private _montoReserva As Double
     Public Property MontoReserva() As Double
         Get
-            If Me.GetType() Is GetType(BE_ReservaAlojamiento) Then
-                Return DirectCast(Me, BE_ReservaAlojamiento).MontoAlquiler
-            Else
-                Return DirectCast(Me, BE_ReservaViaje).viaje.Precio
-            End If
+            Return _montoReserva
         End Get
         Set(ByVal value As Double)
             _montoReserva = value

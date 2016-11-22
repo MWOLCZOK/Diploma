@@ -8,17 +8,19 @@ Public Class BLL_Reserva
 
 
 
-    Public Sub altaReserva(ByVal paramReservaAlojamiento As EE.BE_ReservaAlojamiento)
+    Public Function altaReserva(ByVal paramReservaAlojamiento As EE.BE_ReservaAlojamiento) As Integer
         Try
             Dim valor1 = DateDiff(DateInterval.Day, paramReservaAlojamiento.Fecha_Inicio, paramReservaAlojamiento.Fecha_Fin)
 
             Dim valor2 = Math.Round(valor1 * retornarPuntaje(1))
             paramReservaAlojamiento.puntaje = valor2
+            paramReservaAlojamiento.MontoReserva = paramReservaAlojamiento.MontoAlquiler
             _dalReservaAlojamiento.alta(paramReservaAlojamiento)
+            Return _dalReservaAlojamiento.retornarUltimoID()
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
+    End Function
 
     Public Sub altaReserva(ByVal paramReservaVuelo As EE.BE_ReservaViaje)
         Try
@@ -61,6 +63,17 @@ Public Class BLL_Reserva
 
         End Try
     End Function
+
+
+
+    Public Function consultarReservaAlojamientoID(ByVal oReservaAlojamiento As BE_ReservaAlojamiento) As BE_ReservaAlojamiento
+        Try
+            Return _dalReservaAlojamiento.ConsultarReservaAlojamientoID(oReservaAlojamiento)
+        Catch ex As Exception
+
+        End Try
+    End Function
+
     Public Function consultarReservaViajeporDNI(ByVal oPasajero As BE_Pasajero) As List(Of BE_ReservaViaje)
         Try
             Return _dalReservaVuelo.consultarReservaviajeporPasajero(oPasajero)

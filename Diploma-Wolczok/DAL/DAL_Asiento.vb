@@ -5,13 +5,14 @@ Imports DAL
 
 Public Class DAL_Asiento
 
-    Public Function consultarAsientos(ByVal oTransporte As BE_Transporte) As List(Of BE_Asiento)
+    Public Function consultarAsientos(ByVal oViaje As BE_Viaje) As List(Of BE_Asiento)
         Try
-            Dim consulta As String = ("Select * from Asiento where BL=@BL")
+            Dim consulta As String = ("Select * from Asiento where ID_Transporte=@ID_Transporte and BL=@BL and ID not in (select ID_Asiento from ReservaViaje where ID_Viaje = @ID_Viaje)")
             Dim milistaAsiento As New List(Of BE_Asiento)
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", oTransporte.ID))
+                .Add(New SqlParameter("@ID_Transporte", oViaje.Transporte.ID))
+                .Add(New SqlParameter("@ID_Viaje", oViaje.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)

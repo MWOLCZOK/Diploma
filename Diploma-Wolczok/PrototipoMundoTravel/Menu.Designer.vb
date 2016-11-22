@@ -69,6 +69,7 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.AgregarViajeToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -85,7 +86,7 @@ Partial Class FormMenu
         '
         'ViajesToolStripMenuItem
         '
-        Me.ViajesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BusquedaDeViajesToolStripMenuItem, Me.AgregarDestinoToolStripMenuItem, Me.AgregarViajeToolStripMenuItem, Me.EliminarDestinoToolStripMenuItem, Me.AltaDePaisToolStripMenuItem, Me.ModificarPaisToolStripMenuItem, Me.EliminarPaisToolStripMenuItem, Me.AltaDeProvinciaToolStripMenuItem, Me.ModificarProvinciaToolStripMenuItem, Me.EliminarProvinciaToolStripMenuItem, Me.AltaDeLocalidadToolStripMenuItem, Me.ModificarLocalidadToolStripMenuItem, Me.EliminarLocalidadToolStripMenuItem})
+        Me.ViajesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BusquedaDeViajesToolStripMenuItem, Me.AgregarDestinoToolStripMenuItem, Me.AgregarViajeToolStripMenuItem, Me.EliminarDestinoToolStripMenuItem, Me.AltaDePaisToolStripMenuItem, Me.ModificarPaisToolStripMenuItem, Me.EliminarPaisToolStripMenuItem, Me.AltaDeProvinciaToolStripMenuItem, Me.ModificarProvinciaToolStripMenuItem, Me.EliminarProvinciaToolStripMenuItem, Me.AltaDeLocalidadToolStripMenuItem, Me.ModificarLocalidadToolStripMenuItem, Me.EliminarLocalidadToolStripMenuItem, Me.AgregarViajeToolStripMenuItem1})
         Me.ViajesToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ViajesToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ViajesToolStripMenuItem.Name = "ViajesToolStripMenuItem"
@@ -383,6 +384,12 @@ Partial Class FormMenu
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
+        'AgregarViajeToolStripMenuItem1
+        '
+        Me.AgregarViajeToolStripMenuItem1.Name = "AgregarViajeToolStripMenuItem1"
+        Me.AgregarViajeToolStripMenuItem1.Size = New System.Drawing.Size(198, 22)
+        Me.AgregarViajeToolStripMenuItem1.Text = "Agregar Viaje"
+        '
         'FormMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -448,4 +455,5 @@ Partial Class FormMenu
     Friend WithEvents PagosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarPagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VisualizarPagosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AgregarViajeToolStripMenuItem1 As ToolStripMenuItem
 End Class

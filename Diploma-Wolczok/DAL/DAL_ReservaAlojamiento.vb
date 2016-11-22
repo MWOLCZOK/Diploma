@@ -30,6 +30,10 @@ Public Class DAL_ReservaAlojamiento
         End Try
     End Sub
 
+    Public Function retornarUltimoID() As Integer
+        Return CInt(Acceso.TraerID("ID", "ReservaAlojamiento") - 1)
+    End Function
+
     Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar
         Try
             Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
@@ -105,6 +109,26 @@ Public Class DAL_ReservaAlojamiento
         End Try
     End Function
 
+
+    Public Function ConsultarReservaAlojamientoID(ByVal oReservaAlojamiento As BE_ReservaAlojamiento) As BE_ReservaAlojamiento
+        Try
+            Dim consulta As String = ("Select * from ReservaAlojamiento where ID=@ID and BL=@BL")
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID", oReservaAlojamiento.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return Me.formatearReservaAlojamiento(dt.Rows(0))
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function consultarDestino(ByVal oReservaAlojamiento As EE.BE_ReservaAlojamiento) As EE.BE_ReservaAlojamiento
         Try
             Dim consulta As String = ("Select * from ReservaAlojamiento where ID=@ID and BL=@BL")
@@ -156,6 +180,7 @@ Public Class DAL_ReservaAlojamiento
         oReservaAlojamiento.Detalle = paramDataRow.Item("Detalle")
         oReservaAlojamiento.Estado = paramDataRow.Item("Estado")
         oReservaAlojamiento.puntaje = paramDataRow.Item("Puntaje")
+        oReservaAlojamiento.MontoReserva = paramDataRow.Item("MontoReserva")
         Dim oPasajero As New BE_Pasajero
         oPasajero.ID = paramDataRow.Item("ID_Pasajero")
         oReservaAlojamiento.Pasajero = (New DAL.DAL_Pasajero).consultarPasajero(oPasajero)

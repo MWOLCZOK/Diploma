@@ -95,7 +95,7 @@ Public Class Reserva_Buscar_Pasajero
                 oPasajero = bblPäsajero.consultarPasajero(oPasajero)
                 reservaAlojamiento.Pasajero = oPasajero
                 Dim bllReserva As New BLL_Reserva
-                bllReserva.altaReserva(reservaAlojamiento)
+                reservaAlojamiento.ID = bllReserva.altaReserva(reservaAlojamiento)
                 Dim formularioSeleccionHabitacion As New Reserva_Detalle(Alojamiento, reservaDestino, reservaAlojamiento)
                 formularioSeleccionHabitacion.Show()
                 Me.Close()

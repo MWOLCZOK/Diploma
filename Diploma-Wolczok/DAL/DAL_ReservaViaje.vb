@@ -204,6 +204,7 @@ Public Class DAL_ReservaViaje
 
 
 
+
     Private Function formatearReservaViaje(ByVal paramDataRow As DataRow) As BE_ReservaViaje
         Dim oReservaViaje As New BE_ReservaViaje
         oReservaViaje.ID = paramDataRow.Item("ID")
@@ -221,6 +222,7 @@ Public Class DAL_ReservaViaje
         oReservaViaje.Detalle = paramDataRow.Item("Detalle")
         oReservaViaje.Estado = paramDataRow.Item("Estado")
         oReservaViaje.puntaje = paramDataRow.Item("Puntaje")
+        oReservaViaje.MontoReserva = oReservaViaje.viaje.Precio
         oReservaViaje.Pagoviaje = (New DAL_Pago).consultarPagosviajes(oReservaViaje)
         Return oReservaViaje
     End Function
