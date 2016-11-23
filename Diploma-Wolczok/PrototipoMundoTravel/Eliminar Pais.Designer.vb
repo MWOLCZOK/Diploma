@@ -22,6 +22,7 @@ Partial Class Eliminar_Pais
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Pais))
         Me.CbxPais = New System.Windows.Forms.ComboBox()
         Me.lblusuario = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -80,6 +81,7 @@ Partial Class Eliminar_Pais
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CbxPais)
         Me.Controls.Add(Me.lblusuario)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Pais"
         Me.Text = "Eliminar_Pais"
         Me.ResumeLayout(False)

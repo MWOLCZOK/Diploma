@@ -39,6 +39,7 @@ Partial Class Agregar_Idioma
         '
         'CbxCultura
         '
+        Me.CbxCultura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxCultura.FormattingEnabled = True
         Me.CbxCultura.Location = New System.Drawing.Point(431, 42)
         Me.CbxCultura.Name = "CbxCultura"

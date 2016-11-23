@@ -52,7 +52,7 @@ Public Class BLL_Idioma
 
     Public Function ConsultarNombre(ByVal Idioma As String) As Boolean
         Try
-            _dalIdioma.ConsultarNombre(Idioma)
+            Return _dalIdioma.ConsultarNombre(Idioma)
         Catch ex As Exception
             Throw ex
         End Try

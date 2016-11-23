@@ -22,197 +22,218 @@ Partial Class Modificar_Pasajero
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Txtdomicilio = New System.Windows.Forms.TextBox()
-        Me.Txtdni = New System.Windows.Forms.TextBox()
-        Me.Txtcorreo = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Txapellido = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.Txtnombre = New System.Windows.Forms.TextBox()
-        Me.lblnuevonombreusuario = New System.Windows.Forms.Label()
-        Me.lblperfil = New System.Windows.Forms.Label()
-        Me.lblidioma = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Pasajero))
         Me.Cbxpasajero = New System.Windows.Forms.ComboBox()
         Me.lblpais = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Txttelefono = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtDomicilio = New System.Windows.Forms.TextBox()
+        Me.txtDNI = New System.Windows.Forms.TextBox()
+        Me.txtMail = New System.Windows.Forms.TextBox()
+        Me.Txtapellido = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Txtdomicilio
-        '
-        Me.Txtdomicilio.Location = New System.Drawing.Point(31, 301)
-        Me.Txtdomicilio.Name = "Txtdomicilio"
-        Me.Txtdomicilio.Size = New System.Drawing.Size(254, 20)
-        Me.Txtdomicilio.TabIndex = 62
-        '
-        'Txtdni
-        '
-        Me.Txtdni.Location = New System.Drawing.Point(31, 246)
-        Me.Txtdni.Name = "Txtdni"
-        Me.Txtdni.Size = New System.Drawing.Size(254, 20)
-        Me.Txtdni.TabIndex = 61
-        '
-        'Txtcorreo
-        '
-        Me.Txtcorreo.Location = New System.Drawing.Point(31, 191)
-        Me.Txtcorreo.Name = "Txtcorreo"
-        Me.Txtcorreo.Size = New System.Drawing.Size(254, 20)
-        Me.Txtcorreo.TabIndex = 60
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 285)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
-        Me.Label2.TabIndex = 59
-        Me.Label2.Text = "Domicilio"
-        '
-        'Txapellido
-        '
-        Me.Txapellido.Location = New System.Drawing.Point(31, 142)
-        Me.Txapellido.Name = "Txapellido"
-        Me.Txapellido.Size = New System.Drawing.Size(254, 20)
-        Me.Txapellido.TabIndex = 58
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 125)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 57
-        Me.Label1.Text = "Apellido"
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(164, 387)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnsalir.TabIndex = 56
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btnmodificar
-        '
-        Me.btnmodificar.Location = New System.Drawing.Point(54, 387)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(81, 23)
-        Me.btnmodificar.TabIndex = 55
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = True
-        '
-        'Txtnombre
-        '
-        Me.Txtnombre.Location = New System.Drawing.Point(31, 89)
-        Me.Txtnombre.Name = "Txtnombre"
-        Me.Txtnombre.Size = New System.Drawing.Size(254, 20)
-        Me.Txtnombre.TabIndex = 54
-        '
-        'lblnuevonombreusuario
-        '
-        Me.lblnuevonombreusuario.AutoSize = True
-        Me.lblnuevonombreusuario.Location = New System.Drawing.Point(28, 72)
-        Me.lblnuevonombreusuario.Name = "lblnuevonombreusuario"
-        Me.lblnuevonombreusuario.Size = New System.Drawing.Size(44, 13)
-        Me.lblnuevonombreusuario.TabIndex = 53
-        Me.lblnuevonombreusuario.Text = "Nombre"
-        '
-        'lblperfil
-        '
-        Me.lblperfil.AutoSize = True
-        Me.lblperfil.Location = New System.Drawing.Point(28, 230)
-        Me.lblperfil.Name = "lblperfil"
-        Me.lblperfil.Size = New System.Drawing.Size(26, 13)
-        Me.lblperfil.TabIndex = 52
-        Me.lblperfil.Text = "DNI"
-        '
-        'lblidioma
-        '
-        Me.lblidioma.AutoSize = True
-        Me.lblidioma.Location = New System.Drawing.Point(28, 175)
-        Me.lblidioma.Name = "lblidioma"
-        Me.lblidioma.Size = New System.Drawing.Size(94, 13)
-        Me.lblidioma.TabIndex = 51
-        Me.lblidioma.Text = "Correo Electronico"
         '
         'Cbxpasajero
         '
         Me.Cbxpasajero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cbxpasajero.FormattingEnabled = True
-        Me.Cbxpasajero.Location = New System.Drawing.Point(31, 37)
+        Me.Cbxpasajero.Location = New System.Drawing.Point(33, 50)
         Me.Cbxpasajero.Name = "Cbxpasajero"
-        Me.Cbxpasajero.Size = New System.Drawing.Size(254, 21)
+        Me.Cbxpasajero.Size = New System.Drawing.Size(415, 21)
         Me.Cbxpasajero.TabIndex = 50
         '
         'lblpais
         '
         Me.lblpais.AutoSize = True
-        Me.lblpais.Location = New System.Drawing.Point(104, 21)
+        Me.lblpais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblpais.ForeColor = System.Drawing.Color.White
+        Me.lblpais.Location = New System.Drawing.Point(31, 21)
         Me.lblpais.Name = "lblpais"
-        Me.lblpais.Size = New System.Drawing.Size(107, 13)
+        Me.lblpais.Size = New System.Drawing.Size(144, 15)
         Me.lblpais.TabIndex = 49
         Me.lblpais.Text = "Seleccionar Pasajero"
         '
-        'Label5
+        'Label8
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 331)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 13)
-        Me.Label5.TabIndex = 68
-        Me.Label5.Text = "Telefono"
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(474, 157)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(63, 15)
+        Me.Label8.TabIndex = 80
+        Me.Label8.Text = "Telefono"
         '
-        'Txttelefono
+        'txtTelefono
         '
-        Me.Txttelefono.Location = New System.Drawing.Point(31, 347)
-        Me.Txttelefono.Name = "Txttelefono"
-        Me.Txttelefono.Size = New System.Drawing.Size(254, 20)
-        Me.Txttelefono.TabIndex = 67
+        Me.txtTelefono.Location = New System.Drawing.Point(478, 183)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(189, 20)
+        Me.txtTelefono.TabIndex = 79
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(256, 158)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 15)
+        Me.Label3.TabIndex = 78
+        Me.Label3.Text = "Domicilio"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(475, 92)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(31, 15)
+        Me.Label6.TabIndex = 77
+        Me.Label6.Text = "DNI"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(30, 157)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(126, 15)
+        Me.Label4.TabIndex = 76
+        Me.Label4.Text = "Correo Electronico"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(256, 91)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(59, 15)
+        Me.Label7.TabIndex = 75
+        Me.Label7.Text = "Apellido"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(31, 92)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(58, 15)
+        Me.Label9.TabIndex = 74
+        Me.Label9.Text = "Nombre"
+        '
+        'txtDomicilio
+        '
+        Me.txtDomicilio.Location = New System.Drawing.Point(259, 183)
+        Me.txtDomicilio.Name = "txtDomicilio"
+        Me.txtDomicilio.Size = New System.Drawing.Size(189, 20)
+        Me.txtDomicilio.TabIndex = 73
+        '
+        'txtDNI
+        '
+        Me.txtDNI.Location = New System.Drawing.Point(477, 117)
+        Me.txtDNI.Name = "txtDNI"
+        Me.txtDNI.Size = New System.Drawing.Size(190, 20)
+        Me.txtDNI.TabIndex = 72
+        '
+        'txtMail
+        '
+        Me.txtMail.Location = New System.Drawing.Point(33, 183)
+        Me.txtMail.Name = "txtMail"
+        Me.txtMail.Size = New System.Drawing.Size(189, 20)
+        Me.txtMail.TabIndex = 71
+        '
+        'Txtapellido
+        '
+        Me.Txtapellido.Location = New System.Drawing.Point(259, 117)
+        Me.Txtapellido.Name = "Txtapellido"
+        Me.Txtapellido.Size = New System.Drawing.Size(189, 20)
+        Me.Txtapellido.TabIndex = 70
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(33, 117)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(190, 20)
+        Me.txtNombre.TabIndex = 69
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(172, 246)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 30)
+        Me.Button1.TabIndex = 83
+        Me.Button1.Text = "Modificar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(387, 246)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(150, 30)
+        Me.Button2.TabIndex = 82
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Modificar_Pasajero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(313, 421)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Txttelefono)
-        Me.Controls.Add(Me.Txtdomicilio)
-        Me.Controls.Add(Me.Txtdni)
-        Me.Controls.Add(Me.Txtcorreo)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Txapellido)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btnmodificar)
-        Me.Controls.Add(Me.Txtnombre)
-        Me.Controls.Add(Me.lblnuevonombreusuario)
-        Me.Controls.Add(Me.lblperfil)
-        Me.Controls.Add(Me.lblidioma)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(709, 325)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txtDomicilio)
+        Me.Controls.Add(Me.txtDNI)
+        Me.Controls.Add(Me.txtMail)
+        Me.Controls.Add(Me.Txtapellido)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Cbxpasajero)
         Me.Controls.Add(Me.lblpais)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Pasajero"
         Me.Text = "Modificar_Pasajero"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Txtdomicilio As System.Windows.Forms.TextBox
-    Friend WithEvents Txtdni As System.Windows.Forms.TextBox
-    Friend WithEvents Txtcorreo As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Txapellido As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnsalir As System.Windows.Forms.Button
-    Friend WithEvents btnmodificar As System.Windows.Forms.Button
-    Friend WithEvents Txtnombre As System.Windows.Forms.TextBox
-    Friend WithEvents lblnuevonombreusuario As System.Windows.Forms.Label
-    Friend WithEvents lblperfil As System.Windows.Forms.Label
-    Friend WithEvents lblidioma As System.Windows.Forms.Label
     Friend WithEvents Cbxpasajero As System.Windows.Forms.ComboBox
     Friend WithEvents lblpais As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Txttelefono As System.Windows.Forms.TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtDomicilio As TextBox
+    Friend WithEvents txtDNI As TextBox
+    Friend WithEvents txtMail As TextBox
+    Friend WithEvents Txtapellido As TextBox
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

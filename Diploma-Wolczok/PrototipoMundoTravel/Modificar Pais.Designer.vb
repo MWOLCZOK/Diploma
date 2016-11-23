@@ -22,175 +22,172 @@ Partial Class Modificar_Pais
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Txtidioma = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.Txtdescripcion = New System.Windows.Forms.TextBox()
-        Me.lblnuevonombreusuario = New System.Windows.Forms.Label()
-        Me.lblperfil = New System.Windows.Forms.Label()
-        Me.lblidioma = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Pais))
         Me.Cbxpais = New System.Windows.Forms.ComboBox()
         Me.lblpais = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.lblZonaHoraria = New System.Windows.Forms.Label()
+        Me.lblPoblacionTotal = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Txtpoblacion = New System.Windows.Forms.TextBox()
-        Me.Txtzonahoraria = New System.Windows.Forms.TextBox()
-        Me.Txtprovincia = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Txtzonahorariapais = New System.Windows.Forms.TextBox()
+        Me.Txtidiomapais = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Txtidioma
-        '
-        Me.Txtidioma.Location = New System.Drawing.Point(34, 147)
-        Me.Txtidioma.Name = "Txtidioma"
-        Me.Txtidioma.Size = New System.Drawing.Size(254, 20)
-        Me.Txtidioma.TabIndex = 43
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 130)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 42
-        Me.Label1.Text = "Idioma"
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(169, 356)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnsalir.TabIndex = 41
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btnmodificar
-        '
-        Me.btnmodificar.Location = New System.Drawing.Point(59, 356)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(81, 23)
-        Me.btnmodificar.TabIndex = 40
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = True
-        '
-        'Txtdescripcion
-        '
-        Me.Txtdescripcion.Location = New System.Drawing.Point(34, 94)
-        Me.Txtdescripcion.Name = "Txtdescripcion"
-        Me.Txtdescripcion.Size = New System.Drawing.Size(254, 20)
-        Me.Txtdescripcion.TabIndex = 39
-        '
-        'lblnuevonombreusuario
-        '
-        Me.lblnuevonombreusuario.AutoSize = True
-        Me.lblnuevonombreusuario.Location = New System.Drawing.Point(31, 77)
-        Me.lblnuevonombreusuario.Name = "lblnuevonombreusuario"
-        Me.lblnuevonombreusuario.Size = New System.Drawing.Size(63, 13)
-        Me.lblnuevonombreusuario.TabIndex = 38
-        Me.lblnuevonombreusuario.Text = "Descripcion"
-        '
-        'lblperfil
-        '
-        Me.lblperfil.AutoSize = True
-        Me.lblperfil.Location = New System.Drawing.Point(31, 235)
-        Me.lblperfil.Name = "lblperfil"
-        Me.lblperfil.Size = New System.Drawing.Size(69, 13)
-        Me.lblperfil.TabIndex = 35
-        Me.lblperfil.Text = "Zona Horaria"
-        '
-        'lblidioma
-        '
-        Me.lblidioma.AutoSize = True
-        Me.lblidioma.Location = New System.Drawing.Point(31, 180)
-        Me.lblidioma.Name = "lblidioma"
-        Me.lblidioma.Size = New System.Drawing.Size(81, 13)
-        Me.lblidioma.TabIndex = 34
-        Me.lblidioma.Text = "Poblacion Total"
         '
         'Cbxpais
         '
         Me.Cbxpais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cbxpais.FormattingEnabled = True
-        Me.Cbxpais.Location = New System.Drawing.Point(34, 42)
+        Me.Cbxpais.Location = New System.Drawing.Point(35, 68)
         Me.Cbxpais.Name = "Cbxpais"
-        Me.Cbxpais.Size = New System.Drawing.Size(254, 21)
+        Me.Cbxpais.Size = New System.Drawing.Size(219, 21)
         Me.Cbxpais.TabIndex = 33
         '
         'lblpais
         '
         Me.lblpais.AutoSize = True
-        Me.lblpais.Location = New System.Drawing.Point(114, 26)
+        Me.lblpais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblpais.ForeColor = System.Drawing.Color.White
+        Me.lblpais.Location = New System.Drawing.Point(32, 41)
         Me.lblpais.Name = "lblpais"
-        Me.lblpais.Size = New System.Drawing.Size(86, 13)
+        Me.lblpais.Size = New System.Drawing.Size(115, 15)
         Me.lblpais.TabIndex = 32
         Me.lblpais.Text = "Seleccionar Pais"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(35, 203)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(219, 20)
+        Me.NumericUpDown1.TabIndex = 58
+        '
+        'lblZonaHoraria
+        '
+        Me.lblZonaHoraria.AutoSize = True
+        Me.lblZonaHoraria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblZonaHoraria.ForeColor = System.Drawing.Color.White
+        Me.lblZonaHoraria.Location = New System.Drawing.Point(303, 181)
+        Me.lblZonaHoraria.Name = "lblZonaHoraria"
+        Me.lblZonaHoraria.Size = New System.Drawing.Size(91, 15)
+        Me.lblZonaHoraria.TabIndex = 57
+        Me.lblZonaHoraria.Text = "Zona Horaria"
+        '
+        'lblPoblacionTotal
+        '
+        Me.lblPoblacionTotal.AutoSize = True
+        Me.lblPoblacionTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPoblacionTotal.ForeColor = System.Drawing.Color.White
+        Me.lblPoblacionTotal.Location = New System.Drawing.Point(32, 181)
+        Me.lblPoblacionTotal.Name = "lblPoblacionTotal"
+        Me.lblPoblacionTotal.Size = New System.Drawing.Size(107, 15)
+        Me.lblPoblacionTotal.TabIndex = 56
+        Me.lblPoblacionTotal.Text = "Poblacion Total"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 290)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(303, 109)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 13)
-        Me.Label2.TabIndex = 45
-        Me.Label2.Text = "Provincia"
+        Me.Label2.Size = New System.Drawing.Size(51, 15)
+        Me.Label2.TabIndex = 55
+        Me.Label2.Text = "Idioma"
         '
-        'Txtpoblacion
+        'Label3
         '
-        Me.Txtpoblacion.Location = New System.Drawing.Point(34, 196)
-        Me.Txtpoblacion.Name = "Txtpoblacion"
-        Me.Txtpoblacion.Size = New System.Drawing.Size(254, 20)
-        Me.Txtpoblacion.TabIndex = 46
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(31, 113)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(58, 15)
+        Me.Label3.TabIndex = 54
+        Me.Label3.Text = "Nombre"
         '
-        'Txtzonahoraria
+        'Txtzonahorariapais
         '
-        Me.Txtzonahoraria.Location = New System.Drawing.Point(34, 251)
-        Me.Txtzonahoraria.Name = "Txtzonahoraria"
-        Me.Txtzonahoraria.Size = New System.Drawing.Size(254, 20)
-        Me.Txtzonahoraria.TabIndex = 47
+        Me.Txtzonahorariapais.Location = New System.Drawing.Point(306, 202)
+        Me.Txtzonahorariapais.Name = "Txtzonahorariapais"
+        Me.Txtzonahorariapais.Size = New System.Drawing.Size(220, 20)
+        Me.Txtzonahorariapais.TabIndex = 53
         '
-        'Txtprovincia
+        'Txtidiomapais
         '
-        Me.Txtprovincia.Location = New System.Drawing.Point(34, 306)
-        Me.Txtprovincia.Name = "Txtprovincia"
-        Me.Txtprovincia.Size = New System.Drawing.Size(254, 20)
-        Me.Txtprovincia.TabIndex = 48
+        Me.Txtidiomapais.Location = New System.Drawing.Point(306, 136)
+        Me.Txtidiomapais.Name = "Txtidiomapais"
+        Me.Txtidiomapais.Size = New System.Drawing.Size(220, 20)
+        Me.Txtidiomapais.TabIndex = 52
+        '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.Location = New System.Drawing.Point(35, 136)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(219, 20)
+        Me.txtDescripcion.TabIndex = 51
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(104, 275)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(150, 30)
+        Me.btnModificar.TabIndex = 60
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(306, 275)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 30)
+        Me.Button1.TabIndex = 59
+        Me.Button1.Text = "Salir"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Modificar_Pais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(328, 401)
-        Me.Controls.Add(Me.Txtprovincia)
-        Me.Controls.Add(Me.Txtzonahoraria)
-        Me.Controls.Add(Me.Txtpoblacion)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(557, 359)
+        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.lblZonaHoraria)
+        Me.Controls.Add(Me.lblPoblacionTotal)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Txtidioma)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btnmodificar)
-        Me.Controls.Add(Me.Txtdescripcion)
-        Me.Controls.Add(Me.lblnuevonombreusuario)
-        Me.Controls.Add(Me.lblperfil)
-        Me.Controls.Add(Me.lblidioma)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Txtzonahorariapais)
+        Me.Controls.Add(Me.Txtidiomapais)
+        Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Cbxpais)
         Me.Controls.Add(Me.lblpais)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Pais"
         Me.Text = "Modificar_Pais"
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Txtidioma As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnsalir As System.Windows.Forms.Button
-    Friend WithEvents btnmodificar As System.Windows.Forms.Button
-    Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
-    Friend WithEvents lblnuevonombreusuario As System.Windows.Forms.Label
-    Friend WithEvents lblperfil As System.Windows.Forms.Label
-    Friend WithEvents lblidioma As System.Windows.Forms.Label
     Friend WithEvents Cbxpais As System.Windows.Forms.ComboBox
     Friend WithEvents lblpais As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Txtpoblacion As System.Windows.Forms.TextBox
-    Friend WithEvents Txtzonahoraria As System.Windows.Forms.TextBox
-    Friend WithEvents Txtprovincia As System.Windows.Forms.TextBox
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents lblZonaHoraria As Label
+    Friend WithEvents lblPoblacionTotal As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Txtzonahorariapais As TextBox
+    Friend WithEvents Txtidiomapais As TextBox
+    Friend WithEvents txtDescripcion As TextBox
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents Button1 As Button
 End Class

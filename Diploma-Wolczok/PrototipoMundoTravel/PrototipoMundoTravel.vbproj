@@ -155,12 +155,6 @@
     <Compile Include="Cancelacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modificar_EmpresaTransporte.Designer.vb">
-      <DependentUpon>Modificar_EmpresaTransporte.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modificar_EmpresaTransporte.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Modificar_Puntaje.Designer.vb">
       <DependentUpon>Modificar_Puntaje.vb</DependentUpon>
     </Compile>
@@ -269,12 +263,6 @@
       <DependentUpon>Modificar Pais.vb</DependentUpon>
     </Compile>
     <Compile Include="Modificar Pais.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modificar_Destino.Designer.vb">
-      <DependentUpon>Modificar_Destino.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modificar_Destino.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modificar_Idioma.Designer.vb">
@@ -417,9 +405,6 @@
     <EmbeddedResource Include="Cancelacion.resx">
       <DependentUpon>Cancelacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modificar_EmpresaTransporte.resx">
-      <DependentUpon>Modificar_EmpresaTransporte.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modificar_Puntaje.resx">
       <DependentUpon>Modificar_Puntaje.vb</DependentUpon>
     </EmbeddedResource>
@@ -473,9 +458,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar Pais.resx">
       <DependentUpon>Modificar Pais.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modificar_Destino.resx">
-      <DependentUpon>Modificar_Destino.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar_Idioma.resx">
       <DependentUpon>Modificar_Idioma.vb</DependentUpon>

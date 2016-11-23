@@ -44,6 +44,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -66,7 +70,6 @@
   <ItemGroup>
     <Compile Include="BLL_Alojamiento.vb" />
     <Compile Include="BLL_Asiento.vb" />
-    <Compile Include="BLL_Avion.vb" />
     <Compile Include="BLL_BackupRestore.vb" />
     <Compile Include="BLL_Bitacora.vb" />
     <Compile Include="BLL_Cancelacion.vb" />
@@ -75,8 +78,6 @@
     <Compile Include="BLL_Destino.vb" />
     <Compile Include="BLL_DigitoVerificador.vb" />
     <Compile Include="BLL_EmpresaTransporte.vb" />
-    <Compile Include="BLL_GestorNegocio.vb" />
-    <Compile Include="BLL_GestorVoucher.vb" />
     <Compile Include="BLL_Habitacion.vb" />
     <Compile Include="BLL_Hostel.vb" />
     <Compile Include="BLL_Hotel.vb" />
@@ -97,6 +98,7 @@
     <Compile Include="BLL_Transporte.vb" />
     <Compile Include="BLL_Viaje.vb" />
     <Compile Include="BLL_Voucher.vb" />
+    <Compile Include="SerializadorJSON.vb" />
     <Compile Include="Encriptadora.vb" />
     <Compile Include="Excepciones\CamposIncompletosException.vb" />
     <Compile Include="Excepciones\PasswordIncorrectoException.vb" />
@@ -139,6 +141,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.vbproj">

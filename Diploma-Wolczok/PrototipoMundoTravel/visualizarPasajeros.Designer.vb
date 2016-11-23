@@ -22,8 +22,10 @@ Partial Class visualizarPasajeros
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(visualizarPasajeros))
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.dgvBitacora = New System.Windows.Forms.DataGridView()
+        Me.btn_exportar = New System.Windows.Forms.Button()
         CType(Me.dgvBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,13 +49,27 @@ Partial Class visualizarPasajeros
         Me.dgvBitacora.Size = New System.Drawing.Size(563, 305)
         Me.dgvBitacora.TabIndex = 53
         '
+        'btn_exportar
+        '
+        Me.btn_exportar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btn_exportar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_exportar.Location = New System.Drawing.Point(105, 417)
+        Me.btn_exportar.Name = "btn_exportar"
+        Me.btn_exportar.Size = New System.Drawing.Size(150, 30)
+        Me.btn_exportar.TabIndex = 55
+        Me.btn_exportar.Text = "Exportar"
+        Me.btn_exportar.UseVisualStyleBackColor = False
+        '
         'visualizarPasajeros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(672, 477)
+        Me.Controls.Add(Me.btn_exportar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.dgvBitacora)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "visualizarPasajeros"
         Me.Text = "visualizarPasajeros"
         CType(Me.dgvBitacora, System.ComponentModel.ISupportInitialize).EndInit()
@@ -62,4 +78,5 @@ Partial Class visualizarPasajeros
     End Sub
     Friend WithEvents btnSalir As Button
     Friend WithEvents dgvBitacora As DataGridView
+    Friend WithEvents btn_exportar As Button
 End Class

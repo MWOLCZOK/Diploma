@@ -1,8 +1,14 @@
-﻿Public Class Modificar_Permiso
+﻿Imports BLL
+
+Public Class Modificar_Permiso
+
+    Implements BLL.BLL_Iobservador
 
     Private Sub ModificarPermiso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControladorPermisos.CargarPermisos(ComboBox1)
         ControladorPermisos.CargarPermisos(TreeNuevos)
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -10,7 +16,11 @@
 
     End Sub
 
-    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Not IsNothing(ComboBox1.SelectedItem) Then
             Dim Perfil As EE.BE_GrupoPermiso = DirectCast(ComboBox1.SelectedItem, EE.BE_GrupoPermiso)
             Perfil.BorrarHijos()
@@ -28,5 +38,15 @@
                 ControladorPermisos.CargarPermisos(TreeNuevos)
             End If
         End If
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+    Private Sub Modificar_Permiso_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
 End Class

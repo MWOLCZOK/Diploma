@@ -17,8 +17,6 @@ Public Class Form_Backup
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         FolderBrowserDialog1.ShowDialog()
         TextBox3.Text = FolderBrowserDialog1.SelectedPath
-
-
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -42,5 +40,8 @@ Public Class Form_Backup
         End Try
     End Sub
 
-
+    Private Sub Form_Backup_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
 End Class

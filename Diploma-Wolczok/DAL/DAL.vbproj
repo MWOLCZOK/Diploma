@@ -88,7 +88,6 @@
     <Compile Include="DAL_Pasajero.vb" />
     <Compile Include="DAL_Posada.vb" />
     <Compile Include="DAL_Provincia.vb" />
-    <Compile Include="DAL_Prueba.vb" />
     <Compile Include="DAL_Puntaje.vb" />
     <Compile Include="DAL_ReservaViaje.vb" />
     <Compile Include="DAL_ReservaAlojamiento.vb" />

@@ -22,110 +22,49 @@ Partial Class Modificar_Localidad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Txthabitantes = New System.Windows.Forms.TextBox()
-        Me.Txtcantidadbarrios = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btnmodificar = New System.Windows.Forms.Button()
-        Me.Txtdescripcion = New System.Windows.Forms.TextBox()
-        Me.lblnuevonombreusuario = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Localidad))
         Me.lblperfil = New System.Windows.Forms.Label()
-        Me.lblidioma = New System.Windows.Forms.Label()
         Me.Cbxloc = New System.Windows.Forms.ComboBox()
         Me.lblpais = New System.Windows.Forms.Label()
         Me.Cbxprov = New System.Windows.Forms.ComboBox()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Txthabitantes
-        '
-        Me.Txthabitantes.Location = New System.Drawing.Point(35, 208)
-        Me.Txthabitantes.Name = "Txthabitantes"
-        Me.Txthabitantes.Size = New System.Drawing.Size(254, 20)
-        Me.Txthabitantes.TabIndex = 74
-        '
-        'Txtcantidadbarrios
-        '
-        Me.Txtcantidadbarrios.Location = New System.Drawing.Point(35, 159)
-        Me.Txtcantidadbarrios.Name = "Txtcantidadbarrios"
-        Me.Txtcantidadbarrios.Size = New System.Drawing.Size(254, 20)
-        Me.Txtcantidadbarrios.TabIndex = 72
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(32, 142)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(99, 13)
-        Me.Label1.TabIndex = 71
-        Me.Label1.Text = "Cantidad de Barrios"
-        '
-        'btnsalir
-        '
-        Me.btnsalir.Location = New System.Drawing.Point(168, 308)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 25)
-        Me.btnsalir.TabIndex = 70
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
-        '
-        'btnmodificar
-        '
-        Me.btnmodificar.Location = New System.Drawing.Point(58, 308)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(81, 25)
-        Me.btnmodificar.TabIndex = 69
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = True
-        '
-        'Txtdescripcion
-        '
-        Me.Txtdescripcion.Location = New System.Drawing.Point(35, 106)
-        Me.Txtdescripcion.Name = "Txtdescripcion"
-        Me.Txtdescripcion.Size = New System.Drawing.Size(254, 20)
-        Me.Txtdescripcion.TabIndex = 68
-        '
-        'lblnuevonombreusuario
-        '
-        Me.lblnuevonombreusuario.AutoSize = True
-        Me.lblnuevonombreusuario.Location = New System.Drawing.Point(32, 89)
-        Me.lblnuevonombreusuario.Name = "lblnuevonombreusuario"
-        Me.lblnuevonombreusuario.Size = New System.Drawing.Size(63, 13)
-        Me.lblnuevonombreusuario.TabIndex = 67
-        Me.lblnuevonombreusuario.Text = "Descripcion"
         '
         'lblperfil
         '
         Me.lblperfil.AutoSize = True
-        Me.lblperfil.Location = New System.Drawing.Point(32, 247)
+        Me.lblperfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblperfil.ForeColor = System.Drawing.Color.White
+        Me.lblperfil.Location = New System.Drawing.Point(272, 38)
         Me.lblperfil.Name = "lblperfil"
-        Me.lblperfil.Size = New System.Drawing.Size(51, 13)
+        Me.lblperfil.Size = New System.Drawing.Size(66, 15)
         Me.lblperfil.TabIndex = 66
         Me.lblperfil.Text = "Provincia"
-        '
-        'lblidioma
-        '
-        Me.lblidioma.AutoSize = True
-        Me.lblidioma.Location = New System.Drawing.Point(32, 192)
-        Me.lblidioma.Name = "lblidioma"
-        Me.lblidioma.Size = New System.Drawing.Size(58, 13)
-        Me.lblidioma.TabIndex = 65
-        Me.lblidioma.Text = "Habitantes"
         '
         'Cbxloc
         '
         Me.Cbxloc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cbxloc.FormattingEnabled = True
-        Me.Cbxloc.Location = New System.Drawing.Point(40, 41)
+        Me.Cbxloc.Location = New System.Drawing.Point(33, 66)
         Me.Cbxloc.Name = "Cbxloc"
-        Me.Cbxloc.Size = New System.Drawing.Size(254, 21)
+        Me.Cbxloc.Size = New System.Drawing.Size(203, 21)
         Me.Cbxloc.TabIndex = 64
         '
         'lblpais
         '
         Me.lblpais.AutoSize = True
-        Me.lblpais.Location = New System.Drawing.Point(105, 25)
+        Me.lblpais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblpais.ForeColor = System.Drawing.Color.White
+        Me.lblpais.Location = New System.Drawing.Point(32, 38)
         Me.lblpais.Name = "lblpais"
-        Me.lblpais.Size = New System.Drawing.Size(112, 13)
+        Me.lblpais.Size = New System.Drawing.Size(150, 15)
         Me.lblpais.TabIndex = 63
         Me.lblpais.Text = "Seleccionar Localidad"
         '
@@ -133,44 +72,102 @@ Partial Class Modificar_Localidad
         '
         Me.Cbxprov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cbxprov.FormattingEnabled = True
-        Me.Cbxprov.Location = New System.Drawing.Point(35, 263)
+        Me.Cbxprov.Location = New System.Drawing.Point(275, 66)
         Me.Cbxprov.Name = "Cbxprov"
-        Me.Cbxprov.Size = New System.Drawing.Size(254, 21)
+        Me.Cbxprov.Size = New System.Drawing.Size(204, 21)
         Me.Cbxprov.TabIndex = 75
+        '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.Location = New System.Drawing.Point(275, 135)
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(204, 20)
+        Me.NumericUpDown2.TabIndex = 79
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(35, 135)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(204, 20)
+        Me.NumericUpDown1.TabIndex = 78
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(272, 105)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 15)
+        Me.Label6.TabIndex = 77
+        Me.Label6.Text = "Habitantes"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(32, 105)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(114, 15)
+        Me.Label5.TabIndex = 76
+        Me.Label5.Text = "Cantidad Barrios"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(75, 215)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 30)
+        Me.Button1.TabIndex = 81
+        Me.Button1.Text = "Modificar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(290, 215)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(150, 30)
+        Me.Button2.TabIndex = 80
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Modificar_Localidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(341, 365)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(531, 289)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.NumericUpDown2)
+        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Cbxprov)
-        Me.Controls.Add(Me.Txthabitantes)
-        Me.Controls.Add(Me.Txtcantidadbarrios)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btnmodificar)
-        Me.Controls.Add(Me.Txtdescripcion)
-        Me.Controls.Add(Me.lblnuevonombreusuario)
         Me.Controls.Add(Me.lblperfil)
-        Me.Controls.Add(Me.lblidioma)
         Me.Controls.Add(Me.Cbxloc)
         Me.Controls.Add(Me.lblpais)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Localidad"
         Me.Text = "Modificar_Localidad"
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Txthabitantes As System.Windows.Forms.TextBox
-    Friend WithEvents Txtcantidadbarrios As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnsalir As System.Windows.Forms.Button
-    Friend WithEvents btnmodificar As System.Windows.Forms.Button
-    Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
-    Friend WithEvents lblnuevonombreusuario As System.Windows.Forms.Label
     Friend WithEvents lblperfil As System.Windows.Forms.Label
-    Friend WithEvents lblidioma As System.Windows.Forms.Label
     Friend WithEvents Cbxloc As System.Windows.Forms.ComboBox
     Friend WithEvents lblpais As System.Windows.Forms.Label
     Friend WithEvents Cbxprov As System.Windows.Forms.ComboBox
+    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

@@ -1,7 +1,7 @@
-﻿Public Class Eliminar_Idioma
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs)
+﻿Imports BLL
 
-    End Sub
+Public Class Eliminar_Idioma
+    Implements BLL.BLL_Iobservador
 
     Public Sub iniciar()
         Try
@@ -37,5 +37,21 @@
 
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Eliminar_Idioma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        iniciar()
+    End Sub
+
+    Private Sub Eliminar_Idioma_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
     End Sub
 End Class

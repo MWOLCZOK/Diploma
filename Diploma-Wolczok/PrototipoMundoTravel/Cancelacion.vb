@@ -2,6 +2,8 @@
 Imports BLL
 
 Public Class Cancelacion
+    Implements BLL.BLL_Iobservador
+
     Dim bllCancel As New BLL.BLL_Cancelacion
     Protected Friend paramCancelacion As New BE_Cancelacion
     'Protected Friend paramCancelacion As EE.BE_Cancelacion
@@ -42,30 +44,19 @@ Public Class Cancelacion
 
     Private Sub Cancelacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridView1.DataSource = Nothing
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btnsalir.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btncalcpuni.Click
-        Try
-            Dim bllReserva As New BLL.BLL_Reserva
-            Dim oReserva As New BE_ReservaViaje
-            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-            oReserva = bllReserva.consultarReservaviajeID(oReserva)
-            Dim oCancel As BE_Cancelacion
-            oCancel = bllReserva.calcularPunitorios(oReserva)
-            Me.Txtmontoretenido.Text = oCancel.MontoRetenido
-            Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
-            Me.Txtmontototal.Text = oCancel.MontoTotal
-            paramCancelacion = oCancel
-        Catch ex As Exception
-
-        End Try
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Btncancelares.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnCancelarReserva.Click
         Try
             Dim oReserva As New BE_ReservaViaje
             Dim bllReserva As New BLL_Reserva
@@ -83,5 +74,32 @@ Public Class Cancelacion
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles btnCalcularPunitorios.Click
+        Try
+            Dim bllReserva As New BLL.BLL_Reserva
+            Dim oReserva As New BE_ReservaViaje
+            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+            oReserva = bllReserva.consultarReservaviajeID(oReserva)
+            Dim oCancel As BE_Cancelacion
+            oCancel = bllReserva.calcularPunitorios(oReserva)
+            Me.Txtmontoretenido.Text = oCancel.MontoRetenido
+            Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
+            Me.Txtmontototal.Text = oCancel.MontoTotal
+            paramCancelacion = oCancel
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+    Private Sub Cancelacion_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
 End Class
