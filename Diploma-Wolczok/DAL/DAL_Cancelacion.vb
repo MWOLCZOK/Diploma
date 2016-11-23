@@ -12,7 +12,7 @@ Public Class DAL_Cancelacion
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim paramCancelacion As BE_Cancelacion = DirectCast(paramobjeto, BE_Cancelacion)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Cancelacion values (@ID, @ID_Reserva, @ID_Tiporeserva,@Fechacancelacion, @MontoDevuelto, @MontoRetenido,@MontoTotal, @DescripcionMotivoCancelacion, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Cancelacion values (@ID, @ID_Reserva, @ID_Tiporeserva, @Fechacancelacion, @MontoDevuelto, @MontoRetenido, @MontoTotal, @DescripcionMotivoCancelacion, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Cancelacion")))
                 .Add(New SqlParameter("@ID_Reserva", paramCancelacion.Reserva.ID))

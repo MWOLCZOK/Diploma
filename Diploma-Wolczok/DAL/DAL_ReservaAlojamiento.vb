@@ -49,13 +49,11 @@ Public Class DAL_ReservaAlojamiento
         End Try
     End Sub
 
-    Public Sub actualizarreservaalojacancel(paramobjeto As Object)
+    Public Sub actualizarreservaalojacancel(ByVal paramReservaAlojamiento As BE_ReservaAlojamiento)
         Try
-            Dim paramReservaAloja As BE_ReservaAlojamiento = DirectCast(paramobjeto, BE_ReservaAlojamiento)
-            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set BL=@BL, Estado=@Estado where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update ReservaAlojamiento set BL=@BL where ID=@ID")
             With command.Parameters
-                .Add(New SqlParameter("@ID", paramReservaAloja.ID))
-                .Add(New SqlParameter("@Estado", True))
+                .Add(New SqlParameter("@ID", paramReservaAlojamiento.ID))
                 .Add(New SqlParameter("@BL", True))
             End With
             Acceso.Escritura(command)
@@ -184,6 +182,7 @@ Public Class DAL_ReservaAlojamiento
         Dim oPasajero As New BE_Pasajero
         oPasajero.ID = paramDataRow.Item("ID_Pasajero")
         oReservaAlojamiento.Pasajero = (New DAL.DAL_Pasajero).consultarPasajero(oPasajero)
+        oReservaAlojamiento.Pagoviaje = (New DAL_Pago).consultarPagosviajes(oReservaAlojamiento)
         Return oReservaAlojamiento
     End Function
 End Class

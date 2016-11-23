@@ -3,7 +3,7 @@ Imports BLL
 
 Public Class Cancelacion
     Dim bllCancel As New BLL.BLL_Cancelacion
-
+    Protected Friend paramCancelacion As New BE_Cancelacion
     'Protected Friend paramCancelacion As EE.BE_Cancelacion
 
     Private Sub Txtdni_TextChanged(sender As Object, e As EventArgs) Handles Txtdni.TextChanged
@@ -59,7 +59,7 @@ Public Class Cancelacion
             Me.Txtmontoretenido.Text = oCancel.MontoRetenido
             Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
             Me.Txtmontototal.Text = oCancel.MontoTotal
-
+            paramCancelacion = oCancel
         Catch ex As Exception
 
         End Try
@@ -74,9 +74,9 @@ Public Class Cancelacion
             Dim oCancel As New BE_Cancelacion
             oCancel.Tiporeserva = oReserva.TipoReserva
             oCancel.Fechacancelacion = Today
-            oCancel.MontoDevuelto = Me.Txtmontodevuelto.Text
-            oCancel.MontoRetenido = Me.Txtmontoretenido.Text
-            oCancel.MontoTotal = Me.Txtmontototal.Text
+            oCancel.MontoDevuelto = paramCancelacion.MontoDevuelto
+            oCancel.MontoRetenido = paramCancelacion.MontoRetenido
+            oCancel.MontoTotal = paramCancelacion.MontoTotal
             oCancel.Reserva = oReserva
             oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
             bllCancel.alta(oCancel)
