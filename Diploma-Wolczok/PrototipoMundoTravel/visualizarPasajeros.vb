@@ -3,6 +3,14 @@
         Me.Close()
     End Sub
 
+    Private Sub visualizarPasajeros_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Try
+            Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+            Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+        Catch ex As Exception
+        End Try
+    End Sub
+
     Private Sub visualizarPasajeros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         iniciar()
     End Sub
