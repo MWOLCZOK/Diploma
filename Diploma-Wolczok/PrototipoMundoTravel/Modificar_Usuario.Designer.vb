@@ -34,7 +34,7 @@ Partial Class Modificar_Usuario
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblRepetirContraseñaUsuario = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Txtnombreusuario = New System.Windows.Forms.TextBox()
@@ -147,16 +147,16 @@ Partial Class Modificar_Usuario
         Me.TextBox3.Size = New System.Drawing.Size(191, 20)
         Me.TextBox3.TabIndex = 39
         '
-        'Label3
+        'lblRepetirContraseñaUsuario
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(32, 232)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(185, 15)
-        Me.Label3.TabIndex = 38
-        Me.Label3.Text = "Repetir Contraseña Usuario"
+        Me.lblRepetirContraseñaUsuario.AutoSize = True
+        Me.lblRepetirContraseñaUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRepetirContraseñaUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblRepetirContraseñaUsuario.Location = New System.Drawing.Point(32, 232)
+        Me.lblRepetirContraseñaUsuario.Name = "lblRepetirContraseñaUsuario"
+        Me.lblRepetirContraseñaUsuario.Size = New System.Drawing.Size(185, 15)
+        Me.lblRepetirContraseñaUsuario.TabIndex = 38
+        Me.lblRepetirContraseñaUsuario.Text = "Repetir Contraseña Usuario"
         '
         'TextBox2
         '
@@ -234,7 +234,7 @@ Partial Class Modificar_Usuario
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblRepetirContraseñaUsuario)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Txtnombreusuario)
@@ -259,7 +259,7 @@ Partial Class Modificar_Usuario
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblRepetirContraseñaUsuario As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Txtnombreusuario As TextBox

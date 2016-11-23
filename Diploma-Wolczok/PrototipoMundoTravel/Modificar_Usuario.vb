@@ -6,7 +6,6 @@ Public Class Modificar_Usuario
 
 
     Implements BLL.BLL_Iobservador
-    Protected Friend usuarioPrevio As EE.BE_Usuario
 
     Private Sub iniciar()
         Try
@@ -52,7 +51,6 @@ Public Class Modificar_Usuario
         If Not IsNothing(CbxUsuario.SelectedItem) Then
             Dim Usuario As New BE_Usuario
             Usuario = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
-            usuarioPrevio = Usuario
             Me.txtNombre.Text = Usuario.Nombre
             Me.TxtApe.Text = Usuario.Apellido
             Me.Txtnombreusuario.Text = Usuario.NombreUsuario
@@ -70,6 +68,8 @@ Public Class Modificar_Usuario
     End Sub
 
     Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Dim usuarioPrevio As New BE_Usuario
+        usuarioPrevio = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
         Dim GestorUsuario As New BLL_Usuario
         Dim NuevoUsuario As EE.BE_Usuario = New BE_Usuario
         Try
