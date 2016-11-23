@@ -83,8 +83,8 @@ Public Class Modificar_Usuario
                     NuevoUsuario.idioma = DirectCast(CbxIdioma.SelectedItem, BE_Idioma)
                     NuevoUsuario.Perfil = DirectCast(CbxPerfil.SelectedItem, BE_GrupoPermiso)
                     GestorUsuario.Modificar(NuevoUsuario)
-                    GestorUsuario.gestionarCambio(usuarioPrevio, tipoValor.Anterior, tipoCambio.Modificacion)
-                    GestorUsuario.gestionarCambio(NuevoUsuario, tipoValor.Posterior, tipoCambio.Modificacion)
+                    GestorUsuario.gestionarCambio(usuarioPrevio, tipoCambio.Modificacion, tipoValor.Anterior)
+                    GestorUsuario.gestionarCambio(NuevoUsuario, tipoCambio.Modificacion, tipoValor.Posterior)
                     MessageBox.Show("Se ha modificado el usuario de manera satisfactoria")
                     iniciar()
                 End If
@@ -107,7 +107,4 @@ Public Class Modificar_Usuario
         MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
     End Sub
 
-    Private Sub BLL_Iobservador_actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
-        Throw New NotImplementedException()
-    End Sub
 End Class

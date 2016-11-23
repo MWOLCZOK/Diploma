@@ -164,8 +164,10 @@ Public Class DAL_Usuario
                 .Add(New SqlParameter("@TipoCambio", vTipoCambio))
                 If vTipoCambio = tipoCambio.Alta Then
                     .Add(New SqlParameter("@ID_Usuario", Acceso.TraerUltimoID("ID_Usuario", "Usuario")))
+                    .Add(New SqlParameter("@BL", False))
                 Else
                     .Add(New SqlParameter("@ID_Usuario", oUsuario.ID))
+                    .Add(New SqlParameter("@BL", oUsuario.BL))
                 End If
                 .Add(New SqlParameter("@NombreUsuario", oUsuario.NombreUsuario))
                 .Add(New SqlParameter("@Password", oUsuario.Password))
@@ -174,7 +176,8 @@ Public Class DAL_Usuario
                 .Add(New SqlParameter("@Nombre", oUsuario.Nombre))
                 .Add(New SqlParameter("@Apellido", oUsuario.Apellido))
                 .Add(New SqlParameter("@ID_Perfil", oUsuario.Perfil.ID))
-                .Add(New SqlParameter("@BL", False))
+
+
                 .Add(New SqlParameter("@ID_Idioma", oUsuario.idioma.id_idioma))
             End With
             Acceso.Escritura(Command)
@@ -375,11 +378,12 @@ Public Class DAL_Usuario
 
     Public Function Eliminar(ByRef paramUsuario As EE.BE_Usuario) As Boolean
         Try
+            gestionarCambio(paramUsuario, tipoCambio.Baja, tipoValor.Anterior)
+            paramUsuario.BL = True
             Dim Command As SqlCommand = Acceso.MiComando("Update Usuario set BL=@BL where ID_Usuario = @ID_Usuario")
             With Command.Parameters
                 .Add(New SqlParameter("@BL", True))
                 .Add(New SqlParameter("@ID_Usuario", paramUsuario.ID))
-                '               .Add(New SqlParameter("@DVH", DigitoVerificadorDAL.CalcularDVH(Usuario.ID_Usuario & Usuario.Nombre & Usuario.Password & Usuario.Bloqueo & Usuario.Intento & Usuario.IdiomaEntidad.ID_Idioma & Usuario.Perfil.ID & Command.Parameters("@BL").Value)))
             End With
             Acceso.Escritura(Command)
             Command.Dispose()
@@ -391,6 +395,8 @@ Public Class DAL_Usuario
                 Digitos = Digitos + row.Item("DVH")
             Next
             DAL_DigitoVerificador.CalcularDVV(Digitos, "Usuario")
+            gestionarCambio(paramUsuario, tipoCambio.Baja, tipoValor.Posterior)
+
             Return True
         Catch ex As Exception
             Throw ex
