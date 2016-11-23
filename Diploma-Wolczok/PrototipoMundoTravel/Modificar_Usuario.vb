@@ -70,7 +70,11 @@ Public Class Modificar_Usuario
     Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim usuarioPrevio As New BE_Usuario
         usuarioPrevio = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
+
+
         Dim GestorUsuario As New BLL_Usuario
+        GestorUsuario.gestionarCambio(usuarioPrevio, tipoCambio.Modificacion, tipoValor.Anterior)
+
         Dim NuevoUsuario As EE.BE_Usuario = New BE_Usuario
         Try
             If Not IsNothing(CbxUsuario.SelectedItem) Then
@@ -83,7 +87,7 @@ Public Class Modificar_Usuario
                     NuevoUsuario.idioma = DirectCast(CbxIdioma.SelectedItem, BE_Idioma)
                     NuevoUsuario.Perfil = DirectCast(CbxPerfil.SelectedItem, BE_GrupoPermiso)
                     GestorUsuario.Modificar(NuevoUsuario)
-                    GestorUsuario.gestionarCambio(usuarioPrevio, tipoCambio.Modificacion, tipoValor.Anterior)
+
                     GestorUsuario.gestionarCambio(NuevoUsuario, tipoCambio.Modificacion, tipoValor.Posterior)
                     MessageBox.Show("Se ha modificado el usuario de manera satisfactoria")
                     iniciar()
