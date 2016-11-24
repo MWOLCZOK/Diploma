@@ -55,7 +55,7 @@ Public Class Agregar_Pago
 
     Public Sub ocultar()
         Txtdescripcion.Hide()
-        Label2.Hide()
+        lblNumeroTarjeta.Hide()
     End Sub
 
 
@@ -66,13 +66,13 @@ Public Class Agregar_Pago
         oMediodepago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
         If oMediodepago.ID = 1 Then
             Txtdescripcion.Hide()
-            Label2.Hide()
+            lblNumeroTarjeta.Hide()
         ElseIf oMediodepago.ID = 2 Then
             Txtdescripcion.Show()
-            Label2.Show()
+            lblNumeroTarjeta.Show()
         ElseIf oMediodepago.ID = 3 Then
             Txtdescripcion.Show()
-            Label2.Show()
+            lblNumeroTarjeta.Show()
         End If
 
     End Sub

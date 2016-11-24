@@ -23,11 +23,11 @@ Partial Class Agregar_Provincia
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Provincia))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblPais = New System.Windows.Forms.Label()
+        Me.lblSuperficieTerrestre = New System.Windows.Forms.Label()
+        Me.lblRegion = New System.Windows.Forms.Label()
+        Me.lblHabitantes = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
         Me.Txtsuperficieterrestre = New System.Windows.Forms.TextBox()
         Me.Txtregion = New System.Windows.Forms.TextBox()
         Me.Txtdescripcion = New System.Windows.Forms.TextBox()
@@ -38,60 +38,60 @@ Partial Class Agregar_Provincia
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblPais
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(322, 90)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 15)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Pais"
+        Me.lblPais.AutoSize = True
+        Me.lblPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPais.ForeColor = System.Drawing.Color.White
+        Me.lblPais.Location = New System.Drawing.Point(322, 90)
+        Me.lblPais.Name = "lblPais"
+        Me.lblPais.Size = New System.Drawing.Size(35, 15)
+        Me.lblPais.TabIndex = 25
+        Me.lblPais.Text = "Pais"
         '
-        'Label6
+        'lblSuperficieTerrestre
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(322, 33)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(134, 15)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Superficie Terrestre"
+        Me.lblSuperficieTerrestre.AutoSize = True
+        Me.lblSuperficieTerrestre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSuperficieTerrestre.ForeColor = System.Drawing.Color.White
+        Me.lblSuperficieTerrestre.Location = New System.Drawing.Point(322, 33)
+        Me.lblSuperficieTerrestre.Name = "lblSuperficieTerrestre"
+        Me.lblSuperficieTerrestre.Size = New System.Drawing.Size(134, 15)
+        Me.lblSuperficieTerrestre.TabIndex = 24
+        Me.lblSuperficieTerrestre.Text = "Superficie Terrestre"
         '
-        'Label5
+        'lblRegion
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(29, 149)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 15)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Region"
+        Me.lblRegion.AutoSize = True
+        Me.lblRegion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRegion.ForeColor = System.Drawing.Color.White
+        Me.lblRegion.Location = New System.Drawing.Point(29, 149)
+        Me.lblRegion.Name = "lblRegion"
+        Me.lblRegion.Size = New System.Drawing.Size(53, 15)
+        Me.lblRegion.TabIndex = 23
+        Me.lblRegion.Text = "Region"
         '
-        'Label4
+        'lblHabitantes
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(29, 90)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 15)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Habitantes"
+        Me.lblHabitantes.AutoSize = True
+        Me.lblHabitantes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHabitantes.ForeColor = System.Drawing.Color.White
+        Me.lblHabitantes.Location = New System.Drawing.Point(29, 90)
+        Me.lblHabitantes.Name = "lblHabitantes"
+        Me.lblHabitantes.Size = New System.Drawing.Size(76, 15)
+        Me.lblHabitantes.TabIndex = 22
+        Me.lblHabitantes.Text = "Habitantes"
         '
-        'Label2
+        'lblNombre
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(29, 33)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 15)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "Nombre"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(29, 33)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 15)
+        Me.lblNombre.TabIndex = 21
+        Me.lblNombre.Text = "Nombre"
         '
         'Txtsuperficieterrestre
         '
@@ -161,11 +161,11 @@ Partial Class Agregar_Provincia
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblPais)
+        Me.Controls.Add(Me.lblSuperficieTerrestre)
+        Me.Controls.Add(Me.lblRegion)
+        Me.Controls.Add(Me.lblHabitantes)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Txtsuperficieterrestre)
         Me.Controls.Add(Me.Txtregion)
         Me.Controls.Add(Me.Txtdescripcion)
@@ -177,11 +177,11 @@ Partial Class Agregar_Provincia
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblPais As System.Windows.Forms.Label
+    Friend WithEvents lblSuperficieTerrestre As System.Windows.Forms.Label
+    Friend WithEvents lblRegion As System.Windows.Forms.Label
+    Friend WithEvents lblHabitantes As System.Windows.Forms.Label
+    Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents Txtsuperficieterrestre As System.Windows.Forms.TextBox
     Friend WithEvents Txtregion As System.Windows.Forms.TextBox
     Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox

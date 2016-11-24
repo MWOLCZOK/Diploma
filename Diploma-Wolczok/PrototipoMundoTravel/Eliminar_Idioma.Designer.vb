@@ -24,7 +24,7 @@ Partial Class Eliminar_Idioma
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Idioma))
         Me.CbxIdioma = New System.Windows.Forms.ComboBox()
-        Me.lblidioma = New System.Windows.Forms.Label()
+        Me.lblSeleccionarIdioma = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,16 +38,16 @@ Partial Class Eliminar_Idioma
         Me.CbxIdioma.Size = New System.Drawing.Size(344, 21)
         Me.CbxIdioma.TabIndex = 17
         '
-        'lblidioma
+        'lblSeleccionarIdioma
         '
-        Me.lblidioma.AutoSize = True
-        Me.lblidioma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblidioma.ForeColor = System.Drawing.Color.White
-        Me.lblidioma.Location = New System.Drawing.Point(38, 78)
-        Me.lblidioma.Name = "lblidioma"
-        Me.lblidioma.Size = New System.Drawing.Size(131, 15)
-        Me.lblidioma.TabIndex = 16
-        Me.lblidioma.Text = "Seleccionar Idioma"
+        Me.lblSeleccionarIdioma.AutoSize = True
+        Me.lblSeleccionarIdioma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarIdioma.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarIdioma.Location = New System.Drawing.Point(38, 78)
+        Me.lblSeleccionarIdioma.Name = "lblSeleccionarIdioma"
+        Me.lblSeleccionarIdioma.Size = New System.Drawing.Size(131, 15)
+        Me.lblSeleccionarIdioma.TabIndex = 16
+        Me.lblSeleccionarIdioma.Text = "Seleccionar Idioma"
         '
         'btnEliminar
         '
@@ -80,7 +80,7 @@ Partial Class Eliminar_Idioma
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxIdioma)
-        Me.Controls.Add(Me.lblidioma)
+        Me.Controls.Add(Me.lblSeleccionarIdioma)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Idioma"
         Me.Text = "Eliminar_Idioma"
@@ -89,7 +89,7 @@ Partial Class Eliminar_Idioma
 
     End Sub
     Friend WithEvents CbxIdioma As ComboBox
-    Friend WithEvents lblidioma As Label
+    Friend WithEvents lblSeleccionarIdioma As Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnSalir As Button
 End Class

@@ -24,7 +24,7 @@ Partial Class Eliminar_Pasajero
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Pasajero))
         Me.Cbxpas = New System.Windows.Forms.ComboBox()
-        Me.lblusuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarPasajero = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,16 +38,16 @@ Partial Class Eliminar_Pasajero
         Me.Cbxpas.Size = New System.Drawing.Size(344, 21)
         Me.Cbxpas.TabIndex = 37
         '
-        'lblusuario
+        'lblSeleccionarPasajero
         '
-        Me.lblusuario.AutoSize = True
-        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblusuario.ForeColor = System.Drawing.Color.White
-        Me.lblusuario.Location = New System.Drawing.Point(45, 87)
-        Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(144, 15)
-        Me.lblusuario.TabIndex = 36
-        Me.lblusuario.Text = "Seleccionar Pasajero"
+        Me.lblSeleccionarPasajero.AutoSize = True
+        Me.lblSeleccionarPasajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarPasajero.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarPasajero.Location = New System.Drawing.Point(45, 87)
+        Me.lblSeleccionarPasajero.Name = "lblSeleccionarPasajero"
+        Me.lblSeleccionarPasajero.Size = New System.Drawing.Size(144, 15)
+        Me.lblSeleccionarPasajero.TabIndex = 36
+        Me.lblSeleccionarPasajero.Text = "Seleccionar Pasajero"
         '
         'btnEliminar
         '
@@ -80,7 +80,7 @@ Partial Class Eliminar_Pasajero
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Cbxpas)
-        Me.Controls.Add(Me.lblusuario)
+        Me.Controls.Add(Me.lblSeleccionarPasajero)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Pasajero"
         Me.Text = "Eliminar_Pasajero"
@@ -89,7 +89,7 @@ Partial Class Eliminar_Pasajero
 
     End Sub
     Friend WithEvents Cbxpas As System.Windows.Forms.ComboBox
-    Friend WithEvents lblusuario As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarPasajero As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnSalir As Button
 End Class

@@ -24,7 +24,7 @@ Partial Class Eliminar_Localidad
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Localidad))
         Me.CbxLoc = New System.Windows.Forms.ComboBox()
-        Me.lblusuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarLocalidad = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,16 +38,16 @@ Partial Class Eliminar_Localidad
         Me.CbxLoc.Size = New System.Drawing.Size(344, 21)
         Me.CbxLoc.TabIndex = 33
         '
-        'lblusuario
+        'lblSeleccionarLocalidad
         '
-        Me.lblusuario.AutoSize = True
-        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblusuario.ForeColor = System.Drawing.Color.White
-        Me.lblusuario.Location = New System.Drawing.Point(40, 86)
-        Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(150, 15)
-        Me.lblusuario.TabIndex = 32
-        Me.lblusuario.Text = "Seleccionar Localidad"
+        Me.lblSeleccionarLocalidad.AutoSize = True
+        Me.lblSeleccionarLocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarLocalidad.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarLocalidad.Location = New System.Drawing.Point(40, 79)
+        Me.lblSeleccionarLocalidad.Name = "lblSeleccionarLocalidad"
+        Me.lblSeleccionarLocalidad.Size = New System.Drawing.Size(150, 15)
+        Me.lblSeleccionarLocalidad.TabIndex = 32
+        Me.lblSeleccionarLocalidad.Text = "Seleccionar Localidad"
         '
         'btnEliminar
         '
@@ -80,7 +80,7 @@ Partial Class Eliminar_Localidad
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxLoc)
-        Me.Controls.Add(Me.lblusuario)
+        Me.Controls.Add(Me.lblSeleccionarLocalidad)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Localidad"
         Me.Text = "Eliminar_Localidad"
@@ -89,7 +89,7 @@ Partial Class Eliminar_Localidad
 
     End Sub
     Friend WithEvents CbxLoc As System.Windows.Forms.ComboBox
-    Friend WithEvents lblusuario As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarLocalidad As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnSalir As Button
 End Class

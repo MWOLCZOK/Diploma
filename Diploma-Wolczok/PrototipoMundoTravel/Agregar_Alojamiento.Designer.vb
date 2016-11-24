@@ -34,19 +34,19 @@ Partial Class Agregar_Alojamiento
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.lblPrecioAlquiler = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.ChkFrigobar = New System.Windows.Forms.CheckBox()
+        Me.chkAmoblado = New System.Windows.Forms.CheckBox()
+        Me.chkCochera = New System.Windows.Forms.CheckBox()
+        Me.chkTV = New System.Windows.Forms.CheckBox()
+        Me.chkDesayuno = New System.Windows.Forms.CheckBox()
+        Me.chkSauna = New System.Windows.Forms.CheckBox()
+        Me.chkAire = New System.Windows.Forms.CheckBox()
+        Me.chkPiscina = New System.Windows.Forms.CheckBox()
+        Me.chkMascotas = New System.Windows.Forms.CheckBox()
+        Me.chkWIFI = New System.Windows.Forms.CheckBox()
+        Me.chkGimnasio = New System.Windows.Forms.CheckBox()
+        Me.chkCocina = New System.Windows.Forms.CheckBox()
+        Me.chkPrivada = New System.Windows.Forms.CheckBox()
         Me.Btnsalir = New System.Windows.Forms.Button()
         Me.BtnAceptar = New System.Windows.Forms.Button()
         Me.lblDestino = New System.Windows.Forms.Label()
@@ -159,161 +159,161 @@ Partial Class Agregar_Alojamiento
         Me.TextBox7.Size = New System.Drawing.Size(166, 20)
         Me.TextBox7.TabIndex = 18
         '
-        'CheckBox10
+        'ChkFrigobar
         '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox10.ForeColor = System.Drawing.Color.White
-        Me.CheckBox10.Location = New System.Drawing.Point(393, 243)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(80, 19)
-        Me.CheckBox10.TabIndex = 35
-        Me.CheckBox10.Text = "Frigobar"
-        Me.CheckBox10.UseVisualStyleBackColor = True
+        Me.ChkFrigobar.AutoSize = True
+        Me.ChkFrigobar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkFrigobar.ForeColor = System.Drawing.Color.White
+        Me.ChkFrigobar.Location = New System.Drawing.Point(393, 243)
+        Me.ChkFrigobar.Name = "ChkFrigobar"
+        Me.ChkFrigobar.Size = New System.Drawing.Size(80, 19)
+        Me.ChkFrigobar.TabIndex = 35
+        Me.ChkFrigobar.Text = "Frigobar"
+        Me.ChkFrigobar.UseVisualStyleBackColor = True
         '
-        'CheckBox11
+        'chkAmoblado
         '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox11.ForeColor = System.Drawing.Color.White
-        Me.CheckBox11.Location = New System.Drawing.Point(204, 303)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(90, 19)
-        Me.CheckBox11.TabIndex = 34
-        Me.CheckBox11.Text = "Amoblado"
-        Me.CheckBox11.UseVisualStyleBackColor = True
+        Me.chkAmoblado.AutoSize = True
+        Me.chkAmoblado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkAmoblado.ForeColor = System.Drawing.Color.White
+        Me.chkAmoblado.Location = New System.Drawing.Point(204, 303)
+        Me.chkAmoblado.Name = "chkAmoblado"
+        Me.chkAmoblado.Size = New System.Drawing.Size(90, 19)
+        Me.chkAmoblado.TabIndex = 34
+        Me.chkAmoblado.Text = "Amoblado"
+        Me.chkAmoblado.UseVisualStyleBackColor = True
         '
-        'CheckBox12
+        'chkCochera
         '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox12.ForeColor = System.Drawing.Color.White
-        Me.CheckBox12.Location = New System.Drawing.Point(16, 332)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(79, 19)
-        Me.CheckBox12.TabIndex = 33
-        Me.CheckBox12.Text = "Cochera"
-        Me.CheckBox12.UseVisualStyleBackColor = True
+        Me.chkCochera.AutoSize = True
+        Me.chkCochera.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkCochera.ForeColor = System.Drawing.Color.White
+        Me.chkCochera.Location = New System.Drawing.Point(16, 332)
+        Me.chkCochera.Name = "chkCochera"
+        Me.chkCochera.Size = New System.Drawing.Size(79, 19)
+        Me.chkCochera.TabIndex = 33
+        Me.chkCochera.Text = "Cochera"
+        Me.chkCochera.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'chkTV
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox5.ForeColor = System.Drawing.Color.White
-        Me.CheckBox5.Location = New System.Drawing.Point(393, 272)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(117, 19)
-        Me.CheckBox5.TabIndex = 32
-        Me.CheckBox5.Text = "Servicio de TV"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.chkTV.AutoSize = True
+        Me.chkTV.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkTV.ForeColor = System.Drawing.Color.White
+        Me.chkTV.Location = New System.Drawing.Point(393, 272)
+        Me.chkTV.Name = "chkTV"
+        Me.chkTV.Size = New System.Drawing.Size(117, 19)
+        Me.chkTV.TabIndex = 32
+        Me.chkTV.Text = "Servicio de TV"
+        Me.chkTV.UseVisualStyleBackColor = True
         '
-        'CheckBox6
+        'chkDesayuno
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox6.ForeColor = System.Drawing.Color.White
-        Me.CheckBox6.Location = New System.Drawing.Point(204, 275)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(89, 19)
-        Me.CheckBox6.TabIndex = 31
-        Me.CheckBox6.Text = "Desayuno"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.chkDesayuno.AutoSize = True
+        Me.chkDesayuno.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkDesayuno.ForeColor = System.Drawing.Color.White
+        Me.chkDesayuno.Location = New System.Drawing.Point(204, 275)
+        Me.chkDesayuno.Name = "chkDesayuno"
+        Me.chkDesayuno.Size = New System.Drawing.Size(89, 19)
+        Me.chkDesayuno.TabIndex = 31
+        Me.chkDesayuno.Text = "Desayuno"
+        Me.chkDesayuno.UseVisualStyleBackColor = True
         '
-        'CheckBox7
+        'chkSauna
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox7.ForeColor = System.Drawing.Color.White
-        Me.CheckBox7.Location = New System.Drawing.Point(16, 366)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(67, 19)
-        Me.CheckBox7.TabIndex = 30
-        Me.CheckBox7.Text = "Sauna"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.chkSauna.AutoSize = True
+        Me.chkSauna.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSauna.ForeColor = System.Drawing.Color.White
+        Me.chkSauna.Location = New System.Drawing.Point(16, 366)
+        Me.chkSauna.Name = "chkSauna"
+        Me.chkSauna.Size = New System.Drawing.Size(67, 19)
+        Me.chkSauna.TabIndex = 30
+        Me.chkSauna.Text = "Sauna"
+        Me.chkSauna.UseVisualStyleBackColor = True
         '
-        'CheckBox8
+        'chkAire
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox8.ForeColor = System.Drawing.Color.White
-        Me.CheckBox8.Location = New System.Drawing.Point(204, 243)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(149, 19)
-        Me.CheckBox8.TabIndex = 29
-        Me.CheckBox8.Text = "Aire Acondicionado"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.chkAire.AutoSize = True
+        Me.chkAire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkAire.ForeColor = System.Drawing.Color.White
+        Me.chkAire.Location = New System.Drawing.Point(204, 243)
+        Me.chkAire.Name = "chkAire"
+        Me.chkAire.Size = New System.Drawing.Size(149, 19)
+        Me.chkAire.TabIndex = 29
+        Me.chkAire.Text = "Aire Acondicionado"
+        Me.chkAire.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'chkPiscina
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox4.ForeColor = System.Drawing.Color.White
-        Me.CheckBox4.Location = New System.Drawing.Point(17, 272)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(73, 19)
-        Me.CheckBox4.TabIndex = 28
-        Me.CheckBox4.Text = "Piscina"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.chkPiscina.AutoSize = True
+        Me.chkPiscina.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPiscina.ForeColor = System.Drawing.Color.White
+        Me.chkPiscina.Location = New System.Drawing.Point(17, 272)
+        Me.chkPiscina.Name = "chkPiscina"
+        Me.chkPiscina.Size = New System.Drawing.Size(73, 19)
+        Me.chkPiscina.TabIndex = 28
+        Me.chkPiscina.Text = "Piscina"
+        Me.chkPiscina.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'chkMascotas
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.ForeColor = System.Drawing.Color.White
-        Me.CheckBox3.Location = New System.Drawing.Point(16, 300)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(134, 19)
-        Me.CheckBox3.TabIndex = 27
-        Me.CheckBox3.Text = "Acepta Mascotas"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkMascotas.AutoSize = True
+        Me.chkMascotas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMascotas.ForeColor = System.Drawing.Color.White
+        Me.chkMascotas.Location = New System.Drawing.Point(16, 300)
+        Me.chkMascotas.Name = "chkMascotas"
+        Me.chkMascotas.Size = New System.Drawing.Size(134, 19)
+        Me.chkMascotas.TabIndex = 27
+        Me.chkMascotas.Text = "Acepta Mascotas"
+        Me.chkMascotas.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chkWIFI
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.ForeColor = System.Drawing.Color.White
-        Me.CheckBox2.Location = New System.Drawing.Point(17, 243)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(140, 19)
-        Me.CheckBox2.TabIndex = 26
-        Me.CheckBox2.Text = "Conectividad WIFI"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkWIFI.AutoSize = True
+        Me.chkWIFI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkWIFI.ForeColor = System.Drawing.Color.White
+        Me.chkWIFI.Location = New System.Drawing.Point(17, 243)
+        Me.chkWIFI.Name = "chkWIFI"
+        Me.chkWIFI.Size = New System.Drawing.Size(140, 19)
+        Me.chkWIFI.TabIndex = 26
+        Me.chkWIFI.Text = "Conectividad WIFI"
+        Me.chkWIFI.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkGimnasio
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.ForeColor = System.Drawing.Color.White
-        Me.CheckBox1.Location = New System.Drawing.Point(393, 332)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(87, 19)
-        Me.CheckBox1.TabIndex = 25
-        Me.CheckBox1.Text = "Gimnasio"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkGimnasio.AutoSize = True
+        Me.chkGimnasio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkGimnasio.ForeColor = System.Drawing.Color.White
+        Me.chkGimnasio.Location = New System.Drawing.Point(393, 332)
+        Me.chkGimnasio.Name = "chkGimnasio"
+        Me.chkGimnasio.Size = New System.Drawing.Size(87, 19)
+        Me.chkGimnasio.TabIndex = 25
+        Me.chkGimnasio.Text = "Gimnasio"
+        Me.chkGimnasio.UseVisualStyleBackColor = True
         '
-        'CheckBox9
+        'chkCocina
         '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox9.ForeColor = System.Drawing.Color.White
-        Me.CheckBox9.Location = New System.Drawing.Point(204, 335)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(70, 19)
-        Me.CheckBox9.TabIndex = 36
-        Me.CheckBox9.Text = "Cocina"
-        Me.CheckBox9.UseVisualStyleBackColor = True
+        Me.chkCocina.AutoSize = True
+        Me.chkCocina.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkCocina.ForeColor = System.Drawing.Color.White
+        Me.chkCocina.Location = New System.Drawing.Point(204, 335)
+        Me.chkCocina.Name = "chkCocina"
+        Me.chkCocina.Size = New System.Drawing.Size(70, 19)
+        Me.chkCocina.TabIndex = 36
+        Me.chkCocina.Text = "Cocina"
+        Me.chkCocina.UseVisualStyleBackColor = True
         '
-        'CheckBox13
+        'chkPrivada
         '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox13.ForeColor = System.Drawing.Color.White
-        Me.CheckBox13.Location = New System.Drawing.Point(393, 300)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(147, 19)
-        Me.CheckBox13.TabIndex = 38
-        Me.CheckBox13.Text = "Habitacion Privada"
-        Me.CheckBox13.UseVisualStyleBackColor = True
+        Me.chkPrivada.AutoSize = True
+        Me.chkPrivada.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPrivada.ForeColor = System.Drawing.Color.White
+        Me.chkPrivada.Location = New System.Drawing.Point(393, 300)
+        Me.chkPrivada.Name = "chkPrivada"
+        Me.chkPrivada.Size = New System.Drawing.Size(147, 19)
+        Me.chkPrivada.TabIndex = 38
+        Me.chkPrivada.Text = "Habitacion Privada"
+        Me.chkPrivada.UseVisualStyleBackColor = True
         '
         'Btnsalir
         '
@@ -397,19 +397,19 @@ Partial Class Agregar_Alojamiento
         Me.Controls.Add(Me.lblDestino)
         Me.Controls.Add(Me.Btnsalir)
         Me.Controls.Add(Me.BtnAceptar)
-        Me.Controls.Add(Me.CheckBox13)
-        Me.Controls.Add(Me.CheckBox9)
-        Me.Controls.Add(Me.CheckBox10)
-        Me.Controls.Add(Me.CheckBox11)
-        Me.Controls.Add(Me.CheckBox12)
-        Me.Controls.Add(Me.CheckBox5)
-        Me.Controls.Add(Me.CheckBox6)
-        Me.Controls.Add(Me.CheckBox7)
-        Me.Controls.Add(Me.CheckBox8)
-        Me.Controls.Add(Me.CheckBox4)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.chkPrivada)
+        Me.Controls.Add(Me.chkCocina)
+        Me.Controls.Add(Me.ChkFrigobar)
+        Me.Controls.Add(Me.chkAmoblado)
+        Me.Controls.Add(Me.chkCochera)
+        Me.Controls.Add(Me.chkTV)
+        Me.Controls.Add(Me.chkDesayuno)
+        Me.Controls.Add(Me.chkSauna)
+        Me.Controls.Add(Me.chkAire)
+        Me.Controls.Add(Me.chkPiscina)
+        Me.Controls.Add(Me.chkMascotas)
+        Me.Controls.Add(Me.chkWIFI)
+        Me.Controls.Add(Me.chkGimnasio)
         Me.Controls.Add(Me.lblPrecioAlquiler)
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.TextBox5)
@@ -441,19 +441,19 @@ Partial Class Agregar_Alojamiento
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
     Friend WithEvents lblPrecioAlquiler As System.Windows.Forms.Label
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox10 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox11 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox13 As System.Windows.Forms.CheckBox
+    Friend WithEvents ChkFrigobar As System.Windows.Forms.CheckBox
+    Friend WithEvents chkAmoblado As System.Windows.Forms.CheckBox
+    Friend WithEvents chkCochera As System.Windows.Forms.CheckBox
+    Friend WithEvents chkTV As System.Windows.Forms.CheckBox
+    Friend WithEvents chkDesayuno As System.Windows.Forms.CheckBox
+    Friend WithEvents chkSauna As System.Windows.Forms.CheckBox
+    Friend WithEvents chkAire As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPiscina As System.Windows.Forms.CheckBox
+    Friend WithEvents chkMascotas As System.Windows.Forms.CheckBox
+    Friend WithEvents chkWIFI As System.Windows.Forms.CheckBox
+    Friend WithEvents chkGimnasio As System.Windows.Forms.CheckBox
+    Friend WithEvents chkCocina As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPrivada As System.Windows.Forms.CheckBox
     Friend WithEvents Btnsalir As Button
     Friend WithEvents BtnAceptar As Button
     Friend WithEvents lblDestino As Label

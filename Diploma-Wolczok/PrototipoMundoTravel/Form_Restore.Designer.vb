@@ -27,9 +27,9 @@ Partial Class Form_Restore
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnBackup = New System.Windows.Forms.Button()
+        Me.btnRestore = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Lbldirectorio
@@ -54,16 +54,16 @@ Partial Class Form_Restore
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'btnBackup
+        'btnRestore
         '
-        Me.btnBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnBackup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBackup.Location = New System.Drawing.Point(43, 156)
-        Me.btnBackup.Name = "btnBackup"
-        Me.btnBackup.Size = New System.Drawing.Size(150, 30)
-        Me.btnBackup.TabIndex = 77
-        Me.btnBackup.Text = "Realizar Restore"
-        Me.btnBackup.UseVisualStyleBackColor = False
+        Me.btnRestore.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnRestore.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRestore.Location = New System.Drawing.Point(43, 156)
+        Me.btnRestore.Name = "btnRestore"
+        Me.btnRestore.Size = New System.Drawing.Size(150, 30)
+        Me.btnRestore.TabIndex = 77
+        Me.btnRestore.Text = "Realizar Restore"
+        Me.btnRestore.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
@@ -76,16 +76,16 @@ Partial Class Form_Restore
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnBuscar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(309, 71)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(78, 30)
-        Me.Button1.TabIndex = 78
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.Location = New System.Drawing.Point(309, 71)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(78, 30)
+        Me.btnBuscar.TabIndex = 78
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'Form_Restore
         '
@@ -93,8 +93,8 @@ Partial Class Form_Restore
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(448, 229)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnBackup)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnRestore)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Lbldirectorio)
         Me.Controls.Add(Me.TextBox4)
@@ -109,7 +109,7 @@ Partial Class Form_Restore
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents btnBackup As Button
+    Friend WithEvents btnRestore As Button
     Friend WithEvents btnSalir As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBuscar As Button
 End Class

@@ -23,50 +23,50 @@ Partial Class Agregar_Pago
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Pago))
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblMontoPago = New System.Windows.Forms.Label()
+        Me.lblMedioPago = New System.Windows.Forms.Label()
+        Me.lblNumeroTarjeta = New System.Windows.Forms.Label()
         Me.Txtmontopago = New System.Windows.Forms.TextBox()
         Me.Txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Cbxmediopago = New System.Windows.Forms.ComboBox()
         Me.Cbxreserva = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblNumeroReserva = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label6
+        'lblMontoPago
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(295, 61)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(104, 15)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Monto de Pago"
+        Me.lblMontoPago.AutoSize = True
+        Me.lblMontoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMontoPago.ForeColor = System.Drawing.Color.White
+        Me.lblMontoPago.Location = New System.Drawing.Point(295, 61)
+        Me.lblMontoPago.Name = "lblMontoPago"
+        Me.lblMontoPago.Size = New System.Drawing.Size(104, 15)
+        Me.lblMontoPago.TabIndex = 23
+        Me.lblMontoPago.Text = "Monto de Pago"
         '
-        'Label5
+        'lblMedioPago
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(29, 57)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(104, 15)
-        Me.Label5.TabIndex = 22
-        Me.Label5.Text = "Medio de Pago"
+        Me.lblMedioPago.AutoSize = True
+        Me.lblMedioPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMedioPago.ForeColor = System.Drawing.Color.White
+        Me.lblMedioPago.Location = New System.Drawing.Point(29, 57)
+        Me.lblMedioPago.Name = "lblMedioPago"
+        Me.lblMedioPago.Size = New System.Drawing.Size(104, 15)
+        Me.lblMedioPago.TabIndex = 22
+        Me.lblMedioPago.Text = "Medio de Pago"
         '
-        'Label2
+        'lblNumeroTarjeta
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(295, 130)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(177, 15)
-        Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Numero Tarjeta de Credito"
+        Me.lblNumeroTarjeta.AutoSize = True
+        Me.lblNumeroTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumeroTarjeta.ForeColor = System.Drawing.Color.White
+        Me.lblNumeroTarjeta.Location = New System.Drawing.Point(295, 130)
+        Me.lblNumeroTarjeta.Name = "lblNumeroTarjeta"
+        Me.lblNumeroTarjeta.Size = New System.Drawing.Size(177, 15)
+        Me.lblNumeroTarjeta.TabIndex = 20
+        Me.lblNumeroTarjeta.Text = "Numero Tarjeta de Credito"
         '
         'Txtmontopago
         '
@@ -100,16 +100,16 @@ Partial Class Agregar_Pago
         Me.Cbxreserva.Size = New System.Drawing.Size(222, 21)
         Me.Cbxreserva.TabIndex = 31
         '
-        'Label4
+        'lblNumeroReserva
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(29, 130)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(114, 15)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Numero Reserva"
+        Me.lblNumeroReserva.AutoSize = True
+        Me.lblNumeroReserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumeroReserva.ForeColor = System.Drawing.Color.White
+        Me.lblNumeroReserva.Location = New System.Drawing.Point(29, 130)
+        Me.lblNumeroReserva.Name = "lblNumeroReserva"
+        Me.lblNumeroReserva.Size = New System.Drawing.Size(114, 15)
+        Me.lblNumeroReserva.TabIndex = 30
+        Me.lblNumeroReserva.Text = "Numero Reserva"
         '
         'btnSalir
         '
@@ -142,11 +142,11 @@ Partial Class Agregar_Pago
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Cbxreserva)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblNumeroReserva)
         Me.Controls.Add(Me.Cbxmediopago)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblMontoPago)
+        Me.Controls.Add(Me.lblMedioPago)
+        Me.Controls.Add(Me.lblNumeroTarjeta)
         Me.Controls.Add(Me.Txtmontopago)
         Me.Controls.Add(Me.Txtdescripcion)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -156,14 +156,14 @@ Partial Class Agregar_Pago
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblMontoPago As System.Windows.Forms.Label
+    Friend WithEvents lblMedioPago As System.Windows.Forms.Label
+    Friend WithEvents lblNumeroTarjeta As System.Windows.Forms.Label
     Friend WithEvents Txtmontopago As System.Windows.Forms.TextBox
     Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
     Friend WithEvents Cbxmediopago As System.Windows.Forms.ComboBox
     Friend WithEvents Cbxreserva As System.Windows.Forms.ComboBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblNumeroReserva As System.Windows.Forms.Label
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
 End Class

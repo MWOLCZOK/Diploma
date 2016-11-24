@@ -23,35 +23,35 @@ Partial Class Agregar_Viaje
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Viaje))
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblPrecio = New System.Windows.Forms.Label()
         Me.Txtprecio = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblTransporte = New System.Windows.Forms.Label()
         Me.Cbxtipotransporte = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblOrigen = New System.Windows.Forms.Label()
         Me.Cbxorigen = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDestino = New System.Windows.Forms.Label()
         Me.Cbxdestino = New System.Windows.Forms.ComboBox()
         Me.Cbxcena = New System.Windows.Forms.CheckBox()
         Me.Cbxcafeteria = New System.Windows.Forms.CheckBox()
         Me.Cbxalmuerzo = New System.Windows.Forms.CheckBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblFechaFin = New System.Windows.Forms.Label()
+        Me.lblFechaInicio = New System.Windows.Forms.Label()
         Me.Fechafin = New System.Windows.Forms.DateTimePicker()
         Me.Fechainicio = New System.Windows.Forms.DateTimePicker()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label10
+        'lblPrecio
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(13, 110)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(48, 15)
-        Me.Label10.TabIndex = 35
-        Me.Label10.Text = "Precio"
+        Me.lblPrecio.AutoSize = True
+        Me.lblPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrecio.ForeColor = System.Drawing.Color.White
+        Me.lblPrecio.Location = New System.Drawing.Point(13, 110)
+        Me.lblPrecio.Name = "lblPrecio"
+        Me.lblPrecio.Size = New System.Drawing.Size(48, 15)
+        Me.lblPrecio.TabIndex = 35
+        Me.lblPrecio.Text = "Precio"
         '
         'Txtprecio
         '
@@ -60,16 +60,16 @@ Partial Class Agregar_Viaje
         Me.Txtprecio.Size = New System.Drawing.Size(180, 20)
         Me.Txtprecio.TabIndex = 34
         '
-        'Label2
+        'lblTransporte
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(428, 40)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 15)
-        Me.Label2.TabIndex = 23
-        Me.Label2.Text = "Transporte"
+        Me.lblTransporte.AutoSize = True
+        Me.lblTransporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTransporte.ForeColor = System.Drawing.Color.White
+        Me.lblTransporte.Location = New System.Drawing.Point(428, 40)
+        Me.lblTransporte.Name = "lblTransporte"
+        Me.lblTransporte.Size = New System.Drawing.Size(76, 15)
+        Me.lblTransporte.TabIndex = 23
+        Me.lblTransporte.Text = "Transporte"
         '
         'Cbxtipotransporte
         '
@@ -80,16 +80,16 @@ Partial Class Agregar_Viaje
         Me.Cbxtipotransporte.Size = New System.Drawing.Size(180, 21)
         Me.Cbxtipotransporte.TabIndex = 22
         '
-        'Label1
+        'lblOrigen
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(13, 40)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 15)
-        Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Origen"
+        Me.lblOrigen.AutoSize = True
+        Me.lblOrigen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrigen.ForeColor = System.Drawing.Color.White
+        Me.lblOrigen.Location = New System.Drawing.Point(13, 40)
+        Me.lblOrigen.Name = "lblOrigen"
+        Me.lblOrigen.Size = New System.Drawing.Size(50, 15)
+        Me.lblOrigen.TabIndex = 21
+        Me.lblOrigen.Text = "Origen"
         '
         'Cbxorigen
         '
@@ -100,16 +100,16 @@ Partial Class Agregar_Viaje
         Me.Cbxorigen.Size = New System.Drawing.Size(180, 21)
         Me.Cbxorigen.TabIndex = 20
         '
-        'Label4
+        'lblDestino
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(219, 41)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 15)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Destino"
+        Me.lblDestino.AutoSize = True
+        Me.lblDestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDestino.ForeColor = System.Drawing.Color.White
+        Me.lblDestino.Location = New System.Drawing.Point(219, 41)
+        Me.lblDestino.Name = "lblDestino"
+        Me.lblDestino.Size = New System.Drawing.Size(56, 15)
+        Me.lblDestino.TabIndex = 37
+        Me.lblDestino.Text = "Destino"
         '
         'Cbxdestino
         '
@@ -156,27 +156,27 @@ Partial Class Agregar_Viaje
         Me.Cbxalmuerzo.Text = "Almuerzo"
         Me.Cbxalmuerzo.UseVisualStyleBackColor = True
         '
-        'Label6
+        'lblFechaFin
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(428, 108)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(70, 15)
-        Me.Label6.TabIndex = 47
-        Me.Label6.Text = "Fecha Fin"
+        Me.lblFechaFin.AutoSize = True
+        Me.lblFechaFin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaFin.ForeColor = System.Drawing.Color.White
+        Me.lblFechaFin.Location = New System.Drawing.Point(428, 108)
+        Me.lblFechaFin.Name = "lblFechaFin"
+        Me.lblFechaFin.Size = New System.Drawing.Size(70, 15)
+        Me.lblFechaFin.TabIndex = 47
+        Me.lblFechaFin.Text = "Fecha Fin"
         '
-        'Label7
+        'lblFechaInicio
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(219, 108)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(85, 15)
-        Me.Label7.TabIndex = 46
-        Me.Label7.Text = "Fecha Inicio"
+        Me.lblFechaInicio.AutoSize = True
+        Me.lblFechaInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaInicio.ForeColor = System.Drawing.Color.White
+        Me.lblFechaInicio.Location = New System.Drawing.Point(219, 108)
+        Me.lblFechaInicio.Name = "lblFechaInicio"
+        Me.lblFechaInicio.Size = New System.Drawing.Size(85, 15)
+        Me.lblFechaInicio.TabIndex = 46
+        Me.lblFechaInicio.Text = "Fecha Inicio"
         '
         'Fechafin
         '
@@ -222,20 +222,20 @@ Partial Class Agregar_Viaje
         Me.ClientSize = New System.Drawing.Size(643, 304)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblFechaFin)
+        Me.Controls.Add(Me.lblFechaInicio)
         Me.Controls.Add(Me.Fechafin)
         Me.Controls.Add(Me.Fechainicio)
         Me.Controls.Add(Me.Cbxcena)
         Me.Controls.Add(Me.Cbxcafeteria)
         Me.Controls.Add(Me.Cbxalmuerzo)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblDestino)
         Me.Controls.Add(Me.Cbxdestino)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblPrecio)
         Me.Controls.Add(Me.Txtprecio)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblTransporte)
         Me.Controls.Add(Me.Cbxtipotransporte)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblOrigen)
         Me.Controls.Add(Me.Cbxorigen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Viaje"
@@ -244,19 +244,19 @@ Partial Class Agregar_Viaje
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents lblPrecio As System.Windows.Forms.Label
     Friend WithEvents Txtprecio As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblTransporte As System.Windows.Forms.Label
     Friend WithEvents Cbxtipotransporte As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblOrigen As System.Windows.Forms.Label
     Friend WithEvents Cbxorigen As System.Windows.Forms.ComboBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblDestino As System.Windows.Forms.Label
     Friend WithEvents Cbxdestino As System.Windows.Forms.ComboBox
     Friend WithEvents Cbxcena As System.Windows.Forms.CheckBox
     Friend WithEvents Cbxcafeteria As System.Windows.Forms.CheckBox
     Friend WithEvents Cbxalmuerzo As System.Windows.Forms.CheckBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lblFechaFin As System.Windows.Forms.Label
+    Friend WithEvents lblFechaInicio As System.Windows.Forms.Label
     Friend WithEvents Fechafin As System.Windows.Forms.DateTimePicker
     Friend WithEvents Fechainicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnAgregar As System.Windows.Forms.Button

@@ -24,12 +24,12 @@ Partial Class Modificar_Pais
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Pais))
         Me.Cbxpais = New System.Windows.Forms.ComboBox()
-        Me.lblpais = New System.Windows.Forms.Label()
+        Me.lblSeleccionarPais = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.lblZonaHoraria = New System.Windows.Forms.Label()
         Me.lblPoblacionTotal = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblIdioma = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
         Me.Txtzonahorariapais = New System.Windows.Forms.TextBox()
         Me.Txtidiomapais = New System.Windows.Forms.TextBox()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -47,16 +47,16 @@ Partial Class Modificar_Pais
         Me.Cbxpais.Size = New System.Drawing.Size(219, 21)
         Me.Cbxpais.TabIndex = 33
         '
-        'lblpais
+        'lblSeleccionarPais
         '
-        Me.lblpais.AutoSize = True
-        Me.lblpais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpais.ForeColor = System.Drawing.Color.White
-        Me.lblpais.Location = New System.Drawing.Point(32, 41)
-        Me.lblpais.Name = "lblpais"
-        Me.lblpais.Size = New System.Drawing.Size(115, 15)
-        Me.lblpais.TabIndex = 32
-        Me.lblpais.Text = "Seleccionar Pais"
+        Me.lblSeleccionarPais.AutoSize = True
+        Me.lblSeleccionarPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarPais.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarPais.Location = New System.Drawing.Point(32, 41)
+        Me.lblSeleccionarPais.Name = "lblSeleccionarPais"
+        Me.lblSeleccionarPais.Size = New System.Drawing.Size(115, 15)
+        Me.lblSeleccionarPais.TabIndex = 32
+        Me.lblSeleccionarPais.Text = "Seleccionar Pais"
         '
         'NumericUpDown1
         '
@@ -87,27 +87,27 @@ Partial Class Modificar_Pais
         Me.lblPoblacionTotal.TabIndex = 56
         Me.lblPoblacionTotal.Text = "Poblacion Total"
         '
-        'Label2
+        'lblIdioma
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(303, 109)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 15)
-        Me.Label2.TabIndex = 55
-        Me.Label2.Text = "Idioma"
+        Me.lblIdioma.AutoSize = True
+        Me.lblIdioma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIdioma.ForeColor = System.Drawing.Color.White
+        Me.lblIdioma.Location = New System.Drawing.Point(303, 109)
+        Me.lblIdioma.Name = "lblIdioma"
+        Me.lblIdioma.Size = New System.Drawing.Size(51, 15)
+        Me.lblIdioma.TabIndex = 55
+        Me.lblIdioma.Text = "Idioma"
         '
-        'Label3
+        'lblNombre
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(31, 113)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 15)
-        Me.Label3.TabIndex = 54
-        Me.Label3.Text = "Nombre"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(31, 113)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 15)
+        Me.lblNombre.TabIndex = 54
+        Me.lblNombre.Text = "Nombre"
         '
         'Txtzonahorariapais
         '
@@ -163,13 +163,13 @@ Partial Class Modificar_Pais
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.lblZonaHoraria)
         Me.Controls.Add(Me.lblPoblacionTotal)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblIdioma)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Txtzonahorariapais)
         Me.Controls.Add(Me.Txtidiomapais)
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Cbxpais)
-        Me.Controls.Add(Me.lblpais)
+        Me.Controls.Add(Me.lblSeleccionarPais)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Pais"
         Me.Text = "Modificar_Pais"
@@ -179,12 +179,12 @@ Partial Class Modificar_Pais
 
     End Sub
     Friend WithEvents Cbxpais As System.Windows.Forms.ComboBox
-    Friend WithEvents lblpais As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarPais As System.Windows.Forms.Label
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents lblZonaHoraria As Label
     Friend WithEvents lblPoblacionTotal As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblIdioma As Label
+    Friend WithEvents lblNombre As Label
     Friend WithEvents Txtzonahorariapais As TextBox
     Friend WithEvents Txtidiomapais As TextBox
     Friend WithEvents txtDescripcion As TextBox

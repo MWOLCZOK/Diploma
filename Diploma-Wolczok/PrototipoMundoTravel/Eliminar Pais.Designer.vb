@@ -24,7 +24,7 @@ Partial Class Eliminar_Pais
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Pais))
         Me.CbxPais = New System.Windows.Forms.ComboBox()
-        Me.lblusuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarPais = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,16 +38,16 @@ Partial Class Eliminar_Pais
         Me.CbxPais.Size = New System.Drawing.Size(344, 21)
         Me.CbxPais.TabIndex = 29
         '
-        'lblusuario
+        'lblSeleccionarPais
         '
-        Me.lblusuario.AutoSize = True
-        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblusuario.ForeColor = System.Drawing.Color.White
-        Me.lblusuario.Location = New System.Drawing.Point(34, 55)
-        Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(115, 15)
-        Me.lblusuario.TabIndex = 28
-        Me.lblusuario.Text = "Seleccionar Pais"
+        Me.lblSeleccionarPais.AutoSize = True
+        Me.lblSeleccionarPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarPais.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarPais.Location = New System.Drawing.Point(34, 57)
+        Me.lblSeleccionarPais.Name = "lblSeleccionarPais"
+        Me.lblSeleccionarPais.Size = New System.Drawing.Size(115, 15)
+        Me.lblSeleccionarPais.TabIndex = 28
+        Me.lblSeleccionarPais.Text = "Seleccionar Pais"
         '
         'btnEliminar
         '
@@ -80,7 +80,7 @@ Partial Class Eliminar_Pais
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CbxPais)
-        Me.Controls.Add(Me.lblusuario)
+        Me.Controls.Add(Me.lblSeleccionarPais)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Pais"
         Me.Text = "Eliminar_Pais"
@@ -90,7 +90,7 @@ Partial Class Eliminar_Pais
     End Sub
     Friend WithEvents btnsalir As System.Windows.Forms.Button
     Friend WithEvents CbxPais As System.Windows.Forms.ComboBox
-    Friend WithEvents lblusuario As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarPais As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

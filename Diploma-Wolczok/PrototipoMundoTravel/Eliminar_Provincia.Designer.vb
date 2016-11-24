@@ -24,7 +24,7 @@ Partial Class Eliminar_Provincia
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Provincia))
         Me.CbxProvincia = New System.Windows.Forms.ComboBox()
-        Me.lblusuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarProvincia = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,16 +38,16 @@ Partial Class Eliminar_Provincia
         Me.CbxProvincia.Size = New System.Drawing.Size(344, 21)
         Me.CbxProvincia.TabIndex = 33
         '
-        'lblusuario
+        'lblSeleccionarProvincia
         '
-        Me.lblusuario.AutoSize = True
-        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblusuario.ForeColor = System.Drawing.Color.White
-        Me.lblusuario.Location = New System.Drawing.Point(41, 92)
-        Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(146, 15)
-        Me.lblusuario.TabIndex = 32
-        Me.lblusuario.Text = "Seleccionar Provincia"
+        Me.lblSeleccionarProvincia.AutoSize = True
+        Me.lblSeleccionarProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarProvincia.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarProvincia.Location = New System.Drawing.Point(41, 80)
+        Me.lblSeleccionarProvincia.Name = "lblSeleccionarProvincia"
+        Me.lblSeleccionarProvincia.Size = New System.Drawing.Size(146, 15)
+        Me.lblSeleccionarProvincia.TabIndex = 32
+        Me.lblSeleccionarProvincia.Text = "Seleccionar Provincia"
         '
         'btnEliminar
         '
@@ -80,7 +80,7 @@ Partial Class Eliminar_Provincia
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxProvincia)
-        Me.Controls.Add(Me.lblusuario)
+        Me.Controls.Add(Me.lblSeleccionarProvincia)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Provincia"
         Me.Text = "Eliminar_Provincia"
@@ -89,7 +89,7 @@ Partial Class Eliminar_Provincia
 
     End Sub
     Friend WithEvents CbxProvincia As System.Windows.Forms.ComboBox
-    Friend WithEvents lblusuario As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarProvincia As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnSalir As Button
 End Class

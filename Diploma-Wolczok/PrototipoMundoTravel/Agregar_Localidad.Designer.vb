@@ -23,10 +23,10 @@ Partial Class Agregar_Localidad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Localidad))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblProvincia = New System.Windows.Forms.Label()
+        Me.lblHabitantes = New System.Windows.Forms.Label()
+        Me.lblCantidadBarrios = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
         Me.Txtdescripcion = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -37,49 +37,49 @@ Partial Class Agregar_Localidad
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblProvincia
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(266, 44)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 15)
-        Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Provincia"
+        Me.lblProvincia.AutoSize = True
+        Me.lblProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProvincia.ForeColor = System.Drawing.Color.White
+        Me.lblProvincia.Location = New System.Drawing.Point(266, 44)
+        Me.lblProvincia.Name = "lblProvincia"
+        Me.lblProvincia.Size = New System.Drawing.Size(66, 15)
+        Me.lblProvincia.TabIndex = 25
+        Me.lblProvincia.Text = "Provincia"
         '
-        'Label6
+        'lblHabitantes
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(266, 110)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(76, 15)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Habitantes"
+        Me.lblHabitantes.AutoSize = True
+        Me.lblHabitantes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHabitantes.ForeColor = System.Drawing.Color.White
+        Me.lblHabitantes.Location = New System.Drawing.Point(266, 110)
+        Me.lblHabitantes.Name = "lblHabitantes"
+        Me.lblHabitantes.Size = New System.Drawing.Size(76, 15)
+        Me.lblHabitantes.TabIndex = 24
+        Me.lblHabitantes.Text = "Habitantes"
         '
-        'Label5
+        'lblCantidadBarrios
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(26, 110)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(114, 15)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Cantidad Barrios"
+        Me.lblCantidadBarrios.AutoSize = True
+        Me.lblCantidadBarrios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidadBarrios.ForeColor = System.Drawing.Color.White
+        Me.lblCantidadBarrios.Location = New System.Drawing.Point(26, 110)
+        Me.lblCantidadBarrios.Name = "lblCantidadBarrios"
+        Me.lblCantidadBarrios.Size = New System.Drawing.Size(114, 15)
+        Me.lblCantidadBarrios.TabIndex = 23
+        Me.lblCantidadBarrios.Text = "Cantidad Barrios"
         '
-        'Label4
+        'lblNombre
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(26, 44)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 15)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Nombre"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(26, 44)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 15)
+        Me.lblNombre.TabIndex = 22
+        Me.lblNombre.Text = "Nombre"
         '
         'Txtdescripcion
         '
@@ -143,10 +143,10 @@ Partial Class Agregar_Localidad
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblProvincia)
+        Me.Controls.Add(Me.lblHabitantes)
+        Me.Controls.Add(Me.lblCantidadBarrios)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Txtdescripcion)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Localidad"
@@ -157,10 +157,10 @@ Partial Class Agregar_Localidad
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblProvincia As System.Windows.Forms.Label
+    Friend WithEvents lblHabitantes As System.Windows.Forms.Label
+    Friend WithEvents lblCantidadBarrios As System.Windows.Forms.Label
+    Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents btnAgregar As Button

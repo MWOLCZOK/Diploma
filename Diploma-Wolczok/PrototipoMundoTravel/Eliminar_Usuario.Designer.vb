@@ -24,7 +24,7 @@ Partial Class Eliminar_Usuario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Usuario))
         Me.CbxUsuario = New System.Windows.Forms.ComboBox()
-        Me.lblusuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarUsuario = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -37,16 +37,16 @@ Partial Class Eliminar_Usuario
         Me.CbxUsuario.Size = New System.Drawing.Size(344, 21)
         Me.CbxUsuario.TabIndex = 25
         '
-        'lblusuario
+        'lblSeleccionarUsuario
         '
-        Me.lblusuario.AutoSize = True
-        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblusuario.ForeColor = System.Drawing.Color.White
-        Me.lblusuario.Location = New System.Drawing.Point(44, 82)
-        Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(137, 15)
-        Me.lblusuario.TabIndex = 24
-        Me.lblusuario.Text = "Seleccionar Usuario"
+        Me.lblSeleccionarUsuario.AutoSize = True
+        Me.lblSeleccionarUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarUsuario.Location = New System.Drawing.Point(44, 82)
+        Me.lblSeleccionarUsuario.Name = "lblSeleccionarUsuario"
+        Me.lblSeleccionarUsuario.Size = New System.Drawing.Size(137, 15)
+        Me.lblSeleccionarUsuario.TabIndex = 24
+        Me.lblSeleccionarUsuario.Text = "Seleccionar Usuario"
         '
         'btnEliminar
         '
@@ -79,7 +79,7 @@ Partial Class Eliminar_Usuario
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.CbxUsuario)
-        Me.Controls.Add(Me.lblusuario)
+        Me.Controls.Add(Me.lblSeleccionarUsuario)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Usuario"
         Me.Text = "Eliminar Usuario"
@@ -88,7 +88,7 @@ Partial Class Eliminar_Usuario
 
     End Sub
     Friend WithEvents CbxUsuario As System.Windows.Forms.ComboBox
-    Friend WithEvents lblusuario As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarUsuario As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnSalir As Button
 End Class

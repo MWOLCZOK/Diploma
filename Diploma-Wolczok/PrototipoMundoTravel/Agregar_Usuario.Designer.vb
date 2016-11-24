@@ -23,34 +23,34 @@ Partial Class Agregar_Usuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Usuario))
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblNombreUsuario = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblPassword = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.lblRepetirContraseñaUsuario = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblApellido = New System.Windows.Forms.Label()
+        Me.lblIdioma = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblPerfil = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblNombreUsuario
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(20, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 15)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre Usuario"
+        Me.lblNombreUsuario.AutoSize = True
+        Me.lblNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblNombreUsuario.Location = New System.Drawing.Point(20, 34)
+        Me.lblNombreUsuario.Name = "lblNombreUsuario"
+        Me.lblNombreUsuario.Size = New System.Drawing.Size(112, 15)
+        Me.lblNombreUsuario.TabIndex = 0
+        Me.lblNombreUsuario.Text = "Nombre Usuario"
         '
         'TextBox1
         '
@@ -67,16 +67,16 @@ Partial Class Agregar_Usuario
         Me.TextBox2.Size = New System.Drawing.Size(191, 20)
         Me.TextBox2.TabIndex = 2
         '
-        'Label2
+        'lblPassword
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(264, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(134, 15)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Contraseña Usuario"
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassword.ForeColor = System.Drawing.Color.White
+        Me.lblPassword.Location = New System.Drawing.Point(264, 34)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(134, 15)
+        Me.lblPassword.TabIndex = 2
+        Me.lblPassword.Text = "Contraseña Usuario"
         '
         'TextBox3
         '
@@ -104,16 +104,16 @@ Partial Class Agregar_Usuario
         Me.TextBox4.Size = New System.Drawing.Size(191, 20)
         Me.TextBox4.TabIndex = 4
         '
-        'Label4
+        'lblNombre
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(264, 102)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 15)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Nombre"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(264, 102)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 15)
+        Me.lblNombre.TabIndex = 6
+        Me.lblNombre.Text = "Nombre"
         '
         'TextBox5
         '
@@ -122,27 +122,27 @@ Partial Class Agregar_Usuario
         Me.TextBox5.Size = New System.Drawing.Size(191, 20)
         Me.TextBox5.TabIndex = 5
         '
-        'Label5
+        'lblApellido
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(20, 177)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(59, 15)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Apellido"
+        Me.lblApellido.AutoSize = True
+        Me.lblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellido.ForeColor = System.Drawing.Color.White
+        Me.lblApellido.Location = New System.Drawing.Point(20, 177)
+        Me.lblApellido.Name = "lblApellido"
+        Me.lblApellido.Size = New System.Drawing.Size(59, 15)
+        Me.lblApellido.TabIndex = 8
+        Me.lblApellido.Text = "Apellido"
         '
-        'Label6
+        'lblIdioma
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(20, 250)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(131, 15)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Seleccionar Idioma"
+        Me.lblIdioma.AutoSize = True
+        Me.lblIdioma.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIdioma.ForeColor = System.Drawing.Color.White
+        Me.lblIdioma.Location = New System.Drawing.Point(20, 250)
+        Me.lblIdioma.Name = "lblIdioma"
+        Me.lblIdioma.Size = New System.Drawing.Size(131, 15)
+        Me.lblIdioma.TabIndex = 10
+        Me.lblIdioma.Text = "Seleccionar Idioma"
         '
         'ComboBox1
         '
@@ -162,16 +162,16 @@ Partial Class Agregar_Usuario
         Me.ComboBox2.Size = New System.Drawing.Size(191, 21)
         Me.ComboBox2.TabIndex = 13
         '
-        'Label7
+        'lblPerfil
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(264, 178)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(121, 15)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Seleccionar Perfil"
+        Me.lblPerfil.AutoSize = True
+        Me.lblPerfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPerfil.ForeColor = System.Drawing.Color.White
+        Me.lblPerfil.Location = New System.Drawing.Point(264, 178)
+        Me.lblPerfil.Name = "lblPerfil"
+        Me.lblPerfil.Size = New System.Drawing.Size(121, 15)
+        Me.lblPerfil.TabIndex = 12
+        Me.lblPerfil.Text = "Seleccionar Perfil"
         '
         'btnAgregar
         '
@@ -204,19 +204,19 @@ Partial Class Agregar_Usuario
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblPerfil)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblIdioma)
         Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblApellido)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.lblRepetirContraseñaUsuario)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblNombreUsuario)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Usuario"
         Me.Text = "Agregar Usuario"
@@ -224,20 +224,20 @@ Partial Class Agregar_Usuario
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblNombreUsuario As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblPassword As System.Windows.Forms.Label
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents lblRepetirContraseñaUsuario As System.Windows.Forms.Label
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblApellido As System.Windows.Forms.Label
+    Friend WithEvents lblIdioma As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lblPerfil As System.Windows.Forms.Label
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
 End Class

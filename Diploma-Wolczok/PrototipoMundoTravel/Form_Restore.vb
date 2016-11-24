@@ -13,7 +13,7 @@ Public Class Form_Restore
         MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Me.OpenFileDialog1.ShowDialog()
         TextBox4.Text = Me.OpenFileDialog1.FileName
     End Sub
@@ -22,7 +22,7 @@ Public Class Form_Restore
         Me.Close()
     End Sub
 
-    Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
+    Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnRestore.Click
         Try
             Dim oBack As New EE.BE_BackupRestore(TextBox4.Text)
             Dim bBack As New BLL.BLL_BackupRestore()

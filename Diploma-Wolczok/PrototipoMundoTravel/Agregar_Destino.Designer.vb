@@ -25,7 +25,7 @@ Partial Class Agregar_Destino
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agregar_Destino))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.lblSeleccioneElDestino = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chkTieneAeropuerto = New System.Windows.Forms.CheckBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -50,17 +50,17 @@ Partial Class Agregar_Destino
         Me.lblSeleccioneElDestino.TabIndex = 3
         Me.lblSeleccioneElDestino.Text = "Seleccionar el Destino a Agregar:"
         '
-        'CheckBox1
+        'chkTieneAeropuerto
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.ForeColor = System.Drawing.Color.White
-        Me.CheckBox1.Location = New System.Drawing.Point(26, 130)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(152, 19)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "¿Tiene Aeropuerto?"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkTieneAeropuerto.AutoSize = True
+        Me.chkTieneAeropuerto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkTieneAeropuerto.ForeColor = System.Drawing.Color.White
+        Me.chkTieneAeropuerto.Location = New System.Drawing.Point(26, 130)
+        Me.chkTieneAeropuerto.Name = "chkTieneAeropuerto"
+        Me.chkTieneAeropuerto.Size = New System.Drawing.Size(152, 19)
+        Me.chkTieneAeropuerto.TabIndex = 4
+        Me.chkTieneAeropuerto.Text = "¿Tiene Aeropuerto?"
+        Me.chkTieneAeropuerto.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
@@ -92,7 +92,7 @@ Partial Class Agregar_Destino
         Me.ClientSize = New System.Drawing.Size(429, 283)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnAgregar)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.chkTieneAeropuerto)
         Me.Controls.Add(Me.lblSeleccioneElDestino)
         Me.Controls.Add(Me.ComboBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -105,7 +105,7 @@ Partial Class Agregar_Destino
 
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents lblSeleccioneElDestino As Label
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents chkTieneAeropuerto As CheckBox
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnAgregar As Button
 End Class

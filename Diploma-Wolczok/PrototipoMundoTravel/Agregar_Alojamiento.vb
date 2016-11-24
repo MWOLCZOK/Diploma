@@ -45,13 +45,13 @@ Public Class Agregar_Alojamiento
     End Sub
 
     Public Sub ocultar()
-        CheckBox3.Hide()
-        CheckBox12.Hide()
-        CheckBox11.Hide()
-        CheckBox9.Hide()
-        CheckBox13.Hide()
-        CheckBox1.Hide()
-        CheckBox7.Hide()
+        chkMascotas.Hide()
+        chkCochera.Hide()
+        chkAmoblado.Hide()
+        chkCocina.Hide()
+        chkPrivada.Hide()
+        chkGimnasio.Hide()
+        chkSauna.Hide()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
@@ -62,37 +62,37 @@ Public Class Agregar_Alojamiento
         Dim oTipoAlojamiento As New BE_TipoAlojamiento
         oTipoAlojamiento = DirectCast(ComboBox2.SelectedItem, BE_TipoAlojamiento)
         If oTipoAlojamiento.ID = 1 Then
-            CheckBox13.Show()
-            CheckBox9.Show()
-            CheckBox3.Hide()
-            CheckBox12.Hide()
-            CheckBox11.Hide()
-            CheckBox1.Hide()
-            CheckBox3.Hide()
-            CheckBox7.Hide()
+            chkPrivada.Show()
+            chkCocina.Show()
+            chkMascotas.Hide()
+            chkCochera.Hide()
+            chkAmoblado.Hide()
+            chkGimnasio.Hide()
+            chkMascotas.Hide()
+            chkSauna.Hide()
         ElseIf oTipoAlojamiento.ID = 2 Then
-            CheckBox1.Show()
-            CheckBox3.Show()
-            CheckBox7.Show()
-            CheckBox12.Show()
-            CheckBox11.Hide()
-            CheckBox9.Hide()
+            chkGimnasio.Show()
+            chkMascotas.Show()
+            chkSauna.Show()
+            chkCochera.Show()
+            chkAmoblado.Hide()
+            chkCocina.Hide()
         ElseIf oTipoAlojamiento.ID = 3 Then
-            CheckBox3.Show()
-            CheckBox12.Show()
-            CheckBox11.Show()
-            CheckBox9.Show()
-            CheckBox13.Hide()
-            CheckBox1.Hide()
-            CheckBox7.Hide()
+            chkMascotas.Show()
+            chkCochera.Show()
+            chkAmoblado.Show()
+            chkCocina.Show()
+            chkPrivada.Hide()
+            chkGimnasio.Hide()
+            chkSauna.Hide()
         ElseIf oTipoAlojamiento.ID = 4 Then
-            CheckBox3.Show()
-            CheckBox12.Hide()
-            CheckBox11.Hide()
-            CheckBox9.Hide()
-            CheckBox13.Hide()
-            CheckBox1.Hide()
-            CheckBox7.Hide()
+            chkMascotas.Show()
+            chkCochera.Hide()
+            chkAmoblado.Hide()
+            chkCocina.Hide()
+            chkPrivada.Hide()
+            chkGimnasio.Hide()
+            chkSauna.Hide()
         End If
     End Sub
 
@@ -120,13 +120,13 @@ Public Class Agregar_Alojamiento
                     oHostel.Ubicacion = Me.TextBox5.Text
                     oHostel.Ambientes = Me.NumericUpDown2.Value
                     oHostel.PrecioAlquiler = Me.TextBox7.Text
-                    oHostel.ConectividadWifi = Me.CheckBox2.Checked
-                    oHostel.Piscina = Me.CheckBox4.Checked
-                    oHostel.ServicioAireAcond = Me.CheckBox8.Checked
-                    oHostel.Desayuno = Me.CheckBox6.Checked
-                    oHostel.ServicioTV = Me.CheckBox5.Checked
-                    oHostel.Cocina = Me.CheckBox9.Checked
-                    oHostel.HabitacionPrivada = Me.CheckBox13.Checked
+                    oHostel.ConectividadWifi = Me.chkWIFI.Checked
+                    oHostel.Piscina = Me.chkPiscina.Checked
+                    oHostel.ServicioAireAcond = Me.chkAire.Checked
+                    oHostel.Desayuno = Me.chkDesayuno.Checked
+                    oHostel.ServicioTV = Me.chkTV.Checked
+                    oHostel.Cocina = Me.chkCocina.Checked
+                    oHostel.HabitacionPrivada = Me.chkPrivada.Checked
                     Dim bllHostel As New BLL_Hostel
                     bllHostel.altaHostel(oHostel)
                 ElseIf oTipoAlojamiento.ID = 2 Then
@@ -139,15 +139,15 @@ Public Class Agregar_Alojamiento
                     oHotel.Ubicacion = Me.TextBox5.Text
                     oHotel.Ambientes = Me.NumericUpDown2.Value
                     oHotel.PrecioAlquiler = Me.TextBox7.Text
-                    oHotel.ConectividadWifi = Me.CheckBox2.Checked
-                    oHotel.Piscina = Me.CheckBox4.Checked
-                    oHotel.ServicioAireAcond = Me.CheckBox8.Checked
-                    oHotel.Desayuno = Me.CheckBox6.Checked
-                    oHotel.ServicioTV = Me.CheckBox5.Checked
-                    oHotel.Gimnasio = Me.CheckBox1.Checked
-                    oHotel.Mascota = Me.CheckBox3.Checked
-                    oHotel.Sauna = Me.CheckBox7.Checked
-                    oHotel.Cochera = Me.CheckBox12.Checked
+                    oHotel.ConectividadWifi = Me.chkWIFI.Checked
+                    oHotel.Piscina = Me.chkPiscina.Checked
+                    oHotel.ServicioAireAcond = Me.chkAire.Checked
+                    oHotel.Desayuno = Me.chkDesayuno.Checked
+                    oHotel.ServicioTV = Me.chkTV.Checked
+                    oHotel.Gimnasio = Me.chkGimnasio.Checked
+                    oHotel.Mascota = Me.chkMascotas.Checked
+                    oHotel.Sauna = Me.chkSauna.Checked
+                    oHotel.Cochera = Me.chkCochera.Checked
                     Dim bllHotel As New BLL_Hotel
                     bllHotel.altaHotel(oHotel)
                 ElseIf oTipoAlojamiento.ID = 3 Then
@@ -160,16 +160,16 @@ Public Class Agregar_Alojamiento
                     oDepartamento.Ubicacion = Me.TextBox5.Text
                     oDepartamento.Ambientes = Me.NumericUpDown2.Value
                     oDepartamento.PrecioAlquiler = Me.TextBox7.Text
-                    oDepartamento.ConectividadWifi = Me.CheckBox2.Checked
-                    oDepartamento.Piscina = Me.CheckBox4.Checked
-                    oDepartamento.ServicioAireAcond = Me.CheckBox8.Checked
-                    oDepartamento.Desayuno = Me.CheckBox6.Checked
-                    oDepartamento.ServicioTV = Me.CheckBox5.Checked
+                    oDepartamento.ConectividadWifi = Me.chkWIFI.Checked
+                    oDepartamento.Piscina = Me.chkPiscina.Checked
+                    oDepartamento.ServicioAireAcond = Me.chkAire.Checked
+                    oDepartamento.Desayuno = Me.chkDesayuno.Checked
+                    oDepartamento.ServicioTV = Me.chkTV.Checked
                     Dim bllDepartamento As New BLL_Departamento
-                    oDepartamento.Mascota = Me.CheckBox3.Checked
-                    oDepartamento.Cochera = Me.CheckBox12.Checked
-                    oDepartamento.Cocina = Me.CheckBox9.Checked
-                    oDepartamento.Amoblado = Me.CheckBox11.Checked
+                    oDepartamento.Mascota = Me.chkMascotas.Checked
+                    oDepartamento.Cochera = Me.chkCochera.Checked
+                    oDepartamento.Cocina = Me.chkCocina.Checked
+                    oDepartamento.Amoblado = Me.chkAmoblado.Checked
                     bllDepartamento.altadep(oDepartamento)
                 ElseIf oTipoAlojamiento.ID = 4 Then
                     Dim oPosada As New BE_Posada
@@ -181,13 +181,13 @@ Public Class Agregar_Alojamiento
                     oPosada.Ubicacion = Me.TextBox5.Text
                     oPosada.Ambientes = Me.NumericUpDown2.Value
                     oPosada.PrecioAlquiler = Me.TextBox7.Text
-                    oPosada.ConectividadWifi = Me.CheckBox2.Checked
-                    oPosada.Piscina = Me.CheckBox4.Checked
-                    oPosada.ServicioAireAcond = Me.CheckBox8.Checked
-                    oPosada.Desayuno = Me.CheckBox6.Checked
-                    oPosada.ServicioTV = Me.CheckBox5.Checked
+                    oPosada.ConectividadWifi = Me.chkWIFI.Checked
+                    oPosada.Piscina = Me.chkPiscina.Checked
+                    oPosada.ServicioAireAcond = Me.chkAire.Checked
+                    oPosada.Desayuno = Me.chkDesayuno.Checked
+                    oPosada.ServicioTV = Me.chkTV.Checked
                     Dim bllPosada As New BLL_Posada
-                    oPosada.Mascota = Me.CheckBox3.Checked
+                    oPosada.Mascota = Me.chkMascotas.Checked
                     bllPosada.altaPosada(oPosada)
                 End If
             Else

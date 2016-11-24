@@ -35,7 +35,7 @@ Public Class Agregar_Destino
             Dim oDestino As New BE_Destino
             Dim bllDestino As New BLL.BLL_Destino
             oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
-            oDestino.TieneAeropuerto = Me.CheckBox1.Checked
+            oDestino.TieneAeropuerto = Me.chkTieneAeropuerto.Checked
             bllDestino.altaDestino(oDestino)
         Catch ex As Exception
             MsgBox("Error")

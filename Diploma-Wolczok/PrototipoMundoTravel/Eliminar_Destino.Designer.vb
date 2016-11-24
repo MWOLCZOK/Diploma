@@ -24,7 +24,7 @@ Partial Class Eliminar_Destino
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Eliminar_Destino))
         Me.CbxDestino = New System.Windows.Forms.ComboBox()
-        Me.lblusuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarDestino = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -38,16 +38,16 @@ Partial Class Eliminar_Destino
         Me.CbxDestino.Size = New System.Drawing.Size(344, 21)
         Me.CbxDestino.TabIndex = 33
         '
-        'lblusuario
+        'lblSeleccionarDestino
         '
-        Me.lblusuario.AutoSize = True
-        Me.lblusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblusuario.ForeColor = System.Drawing.Color.White
-        Me.lblusuario.Location = New System.Drawing.Point(38, 82)
-        Me.lblusuario.Name = "lblusuario"
-        Me.lblusuario.Size = New System.Drawing.Size(136, 15)
-        Me.lblusuario.TabIndex = 32
-        Me.lblusuario.Text = "Seleccionar Destino"
+        Me.lblSeleccionarDestino.AutoSize = True
+        Me.lblSeleccionarDestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarDestino.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarDestino.Location = New System.Drawing.Point(38, 82)
+        Me.lblSeleccionarDestino.Name = "lblSeleccionarDestino"
+        Me.lblSeleccionarDestino.Size = New System.Drawing.Size(136, 15)
+        Me.lblSeleccionarDestino.TabIndex = 32
+        Me.lblSeleccionarDestino.Text = "Seleccionar Destino"
         '
         'btnEliminar
         '
@@ -80,7 +80,7 @@ Partial Class Eliminar_Destino
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.CbxDestino)
-        Me.Controls.Add(Me.lblusuario)
+        Me.Controls.Add(Me.lblSeleccionarDestino)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Eliminar_Destino"
         Me.Text = "Eliminar_Destino"
@@ -90,7 +90,7 @@ Partial Class Eliminar_Destino
     End Sub
 
     Friend WithEvents CbxDestino As ComboBox
-    Friend WithEvents lblusuario As Label
+    Friend WithEvents lblSeleccionarDestino As Label
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
