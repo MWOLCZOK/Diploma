@@ -86,4 +86,22 @@ Public Class BLL_Bitacora
         Throw New Exception
     End Function
 
+
+    Public Function ConsultarGestorCambios(ByVal paramUsuario As BE_Usuario_Control_Cambios) As List(Of EE.BE_Usuario_Control_Cambios)
+        Try
+            Dim oBitacoraDAL As DAL_Bitacora = New DAL_Bitacora
+            Return oBitacoraDAL.ConsultarGestorCambios(paramUsuario)
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+    Public Function ConsultarGestorCambios() As List(Of EE.BE_Usuario_Control_Cambios)
+        Try
+            Dim oBitacoraDAL As DAL_Bitacora = New DAL_Bitacora
+            Return oBitacoraDAL.ConsultarGestorCambios()
+        Catch ex As Exception
+
+        End Try
+    End Function
 End Class

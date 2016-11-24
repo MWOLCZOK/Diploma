@@ -62,6 +62,7 @@ Partial Class FormMenu
         Me.RealizarRestoreToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarIdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarPuntajeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControlDeCambiosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarPagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VisualizarPagosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -254,7 +255,7 @@ Partial Class FormMenu
         '
         'AdministracionToolStripMenuItem
         '
-        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarUsuarioToolStripMenuItem, Me.ModificarUsuariosToolStripMenuItem, Me.EliminarUsuarioToolStripMenuItem, Me.AgregarPerfilToolStripMenuItem, Me.ModificarPerfilesToolStripMenuItem, Me.EliminarPermisoToolStripMenuItem, Me.VisualizarBitToolStripMenuItem, Me.RealizarBackupToolStripMenuItem1, Me.RealizarRestoreToolStripMenuItem1, Me.EliminarIdiomaToolStripMenuItem, Me.ModificarPuntajeToolStripMenuItem})
+        Me.AdministracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarUsuarioToolStripMenuItem, Me.ModificarUsuariosToolStripMenuItem, Me.EliminarUsuarioToolStripMenuItem, Me.AgregarPerfilToolStripMenuItem, Me.ModificarPerfilesToolStripMenuItem, Me.EliminarPermisoToolStripMenuItem, Me.VisualizarBitToolStripMenuItem, Me.RealizarBackupToolStripMenuItem1, Me.RealizarRestoreToolStripMenuItem1, Me.EliminarIdiomaToolStripMenuItem, Me.ModificarPuntajeToolStripMenuItem, Me.ControlDeCambiosToolStripMenuItem})
         Me.AdministracionToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AdministracionToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AdministracionToolStripMenuItem.Name = "AdministracionToolStripMenuItem"
@@ -264,68 +265,74 @@ Partial Class FormMenu
         'AgregarUsuarioToolStripMenuItem
         '
         Me.AgregarUsuarioToolStripMenuItem.Name = "AgregarUsuarioToolStripMenuItem"
-        Me.AgregarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.AgregarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.AgregarUsuarioToolStripMenuItem.Text = "Crear Usuario"
         '
         'ModificarUsuariosToolStripMenuItem
         '
         Me.ModificarUsuariosToolStripMenuItem.Name = "ModificarUsuariosToolStripMenuItem"
-        Me.ModificarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ModificarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ModificarUsuariosToolStripMenuItem.Text = "Modificar Usuario"
         '
         'EliminarUsuarioToolStripMenuItem
         '
         Me.EliminarUsuarioToolStripMenuItem.Name = "EliminarUsuarioToolStripMenuItem"
-        Me.EliminarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.EliminarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.EliminarUsuarioToolStripMenuItem.Text = "Eliminar Usuario"
         '
         'AgregarPerfilToolStripMenuItem
         '
         Me.AgregarPerfilToolStripMenuItem.Name = "AgregarPerfilToolStripMenuItem"
-        Me.AgregarPerfilToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.AgregarPerfilToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.AgregarPerfilToolStripMenuItem.Text = "Crear Permiso"
         '
         'ModificarPerfilesToolStripMenuItem
         '
         Me.ModificarPerfilesToolStripMenuItem.Name = "ModificarPerfilesToolStripMenuItem"
-        Me.ModificarPerfilesToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ModificarPerfilesToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ModificarPerfilesToolStripMenuItem.Text = "Modificar Permiso"
         '
         'EliminarPermisoToolStripMenuItem
         '
         Me.EliminarPermisoToolStripMenuItem.Name = "EliminarPermisoToolStripMenuItem"
-        Me.EliminarPermisoToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.EliminarPermisoToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.EliminarPermisoToolStripMenuItem.Text = "Eliminar Permiso"
         '
         'VisualizarBitToolStripMenuItem
         '
         Me.VisualizarBitToolStripMenuItem.Name = "VisualizarBitToolStripMenuItem"
-        Me.VisualizarBitToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.VisualizarBitToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.VisualizarBitToolStripMenuItem.Text = "Visualizar Bitacora"
         '
         'RealizarBackupToolStripMenuItem1
         '
         Me.RealizarBackupToolStripMenuItem1.Name = "RealizarBackupToolStripMenuItem1"
-        Me.RealizarBackupToolStripMenuItem1.Size = New System.Drawing.Size(191, 22)
+        Me.RealizarBackupToolStripMenuItem1.Size = New System.Drawing.Size(197, 22)
         Me.RealizarBackupToolStripMenuItem1.Text = "Realizar Backup"
         '
         'RealizarRestoreToolStripMenuItem1
         '
         Me.RealizarRestoreToolStripMenuItem1.Name = "RealizarRestoreToolStripMenuItem1"
-        Me.RealizarRestoreToolStripMenuItem1.Size = New System.Drawing.Size(191, 22)
+        Me.RealizarRestoreToolStripMenuItem1.Size = New System.Drawing.Size(197, 22)
         Me.RealizarRestoreToolStripMenuItem1.Text = "Realizar Restore"
         '
         'EliminarIdiomaToolStripMenuItem
         '
         Me.EliminarIdiomaToolStripMenuItem.Name = "EliminarIdiomaToolStripMenuItem"
-        Me.EliminarIdiomaToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.EliminarIdiomaToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.EliminarIdiomaToolStripMenuItem.Text = "Eliminar Idioma"
         '
         'ModificarPuntajeToolStripMenuItem
         '
         Me.ModificarPuntajeToolStripMenuItem.Name = "ModificarPuntajeToolStripMenuItem"
-        Me.ModificarPuntajeToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.ModificarPuntajeToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.ModificarPuntajeToolStripMenuItem.Text = "Modificar Puntaje"
+        '
+        'ControlDeCambiosToolStripMenuItem
+        '
+        Me.ControlDeCambiosToolStripMenuItem.Name = "ControlDeCambiosToolStripMenuItem"
+        Me.ControlDeCambiosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ControlDeCambiosToolStripMenuItem.Text = "Control de Cambios"
         '
         'PagosToolStripMenuItem
         '
@@ -398,6 +405,7 @@ Partial Class FormMenu
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormMenu"
         Me.Text = "Mundo Travel SA - Menú Principal"
@@ -456,4 +464,5 @@ Partial Class FormMenu
     Friend WithEvents VisualizarPagosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarViajeToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents VisualizarPasajerosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ControlDeCambiosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

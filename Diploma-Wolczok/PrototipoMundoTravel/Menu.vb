@@ -328,4 +328,8 @@ Public Class FormMenu
         AbrirForm(vEliminarIdioma)
     End Sub
 
+    Private Sub ControlDeCambiosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeCambiosToolStripMenuItem.Click
+        Dim vVisualizar As New visualizarControlCambios
+        AbrirForm(vVisualizar)
+    End Sub
 End Class

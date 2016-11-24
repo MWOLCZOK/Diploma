@@ -87,7 +87,7 @@ Partial Class Modificar_Usuario
         '
         Me.CbxIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxIdioma.FormattingEnabled = True
-        Me.CbxIdioma.Location = New System.Drawing.Point(279, 184)
+        Me.CbxIdioma.Location = New System.Drawing.Point(35, 333)
         Me.CbxIdioma.Name = "CbxIdioma"
         Me.CbxIdioma.Size = New System.Drawing.Size(191, 21)
         Me.CbxIdioma.TabIndex = 45
@@ -97,7 +97,7 @@ Partial Class Modificar_Usuario
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(276, 158)
+        Me.Label6.Location = New System.Drawing.Point(32, 307)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(131, 15)
         Me.Label6.TabIndex = 44
@@ -105,17 +105,17 @@ Partial Class Modificar_Usuario
         '
         'TxtApe
         '
-        Me.TxtApe.Location = New System.Drawing.Point(279, 116)
+        Me.TxtApe.Location = New System.Drawing.Point(35, 259)
         Me.TxtApe.Name = "TxtApe"
         Me.TxtApe.Size = New System.Drawing.Size(191, 20)
-        Me.TxtApe.TabIndex = 43
+        Me.TxtApe.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(276, 90)
+        Me.Label5.Location = New System.Drawing.Point(32, 233)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 15)
         Me.Label5.TabIndex = 42
@@ -123,17 +123,17 @@ Partial Class Modificar_Usuario
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(35, 333)
+        Me.txtNombre.Location = New System.Drawing.Point(279, 185)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(191, 20)
-        Me.txtNombre.TabIndex = 41
+        Me.txtNombre.TabIndex = 4
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(32, 306)
+        Me.Label4.Location = New System.Drawing.Point(276, 158)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 15)
         Me.Label4.TabIndex = 40
@@ -141,18 +141,18 @@ Partial Class Modificar_Usuario
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(35, 259)
+        Me.TextBox3.Location = New System.Drawing.Point(35, 185)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox3.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox3.TabIndex = 39
+        Me.TextBox3.TabIndex = 3
         '
         'lblRepetirContraseñaUsuario
         '
         Me.lblRepetirContraseñaUsuario.AutoSize = True
         Me.lblRepetirContraseñaUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRepetirContraseñaUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblRepetirContraseñaUsuario.Location = New System.Drawing.Point(32, 232)
+        Me.lblRepetirContraseñaUsuario.Location = New System.Drawing.Point(32, 158)
         Me.lblRepetirContraseñaUsuario.Name = "lblRepetirContraseñaUsuario"
         Me.lblRepetirContraseñaUsuario.Size = New System.Drawing.Size(185, 15)
         Me.lblRepetirContraseñaUsuario.TabIndex = 38
@@ -160,18 +160,18 @@ Partial Class Modificar_Usuario
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(35, 184)
+        Me.TextBox2.Location = New System.Drawing.Point(279, 116)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox2.TabIndex = 37
+        Me.TextBox2.TabIndex = 2
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(32, 158)
+        Me.Label8.Location = New System.Drawing.Point(276, 90)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(134, 15)
         Me.Label8.TabIndex = 36
@@ -182,7 +182,7 @@ Partial Class Modificar_Usuario
         Me.Txtnombreusuario.Location = New System.Drawing.Point(35, 116)
         Me.Txtnombreusuario.Name = "Txtnombreusuario"
         Me.Txtnombreusuario.Size = New System.Drawing.Size(191, 20)
-        Me.Txtnombreusuario.TabIndex = 35
+        Me.Txtnombreusuario.TabIndex = 1
         '
         'Label9
         '

@@ -61,18 +61,18 @@ Partial Class Agregar_Usuario
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(23, 128)
+        Me.TextBox2.Location = New System.Drawing.Point(267, 60)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.TextBox2.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(20, 102)
+        Me.Label2.Location = New System.Drawing.Point(264, 34)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(134, 15)
         Me.Label2.TabIndex = 2
@@ -80,18 +80,18 @@ Partial Class Agregar_Usuario
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(23, 203)
+        Me.TextBox3.Location = New System.Drawing.Point(23, 129)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox3.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox3.TabIndex = 5
+        Me.TextBox3.TabIndex = 3
         '
         'lblRepetirContraseñaUsuario
         '
         Me.lblRepetirContraseñaUsuario.AutoSize = True
         Me.lblRepetirContraseñaUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRepetirContraseñaUsuario.ForeColor = System.Drawing.Color.White
-        Me.lblRepetirContraseñaUsuario.Location = New System.Drawing.Point(20, 176)
+        Me.lblRepetirContraseñaUsuario.Location = New System.Drawing.Point(20, 102)
         Me.lblRepetirContraseñaUsuario.Name = "lblRepetirContraseñaUsuario"
         Me.lblRepetirContraseñaUsuario.Size = New System.Drawing.Size(185, 15)
         Me.lblRepetirContraseñaUsuario.TabIndex = 4
@@ -99,17 +99,17 @@ Partial Class Agregar_Usuario
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(23, 277)
+        Me.TextBox4.Location = New System.Drawing.Point(267, 129)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox4.TabIndex = 7
+        Me.TextBox4.TabIndex = 4
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(20, 250)
+        Me.Label4.Location = New System.Drawing.Point(264, 102)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 15)
         Me.Label4.TabIndex = 6
@@ -117,17 +117,17 @@ Partial Class Agregar_Usuario
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(267, 60)
+        Me.TextBox5.Location = New System.Drawing.Point(23, 203)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(191, 20)
-        Me.TextBox5.TabIndex = 9
+        Me.TextBox5.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(264, 34)
+        Me.Label5.Location = New System.Drawing.Point(20, 177)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 15)
         Me.Label5.TabIndex = 8
@@ -138,7 +138,7 @@ Partial Class Agregar_Usuario
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(264, 102)
+        Me.Label6.Location = New System.Drawing.Point(20, 250)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(131, 15)
         Me.Label6.TabIndex = 10
@@ -148,7 +148,7 @@ Partial Class Agregar_Usuario
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(267, 128)
+        Me.ComboBox1.Location = New System.Drawing.Point(23, 276)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(191, 21)
         Me.ComboBox1.TabIndex = 11

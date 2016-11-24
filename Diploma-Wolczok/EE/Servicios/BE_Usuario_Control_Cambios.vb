@@ -31,6 +31,20 @@
         End Set
     End Property
 
+    Private _fechaCambio As Date
+    Public Property fechaCambio() As Date
+        Get
+            Return _fechaCambio
+        End Get
+        Set(ByVal value As Date)
+            _fechaCambio = value
+        End Set
+    End Property
+
+    Public Overrides Function ToString() As String
+        Return Me.ID_Cambio & "-" & Me._tipoCambio.ToString
+    End Function
+
 End Class
 
 

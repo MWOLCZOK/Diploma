@@ -156,4 +156,63 @@ Public Class DAL_Bitacora
     End Function
 
 
+
+    Public Function ConsultarGestorCambios(ByVal paramUsuario As BE_Usuario_Control_Cambios) As List(Of EE.BE_Usuario_Control_Cambios)
+        Try
+            Dim consulta As String = ("Select * from Usuario_Control_Cambios where id_Cambio=@ID_Cambio")
+            Dim milistaControl As New List(Of BE_Usuario_Control_Cambios)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@id_Cambio", paramUsuario.ID_Cambio))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                milistaControl.Add(Me.formatearControl(drow))
+            Next
+            Return milistaControl
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ConsultarGestorCambios() As List(Of EE.BE_Usuario_Control_Cambios)
+        Try
+            Dim consulta As String = ("Select * from Usuario_Control_Cambios")
+            Dim milistaControl As New List(Of BE_Usuario_Control_Cambios)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                milistaControl.Add(Me.formatearControl(drow))
+            Next
+            Return milistaControl
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function formatearControl(ByVal paramDataRow As DataRow) As EE.BE_Usuario_Control_Cambios
+        Try
+            Dim oUsuarioControl As New EE.BE_Usuario_Control_Cambios
+            oUsuarioControl.ID_Cambio = paramDataRow.Item("ID_Cambio")
+            oUsuarioControl.tipoCambio = paramDataRow.Item("TipoCambio")
+            oUsuarioControl.tipoValor = paramDataRow.Item("TipoValor")
+            oUsuarioControl.ID = paramDataRow.Item("ID_Usuario")
+            oUsuarioControl.NombreUsuario = paramDataRow.Item("NombreUsuario")
+            oUsuarioControl.Password = paramDataRow.Item("Password")
+            oUsuarioControl.Intentos = paramDataRow.Item("Intentos")
+            oUsuarioControl.Bloqueado = paramDataRow.Item("Bloqueado")
+            oUsuarioControl.Nombre = paramDataRow.Item("Nombre")
+            oUsuarioControl.Apellido = paramDataRow.Item("Apellido")
+            oUsuarioControl.BL = paramDataRow.Item("BL")
+            Dim oDalPerfil As New DAL.DAL_GestorPermiso
+            oUsuarioControl.Perfil = oDalPerfil.ConsultarporID(CInt(paramDataRow.Item("ID_Perfil")))
+            Dim oDalIdioma As New DAL.DAL_Idioma
+            oUsuarioControl.idioma = oDalIdioma.ConsultarPorID(CInt(paramDataRow.Item("ID_Idioma")))
+            oUsuarioControl.BL = paramDataRow.Item("BL")
+            oUsuarioControl.fechaCambio = paramDataRow.Item("fechaCambio")
+            Return oUsuarioControl
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

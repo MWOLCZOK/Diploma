@@ -43,10 +43,10 @@ Partial Class visualizarPasajeros
         'dgvBitacora
         '
         Me.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBitacora.Location = New System.Drawing.Point(50, 87)
+        Me.dgvBitacora.Location = New System.Drawing.Point(50, 55)
         Me.dgvBitacora.Name = "dgvBitacora"
         Me.dgvBitacora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvBitacora.Size = New System.Drawing.Size(563, 305)
+        Me.dgvBitacora.Size = New System.Drawing.Size(563, 337)
         Me.dgvBitacora.TabIndex = 53
         '
         'btn_exportar

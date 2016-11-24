@@ -352,6 +352,12 @@
     <Compile Include="visualizarBitacora.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="visualizarControlCambios.Designer.vb">
+      <DependentUpon>visualizarControlCambios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visualizarControlCambios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="visualizarPasajeros.Designer.vb">
       <DependentUpon>visualizarPasajeros.vb</DependentUpon>
     </Compile>
@@ -500,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="visualizarBitacora.resx">
       <DependentUpon>visualizarBitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizarControlCambios.resx">
+      <DependentUpon>visualizarControlCambios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="visualizarPasajeros.resx">
       <DependentUpon>visualizarPasajeros.vb</DependentUpon>

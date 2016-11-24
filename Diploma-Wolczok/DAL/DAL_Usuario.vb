@@ -157,9 +157,20 @@ Public Class DAL_Usuario
 
     Public Sub gestionarCambio(ByVal oUsuario As EE.BE_Usuario, ByVal vTipoCambio As EE.tipoCambio, ByVal vtipovalor As tipoValor)
         Try
-            Dim Command As SqlCommand = Acceso.MiComando("insert into Usuario_Control_Cambios values (@ID_Cambio, @TipoValor, @TipoCambio, @ID_Usuario, @NombreUsuario, @Password, @Intentos, @Bloqueado, @Nombre, @Apellido, @ID_Perfil, @BL, @ID_Idioma)")
+            Dim Command As SqlCommand = Acceso.MiComando("insert into Usuario_Control_Cambios values (@ID_Cambio, @TipoValor, @TipoCambio, @ID_Usuario, @NombreUsuario, @Password, @Intentos, @Bloqueado, @Nombre, @Apellido, @ID_Perfil, @BL, @ID_Idioma, @FechaCambio)")
             With Command.Parameters
-                .Add(New SqlParameter("@ID_Cambio", Acceso.TraerID("ID_Cambio", "Usuario_Control_Cambios")))
+
+                If vTipoCambio = tipoCambio.Modificacion Or vTipoCambio = tipoCambio.Baja Then
+                    If vtipovalor = tipoValor.Anterior Then
+                        .Add(New SqlParameter("@ID_Cambio", Acceso.TraerID("ID_Cambio", "Usuario_Control_Cambios")))
+
+                    Else
+                        .Add(New SqlParameter("@ID_Cambio", Acceso.TraerUltimoID("ID_Cambio", "Usuario_Control_Cambios")))
+
+                    End If
+                Else
+                    .Add(New SqlParameter("@ID_Cambio", Acceso.TraerID("ID_Cambio", "Usuario_Control_Cambios")))
+                End If
                 .Add(New SqlParameter("@TipoValor", vtipovalor))
                 .Add(New SqlParameter("@TipoCambio", vTipoCambio))
                 If vTipoCambio = tipoCambio.Alta Then
@@ -179,6 +190,7 @@ Public Class DAL_Usuario
 
 
                 .Add(New SqlParameter("@ID_Idioma", oUsuario.idioma.id_idioma))
+                .Add(New SqlParameter("@FechaCambio", Today))
             End With
             Acceso.Escritura(Command)
         Catch ex As Exception
