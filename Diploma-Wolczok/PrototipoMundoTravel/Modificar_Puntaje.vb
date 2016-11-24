@@ -80,7 +80,7 @@ Public Class Modificar_Puntaje
                     puntajemodif.Coeficiente = Me.Txtpuntaje.Text
                     Gestorpuntaje.modificarPuntaje(puntajemodif)
                     DataGridView1.DataSource = Nothing
-                    MessageBox.Show("Se ha modificado el Puntaje de manera satisfactoria")
+                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                     Dim listColumns As New List(Of String)
                     listColumns.Add("Descripcion")
                     listColumns.Add("Coeficiente")

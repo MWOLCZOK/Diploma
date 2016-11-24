@@ -82,7 +82,7 @@ Public Class Modificar_Localidad
                 '   Locmodificar.Destino = Txtdestino.Text
                 GestorLoc.modificarLocalidad(Locmodificar)
                 iniciar()
-                MessageBox.Show("Se ha modificado la Localidad de manera satisfactoria")
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             End If
         Catch ex As Exception
 

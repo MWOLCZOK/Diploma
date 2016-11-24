@@ -48,7 +48,7 @@ Public Class Agregar_Provincia
                 oPais.ID = DirectCast(ComboBox1.SelectedItem, BE_Pais).ID
                 oProvincia.Pais = oPais
                 bllProvincia.altaprovincia(oProvincia)
-                MsgBox("Se ha agregado correctamente la provincia")
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             Else
                 Throw New Exception
             End If

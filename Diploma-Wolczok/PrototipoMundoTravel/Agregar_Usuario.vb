@@ -62,6 +62,7 @@ Public Class Agregar_Usuario
                 oPerfil = bllPerfil.ConsultarporID(CInt(DirectCast(Me.ComboBox2.SelectedItem, EE.BE_GrupoPermiso).ID))
                 oUsuario.Perfil = oPerfil
                 bllUsuario.altaUsuario(oUsuario)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             Else
                 Throw New Exception
             End If

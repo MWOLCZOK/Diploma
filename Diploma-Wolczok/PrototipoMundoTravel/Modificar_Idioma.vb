@@ -101,6 +101,7 @@ Public Class Modificar_Idioma
                             IdiomaNuevo.Palabras = Palabras
                             GestorIdioma.modificarIdioma(IdiomaNuevo)
                             iniciar()
+                            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                         Else
                         End If
                     Else

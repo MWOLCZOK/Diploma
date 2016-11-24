@@ -89,7 +89,7 @@ Public Class Modificar_Usuario
                     GestorUsuario.Modificar(NuevoUsuario)
 
                     GestorUsuario.gestionarCambio(NuevoUsuario, tipoCambio.Modificacion, tipoValor.Posterior)
-                    MessageBox.Show("Se ha modificado el usuario de manera satisfactoria")
+                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                     iniciar()
                 End If
             End If

@@ -41,6 +41,7 @@ Public Class Reserva_Detalle
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnFinalizarCompra.Click
+
         Me.Close()
 
     End Sub

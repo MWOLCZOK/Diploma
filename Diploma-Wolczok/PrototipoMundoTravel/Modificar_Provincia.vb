@@ -82,7 +82,7 @@ Public Class Modificar_Provincia
                 Provmodificar.SuperficieTerrestre = txtSuperficieTerrestre.Text
                 GestorProv.modificarprovincia(Provmodificar)
                 iniciar()
-                MessageBox.Show("Se ha modificado la provincia de manera satisfactoria")
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             End If
         Catch ex As Exception
 

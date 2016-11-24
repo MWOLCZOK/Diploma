@@ -48,6 +48,7 @@ Public Class Agregar_Permisos
                     GestorPermisos.Alta(Perfil)
                     ControladorPermisos.CargarPermisos(Tree)
                     txtnombre.Text = ""
+                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                 End If
             Else
             End If

@@ -37,6 +37,7 @@ Public Class Agregar_Destino
             oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
             oDestino.TieneAeropuerto = Me.chkTieneAeropuerto.Checked
             bllDestino.altaDestino(oDestino)
+            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
         Catch ex As Exception
             MsgBox("Error")
         End Try

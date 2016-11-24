@@ -36,6 +36,7 @@ Public Class Agregar_Habitacion
                 oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
                 Dim bllHabitacion As New BLL.BLL_Habitacion
                 bllHabitacion.altaHabitacion(oHabitacion)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             Else
                 MsgBox("Debe seleccionar un alojamiento", MsgBoxStyle.Exclamation, "Error")
             End If

@@ -65,6 +65,7 @@ Public Class Agregar_Idioma
                         iniciar()
                     Else
                     End If
+                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                 Else
                     MsgBox("Debe seleccionar un cultura", MsgBoxStyle.Exclamation, "Error")
 

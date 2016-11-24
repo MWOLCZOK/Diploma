@@ -39,6 +39,7 @@ Public Class Agregar_Pais
                 'oPais.Poblacion_total = Me.Txtpoblacionpais.Text
                 oPais.Zonahoraria = Me.Txtzonahorariapais.Text
                 bllPais.AltaPais(oPais)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             Else
                 Throw New Exception
             End If

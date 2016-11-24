@@ -31,6 +31,7 @@ Public Class Eliminar_Idioma
                 Dim Idioma As EE.BE_Idioma = DirectCast(CbxIdioma.SelectedItem, EE.BE_Idioma)
                 Dim GestorIdioma As BLL.BLL_Idioma = New BLL.BLL_Idioma
                 GestorIdioma.eliminarIdioma(Idioma)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                 iniciar()
             Else
             End If

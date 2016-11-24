@@ -26,6 +26,7 @@ Public Class Eliminar_Permiso
                 GestorPermisos.Baja(Perfil.ID)
                 ControladorPermisos.CargarPermisos(ComboBox1)
                 Tree.Nodes.Clear()
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             End If
         Catch ex As Exception
 

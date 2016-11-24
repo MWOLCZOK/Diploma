@@ -71,6 +71,7 @@ Public Class Cancelacion
             oCancel.Reserva = oReserva
             oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
             bllCancel.alta(oCancel)
+            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
         Catch ex As Exception
 
         End Try

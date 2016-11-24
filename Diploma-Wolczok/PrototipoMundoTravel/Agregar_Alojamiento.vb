@@ -190,6 +190,7 @@ Public Class Agregar_Alojamiento
                     oPosada.Mascota = Me.chkMascotas.Checked
                     bllPosada.altaPosada(oPosada)
                 End If
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             Else
                 'ACA EL MENSAJE DE ERROR
             End If
