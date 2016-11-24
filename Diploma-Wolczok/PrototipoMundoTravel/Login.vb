@@ -56,5 +56,8 @@ Public Class Login
         txtPassword.Text = "admin"
     End Sub
 
-
+    Private Sub Login_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Login")
+    End Sub
 End Class

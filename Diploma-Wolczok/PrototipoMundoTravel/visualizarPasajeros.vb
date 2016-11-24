@@ -12,7 +12,7 @@ Public Class visualizarPasajeros
     Private Sub visualizarPasajeros_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Try
             Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
-            Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+            Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Pasajeros")
         Catch ex As Exception
         End Try
     End Sub

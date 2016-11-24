@@ -7,7 +7,7 @@ Public Class visualizarControlCambios
     Private Sub visualizarControlCambios_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Try
             Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
-            Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+            Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Control de Cambios")
         Catch ex As Exception
         End Try
     End Sub

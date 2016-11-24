@@ -74,6 +74,6 @@ Public Class Reserva_Buscar_Asientos
 
     Private Sub btnSalir_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles btnSalir.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
-        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Vuelos")
     End Sub
 End Class
