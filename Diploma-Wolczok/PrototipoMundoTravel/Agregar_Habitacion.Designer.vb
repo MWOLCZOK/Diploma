@@ -53,6 +53,7 @@ Partial Class Agregar_Habitacion
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(23, 53)
         Me.ComboBox1.Name = "ComboBox1"

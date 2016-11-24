@@ -85,6 +85,7 @@ Public Class Agregar_Pago
             oPagoviaje.Fecha = Today.Date
             oPagoviaje.Monto = Me.Txtmontopago.Text
             oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
+
             Dim oreserva As EE.BE_Reserva = DirectCast(Cbxreserva.SelectedItem, BE_Reserva)
             If oreserva.TipoReserva = TipoReserva.Alojamiento Then
                 oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaAlojamiento)
@@ -92,7 +93,13 @@ Public Class Agregar_Pago
                 oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
             End If
 
-            bllPagoviaje.altapagoviaje(oPagoviaje)
+            If bllPagoviaje.validarPago(oPagoviaje) = True Then
+                bllPagoviaje.altapagoviaje(oPagoviaje)
+            Else
+                MsgBox("el pago excede el monto de la reserva", MsgBoxStyle.Exclamation, "Error")
+
+            End If
+
         Catch ex As Exception
 
         End Try

@@ -28,13 +28,18 @@ Public Class Agregar_Habitacion
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            Dim oHabitacion As New EE.BE_Habitacion
-            oHabitacion.Descripcion = Me.TextBox1.Text
-            oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
-            oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
-            oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
-            Dim bllHabitacion As New BLL.BLL_Habitacion
-            bllHabitacion.altaHabitacion(oHabitacion)
+            If Not IsNothing(ComboBox1.SelectedItem) Then
+                Dim oHabitacion As New EE.BE_Habitacion
+                oHabitacion.Descripcion = Me.TextBox1.Text
+                oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
+                oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
+                oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
+                Dim bllHabitacion As New BLL.BLL_Habitacion
+                bllHabitacion.altaHabitacion(oHabitacion)
+            Else
+                MsgBox("Debe seleccionar un alojamiento", MsgBoxStyle.Exclamation, "Error")
+            End If
+
         Catch ex As Exception
 
         End Try

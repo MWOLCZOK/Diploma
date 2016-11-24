@@ -10,7 +10,7 @@ Public Class BLL_PagoViaje
     Public Sub altapagoviaje(ByVal paramPagoViaje As BE_Pago)
         Try
             Dim listaPago As New List(Of EE.BE_Pago)
-            listaPago = consultarPagosViajes(paramPagoViaje.Reserva)
+            listaPago = _dalpagoviaje.validarPago(paramPagoViaje)
             paramPagoViaje.Finpago = calcularUltimoPago(listaPago, paramPagoViaje)
             _dalpagoviaje.alta(paramPagoViaje)
             If paramPagoViaje.Finpago = True Then
@@ -57,15 +57,30 @@ Public Class BLL_PagoViaje
         End Try
     End Function
 
-    'Public Function consultarpagoviaje(ByVal oPagoviaje As BE_PagoViaje) As BE_PagoViaje
-    '    Try
-    '        Return _dalpagoviaje.consultarPagoviaje(oPagoviaje)
-    '    Catch ex As Exception
+    Public Function validarPago(ByVal oPagoReserva As EE.BE_Pago) As Boolean
+        Try
+            Dim _listaPagos As New List(Of BE_Pago)
+            _listaPagos = _dalpagoviaje.validarPago(oPagoReserva)
+            Dim _montoAcumulado As Double = 0
 
-    '    End Try
-    'End Function
+            For Each _pago As BE_Pago In _listaPagos
+                _montoAcumulado += _pago.Monto
+            Next
 
-    Public Function consultarPagosViajes(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_Pago)
+            _montoAcumulado += oPagoReserva.Monto
+
+            If _montoAcumulado > oPagoReserva.Reserva.MontoReserva Then
+                Return False
+            Else
+                Return True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+    Public Function consultarPagosViajes(ByVal oReservaviaje As BE_Reserva) As List(Of BE_Pago)
         Try
             Return _dalpagoviaje.consultarPagosviajes(oReservaviaje) ' este consultar pagosviajes es pagos (todos)
         Catch ex As Exception

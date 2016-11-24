@@ -16,15 +16,32 @@ Public Class Reserva_Buscar_Alojamiento
 
     End Sub
 
+    Private Function validarFecha() As Boolean
+        If Me.DateTimePicker1.Value < Today Then Return False
+        If Me.DateTimePicker2.Value < Me.DateTimePicker1.Value Then Return False
+        Return True
+    End Function
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
-            Dim oListaAlojamiento As New List(Of EE.BE_Alojamiento)
-            Dim bllAlojamiento As New BLL.BLL_Alojamiento
-            oListaAlojamiento = bllAlojamiento.consultarAlojamiento(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Destino), Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
-            DataGridView1.DataSource = Nothing
-            DataGridView1.DataSource = oListaAlojamiento
-            DataGridView1.ReadOnly = True
-            DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            If Not IsNothing(ComboBox1.SelectedItem) Then
+                If validarFecha = True Then
+                    Dim oListaAlojamiento As New List(Of EE.BE_Alojamiento)
+                    Dim bllAlojamiento As New BLL.BLL_Alojamiento
+                    oListaAlojamiento = bllAlojamiento.consultarAlojamiento(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Destino), Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
+                    DataGridView1.DataSource = Nothing
+                    DataGridView1.DataSource = oListaAlojamiento
+                    DataGridView1.ReadOnly = True
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+                Else
+                    MsgBox("Las fechas ingresadas son incorrectas", MsgBoxStyle.Exclamation, "Error")
+
+                End If
+
+            Else
+                MsgBox("Debe seleccionar un destino", MsgBoxStyle.Exclamation, "Error")
+            End If
+
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try

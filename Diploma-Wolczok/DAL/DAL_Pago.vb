@@ -131,7 +131,25 @@ Public Class DAL_Pago
         End Try
     End Function
 
-
+    Public Function validarPago(ByVal oReservaviaje As BE_Pago) As List(Of BE_Pago)
+        Try
+            Dim consulta As String = ("Select * from Pago where ID_Reserva=@ID_Reserva and TipoReserva=@TipoReserva and BL=@BL")
+            Dim miListaPagosviajes As New List(Of BE_Pago)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID_Reserva", oReservaviaje.Reserva.ID))
+                .Add(New SqlParameter("@TipoReserva", oReservaviaje.Reserva.TipoReserva))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                miListaPagosviajes.Add(Me.formatearPagoviaje(drow))
+            Next
+            Return miListaPagosviajes
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
 
 End Class

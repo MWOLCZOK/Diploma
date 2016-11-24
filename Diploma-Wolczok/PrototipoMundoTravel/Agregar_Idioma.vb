@@ -66,6 +66,8 @@ Public Class Agregar_Idioma
                     Else
                     End If
                 Else
+                    MsgBox("Debe seleccionar un cultura", MsgBoxStyle.Exclamation, "Error")
+
                 End If
             Else
             End If

@@ -71,22 +71,48 @@ Public Class Reserva_Buscar_Viaje
         Me.Close()
     End Sub
 
+    Private Function validarFecha() As Boolean
+        If Me.DateTimePicker1.Value < Today Then Return False
+        Return True
+    End Function
+
+
     Private Sub btnSeleccionar_Click_1(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
-            Dim oViaje As New BE_Viaje
-            oViaje.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-            Dim bllViaje As New BLL.BLL_Viaje
-            oViaje = bllViaje.consultarViaje(oViaje)
-            Dim oReservaViaje As New BE_ReservaViaje
-            oReservaViaje.viaje = oViaje
-            oReservaViaje.Detalle = "Reserva de Viaje - Mundo Travel"
-            Dim oOrigen As New BE_Destino
-            oOrigen = DirectCast(Me.Cbxorigen.SelectedItem, BE_Destino)
-            Dim oDestino As New BE_Destino
-            oDestino = DirectCast(Me.Cbxdestino.SelectedItem, BE_Destino)
-            Dim formularioreservaasientos As New Reserva_Buscar_Asientos(oViaje, oReservaViaje, oOrigen, oDestino)
-            formularioreservaasientos.Show()
-            Me.Close()
+            If Not IsNothing(Cbxorigen.SelectedItem) Then
+                If Not IsNothing(Cbxdestino.SelectedItem) Then
+                    If Not IsNothing(ComboBox1.SelectedItem) Then
+                        If validarFecha() = True Then
+                            Dim oViaje As New BE_Viaje
+                            oViaje.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+                            Dim bllViaje As New BLL.BLL_Viaje
+                            oViaje = bllViaje.consultarViaje(oViaje)
+                            Dim oReservaViaje As New BE_ReservaViaje
+                            oReservaViaje.viaje = oViaje
+                            oReservaViaje.Detalle = "Reserva de Viaje - Mundo Travel"
+                            Dim oOrigen As New BE_Destino
+                            oOrigen = DirectCast(Me.Cbxorigen.SelectedItem, BE_Destino)
+                            Dim oDestino As New BE_Destino
+                            oDestino = DirectCast(Me.Cbxdestino.SelectedItem, BE_Destino)
+                            Dim formularioreservaasientos As New Reserva_Buscar_Asientos(oViaje, oReservaViaje, oOrigen, oDestino)
+                            formularioreservaasientos.Show()
+                            Me.Close()
+                        Else
+                            MsgBox("Debe cargar una fecha correcta", MsgBoxStyle.Exclamation, "Error")
+
+                        End If
+                    Else
+                        MsgBox("Debe cargar un Tipo de Transporte", MsgBoxStyle.Exclamation, "Error")
+
+                    End If
+                Else
+                    MsgBox("Debe cargar un Destino", MsgBoxStyle.Exclamation, "Error")
+                End If
+
+            Else
+                MsgBox("Debe cargar un Origen", MsgBoxStyle.Exclamation, "Error")
+            End If
+
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
