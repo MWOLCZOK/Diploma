@@ -8,22 +8,20 @@ Public Class BLL_Cancelacion
     Dim _dalpago As New DAL_Pago
     Dim _dalreservaviaje As New DAL_ReservaViaje
     Dim _dalreservaaloja As New DAL_ReservaAlojamiento
+    Dim _dalVoucher As New DAL_Voucher
 
     Public Sub alta(ByVal paramCancelacion As BE_Cancelacion)
         Try
-            '   LA DESCRIPCION VIENE EN EL OBJETO DESDE EL FORMULARIO
-
-            '   ACTUALIZAR EL ESTADO DE LA RESERVA
-
-
-            '   ACTUALIZAR EL ESTADO DE LOS PAGOS DE LA RESERVA
-
-
-            '   AGREGAR DATOS DE LA CANCELACION
-
-            '_dalreservaaloja.actualizarreservaalojacancel(paramCancelacion)
-            '_dalreservaviaje.actualizarreservaviajecancel(paramCancelacion)
-
+            _cancelacion.alta(paramCancelacion)
+            For Each pagoReserva As EE.BE_Pago In paramCancelacion.Reserva.Pagoviaje
+                _dalpago.actualizarpagocancel(paramCancelacion)
+            Next
+            If paramCancelacion.Reserva.TipoReserva = TipoReserva.Alojamiento Then
+                _dalreservaaloja.actualizarreservaalojacancel(paramCancelacion.Reserva)
+            Else
+                _dalreservaviaje.actualizarreservaviajecancel(paramCancelacion.Reserva)
+            End If
+            _dalVoucher.cancelarVoucher(paramCancelacion.Reserva)
         Catch ex As Exception
         End Try
     End Sub

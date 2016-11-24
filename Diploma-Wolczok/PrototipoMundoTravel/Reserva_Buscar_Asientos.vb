@@ -2,6 +2,9 @@
 Imports BLL
 
 Public Class Reserva_Buscar_Asientos
+    Implements BLL.BLL_Iobservador
+
+
     Protected Friend viaje As BE_Viaje
     Protected Friend reservaViaje As EE.BE_ReservaViaje
     Protected Friend reservaDestino As EE.BE_Destino
@@ -18,6 +21,8 @@ Public Class Reserva_Buscar_Asientos
         reservaTransporte = oViaje.Transporte
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         cargarGrid()
+
+
     End Sub
 
     Private Sub cargarGrid()
@@ -35,15 +40,25 @@ Public Class Reserva_Buscar_Asientos
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
 
-    Private Sub Btnaceptar_Click(sender As Object, e As EventArgs) Handles Btnaceptar.Click
+
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+    Private Sub Reserva_Buscar_Asientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
+    End Sub
+
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
             Dim oReservaViaje As New BE_ReservaViaje
             oReservaViaje = reservaViaje
             Dim oAsiento As New BE_Asiento
             oAsiento.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-
             Dim bllAsiento As New BLL.BLL_Asiento
-
             oReservaViaje.Asiento = bllAsiento.consultarAsientos(oAsiento)
             Dim formularioreservaasientos As New Reserva_Buscar_Pasajero(viaje, oReservaViaje, reservaOrigen, reservaDestino)
             formularioreservaasientos.Show()
@@ -53,9 +68,12 @@ Public Class Reserva_Buscar_Asientos
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
-
     End Sub
 
+    Private Sub btnSalir_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles btnSalir.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
 End Class

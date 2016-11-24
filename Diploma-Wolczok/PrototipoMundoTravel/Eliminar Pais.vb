@@ -2,10 +2,12 @@
 Imports BLL
 
 Public Class Eliminar_Pais
+    Implements BLL.BLL_Iobservador
 
     Private Sub Eliminar_Pais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         iniciar()
-
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Public Sub iniciar()
@@ -43,5 +45,16 @@ Public Class Eliminar_Pais
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+    Private Sub Eliminar_Pais_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
 End Class

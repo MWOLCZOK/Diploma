@@ -2,12 +2,16 @@
 Imports BLL
 
 Public Class Eliminar_Destino
+    Implements BLL.BLL_Iobservador
+
     Private Sub Eliminar_Destino_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarcombos()
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
     Private Sub llenarcombos()
-        Dim oListaDestinos As New List(Of be_Destino)
+        Dim oListaDestinos As New List(Of BE_Destino)
         Dim bllDestino As New BLL_Destino
         oListaDestinos = bllDestino.consultarDestinos
         For Each miDest As BE_Destino In oListaDestinos
@@ -31,5 +35,16 @@ Public Class Eliminar_Destino
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Eliminar_Destino_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 End Class

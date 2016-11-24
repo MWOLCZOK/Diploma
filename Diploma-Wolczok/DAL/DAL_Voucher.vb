@@ -40,7 +40,7 @@ Public Class DAL_Voucher
             Dim consulta As String = ("Select * from Voucher where ID=@ID and BL=@BL")
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
-                .Add(New SqlParameter("@ID", paramVoucher.id))
+                .Add(New SqlParameter("@ID", paramVoucher.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)
@@ -74,6 +74,21 @@ Public Class DAL_Voucher
 
         End Try
     End Function
+
+
+    Public Sub cancelarVoucher(ByVal paramReserva As BE_Reserva)
+        Try
+            Dim command As SqlCommand = Acceso.MiComando("Update Voucher set BL=@BL where ID_Reserva=@ID_Reserva")
+            With command.Parameters
+                .Add(New SqlParameter("@ID_Reserva", paramReserva.ID))
+                .Add(New SqlParameter("@BL", True))
+            End With
+            Acceso.Escritura(command)
+            command.Dispose()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
 
     Private Function formatearVoucher(ByVal paramDataRow As DataRow) As BE_Voucher

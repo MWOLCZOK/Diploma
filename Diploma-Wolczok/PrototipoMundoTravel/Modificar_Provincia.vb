@@ -3,11 +3,13 @@ Imports EE
 
 
 Public Class Modificar_Provincia
+    Implements BLL.BLL_Iobservador
 
     Private Sub Modificar_Provincia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         iniciar()
-        cargarcombos()
-
+        cargarCombos()
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
 
@@ -26,17 +28,16 @@ Public Class Modificar_Provincia
     Public Sub iniciar()
         Try
             Cbxprov.SelectedItem = Nothing
-        Cbxprov.Items.Clear()
-        Txtdescripcion.Text = ""
-            Txthabitantes.Text = ""
-        Txtregion.Text = ""
-            Txtsuperficieterrestre.Text = ""
-        Dim GestorProv As New BLL_Provincia
-        Dim Listaprov = GestorProv.Consultarprovincias()
-        For Each prov In Listaprov
+            Cbxprov.Items.Clear()
+            txtNombre.Text = ""
+            NumericUpDown1.Value = 0
+            txtRegion.Text = ""
+            txtSuperficieTerrestre.Text = ""
+            Dim GestorProv As New BLL_Provincia
+            Dim Listaprov = GestorProv.Consultarprovincias()
+            For Each prov In Listaprov
                 Cbxprov.Items.Add(prov)
-
-        Next
+            Next
         Catch ex As Exception
         End Try
     End Sub
@@ -48,40 +49,37 @@ Public Class Modificar_Provincia
             If Not IsNothing(Cbxprov.SelectedItem) Then
                 Dim Nuevaprov As BE_Provincia = New BE_Provincia
                 Nuevaprov = DirectCast(Cbxprov.SelectedItem, BE_Provincia)
-                Me.Txtdescripcion.Text = Nuevaprov.Descripcion
-                Me.Txthabitantes.Text = Nuevaprov.Habitantes
-                Me.Txtregion.Text = Nuevaprov.Region
-                Me.Txtsuperficieterrestre.Text = Nuevaprov.SuperficieTerrestre
+                Me.txtNombre.Text = Nuevaprov.Descripcion
+                Me.NumericUpDown1.Value = Nuevaprov.Habitantes
+                Me.txtRegion.Text = Nuevaprov.Region
+                Me.txtSuperficieTerrestre.Text = Nuevaprov.SuperficieTerrestre
 
                 For Each miPais As BE_Pais In ComboBox1.Items
                     If miPais.ID = Nuevaprov.Pais.ID Then
                         ComboBox1.SelectedItem = miPais
                     End If
                 Next
-
-                '       Me.TxtLocalidad.Text = Nuevaprov.Localidad
             End If
         Catch ex As Exception
         End Try
     End Sub
 
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
 
     End Sub
 
-    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim GestorProv As New BLL_Provincia
         Dim Provmodificar As New BE_Provincia
         Try
             If Not IsNothing(Cbxprov.SelectedItem) Then
                 Provmodificar = DirectCast(Cbxprov.SelectedItem, BE_Provincia)
                 Provmodificar.ID = DirectCast(Cbxprov.SelectedItem, BE_Provincia).ID
-                Provmodificar.Descripcion = Txtdescripcion.Text
-                Provmodificar.Habitantes = Txthabitantes.Text
-                Provmodificar.Region = Txtregion.Text
-                Provmodificar.SuperficieTerrestre = Txtsuperficieterrestre.Text
-                '        Provmodificar.Localidad = TxtLocalidad.Text
+                Provmodificar.Descripcion = txtNombre.Text
+                Provmodificar.Habitantes = NumericUpDown1.Value
+                Provmodificar.Region = txtRegion.Text
+                Provmodificar.SuperficieTerrestre = txtSuperficieTerrestre.Text
                 GestorProv.modificarprovincia(Provmodificar)
                 iniciar()
                 MessageBox.Show("Se ha modificado la provincia de manera satisfactoria")
@@ -91,5 +89,13 @@ Public Class Modificar_Provincia
         End Try
     End Sub
 
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
 
+    Private Sub Modificar_Provincia_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
 End Class

@@ -13,7 +13,7 @@ Public Class DAL_Pago
     Public Sub alta(paramobjeto As Object) Implements Master.alta
         Try
             Dim parampago As BE_Pago = DirectCast(paramobjeto, BE_Pago)
-            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @NumeroTarjeta,@Estado, @BL)")
+            Dim command As SqlCommand = Acceso.MiComando("Insert into Pago values (@ID, @ID_Reserva, @TipoReserva, @Fecha, @ID_Metodopago, @Monto,@finpago, @NumeroTarjeta, @Estado, @BL)")
             With command.Parameters
                 .Add(New SqlParameter("@ID", Acceso.TraerID("ID", "Pago")))
                 .Add(New SqlParameter("@ID_Reserva", parampago.Reserva.ID))
@@ -23,7 +23,7 @@ Public Class DAL_Pago
                 .Add(New SqlParameter("@Monto", parampago.Monto))
                 .Add(New SqlParameter("@finpago", parampago.Finpago))
                 .Add(New SqlParameter("@NumeroTarjeta", parampago.NumeroTarjeta))
-                .Add(New SqlParameter("@Estado", parampago.Estado))
+                .Add(New SqlParameter("@Estado", False))
                 .Add(New SqlParameter("@BL", False))
             End With
             Acceso.Escritura(command)
@@ -50,10 +50,9 @@ Public Class DAL_Pago
     Public Sub actualizarpagocancel(paramobjeto As Object)
         Try
             Dim paramPagoviaje As BE_Pago = DirectCast(paramobjeto, BE_Pago)
-            Dim command As SqlCommand = Acceso.MiComando("Update Pago set BL=@BL, Estado=@Estado where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update Pago set BL=@BL where ID=@ID")
             With command.Parameters
                 .Add(New SqlParameter("@ID", paramPagoviaje.ID))
-                .Add(New SqlParameter("@Estado", True))
                 .Add(New SqlParameter("@BL", True))
             End With
             Acceso.Escritura(command)
@@ -113,12 +112,13 @@ Public Class DAL_Pago
     End Function
 
 
-    Public Function consultarPagosviajes(ByVal oReservaviaje As BE_ReservaViaje) As List(Of BE_Pago)
+    Public Function consultarPagosviajes(ByVal oReservaviaje As BE_Reserva) As List(Of BE_Pago)
         Try
-            Dim consulta As String = ("Select * from Pago where BL=@BL")
+            Dim consulta As String = ("Select * from Pago where ID=@ID and BL=@BL")
             Dim miListaPagosviajes As New List(Of BE_Pago)
             Dim Command As SqlCommand = Acceso.MiComando(consulta)
             With Command.Parameters
+                .Add(New SqlParameter("@ID", oReservaviaje.ID))
                 .Add(New SqlParameter("@BL", False))
             End With
             Dim dt As DataTable = Acceso.Lectura(Command)

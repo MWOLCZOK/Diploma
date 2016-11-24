@@ -2,25 +2,31 @@
 Imports EE
 
 Public Class Modificar_Pasajero
+    Implements BLL.BLL_Iobservador
 
-    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
     Private Sub Modificar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Iniciar()
+
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
+
+
     End Sub
 
     Public Sub Iniciar()
         Try
             Cbxpasajero.SelectedItem = Nothing
             Cbxpasajero.Items.Clear()
-            Txtnombre.Text = ""
-            Txapellido.Text = ""
-            Txtcorreo.Text = ""
-            Txtdni.Text = ""
-            Txtdomicilio.Text = ""
-            Txttelefono.Text = ""
+            txtNombre.Text = ""
+            Txtapellido.Text = ""
+            txtMail.Text = ""
+            txtDNI.Text = ""
+            txtDomicilio.Text = ""
+            txtTelefono.Text = ""
             Dim Gestorpas As New BLL_Pasajero
             Dim Listapas = Gestorpas.consultarPasajeros()
             For Each pas In Listapas
@@ -38,35 +44,34 @@ Public Class Modificar_Pasajero
             If Not IsNothing(Cbxpasajero.SelectedItem) Then
                 Dim NuevoPas As BE_Pasajero = New BE_Pasajero
                 NuevoPas = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero)
-                Me.Txtnombre.Text = NuevoPas.Nombre
-                Me.Txapellido.Text = NuevoPas.Apellido
-                Me.Txtcorreo.Text = NuevoPas.CorreoElectronico
-                Me.Txtdni.Text = NuevoPas.DNI
-                Me.Txtdomicilio.Text = NuevoPas.Domicilio
-                Me.Txttelefono.Text = NuevoPas.Telefono
+                Me.txtNombre.Text = NuevoPas.Nombre
+                Me.Txtapellido.Text = NuevoPas.Apellido
+                Me.txtMail.Text = NuevoPas.CorreoElectronico
+                Me.txtDNI.Text = NuevoPas.DNI
+                Me.txtDomicilio.Text = NuevoPas.Domicilio
+                Me.txtTelefono.Text = NuevoPas.Telefono
             End If
         Catch ex As Exception
 
         End Try
-       
+
 
     End Sub
 
-
-    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim GestorPas As New BLL_Pasajero
         Dim pasmodificar As New BE_Pasajero
         Try
             If Not IsNothing(Cbxpasajero.SelectedItem) Then
-                If Not IsNothing(Cbxpasajero.SelectedItem) And Not String.IsNullOrWhiteSpace(Txtnombre.Text) And Not String.IsNullOrWhiteSpace(Txapellido.Text) And Not String.IsNullOrWhiteSpace(Txtcorreo.Text) And Not String.IsNullOrWhiteSpace(Txtdni.Text) And Not String.IsNullOrWhiteSpace(Txtdomicilio.Text) And Not String.IsNullOrWhiteSpace(Txttelefono.Text) Then
+                If Not IsNothing(Cbxpasajero.SelectedItem) And Not String.IsNullOrWhiteSpace(txtNombre.Text) And Not String.IsNullOrWhiteSpace(Txtapellido.Text) And Not String.IsNullOrWhiteSpace(txtMail.Text) And Not String.IsNullOrWhiteSpace(txtDNI.Text) And Not String.IsNullOrWhiteSpace(txtDomicilio.Text) And Not String.IsNullOrWhiteSpace(txtTelefono.Text) Then
                     pasmodificar = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero)
                     pasmodificar.ID = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero).ID
-                    pasmodificar.Nombre = Txtnombre.Text
-                    pasmodificar.Apellido = Txapellido.Text
-                    pasmodificar.CorreoElectronico = Txtcorreo.Text
-                    pasmodificar.DNI = Txtdni.Text
-                    pasmodificar.Domicilio = Txtdomicilio.Text
-                    pasmodificar.Telefono = Txttelefono.Text
+                    pasmodificar.Nombre = txtNombre.Text
+                    pasmodificar.Apellido = Txtapellido.Text
+                    pasmodificar.CorreoElectronico = txtMail.Text
+                    pasmodificar.DNI = txtDNI.Text
+                    pasmodificar.Domicilio = txtDomicilio.Text
+                    pasmodificar.Telefono = txtTelefono.Text
                     GestorPas.modificarPasajero(pasmodificar)
                     Iniciar()
                     MessageBox.Show("Se ha modificado el pasajero de manera satisfactoria")
@@ -76,5 +81,13 @@ Public Class Modificar_Pasajero
         End Try
     End Sub
 
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
 
+    Private Sub Modificar_Pasajero_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
 End Class

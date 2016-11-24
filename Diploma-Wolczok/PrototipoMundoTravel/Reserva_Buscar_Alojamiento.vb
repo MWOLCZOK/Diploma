@@ -2,10 +2,14 @@
 Imports EE
 
 Public Class Reserva_Buscar_Alojamiento
+    Implements BLL.BLL_Iobservador
 
     Private Sub BuscarAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             cargarCombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+
         Catch ex As Exception
 
         End Try
@@ -21,16 +25,8 @@ Public Class Reserva_Buscar_Alojamiento
             DataGridView1.DataSource = oListaAlojamiento
             DataGridView1.ReadOnly = True
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-
-        'Dim listColumns As New List(Of String)
-        'listColumns.Add("ID")
-        'listColumns.Add("Categoria")
-        'listColumns.Add("ConectividadWIFI")
-        'LlenarTabla(DataGridView1, listColumns)
-        'DataGridView1.DataSource = oListaAlojamiento
-
         Catch ex As Exception
-        MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
     End Sub
 
@@ -48,24 +44,9 @@ Public Class Reserva_Buscar_Alojamiento
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
-      
+
     End Sub
 
-
-    'Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
-    '    Dim cantidad As Integer = list.Count
-    '    Dim i = 0
-    '    dvg.ColumnCount = cantidad
-    '    dvg.AutoGenerateColumns = False
-
-    '    For Each item In list
-    '        dvg.Columns(i).Name = item
-    '        dvg.Columns(i).DataPropertyName = item
-    '        dvg.Columns(i).HeaderText = item
-    '        i = i + 1
-    '    Next
-    '    dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-    'End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -88,5 +69,15 @@ Public Class Reserva_Buscar_Alojamiento
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+    End Sub
+
+    Private Sub Reserva_Buscar_Alojamiento_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class visualizarBitacora
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(visualizarBitacora))
         Me.dgvBitacora = New System.Windows.Forms.DataGridView()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -137,7 +138,7 @@ Partial Class visualizarBitacora
         '
         Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(478, 412)
+        Me.btnSalir.Location = New System.Drawing.Point(478, 425)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(150, 30)
         Me.btnSalir.TabIndex = 50
@@ -148,7 +149,7 @@ Partial Class visualizarBitacora
         '
         Me.btnExportar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnExportar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExportar.Location = New System.Drawing.Point(163, 412)
+        Me.btnExportar.Location = New System.Drawing.Point(163, 425)
         Me.btnExportar.Name = "btnExportar"
         Me.btnExportar.Size = New System.Drawing.Size(150, 30)
         Me.btnExportar.TabIndex = 52
@@ -173,6 +174,7 @@ Partial Class visualizarBitacora
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.dgvBitacora)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "visualizarBitacora"
         Me.Text = "Bitacora"
         CType(Me.dgvBitacora, System.ComponentModel.ISupportInitialize).EndInit()

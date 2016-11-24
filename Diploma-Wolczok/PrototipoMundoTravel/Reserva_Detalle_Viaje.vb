@@ -5,6 +5,7 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class Reserva_Detalle_Viaje
+    Implements BLL.BLL_Iobservador
 
     Protected Friend viaje As EE.BE_Viaje
     Protected Friend reservaViaje As EE.BE_ReservaViaje
@@ -32,6 +33,7 @@ Public Class Reserva_Detalle_Viaje
         Me.Txttipotrans.Text = reservaTransporte.TipoTransporte.ToString
         Me.Txtorigen.Text = reservaOrigen.NombreCompleto
         Me.TextBox1.Text = reservaViaje.Asiento.NumeroAsiento
+        Me.txtValorReserva.Text = reservaViaje.MontoReserva
     End Sub
 
 
@@ -154,4 +156,19 @@ Public Class Reserva_Detalle_Viaje
         cbPie.EndText()
     End Sub
 
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
+    End Sub
+
+    Private Sub Reserva_Detalle_Viaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
+    End Sub
+
+    Private Sub Reserva_Detalle_Viaje_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
 End Class

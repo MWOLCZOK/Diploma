@@ -145,9 +145,6 @@ Public Class FormMenu
         AbrirForm(RealizarRestore)
     End Sub
 
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-
-    End Sub
 
     Private Sub AgregarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarUsuarioToolStripMenuItem.Click
         Dim agregarUsuario As Agregar_Usuario = New Agregar_Usuario
@@ -254,10 +251,6 @@ Public Class FormMenu
         AbrirForm(formpas)
     End Sub
 
-    Private Sub AgregarHotelToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
 
     Private Sub EliminarDepartamentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarDepartamentoToolStripMenuItem.Click
         Dim formHabi As New Agregar_Habitacion
@@ -314,9 +307,6 @@ Public Class FormMenu
         AbrirForm(formvisualizarpagos)
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub CancelarReservaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CancelarReservaToolStripMenuItem.Click
         Dim formCancelacion As New Cancelacion
@@ -332,4 +322,10 @@ Public Class FormMenu
         Dim vPasajeros As New visualizarPasajeros
         AbrirForm(vPasajeros)
     End Sub
+
+    Private Sub EliminarIdiomaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarIdiomaToolStripMenuItem.Click
+        Dim vEliminarIdioma As New Eliminar_Idioma
+        AbrirForm(vEliminarIdioma)
+    End Sub
+
 End Class

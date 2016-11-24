@@ -5,8 +5,14 @@ Imports BLL
 
 Public Class Visualizar_Pagos
 
+
+    Implements BLL.BLL_Iobservador
+
     Private Sub Visualizar_Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DataGridView1.DataSource = Nothing
+
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
 
@@ -24,7 +30,7 @@ Public Class Visualizar_Pagos
                 Dim oListapago As New List(Of BE_Pago)
                 oListapago = bllPagoViaje.consultarPagosViajes(oReservaviaje)
 
-              
+
                 Dim listColumns As New List(Of String)
                 listColumns.Add("Reserva")
                 listColumns.Add("TipoReserva")
@@ -67,12 +73,21 @@ Public Class Visualizar_Pagos
         dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
 
+    End Sub
+
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
+
+    End Sub
+
+    Private Sub Visualizar_Pagos_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
 End Class

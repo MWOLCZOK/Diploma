@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Modificar_Permiso
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,39 +20,42 @@ Partial Class Modificar_Permiso
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Permiso))
         Me.lblnuevospermisos = New System.Windows.Forms.Label()
         Me.TreeNuevos = New System.Windows.Forms.TreeView()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.lblpermisosactuales = New System.Windows.Forms.Label()
         Me.Tree = New System.Windows.Forms.TreeView()
         Me.lblperfil = New System.Windows.Forms.Label()
-        Me.btnsalir = New System.Windows.Forms.Button()
-        Me.btnmodificar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblnuevospermisos
         '
         Me.lblnuevospermisos.AutoSize = True
-        Me.lblnuevospermisos.Location = New System.Drawing.Point(308, 69)
+        Me.lblnuevospermisos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblnuevospermisos.ForeColor = System.Drawing.Color.White
+        Me.lblnuevospermisos.Location = New System.Drawing.Point(306, 85)
         Me.lblnuevospermisos.Name = "lblnuevospermisos"
-        Me.lblnuevospermisos.Size = New System.Drawing.Size(89, 13)
+        Me.lblnuevospermisos.Size = New System.Drawing.Size(118, 15)
         Me.lblnuevospermisos.TabIndex = 26
         Me.lblnuevospermisos.Text = "Nuevos Permisos"
         '
         'TreeNuevos
         '
         Me.TreeNuevos.CheckBoxes = True
-        Me.TreeNuevos.Location = New System.Drawing.Point(311, 85)
+        Me.TreeNuevos.Location = New System.Drawing.Point(309, 109)
         Me.TreeNuevos.Name = "TreeNuevos"
-        Me.TreeNuevos.Size = New System.Drawing.Size(258, 319)
+        Me.TreeNuevos.Size = New System.Drawing.Size(239, 319)
         Me.TreeNuevos.TabIndex = 25
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(167, 33)
+        Me.ComboBox1.Location = New System.Drawing.Point(27, 42)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(257, 21)
         Me.ComboBox1.TabIndex = 24
@@ -60,60 +63,70 @@ Partial Class Modificar_Permiso
         'lblpermisosactuales
         '
         Me.lblpermisosactuales.AutoSize = True
-        Me.lblpermisosactuales.Location = New System.Drawing.Point(24, 69)
+        Me.lblpermisosactuales.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblpermisosactuales.ForeColor = System.Drawing.Color.White
+        Me.lblpermisosactuales.Location = New System.Drawing.Point(24, 85)
         Me.lblpermisosactuales.Name = "lblpermisosactuales"
-        Me.lblpermisosactuales.Size = New System.Drawing.Size(93, 13)
+        Me.lblpermisosactuales.Size = New System.Drawing.Size(125, 15)
         Me.lblpermisosactuales.TabIndex = 23
         Me.lblpermisosactuales.Text = "Permisos Actuales"
         '
         'Tree
         '
-        Me.Tree.Location = New System.Drawing.Point(27, 85)
+        Me.Tree.Location = New System.Drawing.Point(26, 109)
         Me.Tree.Name = "Tree"
-        Me.Tree.Size = New System.Drawing.Size(258, 319)
+        Me.Tree.Size = New System.Drawing.Size(240, 319)
         Me.Tree.TabIndex = 22
         '
         'lblperfil
         '
         Me.lblperfil.AutoSize = True
-        Me.lblperfil.Location = New System.Drawing.Point(275, 20)
+        Me.lblperfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblperfil.ForeColor = System.Drawing.Color.White
+        Me.lblperfil.Location = New System.Drawing.Point(24, 20)
         Me.lblperfil.Name = "lblperfil"
-        Me.lblperfil.Size = New System.Drawing.Size(30, 13)
+        Me.lblperfil.Size = New System.Drawing.Size(41, 15)
         Me.lblperfil.TabIndex = 21
         Me.lblperfil.Text = "Perfil"
         '
-        'btnsalir
+        'Button1
         '
-        Me.btnsalir.Location = New System.Drawing.Point(322, 434)
-        Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(75, 37)
-        Me.btnsalir.TabIndex = 28
-        Me.btnsalir.Text = "Salir"
-        Me.btnsalir.UseVisualStyleBackColor = True
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(109, 453)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 30)
+        Me.Button1.TabIndex = 85
+        Me.Button1.Text = "Modificar"
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'btnmodificar
+        'Button2
         '
-        Me.btnmodificar.Location = New System.Drawing.Point(174, 434)
-        Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(75, 37)
-        Me.btnmodificar.TabIndex = 27
-        Me.btnmodificar.Text = "Modificar"
-        Me.btnmodificar.UseVisualStyleBackColor = True
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(324, 453)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(150, 30)
+        Me.Button2.TabIndex = 84
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = False
         '
-        'ModificarPermiso
+        'Modificar_Permiso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(592, 572)
-        Me.Controls.Add(Me.btnsalir)
-        Me.Controls.Add(Me.btnmodificar)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(580, 521)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblnuevospermisos)
         Me.Controls.Add(Me.TreeNuevos)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.lblpermisosactuales)
         Me.Controls.Add(Me.Tree)
         Me.Controls.Add(Me.lblperfil)
-        Me.Name = "ModificarPermiso"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "Modificar_Permiso"
         Me.Text = "ModificarPermiso"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -125,6 +138,6 @@ Partial Class Modificar_Permiso
     Friend WithEvents lblpermisosactuales As System.Windows.Forms.Label
     Friend WithEvents Tree As System.Windows.Forms.TreeView
     Friend WithEvents lblperfil As System.Windows.Forms.Label
-    Friend WithEvents btnsalir As System.Windows.Forms.Button
-    Friend WithEvents btnmodificar As System.Windows.Forms.Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

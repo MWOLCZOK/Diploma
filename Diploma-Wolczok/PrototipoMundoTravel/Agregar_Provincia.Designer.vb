@@ -43,7 +43,7 @@ Partial Class Agregar_Provincia
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(301, 91)
+        Me.Label1.Location = New System.Drawing.Point(322, 90)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 15)
         Me.Label1.TabIndex = 25
@@ -54,7 +54,7 @@ Partial Class Agregar_Provincia
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(301, 34)
+        Me.Label6.Location = New System.Drawing.Point(322, 33)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(134, 15)
         Me.Label6.TabIndex = 24
@@ -65,7 +65,7 @@ Partial Class Agregar_Provincia
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(8, 150)
+        Me.Label5.Location = New System.Drawing.Point(29, 149)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 15)
         Me.Label5.TabIndex = 23
@@ -76,7 +76,7 @@ Partial Class Agregar_Provincia
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(8, 91)
+        Me.Label4.Location = New System.Drawing.Point(29, 90)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 15)
         Me.Label4.TabIndex = 22
@@ -87,7 +87,7 @@ Partial Class Agregar_Provincia
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(8, 34)
+        Me.Label2.Location = New System.Drawing.Point(29, 33)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 15)
         Me.Label2.TabIndex = 21
@@ -95,21 +95,21 @@ Partial Class Agregar_Provincia
         '
         'Txtsuperficieterrestre
         '
-        Me.Txtsuperficieterrestre.Location = New System.Drawing.Point(304, 52)
+        Me.Txtsuperficieterrestre.Location = New System.Drawing.Point(325, 51)
         Me.Txtsuperficieterrestre.Name = "Txtsuperficieterrestre"
         Me.Txtsuperficieterrestre.Size = New System.Drawing.Size(233, 20)
         Me.Txtsuperficieterrestre.TabIndex = 19
         '
         'Txtregion
         '
-        Me.Txtregion.Location = New System.Drawing.Point(11, 168)
+        Me.Txtregion.Location = New System.Drawing.Point(32, 167)
         Me.Txtregion.Name = "Txtregion"
         Me.Txtregion.Size = New System.Drawing.Size(236, 20)
         Me.Txtregion.TabIndex = 18
         '
         'Txtdescripcion
         '
-        Me.Txtdescripcion.Location = New System.Drawing.Point(11, 52)
+        Me.Txtdescripcion.Location = New System.Drawing.Point(32, 51)
         Me.Txtdescripcion.Name = "Txtdescripcion"
         Me.Txtdescripcion.Size = New System.Drawing.Size(236, 20)
         Me.Txtdescripcion.TabIndex = 16
@@ -117,7 +117,7 @@ Partial Class Agregar_Provincia
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(304, 108)
+        Me.ComboBox1.Location = New System.Drawing.Point(325, 107)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(233, 21)
         Me.ComboBox1.TabIndex = 27
@@ -126,7 +126,7 @@ Partial Class Agregar_Provincia
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(92, 218)
+        Me.btnAgregar.Location = New System.Drawing.Point(123, 216)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(150, 30)
         Me.btnAgregar.TabIndex = 55
@@ -137,7 +137,7 @@ Partial Class Agregar_Provincia
         '
         Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(294, 218)
+        Me.btnSalir.Location = New System.Drawing.Point(325, 216)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(150, 30)
         Me.btnSalir.TabIndex = 54
@@ -146,7 +146,7 @@ Partial Class Agregar_Provincia
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(12, 109)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(33, 108)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(235, 20)
         Me.NumericUpDown1.TabIndex = 56
@@ -156,7 +156,7 @@ Partial Class Agregar_Provincia
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(575, 290)
+        Me.ClientSize = New System.Drawing.Size(607, 290)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)

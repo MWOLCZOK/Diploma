@@ -155,6 +155,37 @@ Public Class DAL_Usuario
 
 #End Region
 
+    Public Sub gestionarCambio(ByVal oUsuario As EE.BE_Usuario, ByVal vTipoCambio As EE.tipoCambio, ByVal vtipovalor As tipoValor)
+        Try
+            Dim Command As SqlCommand = Acceso.MiComando("insert into Usuario_Control_Cambios values (@ID_Cambio, @TipoValor, @TipoCambio, @ID_Usuario, @NombreUsuario, @Password, @Intentos, @Bloqueado, @Nombre, @Apellido, @ID_Perfil, @BL, @ID_Idioma)")
+            With Command.Parameters
+                .Add(New SqlParameter("@ID_Cambio", Acceso.TraerID("ID_Cambio", "Usuario_Control_Cambios")))
+                .Add(New SqlParameter("@TipoValor", vtipovalor))
+                .Add(New SqlParameter("@TipoCambio", vTipoCambio))
+                If vTipoCambio = tipoCambio.Alta Then
+                    .Add(New SqlParameter("@ID_Usuario", Acceso.TraerUltimoID("ID_Usuario", "Usuario")))
+                    .Add(New SqlParameter("@BL", False))
+                Else
+                    .Add(New SqlParameter("@ID_Usuario", oUsuario.ID))
+                    .Add(New SqlParameter("@BL", oUsuario.BL))
+                End If
+                .Add(New SqlParameter("@NombreUsuario", oUsuario.NombreUsuario))
+                .Add(New SqlParameter("@Password", oUsuario.Password))
+                .Add(New SqlParameter("@Intentos", 0))
+                .Add(New SqlParameter("@Bloqueado", False))
+                .Add(New SqlParameter("@Nombre", oUsuario.Nombre))
+                .Add(New SqlParameter("@Apellido", oUsuario.Apellido))
+                .Add(New SqlParameter("@ID_Perfil", oUsuario.Perfil.ID))
+
+
+                .Add(New SqlParameter("@ID_Idioma", oUsuario.idioma.id_idioma))
+            End With
+            Acceso.Escritura(Command)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
 
     Public Function Modificar(ByRef Usuario As EE.BE_Usuario) As Boolean
         Try
@@ -166,8 +197,6 @@ Public Class DAL_Usuario
                 .Add(New SqlParameter("@Apellido", Usuario.Apellido))
                 .Add(New SqlParameter("@ID_Idioma", Usuario.idioma.id_idioma))
                 .Add(New SqlParameter("@ID_Perfil", Usuario.Perfil.ID))
-                '.Add(New SqlParameter("@BL", False))
-                '              .Add(New SqlParameter("@DVH", DigitoVerificadorDAL.CalcularDVH(Command.Parameters("@ID_Usuario").Value & Command.Parameters("@NombreUsuario").Value & Usuario.Password & Usuario.Bloqueo & Usuario.Intento & Command.Parameters("@Idioma").Value & Command.Parameters("@Perfil").Value & Command.Parameters("@BL").Value)))
             End With
             Acceso.Escritura(Command)
             Command.Dispose()
@@ -208,6 +237,7 @@ Public Class DAL_Usuario
                 Digitos = Digitos + row.Item("DVH")
             Next
             DAL_DigitoVerificador.CalcularDVV(Digitos, "Usuario")
+            gestionarCambio(oUsuario, tipoCambio.Alta, tipoValor.Nuevo)
         Catch ex As Exception
             Throw ex
         End Try
@@ -215,10 +245,12 @@ Public Class DAL_Usuario
 
     Public Sub bajaUsuario(ByVal oUsuario As EE.BE_Usuario)
         Try
+            gestionarCambio(oUsuario, tipoCambio.Baja, tipoValor.Anterior)
+            oUsuario.BL = True
             Dim Command As SqlCommand = Acceso.MiComando("update Usuario set BL=@BL where ID_Usuario=@ID_Usuario")
             With Command.Parameters
                 .Add(New SqlParameter("@ID_Usuario", oUsuario.ID))
-                .Add(New SqlParameter("@BL", True))
+                .Add(New SqlParameter("@BL", oUsuario.BL))
                 Command.Parameters.Add(New SqlParameter("@DVH", DAL_DigitoVerificador.CalcularDVH(oUsuario.ID & oUsuario.NombreUsuario & oUsuario.Password & False + oUsuario.Intentos & oUsuario.Perfil.ID & False)))
             End With
             Acceso.Escritura(Command)
@@ -229,6 +261,7 @@ Public Class DAL_Usuario
                 Digitos = Digitos + row.Item("DVH")
             Next
             DAL_DigitoVerificador.CalcularDVV(Digitos, "Usuario")
+            gestionarCambio(oUsuario, tipoCambio.Baja, tipoValor.Posterior)
         Catch ex As Exception
             Throw ex
         End Try
@@ -323,6 +356,7 @@ Public Class DAL_Usuario
             oUsuario.Perfil = oDalPerfil.ConsultarporID(CInt(paramDataRow.Item("ID_Perfil")))
             Dim oDalIdioma As New DAL.DAL_Idioma
             oUsuario.idioma = oDalIdioma.ConsultarPorID(CInt(paramDataRow.Item("ID_Idioma")))
+            oUsuario.BL = paramDataRow.Item("BL")
             Return oUsuario
         Catch ex As Exception
             Throw ex
@@ -334,6 +368,7 @@ Public Class DAL_Usuario
             Dim oUsuario As New EE.BE_Usuario
             oUsuario.ID = paramDataRow.Item("ID_Usuario")
             oUsuario.NombreUsuario = paramDataRow.Item("NombreUsuario")
+            oUsuario.BL = paramDataRow.Item("BL")
             Return oUsuario
         Catch ex As Exception
             Throw ex
@@ -343,11 +378,12 @@ Public Class DAL_Usuario
 
     Public Function Eliminar(ByRef paramUsuario As EE.BE_Usuario) As Boolean
         Try
+            gestionarCambio(paramUsuario, tipoCambio.Baja, tipoValor.Anterior)
+            paramUsuario.BL = True
             Dim Command As SqlCommand = Acceso.MiComando("Update Usuario set BL=@BL where ID_Usuario = @ID_Usuario")
             With Command.Parameters
                 .Add(New SqlParameter("@BL", True))
                 .Add(New SqlParameter("@ID_Usuario", paramUsuario.ID))
-                '               .Add(New SqlParameter("@DVH", DigitoVerificadorDAL.CalcularDVH(Usuario.ID_Usuario & Usuario.Nombre & Usuario.Password & Usuario.Bloqueo & Usuario.Intento & Usuario.IdiomaEntidad.ID_Idioma & Usuario.Perfil.ID & Command.Parameters("@BL").Value)))
             End With
             Acceso.Escritura(Command)
             Command.Dispose()
@@ -359,6 +395,8 @@ Public Class DAL_Usuario
                 Digitos = Digitos + row.Item("DVH")
             Next
             DAL_DigitoVerificador.CalcularDVV(Digitos, "Usuario")
+            gestionarCambio(paramUsuario, tipoCambio.Baja, tipoValor.Posterior)
+
             Return True
         Catch ex As Exception
             Throw ex

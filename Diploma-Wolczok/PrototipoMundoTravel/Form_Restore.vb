@@ -3,12 +3,6 @@
 Public Class Form_Restore
     Implements BLL_Iobservador
 
-
-
-
-
-
-
     Private Sub Form_Restore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SessionBLL.SesionActual.agregarForm(Me)
         SessionBLL.SesionActual.notificarCambiodeIdioma()
@@ -47,5 +41,10 @@ Public Class Form_Restore
 
         End Try
 
+    End Sub
+
+    Private Sub Form_Restore_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
 End Class

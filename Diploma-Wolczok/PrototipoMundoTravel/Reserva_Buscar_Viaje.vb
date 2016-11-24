@@ -2,9 +2,12 @@
 Imports EE
 
 Public Class Reserva_Buscar_Viaje
+    Implements BLL.BLL_Iobservador
 
     Private Sub Reserva_Buscar_Viaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         iniciar()
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
 
@@ -43,7 +46,11 @@ Public Class Reserva_Buscar_Viaje
         Next
     End Sub
 
-    Private Sub Btnbuscar_Click(sender As Object, e As EventArgs) Handles Btnbuscar.Click
+    Private Sub Btncancelar_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim oListaViaje As New List(Of BE_Viaje)
             Dim bllViaje As New BLL.BLL_Viaje
@@ -60,7 +67,11 @@ Public Class Reserva_Buscar_Viaje
         End Try
     End Sub
 
-    Private Sub Btnseleccionar_Click(sender As Object, e As EventArgs) Handles Btnseleccionar.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnSeleccionar_Click_1(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
         Try
             Dim oViaje As New BE_Viaje
             oViaje.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
@@ -79,11 +90,15 @@ Public Class Reserva_Buscar_Viaje
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
-
     End Sub
 
-    Private Sub Btncancelar_Click(sender As Object, e As EventArgs) Handles Btncancelar.Click
-        Me.Close()
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
     End Sub
 
+    Private Sub Reserva_Buscar_Viaje_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
 End Class

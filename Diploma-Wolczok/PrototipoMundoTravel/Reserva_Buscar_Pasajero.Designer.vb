@@ -52,17 +52,17 @@ Partial Class Reserva_Buscar_Pasajero
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(31, 84)
+        Me.DataGridView2.Location = New System.Drawing.Point(31, 97)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(435, 189)
+        Me.DataGridView2.Size = New System.Drawing.Size(435, 214)
         Me.DataGridView2.TabIndex = 43
         '
         'btnSeleccionar
         '
         Me.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSeleccionar.Location = New System.Drawing.Point(293, 299)
+        Me.btnSeleccionar.Location = New System.Drawing.Point(289, 331)
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(150, 30)
         Me.btnSeleccionar.TabIndex = 72
@@ -73,7 +73,7 @@ Partial Class Reserva_Buscar_Pasajero
         '
         Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(57, 299)
+        Me.btnSalir.Location = New System.Drawing.Point(53, 331)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(150, 30)
         Me.btnSalir.TabIndex = 71

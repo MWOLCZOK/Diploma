@@ -44,13 +44,11 @@ Public Class DAL_ReservaViaje
         End Try
     End Sub
 
-    Public Sub actualizarreservaviajecancel(paramobjeto As Object)
+    Public Sub actualizarreservaviajecancel(ByVal paramViaje As BE_ReservaViaje)
         Try
-            Dim paramReservaViaje As BE_ReservaViaje = DirectCast(paramobjeto, BE_ReservaViaje)
-            Dim command As SqlCommand = Acceso.MiComando("Update ReservaViaje set BL=@BL, Estado=@Estado where ID=@ID")
+            Dim command As SqlCommand = Acceso.MiComando("Update ReservaViaje set BL=@BL where ID=@ID")
             With command.Parameters
-                .Add(New SqlParameter("@ID", paramReservaViaje.ID))
-                .Add(New SqlParameter("@Estado", True))
+                .Add(New SqlParameter("@ID", paramViaje.ID))
                 .Add(New SqlParameter("@BL", True))
             End With
             Acceso.Escritura(command)

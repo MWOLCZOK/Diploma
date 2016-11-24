@@ -92,4 +92,13 @@
 
     End Function
 
+
+    Public Sub gestionarCambio(ByVal oUsuario As EE.BE_Usuario, ByVal vTipoValor As EE.tipoValor, ByVal vTipoCambio As EE.tipoCambio)
+        Try
+            dUsuario.gestionarCambio(oUsuario, vTipoValor, vTipoCambio)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class

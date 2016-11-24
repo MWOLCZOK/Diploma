@@ -83,9 +83,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BE_Cancelacion.vb" />
-    <Compile Include="BE_Metodopago.vb" />
-    <Compile Include="Micro.vb" />
+    <Compile Include="Negocio\BE_Cancelacion.vb" />
+    <Compile Include="Negocio\BE_Metodopago.vb" />
     <Compile Include="Negocio\BE_Puntaje.vb" />
     <Compile Include="Negocio\BE_Asiento.vb" />
     <Compile Include="Negocio\BE_TipoAlojamiento.vb" />
@@ -135,6 +134,7 @@
     <Compile Include="Servicios\BE_PermisoBase.vb" />
     <Compile Include="Servicios\BE_Permiso.vb" />
     <Compile Include="Servicios\BE_Usuario.vb" />
+    <Compile Include="Servicios\BE_Usuario_Control_Cambios.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -145,8 +145,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

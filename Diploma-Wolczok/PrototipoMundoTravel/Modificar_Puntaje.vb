@@ -2,9 +2,13 @@
 Imports EE
 
 Public Class Modificar_Puntaje
+    Implements BLL.BLL_Iobservador
 
     Private Sub Modificar_Puntaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
+        Iniciar()
+
+        SessionBLL.SesionActual.agregarForm(Me)
+        SessionBLL.SesionActual.notificarCambiodeIdioma()
 
     End Sub
 
@@ -38,16 +42,34 @@ Public Class Modificar_Puntaje
     End Sub
 
 
-
-
-
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btnsalir.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Close()
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnaceptar.Click
+
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim Gestorpuntaje As New BLL_Puntaje
         Dim puntajemodif As New BE_Puntaje
         Try
@@ -71,25 +93,16 @@ Public Class Modificar_Puntaje
         Catch ex As Exception
 
         End Try
+    End Sub
 
+    Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
 
     End Sub
 
-
-    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
-        Dim cantidad As Integer = list.Count
-        Dim i = 0
-        dvg.ColumnCount = cantidad
-        dvg.AutoGenerateColumns = False
-
-        For Each item In list
-            dvg.Columns(i).Name = item
-            dvg.Columns(i).DataPropertyName = item
-            dvg.Columns(i).HeaderText = item
-            i = i + 1
-        Next
-        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    Private Sub Modificar_Puntaje_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
+        Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
+        Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
     End Sub
-
-
 End Class

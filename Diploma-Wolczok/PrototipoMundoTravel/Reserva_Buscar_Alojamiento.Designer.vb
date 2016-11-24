@@ -22,6 +22,7 @@ Partial Class Reserva_Buscar_Alojamiento
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Alojamiento))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -151,6 +152,7 @@ Partial Class Reserva_Buscar_Alojamiento
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ComboBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Alojamiento"
         Me.Text = "BuscarAlojamiento"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -22,6 +22,7 @@ Partial Class Reserva_Buscar_Asientos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Asientos))
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Txtdestino = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -32,9 +33,9 @@ Partial Class Reserva_Buscar_Asientos
         Me.Txttipotrans = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Txtorigen = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Btnaceptar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,7 +43,8 @@ Partial Class Reserva_Buscar_Asientos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(272, 24)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(274, 28)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 15)
         Me.Label4.TabIndex = 30
@@ -50,10 +52,11 @@ Partial Class Reserva_Buscar_Asientos
         '
         'Txtdestino
         '
-        Me.Txtdestino.BackColor = System.Drawing.SystemColors.Control
+        Me.Txtdestino.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Txtdestino.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtdestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtdestino.Location = New System.Drawing.Point(275, 40)
+        Me.Txtdestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtdestino.ForeColor = System.Drawing.Color.White
+        Me.Txtdestino.Location = New System.Drawing.Point(277, 53)
         Me.Txtdestino.Multiline = True
         Me.Txtdestino.Name = "Txtdestino"
         Me.Txtdestino.Size = New System.Drawing.Size(222, 20)
@@ -63,7 +66,8 @@ Partial Class Reserva_Buscar_Asientos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(272, 67)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(274, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(82, 15)
         Me.Label2.TabIndex = 26
@@ -71,10 +75,11 @@ Partial Class Reserva_Buscar_Asientos
         '
         'Txtfechaviaje
         '
-        Me.Txtfechaviaje.BackColor = System.Drawing.SystemColors.Control
+        Me.Txtfechaviaje.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Txtfechaviaje.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtfechaviaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtfechaviaje.Location = New System.Drawing.Point(275, 83)
+        Me.Txtfechaviaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtfechaviaje.ForeColor = System.Drawing.Color.White
+        Me.Txtfechaviaje.Location = New System.Drawing.Point(277, 116)
         Me.Txtfechaviaje.Multiline = True
         Me.Txtfechaviaje.Name = "Txtfechaviaje"
         Me.Txtfechaviaje.Size = New System.Drawing.Size(222, 20)
@@ -84,7 +89,8 @@ Partial Class Reserva_Buscar_Asientos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(15, 67)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(17, 89)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(137, 15)
         Me.Label1.TabIndex = 24
@@ -92,10 +98,11 @@ Partial Class Reserva_Buscar_Asientos
         '
         'Txtempresatrans
         '
-        Me.Txtempresatrans.BackColor = System.Drawing.SystemColors.Control
+        Me.Txtempresatrans.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Txtempresatrans.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtempresatrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtempresatrans.Location = New System.Drawing.Point(18, 83)
+        Me.Txtempresatrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtempresatrans.ForeColor = System.Drawing.Color.White
+        Me.Txtempresatrans.Location = New System.Drawing.Point(20, 116)
         Me.Txtempresatrans.Multiline = True
         Me.Txtempresatrans.Name = "Txtempresatrans"
         Me.Txtempresatrans.Size = New System.Drawing.Size(222, 20)
@@ -105,7 +112,8 @@ Partial Class Reserva_Buscar_Asientos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(15, 109)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(17, 149)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 15)
         Me.Label5.TabIndex = 32
@@ -113,10 +121,11 @@ Partial Class Reserva_Buscar_Asientos
         '
         'Txttipotrans
         '
-        Me.Txttipotrans.BackColor = System.Drawing.SystemColors.Control
+        Me.Txttipotrans.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Txttipotrans.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txttipotrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txttipotrans.Location = New System.Drawing.Point(18, 125)
+        Me.Txttipotrans.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txttipotrans.ForeColor = System.Drawing.Color.White
+        Me.Txttipotrans.Location = New System.Drawing.Point(20, 178)
         Me.Txttipotrans.Multiline = True
         Me.Txttipotrans.Name = "Txttipotrans"
         Me.Txttipotrans.Size = New System.Drawing.Size(222, 20)
@@ -126,7 +135,8 @@ Partial Class Reserva_Buscar_Asientos
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(15, 24)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(17, 28)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(50, 15)
         Me.Label6.TabIndex = 34
@@ -134,49 +144,55 @@ Partial Class Reserva_Buscar_Asientos
         '
         'Txtorigen
         '
-        Me.Txtorigen.BackColor = System.Drawing.SystemColors.Control
+        Me.Txtorigen.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Txtorigen.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtorigen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtorigen.Location = New System.Drawing.Point(18, 40)
+        Me.Txtorigen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtorigen.ForeColor = System.Drawing.Color.White
+        Me.Txtorigen.Location = New System.Drawing.Point(20, 53)
         Me.Txtorigen.Multiline = True
         Me.Txtorigen.Name = "Txtorigen"
         Me.Txtorigen.Size = New System.Drawing.Size(222, 20)
         Me.Txtorigen.TabIndex = 33
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(98, 461)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 39)
-        Me.Button1.TabIndex = 37
-        Me.Button1.Text = "Cancelar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Btnaceptar
-        '
-        Me.Btnaceptar.Location = New System.Drawing.Point(322, 461)
-        Me.Btnaceptar.Name = "Btnaceptar"
-        Me.Btnaceptar.Size = New System.Drawing.Size(100, 39)
-        Me.Btnaceptar.TabIndex = 36
-        Me.Btnaceptar.Text = "Seleccionar"
-        Me.Btnaceptar.UseVisualStyleBackColor = True
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(18, 179)
+        Me.DataGridView1.Location = New System.Drawing.Point(20, 222)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(479, 256)
+        Me.DataGridView1.Size = New System.Drawing.Size(479, 210)
         Me.DataGridView1.TabIndex = 35
+        '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeleccionar.Location = New System.Drawing.Point(318, 463)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(150, 30)
+        Me.btnSeleccionar.TabIndex = 72
+        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.UseVisualStyleBackColor = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(44, 463)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 71
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'Reserva_Buscar_Asientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(514, 522)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Btnaceptar)
+        Me.Controls.Add(Me.btnSeleccionar)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Txtorigen)
@@ -188,6 +204,7 @@ Partial Class Reserva_Buscar_Asientos
         Me.Controls.Add(Me.Txtfechaviaje)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Txtempresatrans)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Asientos"
         Me.Text = "s"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -205,7 +222,7 @@ Partial Class Reserva_Buscar_Asientos
     Friend WithEvents Txttipotrans As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Txtorigen As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Btnaceptar As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents btnSeleccionar As Button
+    Friend WithEvents btnSalir As Button
 End Class
