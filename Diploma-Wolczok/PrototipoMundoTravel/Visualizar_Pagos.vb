@@ -10,51 +10,18 @@ Public Class Visualizar_Pagos
 
     Private Sub Visualizar_Pagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.DataGridView1.DataSource = Nothing
-
+        cargarComboPasajeros
         SessionBLL.SesionActual.agregarForm(Me)
         SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
 
-
-    Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
-        Try
-            If TextBox9.Text.Length >= 3 Then
-                Dim oPasajero As New BE_Pasajero
-                Dim oReservaviaje As New BE_ReservaViaje
-                Dim oPagoviaje As New BE_Pago
-                oPasajero.DNI = Me.TextBox9.Text
-                oReservaviaje.Pasajero = oPasajero
-
-
-                Dim bllPagoViaje As New BLL_PagoViaje
-                Dim oListapago As New List(Of BE_Pago)
-                oListapago = bllPagoViaje.consultarPagosViajes(oReservaviaje)
-
-
-                Dim listColumns As New List(Of String)
-                listColumns.Add("Reserva")
-                listColumns.Add("TipoReserva")
-                listColumns.Add("Fecha")
-                listColumns.Add("Metodopago")
-                listColumns.Add("Monto")
-                listColumns.Add("Numerotarjeta")
-                LlenarTabla(DataGridView1, listColumns)
-
-
-
-
-                Me.DataGridView1.DataSource = oListapago
-                DataGridView1.ReadOnly = True
-                'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-
-
-
-
-            End If
-        Catch ex As Exception
-
-        End Try
-
+    Private Sub cargarComboPasajeros()
+        Dim Gestorpas As New BLL_Pasajero
+        Dim Listapas = Gestorpas.consultarPasajeros()
+        For Each pas In Listapas
+            Cbxpasajero.Items.Add(pas)
+            Cbxpasajero.DisplayMember = "NombreApellido"
+        Next
     End Sub
 
 
@@ -80,14 +47,60 @@ Public Class Visualizar_Pagos
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
-
         Dim MiTraductor As New ControladorTraductor
         MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
-
     End Sub
 
     Private Sub Visualizar_Pagos_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "")
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbxpasajero.SelectedIndexChanged
+        ComboBox2.Items.Clear()
+        Dim Gestorpas As New BLL_Reserva
+        Dim oPasajero As New BE_Pasajero
+        If Not Me.Cbxpasajero.SelectedItem Is Nothing Then
+            oPasajero = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero)
+            Dim ListapasAlojamiento As List(Of BE_ReservaAlojamiento) = Gestorpas.consultarReservaAlojamientoporPasajero(oPasajero)
+            For Each pas As BE_Reserva In ListapasAlojamiento
+                ComboBox2.Items.Add(pas)
+                ComboBox2.DisplayMember = "ID"
+            Next
+            Dim ListapasViaje As List(Of BE_ReservaViaje) = Gestorpas.consultarReservaViajeporPasajero(oPasajero)
+            For Each pas As BE_Reserva In ListapasViaje
+                ComboBox2.Items.Add(pas)
+                ComboBox2.DisplayMember = "ID"
+            Next
+        End If
+
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        If Not Me.Cbxpasajero.SelectedItem Is Nothing Then
+            If Not Me.ComboBox2.SelectedItem Is Nothing Then
+                Me.DataGridView1.DataSource = Nothing
+                Dim oPasajero As New BE_Pasajero
+                Dim oReserva As New BE_Reserva
+                Dim oPagoviaje As New BE_Pago
+                oPasajero = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero)
+                oReserva = DirectCast(ComboBox2.SelectedItem, BE_Reserva)
+                oReserva.Pasajero = oPasajero
+                oPagoviaje.Reserva = oReserva
+                Dim bllPagoViaje As New BLL_PagoViaje
+                Dim oListapago As New List(Of BE_Pago)
+                oListapago = bllPagoViaje.consultarPagosViajes(oReserva)
+                Dim listColumns As New List(Of String)
+                listColumns.Add("Reserva")
+                listColumns.Add("TipoReserva")
+                listColumns.Add("Fecha")
+                listColumns.Add("Metodopago")
+                listColumns.Add("Monto")
+                listColumns.Add("Numerotarjeta")
+                LlenarTabla(DataGridView1, listColumns)
+                Me.DataGridView1.DataSource = oListapago
+                DataGridView1.ReadOnly = True
+            End If
+        End If
     End Sub
 End Class

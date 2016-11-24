@@ -107,6 +107,26 @@ Public Class DAL_ReservaAlojamiento
         End Try
     End Function
 
+    Public Function consultarReservasAlojamientoPasajero(ByVal oPasajero As BE_Pasajero) As List(Of BE_ReservaAlojamiento)
+        Try
+            Dim consulta As String = ("Select * from ReservaAlojamiento where ID_Pasajero=@ID_Pasajero and BL=@BL")
+            Dim miListaReserva As New List(Of BE_ReservaAlojamiento)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID_Pasajero", oPasajero.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                miListaReserva.Add(Me.formatearReservaAlojamiento(drow))
+            Next
+            Return miListaReserva
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
 
     Public Function ConsultarReservaAlojamientoID(ByVal oReservaAlojamiento As BE_ReservaAlojamiento) As BE_ReservaAlojamiento
         Try

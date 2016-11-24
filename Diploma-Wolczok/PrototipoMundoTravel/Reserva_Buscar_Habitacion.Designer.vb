@@ -47,7 +47,7 @@ Partial Class Reserva_Buscar_Habitacion
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(610, 256)
+        Me.DataGridView1.Size = New System.Drawing.Size(601, 256)
         Me.DataGridView1.TabIndex = 12
         '
         'TextBox1

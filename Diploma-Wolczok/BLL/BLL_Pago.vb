@@ -82,7 +82,7 @@ Public Class BLL_PagoViaje
 
     Public Function consultarPagosViajes(ByVal oReservaviaje As BE_Reserva) As List(Of BE_Pago)
         Try
-            Return _dalpagoviaje.consultarPagosviajes(oReservaviaje) ' este consultar pagosviajes es pagos (todos)
+            Return _dalpagoviaje.consultarPagosviajesPasajero(oReservaviaje) ' este consultar pagosviajes es pagos (todos)
         Catch ex As Exception
 
         End Try

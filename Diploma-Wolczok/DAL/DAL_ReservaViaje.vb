@@ -142,6 +142,26 @@ Public Class DAL_ReservaViaje
     End Function
 
 
+    Public Function consultarReservasViajePasajero(ByVal oPasajero As BE_Pasajero) As List(Of BE_ReservaViaje)
+        Try
+            Dim consulta As String = ("Select * from ReservaViaje where ID_Pasajero=@ID_Pasajero and BL=@BL")
+            Dim miListaReservaviaje As New List(Of BE_ReservaViaje)
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@ID_Pasajero", oPasajero.ID))
+                .Add(New SqlParameter("@BL", False))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In dt.Rows
+                miListaReservaviaje.Add(Me.formatearReservaViaje(drow))
+            Next
+            Return miListaReservaviaje
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
 
     Public Function retornarPuntaje(ByVal idCoeficiente As Integer) As Double
         Try
