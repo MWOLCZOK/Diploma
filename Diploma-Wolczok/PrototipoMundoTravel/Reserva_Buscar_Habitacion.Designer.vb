@@ -25,16 +25,16 @@ Partial Class Reserva_Buscar_Habitacion
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Habitacion))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblAlojamiento = New System.Windows.Forms.Label()
+        Me.lblFechaDesde = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblFechaHasta = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDestino = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblCantidadDias = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,27 +62,27 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox1.Size = New System.Drawing.Size(284, 20)
         Me.TextBox1.TabIndex = 15
         '
-        'Label1
+        'lblAlojamiento
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(24, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 15)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "Alojamiento:"
+        Me.lblAlojamiento.AutoSize = True
+        Me.lblAlojamiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAlojamiento.ForeColor = System.Drawing.Color.White
+        Me.lblAlojamiento.Location = New System.Drawing.Point(24, 29)
+        Me.lblAlojamiento.Name = "lblAlojamiento"
+        Me.lblAlojamiento.Size = New System.Drawing.Size(87, 15)
+        Me.lblAlojamiento.TabIndex = 16
+        Me.lblAlojamiento.Text = "Alojamiento:"
         '
-        'Label2
+        'lblFechaDesde
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(416, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 15)
-        Me.Label2.TabIndex = 18
-        Me.Label2.Text = "Fecha Desde:"
+        Me.lblFechaDesde.AutoSize = True
+        Me.lblFechaDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaDesde.ForeColor = System.Drawing.Color.White
+        Me.lblFechaDesde.Location = New System.Drawing.Point(416, 29)
+        Me.lblFechaDesde.Name = "lblFechaDesde"
+        Me.lblFechaDesde.Size = New System.Drawing.Size(95, 15)
+        Me.lblFechaDesde.TabIndex = 18
+        Me.lblFechaDesde.Text = "Fecha Desde:"
         '
         'TextBox2
         '
@@ -96,16 +96,16 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox2.Size = New System.Drawing.Size(104, 20)
         Me.TextBox2.TabIndex = 17
         '
-        'Label3
+        'lblFechaHasta
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(416, 63)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(91, 15)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Fecha Hasta:"
+        Me.lblFechaHasta.AutoSize = True
+        Me.lblFechaHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaHasta.ForeColor = System.Drawing.Color.White
+        Me.lblFechaHasta.Location = New System.Drawing.Point(416, 63)
+        Me.lblFechaHasta.Name = "lblFechaHasta"
+        Me.lblFechaHasta.Size = New System.Drawing.Size(91, 15)
+        Me.lblFechaHasta.TabIndex = 20
+        Me.lblFechaHasta.Text = "Fecha Hasta:"
         '
         'TextBox3
         '
@@ -119,16 +119,16 @@ Partial Class Reserva_Buscar_Habitacion
         Me.TextBox3.Size = New System.Drawing.Size(104, 20)
         Me.TextBox3.TabIndex = 19
         '
-        'Label4
+        'lblDestino
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(24, 64)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 15)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Destino:"
+        Me.lblDestino.AutoSize = True
+        Me.lblDestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDestino.ForeColor = System.Drawing.Color.White
+        Me.lblDestino.Location = New System.Drawing.Point(24, 64)
+        Me.lblDestino.Name = "lblDestino"
+        Me.lblDestino.Size = New System.Drawing.Size(60, 15)
+        Me.lblDestino.TabIndex = 22
+        Me.lblDestino.Text = "Destino:"
         '
         'TextBox4
         '
@@ -164,16 +164,16 @@ Partial Class Reserva_Buscar_Habitacion
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'Label5
+        'lblCantidadDias
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(24, 98)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 15)
-        Me.Label5.TabIndex = 72
-        Me.Label5.Text = "Cantidad de Dias:"
+        Me.lblCantidadDias.AutoSize = True
+        Me.lblCantidadDias.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidadDias.ForeColor = System.Drawing.Color.White
+        Me.lblCantidadDias.Location = New System.Drawing.Point(24, 98)
+        Me.lblCantidadDias.Name = "lblCantidadDias"
+        Me.lblCantidadDias.Size = New System.Drawing.Size(121, 15)
+        Me.lblCantidadDias.TabIndex = 72
+        Me.lblCantidadDias.Text = "Cantidad de Dias:"
         '
         'TextBox5
         '
@@ -193,17 +193,17 @@ Partial Class Reserva_Buscar_Habitacion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(653, 461)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblCantidadDias)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblDestino)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblFechaHasta)
         Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblFechaDesde)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblAlojamiento)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -216,15 +216,15 @@ Partial Class Reserva_Buscar_Habitacion
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblAlojamiento As System.Windows.Forms.Label
+    Friend WithEvents lblFechaDesde As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblFechaHasta As System.Windows.Forms.Label
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblDestino As System.Windows.Forms.Label
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents btnSeleccionar As Button
     Friend WithEvents btnSalir As Button
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblCantidadDias As System.Windows.Forms.Label
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
 End Class

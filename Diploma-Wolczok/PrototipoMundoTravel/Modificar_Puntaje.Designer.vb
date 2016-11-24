@@ -27,9 +27,9 @@ Partial Class Modificar_Puntaje
         Me.Txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Txtpuntaje = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblTipoPuntaje = New System.Windows.Forms.Label()
+        Me.lblCoeficiente = New System.Windows.Forms.Label()
+        Me.lblSeleccionarTipoPuntaje = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,38 +68,38 @@ Partial Class Modificar_Puntaje
         Me.DataGridView1.Size = New System.Drawing.Size(393, 150)
         Me.DataGridView1.TabIndex = 5
         '
-        'Label1
+        'lblTipoPuntaje
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(31, 95)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(108, 15)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Tipo de Puntaje"
+        Me.lblTipoPuntaje.AutoSize = True
+        Me.lblTipoPuntaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipoPuntaje.ForeColor = System.Drawing.Color.White
+        Me.lblTipoPuntaje.Location = New System.Drawing.Point(31, 95)
+        Me.lblTipoPuntaje.Name = "lblTipoPuntaje"
+        Me.lblTipoPuntaje.Size = New System.Drawing.Size(108, 15)
+        Me.lblTipoPuntaje.TabIndex = 6
+        Me.lblTipoPuntaje.Text = "Tipo de Puntaje"
         '
-        'Label2
+        'lblCoeficiente
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(244, 95)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 15)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Coeficiente"
+        Me.lblCoeficiente.AutoSize = True
+        Me.lblCoeficiente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCoeficiente.ForeColor = System.Drawing.Color.White
+        Me.lblCoeficiente.Location = New System.Drawing.Point(244, 95)
+        Me.lblCoeficiente.Name = "lblCoeficiente"
+        Me.lblCoeficiente.Size = New System.Drawing.Size(79, 15)
+        Me.lblCoeficiente.TabIndex = 7
+        Me.lblCoeficiente.Text = "Coeficiente"
         '
-        'Label3
+        'lblSeleccionarTipoPuntaje
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(31, 28)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(195, 15)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Selección de Tipo de Puntaje"
+        Me.lblSeleccionarTipoPuntaje.AutoSize = True
+        Me.lblSeleccionarTipoPuntaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarTipoPuntaje.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarTipoPuntaje.Location = New System.Drawing.Point(31, 28)
+        Me.lblSeleccionarTipoPuntaje.Name = "lblSeleccionarTipoPuntaje"
+        Me.lblSeleccionarTipoPuntaje.Size = New System.Drawing.Size(195, 15)
+        Me.lblSeleccionarTipoPuntaje.TabIndex = 8
+        Me.lblSeleccionarTipoPuntaje.Text = "Selección de Tipo de Puntaje"
         '
         'btnModificar
         '
@@ -131,9 +131,9 @@ Partial Class Modificar_Puntaje
         Me.ClientSize = New System.Drawing.Size(475, 464)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblSeleccionarTipoPuntaje)
+        Me.Controls.Add(Me.lblCoeficiente)
+        Me.Controls.Add(Me.lblTipoPuntaje)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Txtpuntaje)
         Me.Controls.Add(Me.Txtdescripcion)
@@ -150,9 +150,9 @@ Partial Class Modificar_Puntaje
     Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
     Friend WithEvents Txtpuntaje As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblTipoPuntaje As System.Windows.Forms.Label
+    Friend WithEvents lblCoeficiente As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarTipoPuntaje As System.Windows.Forms.Label
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
 End Class

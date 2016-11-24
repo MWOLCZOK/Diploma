@@ -29,8 +29,8 @@ Partial Class Modificar_Permiso
         Me.lblpermisosactuales = New System.Windows.Forms.Label()
         Me.Tree = New System.Windows.Forms.TreeView()
         Me.lblperfil = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.lblModificar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblnuevospermisos
@@ -89,27 +89,27 @@ Partial Class Modificar_Permiso
         Me.lblperfil.TabIndex = 21
         Me.lblperfil.Text = "Perfil"
         '
-        'Button1
+        'lblModificar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(109, 453)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 30)
-        Me.Button1.TabIndex = 85
-        Me.Button1.Text = "Modificar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.lblModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.lblModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblModificar.Location = New System.Drawing.Point(109, 453)
+        Me.lblModificar.Name = "lblModificar"
+        Me.lblModificar.Size = New System.Drawing.Size(150, 30)
+        Me.lblModificar.TabIndex = 85
+        Me.lblModificar.Text = "Modificar"
+        Me.lblModificar.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnSalir
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(324, 453)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(150, 30)
-        Me.Button2.TabIndex = 84
-        Me.Button2.Text = "Salir"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(324, 453)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 84
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'Modificar_Permiso
         '
@@ -117,8 +117,8 @@ Partial Class Modificar_Permiso
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(580, 521)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.lblModificar)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblnuevospermisos)
         Me.Controls.Add(Me.TreeNuevos)
         Me.Controls.Add(Me.ComboBox1)
@@ -138,6 +138,6 @@ Partial Class Modificar_Permiso
     Friend WithEvents lblpermisosactuales As System.Windows.Forms.Label
     Friend WithEvents Tree As System.Windows.Forms.TreeView
     Friend WithEvents lblperfil As System.Windows.Forms.Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents lblModificar As Button
+    Friend WithEvents btnSalir As Button
 End Class

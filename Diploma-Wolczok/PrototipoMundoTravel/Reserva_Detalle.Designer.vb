@@ -23,35 +23,35 @@ Partial Class Reserva_Detalle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Detalle))
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDestino = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblFechaHasta = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblFechaDesde = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblAlojamiento = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblNumeroHabitacion = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.btnFinalizarCompra = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnVolverComprar = New System.Windows.Forms.Button()
         Me.btnGenerarPDF = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblValorReserva = New System.Windows.Forms.Label()
         Me.txtValorReserva = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'Label4
+        'lblDestino
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(370, 150)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 15)
-        Me.Label4.TabIndex = 40
-        Me.Label4.Text = "Destino"
+        Me.lblDestino.AutoSize = True
+        Me.lblDestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDestino.ForeColor = System.Drawing.Color.White
+        Me.lblDestino.Location = New System.Drawing.Point(370, 150)
+        Me.lblDestino.Name = "lblDestino"
+        Me.lblDestino.Size = New System.Drawing.Size(56, 15)
+        Me.lblDestino.TabIndex = 40
+        Me.lblDestino.Text = "Destino"
         '
         'TextBox4
         '
@@ -65,16 +65,16 @@ Partial Class Reserva_Detalle
         Me.TextBox4.Size = New System.Drawing.Size(311, 20)
         Me.TextBox4.TabIndex = 39
         '
-        'Label3
+        'lblFechaHasta
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(370, 99)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 15)
-        Me.Label3.TabIndex = 38
-        Me.Label3.Text = "Fecha Hasta"
+        Me.lblFechaHasta.AutoSize = True
+        Me.lblFechaHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaHasta.ForeColor = System.Drawing.Color.White
+        Me.lblFechaHasta.Location = New System.Drawing.Point(370, 99)
+        Me.lblFechaHasta.Name = "lblFechaHasta"
+        Me.lblFechaHasta.Size = New System.Drawing.Size(87, 15)
+        Me.lblFechaHasta.TabIndex = 38
+        Me.lblFechaHasta.Text = "Fecha Hasta"
         '
         'TextBox3
         '
@@ -88,16 +88,16 @@ Partial Class Reserva_Detalle
         Me.TextBox3.Size = New System.Drawing.Size(311, 20)
         Me.TextBox3.TabIndex = 37
         '
-        'Label2
+        'lblFechaDesde
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(370, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 15)
-        Me.Label2.TabIndex = 36
-        Me.Label2.Text = "Fecha Desde"
+        Me.lblFechaDesde.AutoSize = True
+        Me.lblFechaDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaDesde.ForeColor = System.Drawing.Color.White
+        Me.lblFechaDesde.Location = New System.Drawing.Point(370, 34)
+        Me.lblFechaDesde.Name = "lblFechaDesde"
+        Me.lblFechaDesde.Size = New System.Drawing.Size(91, 15)
+        Me.lblFechaDesde.TabIndex = 36
+        Me.lblFechaDesde.Text = "Fecha Desde"
         '
         'TextBox2
         '
@@ -111,16 +111,16 @@ Partial Class Reserva_Detalle
         Me.TextBox2.Size = New System.Drawing.Size(314, 20)
         Me.TextBox2.TabIndex = 35
         '
-        'Label1
+        'lblAlojamiento
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(27, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 15)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Alojamiento"
+        Me.lblAlojamiento.AutoSize = True
+        Me.lblAlojamiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAlojamiento.ForeColor = System.Drawing.Color.White
+        Me.lblAlojamiento.Location = New System.Drawing.Point(27, 34)
+        Me.lblAlojamiento.Name = "lblAlojamiento"
+        Me.lblAlojamiento.Size = New System.Drawing.Size(83, 15)
+        Me.lblAlojamiento.TabIndex = 34
+        Me.lblAlojamiento.Text = "Alojamiento"
         '
         'TextBox1
         '
@@ -157,16 +157,16 @@ Partial Class Reserva_Detalle
         Me.TextBox5.Size = New System.Drawing.Size(311, 20)
         Me.TextBox5.TabIndex = 51
         '
-        'Label6
+        'lblNumeroHabitacion
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(27, 150)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(151, 15)
-        Me.Label6.TabIndex = 54
-        Me.Label6.Text = "Numero de Habitacion"
+        Me.lblNumeroHabitacion.AutoSize = True
+        Me.lblNumeroHabitacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumeroHabitacion.ForeColor = System.Drawing.Color.White
+        Me.lblNumeroHabitacion.Location = New System.Drawing.Point(27, 150)
+        Me.lblNumeroHabitacion.Name = "lblNumeroHabitacion"
+        Me.lblNumeroHabitacion.Size = New System.Drawing.Size(151, 15)
+        Me.lblNumeroHabitacion.TabIndex = 54
+        Me.lblNumeroHabitacion.Text = "Numero de Habitacion"
         '
         'TextBox6
         '
@@ -191,16 +191,16 @@ Partial Class Reserva_Detalle
         Me.btnFinalizarCompra.Text = "Finalizar Compra"
         Me.btnFinalizarCompra.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnVolverComprar
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(87, 305)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(150, 30)
-        Me.Button3.TabIndex = 74
-        Me.Button3.Text = "Volver a Comprar"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnVolverComprar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnVolverComprar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolverComprar.Location = New System.Drawing.Point(87, 305)
+        Me.btnVolverComprar.Name = "btnVolverComprar"
+        Me.btnVolverComprar.Size = New System.Drawing.Size(150, 30)
+        Me.btnVolverComprar.TabIndex = 74
+        Me.btnVolverComprar.Text = "Volver a Comprar"
+        Me.btnVolverComprar.UseVisualStyleBackColor = False
         '
         'btnGenerarPDF
         '
@@ -213,16 +213,16 @@ Partial Class Reserva_Detalle
         Me.btnGenerarPDF.Text = "Generar PDF"
         Me.btnGenerarPDF.UseVisualStyleBackColor = False
         '
-        'Label7
+        'lblValorReserva
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(27, 213)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(96, 15)
-        Me.Label7.TabIndex = 77
-        Me.Label7.Text = "Valor Reserva"
+        Me.lblValorReserva.AutoSize = True
+        Me.lblValorReserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblValorReserva.ForeColor = System.Drawing.Color.White
+        Me.lblValorReserva.Location = New System.Drawing.Point(27, 213)
+        Me.lblValorReserva.Name = "lblValorReserva"
+        Me.lblValorReserva.Size = New System.Drawing.Size(96, 15)
+        Me.lblValorReserva.TabIndex = 77
+        Me.lblValorReserva.Text = "Valor Reserva"
         '
         'txtValorReserva
         '
@@ -242,22 +242,22 @@ Partial Class Reserva_Detalle
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(716, 374)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblValorReserva)
         Me.Controls.Add(Me.txtValorReserva)
         Me.Controls.Add(Me.btnGenerarPDF)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnVolverComprar)
         Me.Controls.Add(Me.btnFinalizarCompra)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblNumeroHabitacion)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblDestino)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblFechaHasta)
         Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblFechaDesde)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblAlojamiento)
         Me.Controls.Add(Me.TextBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Detalle"
@@ -266,21 +266,21 @@ Partial Class Reserva_Detalle
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblDestino As System.Windows.Forms.Label
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblFechaHasta As System.Windows.Forms.Label
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblFechaDesde As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblAlojamiento As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblNumeroHabitacion As System.Windows.Forms.Label
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents btnFinalizarCompra As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnVolverComprar As Button
     Friend WithEvents btnGenerarPDF As Button
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblValorReserva As Label
     Friend WithEvents txtValorReserva As TextBox
 End Class

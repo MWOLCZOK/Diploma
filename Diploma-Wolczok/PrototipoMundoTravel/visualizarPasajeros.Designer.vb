@@ -25,7 +25,7 @@ Partial Class visualizarPasajeros
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(visualizarPasajeros))
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.dgvBitacora = New System.Windows.Forms.DataGridView()
-        Me.btn_exportar = New System.Windows.Forms.Button()
+        Me.btnExportar = New System.Windows.Forms.Button()
         CType(Me.dgvBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,16 +49,16 @@ Partial Class visualizarPasajeros
         Me.dgvBitacora.Size = New System.Drawing.Size(563, 337)
         Me.dgvBitacora.TabIndex = 53
         '
-        'btn_exportar
+        'btnExportar
         '
-        Me.btn_exportar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btn_exportar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_exportar.Location = New System.Drawing.Point(105, 417)
-        Me.btn_exportar.Name = "btn_exportar"
-        Me.btn_exportar.Size = New System.Drawing.Size(150, 30)
-        Me.btn_exportar.TabIndex = 55
-        Me.btn_exportar.Text = "Exportar"
-        Me.btn_exportar.UseVisualStyleBackColor = False
+        Me.btnExportar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnExportar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportar.Location = New System.Drawing.Point(105, 417)
+        Me.btnExportar.Name = "btnExportar"
+        Me.btnExportar.Size = New System.Drawing.Size(150, 30)
+        Me.btnExportar.TabIndex = 55
+        Me.btnExportar.Text = "Exportar"
+        Me.btnExportar.UseVisualStyleBackColor = False
         '
         'visualizarPasajeros
         '
@@ -66,7 +66,7 @@ Partial Class visualizarPasajeros
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(672, 477)
-        Me.Controls.Add(Me.btn_exportar)
+        Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.dgvBitacora)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -78,5 +78,5 @@ Partial Class visualizarPasajeros
     End Sub
     Friend WithEvents btnSalir As Button
     Friend WithEvents dgvBitacora As DataGridView
-    Friend WithEvents btn_exportar As Button
+    Friend WithEvents btnExportar As Button
 End Class

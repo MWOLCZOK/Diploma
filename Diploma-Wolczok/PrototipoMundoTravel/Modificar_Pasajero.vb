@@ -58,7 +58,7 @@ Public Class Modificar_Pasajero
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim GestorPas As New BLL_Pasajero
         Dim pasmodificar As New BE_Pasajero
         Try

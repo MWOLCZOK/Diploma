@@ -43,7 +43,7 @@ Public Class visualizarPasajeros
         Me.dgvBitacora.Columns("CorreoElectronico").Name = "Column_MAIL"
     End Sub
 
-    Private Sub btn_exportar_Click(sender As Object, e As EventArgs) Handles btn_exportar.Click
+    Private Sub btn_exportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
         Dim _bllPasajero As New BLL.BLL_Pasajero
         Dim Pasajeros As New List(Of EE.BE_Pasajero)
         Pasajeros = _bllPasajero.consultarPasajeros()

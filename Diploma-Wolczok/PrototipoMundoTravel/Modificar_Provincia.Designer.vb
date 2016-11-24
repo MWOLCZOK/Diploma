@@ -24,19 +24,19 @@ Partial Class Modificar_Provincia
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Provincia))
         Me.Cbxprov = New System.Windows.Forms.ComboBox()
-        Me.lblpais = New System.Windows.Forms.Label()
+        Me.lblSeleccionarProvincia = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblPais = New System.Windows.Forms.Label()
+        Me.lblSuperficieTerrestre = New System.Windows.Forms.Label()
+        Me.lblRegion = New System.Windows.Forms.Label()
+        Me.lblHabitantes = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
         Me.txtSuperficieTerrestre = New System.Windows.Forms.TextBox()
         Me.txtRegion = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,16 +49,16 @@ Partial Class Modificar_Provincia
         Me.Cbxprov.Size = New System.Drawing.Size(236, 21)
         Me.Cbxprov.TabIndex = 50
         '
-        'lblpais
+        'lblSeleccionarProvincia
         '
-        Me.lblpais.AutoSize = True
-        Me.lblpais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblpais.ForeColor = System.Drawing.Color.White
-        Me.lblpais.Location = New System.Drawing.Point(37, 38)
-        Me.lblpais.Name = "lblpais"
-        Me.lblpais.Size = New System.Drawing.Size(146, 15)
-        Me.lblpais.TabIndex = 49
-        Me.lblpais.Text = "Seleccionar Provincia"
+        Me.lblSeleccionarProvincia.AutoSize = True
+        Me.lblSeleccionarProvincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarProvincia.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarProvincia.Location = New System.Drawing.Point(37, 38)
+        Me.lblSeleccionarProvincia.Name = "lblSeleccionarProvincia"
+        Me.lblSeleccionarProvincia.Size = New System.Drawing.Size(146, 15)
+        Me.lblSeleccionarProvincia.TabIndex = 49
+        Me.lblSeleccionarProvincia.Text = "Seleccionar Provincia"
         '
         'NumericUpDown1
         '
@@ -75,60 +75,60 @@ Partial Class Modificar_Provincia
         Me.ComboBox1.Size = New System.Drawing.Size(233, 21)
         Me.ComboBox1.TabIndex = 71
         '
-        'Label3
+        'lblPais
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(330, 159)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 15)
-        Me.Label3.TabIndex = 70
-        Me.Label3.Text = "Pais"
+        Me.lblPais.AutoSize = True
+        Me.lblPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPais.ForeColor = System.Drawing.Color.White
+        Me.lblPais.Location = New System.Drawing.Point(330, 159)
+        Me.lblPais.Name = "lblPais"
+        Me.lblPais.Size = New System.Drawing.Size(35, 15)
+        Me.lblPais.TabIndex = 70
+        Me.lblPais.Text = "Pais"
         '
-        'Label6
+        'lblSuperficieTerrestre
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(330, 102)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(134, 15)
-        Me.Label6.TabIndex = 69
-        Me.Label6.Text = "Superficie Terrestre"
+        Me.lblSuperficieTerrestre.AutoSize = True
+        Me.lblSuperficieTerrestre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSuperficieTerrestre.ForeColor = System.Drawing.Color.White
+        Me.lblSuperficieTerrestre.Location = New System.Drawing.Point(330, 102)
+        Me.lblSuperficieTerrestre.Name = "lblSuperficieTerrestre"
+        Me.lblSuperficieTerrestre.Size = New System.Drawing.Size(134, 15)
+        Me.lblSuperficieTerrestre.TabIndex = 69
+        Me.lblSuperficieTerrestre.Text = "Superficie Terrestre"
         '
-        'Label5
+        'lblRegion
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(37, 218)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 15)
-        Me.Label5.TabIndex = 68
-        Me.Label5.Text = "Region"
+        Me.lblRegion.AutoSize = True
+        Me.lblRegion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRegion.ForeColor = System.Drawing.Color.White
+        Me.lblRegion.Location = New System.Drawing.Point(37, 218)
+        Me.lblRegion.Name = "lblRegion"
+        Me.lblRegion.Size = New System.Drawing.Size(53, 15)
+        Me.lblRegion.TabIndex = 68
+        Me.lblRegion.Text = "Region"
         '
-        'Label4
+        'lblHabitantes
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(37, 159)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 15)
-        Me.Label4.TabIndex = 67
-        Me.Label4.Text = "Habitantes"
+        Me.lblHabitantes.AutoSize = True
+        Me.lblHabitantes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHabitantes.ForeColor = System.Drawing.Color.White
+        Me.lblHabitantes.Location = New System.Drawing.Point(37, 159)
+        Me.lblHabitantes.Name = "lblHabitantes"
+        Me.lblHabitantes.Size = New System.Drawing.Size(76, 15)
+        Me.lblHabitantes.TabIndex = 67
+        Me.lblHabitantes.Text = "Habitantes"
         '
-        'Label7
+        'lblNombre
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(37, 102)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 15)
-        Me.Label7.TabIndex = 66
-        Me.Label7.Text = "Nombre"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(37, 102)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(58, 15)
+        Me.lblNombre.TabIndex = 66
+        Me.lblNombre.Text = "Nombre"
         '
         'txtSuperficieTerrestre
         '
@@ -151,27 +151,27 @@ Partial Class Modificar_Provincia
         Me.txtNombre.Size = New System.Drawing.Size(236, 20)
         Me.txtNombre.TabIndex = 63
         '
-        'Button1
+        'btnModificar
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(112, 302)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 30)
-        Me.Button1.TabIndex = 85
-        Me.Button1.Text = "Modificar"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(112, 302)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(150, 30)
+        Me.btnModificar.TabIndex = 85
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnSalir
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(355, 302)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(150, 30)
-        Me.Button2.TabIndex = 84
-        Me.Button2.Text = "Salir"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(355, 302)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(150, 30)
+        Me.btnSalir.TabIndex = 84
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
         '
         'Modificar_Provincia
         '
@@ -179,20 +179,20 @@ Partial Class Modificar_Provincia
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(607, 360)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblPais)
+        Me.Controls.Add(Me.lblSuperficieTerrestre)
+        Me.Controls.Add(Me.lblRegion)
+        Me.Controls.Add(Me.lblHabitantes)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.txtSuperficieTerrestre)
         Me.Controls.Add(Me.txtRegion)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Cbxprov)
-        Me.Controls.Add(Me.lblpais)
+        Me.Controls.Add(Me.lblSeleccionarProvincia)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Provincia"
         Me.Text = "Modificar_Provincia"
@@ -202,17 +202,17 @@ Partial Class Modificar_Provincia
 
     End Sub
     Friend WithEvents Cbxprov As System.Windows.Forms.ComboBox
-    Friend WithEvents lblpais As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarProvincia As System.Windows.Forms.Label
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblPais As Label
+    Friend WithEvents lblSuperficieTerrestre As Label
+    Friend WithEvents lblRegion As Label
+    Friend WithEvents lblHabitantes As Label
+    Friend WithEvents lblNombre As Label
     Friend WithEvents txtSuperficieTerrestre As TextBox
     Friend WithEvents txtRegion As TextBox
     Friend WithEvents txtNombre As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnSalir As Button
 End Class

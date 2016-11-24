@@ -25,9 +25,9 @@ Partial Class Visualizar_Pagos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Visualizar_Pagos))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblSeleccionarPasajero = New System.Windows.Forms.Label()
         Me.Cbxpasajero = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblSeleccionarReserva = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,16 +52,16 @@ Partial Class Visualizar_Pagos
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'Label1
+        'lblSeleccionarPasajero
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(15, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 15)
-        Me.Label1.TabIndex = 52
-        Me.Label1.Text = "Seleccionar Pasajero"
+        Me.lblSeleccionarPasajero.AutoSize = True
+        Me.lblSeleccionarPasajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarPasajero.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarPasajero.Location = New System.Drawing.Point(15, 22)
+        Me.lblSeleccionarPasajero.Name = "lblSeleccionarPasajero"
+        Me.lblSeleccionarPasajero.Size = New System.Drawing.Size(144, 15)
+        Me.lblSeleccionarPasajero.TabIndex = 52
+        Me.lblSeleccionarPasajero.Text = "Seleccionar Pasajero"
         '
         'Cbxpasajero
         '
@@ -72,16 +72,16 @@ Partial Class Visualizar_Pagos
         Me.Cbxpasajero.Size = New System.Drawing.Size(212, 21)
         Me.Cbxpasajero.TabIndex = 51
         '
-        'Label2
+        'lblSeleccionarReserva
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(262, 22)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 15)
-        Me.Label2.TabIndex = 54
-        Me.Label2.Text = "Seleccionar Reserva"
+        Me.lblSeleccionarReserva.AutoSize = True
+        Me.lblSeleccionarReserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarReserva.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarReserva.Location = New System.Drawing.Point(262, 22)
+        Me.lblSeleccionarReserva.Name = "lblSeleccionarReserva"
+        Me.lblSeleccionarReserva.Size = New System.Drawing.Size(139, 15)
+        Me.lblSeleccionarReserva.TabIndex = 54
+        Me.lblSeleccionarReserva.Text = "Seleccionar Reserva"
         '
         'ComboBox2
         '
@@ -110,9 +110,9 @@ Partial Class Visualizar_Pagos
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(683, 468)
         Me.Controls.Add(Me.btnBuscar)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblSeleccionarReserva)
         Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblSeleccionarPasajero)
         Me.Controls.Add(Me.Cbxpasajero)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.DataGridView1)
@@ -126,9 +126,9 @@ Partial Class Visualizar_Pagos
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents btnSalir As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblSeleccionarPasajero As Label
     Friend WithEvents Cbxpasajero As ComboBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblSeleccionarReserva As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents btnBuscar As Button
 End Class

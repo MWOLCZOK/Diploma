@@ -39,7 +39,7 @@ Public Class Reserva_Detalle_Viaje
 
 
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnVolverComprar.Click
         Dim formulariobuscarviaje As New Reserva_Buscar_Viaje()
         formulariobuscarviaje.Show()
         Me.Close()

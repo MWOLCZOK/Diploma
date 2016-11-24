@@ -25,7 +25,7 @@ Partial Class visualizarControlCambios
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(visualizarControlCambios))
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblSeleccionarCambio = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.dgvBitacora = New System.Windows.Forms.DataGridView()
         CType(Me.dgvBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,16 +53,16 @@ Partial Class visualizarControlCambios
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'Label1
+        'lblSeleccionarCambio
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(21, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(143, 15)
-        Me.Label1.TabIndex = 54
-        Me.Label1.Text = "Selección de Cambio"
+        Me.lblSeleccionarCambio.AutoSize = True
+        Me.lblSeleccionarCambio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarCambio.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarCambio.Location = New System.Drawing.Point(21, 25)
+        Me.lblSeleccionarCambio.Name = "lblSeleccionarCambio"
+        Me.lblSeleccionarCambio.Size = New System.Drawing.Size(143, 15)
+        Me.lblSeleccionarCambio.TabIndex = 54
+        Me.lblSeleccionarCambio.Text = "Selección de Cambio"
         '
         'ComboBox1
         '
@@ -90,7 +90,7 @@ Partial Class visualizarControlCambios
         Me.ClientSize = New System.Drawing.Size(791, 519)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblSeleccionarCambio)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.dgvBitacora)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -103,7 +103,7 @@ Partial Class visualizarControlCambios
     End Sub
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarCambio As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents dgvBitacora As System.Windows.Forms.DataGridView
 End Class

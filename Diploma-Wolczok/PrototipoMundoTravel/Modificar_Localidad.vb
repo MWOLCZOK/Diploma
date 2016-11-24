@@ -65,11 +65,11 @@ Public Class Modificar_Localidad
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim GestorLoc As New BLL_Localidad
         Dim Locmodificar As New BE_Localidad
 

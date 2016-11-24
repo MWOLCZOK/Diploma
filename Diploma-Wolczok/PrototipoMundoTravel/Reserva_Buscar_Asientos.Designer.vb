@@ -23,15 +23,15 @@ Partial Class Reserva_Buscar_Asientos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Asientos))
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDestino = New System.Windows.Forms.Label()
         Me.Txtdestino = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblFechaViaje = New System.Windows.Forms.Label()
         Me.Txtfechaviaje = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblEmpresaTransporte = New System.Windows.Forms.Label()
         Me.Txtempresatrans = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblTipoTransporte = New System.Windows.Forms.Label()
         Me.Txttipotrans = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblOrigen = New System.Windows.Forms.Label()
         Me.Txtorigen = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
@@ -39,16 +39,16 @@ Partial Class Reserva_Buscar_Asientos
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label4
+        'lblDestino
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(274, 28)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 15)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Destino"
+        Me.lblDestino.AutoSize = True
+        Me.lblDestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDestino.ForeColor = System.Drawing.Color.White
+        Me.lblDestino.Location = New System.Drawing.Point(274, 28)
+        Me.lblDestino.Name = "lblDestino"
+        Me.lblDestino.Size = New System.Drawing.Size(56, 15)
+        Me.lblDestino.TabIndex = 30
+        Me.lblDestino.Text = "Destino"
         '
         'Txtdestino
         '
@@ -62,16 +62,16 @@ Partial Class Reserva_Buscar_Asientos
         Me.Txtdestino.Size = New System.Drawing.Size(222, 20)
         Me.Txtdestino.TabIndex = 29
         '
-        'Label2
+        'lblFechaViaje
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(274, 89)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 15)
-        Me.Label2.TabIndex = 26
-        Me.Label2.Text = "Fecha Viaje"
+        Me.lblFechaViaje.AutoSize = True
+        Me.lblFechaViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaViaje.ForeColor = System.Drawing.Color.White
+        Me.lblFechaViaje.Location = New System.Drawing.Point(274, 89)
+        Me.lblFechaViaje.Name = "lblFechaViaje"
+        Me.lblFechaViaje.Size = New System.Drawing.Size(82, 15)
+        Me.lblFechaViaje.TabIndex = 26
+        Me.lblFechaViaje.Text = "Fecha Viaje"
         '
         'Txtfechaviaje
         '
@@ -85,16 +85,16 @@ Partial Class Reserva_Buscar_Asientos
         Me.Txtfechaviaje.Size = New System.Drawing.Size(222, 20)
         Me.Txtfechaviaje.TabIndex = 25
         '
-        'Label1
+        'lblEmpresaTransporte
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(17, 89)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(137, 15)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "Empresa Transporte"
+        Me.lblEmpresaTransporte.AutoSize = True
+        Me.lblEmpresaTransporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpresaTransporte.ForeColor = System.Drawing.Color.White
+        Me.lblEmpresaTransporte.Location = New System.Drawing.Point(17, 89)
+        Me.lblEmpresaTransporte.Name = "lblEmpresaTransporte"
+        Me.lblEmpresaTransporte.Size = New System.Drawing.Size(137, 15)
+        Me.lblEmpresaTransporte.TabIndex = 24
+        Me.lblEmpresaTransporte.Text = "Empresa Transporte"
         '
         'Txtempresatrans
         '
@@ -108,16 +108,16 @@ Partial Class Reserva_Buscar_Asientos
         Me.Txtempresatrans.Size = New System.Drawing.Size(222, 20)
         Me.Txtempresatrans.TabIndex = 23
         '
-        'Label5
+        'lblTipoTransporte
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(17, 149)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(108, 15)
-        Me.Label5.TabIndex = 32
-        Me.Label5.Text = "Tipo Transporte"
+        Me.lblTipoTransporte.AutoSize = True
+        Me.lblTipoTransporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipoTransporte.ForeColor = System.Drawing.Color.White
+        Me.lblTipoTransporte.Location = New System.Drawing.Point(17, 149)
+        Me.lblTipoTransporte.Name = "lblTipoTransporte"
+        Me.lblTipoTransporte.Size = New System.Drawing.Size(108, 15)
+        Me.lblTipoTransporte.TabIndex = 32
+        Me.lblTipoTransporte.Text = "Tipo Transporte"
         '
         'Txttipotrans
         '
@@ -131,16 +131,16 @@ Partial Class Reserva_Buscar_Asientos
         Me.Txttipotrans.Size = New System.Drawing.Size(222, 20)
         Me.Txttipotrans.TabIndex = 31
         '
-        'Label6
+        'lblOrigen
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(17, 28)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 15)
-        Me.Label6.TabIndex = 34
-        Me.Label6.Text = "Origen"
+        Me.lblOrigen.AutoSize = True
+        Me.lblOrigen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrigen.ForeColor = System.Drawing.Color.White
+        Me.lblOrigen.Location = New System.Drawing.Point(17, 28)
+        Me.lblOrigen.Name = "lblOrigen"
+        Me.lblOrigen.Size = New System.Drawing.Size(50, 15)
+        Me.lblOrigen.TabIndex = 34
+        Me.lblOrigen.Text = "Origen"
         '
         'Txtorigen
         '
@@ -194,15 +194,15 @@ Partial Class Reserva_Buscar_Asientos
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblOrigen)
         Me.Controls.Add(Me.Txtorigen)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblTipoTransporte)
         Me.Controls.Add(Me.Txttipotrans)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblDestino)
         Me.Controls.Add(Me.Txtdestino)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblFechaViaje)
         Me.Controls.Add(Me.Txtfechaviaje)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblEmpresaTransporte)
         Me.Controls.Add(Me.Txtempresatrans)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Asientos"
@@ -212,15 +212,15 @@ Partial Class Reserva_Buscar_Asientos
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblDestino As System.Windows.Forms.Label
     Friend WithEvents Txtdestino As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblFechaViaje As System.Windows.Forms.Label
     Friend WithEvents Txtfechaviaje As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblEmpresaTransporte As System.Windows.Forms.Label
     Friend WithEvents Txtempresatrans As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblTipoTransporte As System.Windows.Forms.Label
     Friend WithEvents Txttipotrans As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblOrigen As System.Windows.Forms.Label
     Friend WithEvents Txtorigen As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents btnSeleccionar As Button

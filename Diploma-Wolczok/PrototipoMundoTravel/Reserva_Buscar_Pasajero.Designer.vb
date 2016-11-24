@@ -23,7 +23,7 @@ Partial Class Reserva_Buscar_Pasajero
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Pasajero))
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblBusquedaPasajero = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
@@ -31,16 +31,16 @@ Partial Class Reserva_Buscar_Pasajero
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label9
+        'lblBusquedaPasajero
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(28, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(152, 15)
-        Me.Label9.TabIndex = 35
-        Me.Label9.Text = "Busqueda de Pasajero"
+        Me.lblBusquedaPasajero.AutoSize = True
+        Me.lblBusquedaPasajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBusquedaPasajero.ForeColor = System.Drawing.Color.White
+        Me.lblBusquedaPasajero.Location = New System.Drawing.Point(28, 22)
+        Me.lblBusquedaPasajero.Name = "lblBusquedaPasajero"
+        Me.lblBusquedaPasajero.Size = New System.Drawing.Size(152, 15)
+        Me.lblBusquedaPasajero.TabIndex = 35
+        Me.lblBusquedaPasajero.Text = "Busqueda de Pasajero"
         '
         'TextBox9
         '
@@ -89,7 +89,7 @@ Partial Class Reserva_Buscar_Pasajero
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblBusquedaPasajero)
         Me.Controls.Add(Me.TextBox9)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Pasajero"
@@ -99,7 +99,7 @@ Partial Class Reserva_Buscar_Pasajero
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblBusquedaPasajero As System.Windows.Forms.Label
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents btnSeleccionar As Button

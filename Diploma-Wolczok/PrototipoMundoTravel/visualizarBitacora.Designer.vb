@@ -28,10 +28,10 @@ Partial Class visualizarBitacora
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblSeleccionarUsuario = New System.Windows.Forms.Label()
+        Me.lblSeleccionarAccion = New System.Windows.Forms.Label()
+        Me.lblFechaInicio = New System.Windows.Forms.Label()
+        Me.lblFechaFin = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnExportar = New System.Windows.Forms.Button()
@@ -79,49 +79,49 @@ Partial Class visualizarBitacora
         Me.ComboBox2.Size = New System.Drawing.Size(196, 21)
         Me.ComboBox2.TabIndex = 4
         '
-        'Label1
+        'lblSeleccionarUsuario
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(8, 53)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 15)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Selección de Usuario"
+        Me.lblSeleccionarUsuario.AutoSize = True
+        Me.lblSeleccionarUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarUsuario.Location = New System.Drawing.Point(8, 53)
+        Me.lblSeleccionarUsuario.Name = "lblSeleccionarUsuario"
+        Me.lblSeleccionarUsuario.Size = New System.Drawing.Size(144, 15)
+        Me.lblSeleccionarUsuario.TabIndex = 7
+        Me.lblSeleccionarUsuario.Text = "Selección de Usuario"
         '
-        'Label2
+        'lblSeleccionarAccion
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(8, 120)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(136, 15)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Selección de Acción"
+        Me.lblSeleccionarAccion.AutoSize = True
+        Me.lblSeleccionarAccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSeleccionarAccion.ForeColor = System.Drawing.Color.White
+        Me.lblSeleccionarAccion.Location = New System.Drawing.Point(8, 120)
+        Me.lblSeleccionarAccion.Name = "lblSeleccionarAccion"
+        Me.lblSeleccionarAccion.Size = New System.Drawing.Size(136, 15)
+        Me.lblSeleccionarAccion.TabIndex = 8
+        Me.lblSeleccionarAccion.Text = "Selección de Acción"
         '
-        'Label3
+        'lblFechaInicio
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(8, 187)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 15)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Fecha Inicio"
+        Me.lblFechaInicio.AutoSize = True
+        Me.lblFechaInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaInicio.ForeColor = System.Drawing.Color.White
+        Me.lblFechaInicio.Location = New System.Drawing.Point(8, 187)
+        Me.lblFechaInicio.Name = "lblFechaInicio"
+        Me.lblFechaInicio.Size = New System.Drawing.Size(85, 15)
+        Me.lblFechaInicio.TabIndex = 9
+        Me.lblFechaInicio.Text = "Fecha Inicio"
         '
-        'Label4
+        'lblFechaFin
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(11, 258)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 15)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Fecha Fin"
+        Me.lblFechaFin.AutoSize = True
+        Me.lblFechaFin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaFin.ForeColor = System.Drawing.Color.White
+        Me.lblFechaFin.Location = New System.Drawing.Point(11, 258)
+        Me.lblFechaFin.Name = "lblFechaFin"
+        Me.lblFechaFin.Size = New System.Drawing.Size(70, 15)
+        Me.lblFechaFin.TabIndex = 10
+        Me.lblFechaFin.Text = "Fecha Fin"
         '
         'btnBuscar
         '
@@ -165,10 +165,10 @@ Partial Class visualizarBitacora
         Me.Controls.Add(Me.btnExportar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblFechaFin)
+        Me.Controls.Add(Me.lblFechaInicio)
+        Me.Controls.Add(Me.lblSeleccionarAccion)
+        Me.Controls.Add(Me.lblSeleccionarUsuario)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -187,10 +187,10 @@ Partial Class visualizarBitacora
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarUsuario As System.Windows.Forms.Label
+    Friend WithEvents lblSeleccionarAccion As System.Windows.Forms.Label
+    Friend WithEvents lblFechaInicio As System.Windows.Forms.Label
+    Friend WithEvents lblFechaFin As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnExportar As System.Windows.Forms.Button
