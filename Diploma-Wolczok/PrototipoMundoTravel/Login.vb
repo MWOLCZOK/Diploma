@@ -7,13 +7,12 @@ Public Class Login
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnlogin.Click
         Try
             validarCampos()
-            'BLL_DigitoVerificador.Integridad()
+            BLL_DigitoVerificador.Integridad()
             Dim oUsuario As New EE.BE_Usuario
             Dim bUsuario As New BLL.BLL_Usuario
             oUsuario.NombreUsuario = Me.txtUsuario.Text
             oUsuario.Password = Me.txtPassword.Text
             oUsuario = bUsuario.login(oUsuario)
-
             Dim MiSesion As BLL.SessionBLL = BLL.SessionBLL.SesionActual()
             MiSesion.EstablecerUsuarioActual(oUsuario)
             Dim oBitacora As New EE.BE_Bitacora("Logueo Correcto al Sistema", EE.BE_TipoBitacora.Login, BLL.SessionBLL.SesionActual.ObtenerUsuarioActual)
@@ -52,8 +51,6 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtUsuario.Text = "admin"
-        txtPassword.Text = "admin"
     End Sub
 
     Private Sub Login_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
