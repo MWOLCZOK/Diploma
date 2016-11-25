@@ -7,7 +7,7 @@ Public Class Login
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnlogin.Click
         Try
             validarCampos()
-            BLL_DigitoVerificador.Integridad()
+            'BLL_DigitoVerificador.Integridad()
             Dim oUsuario As New EE.BE_Usuario
             Dim bUsuario As New BLL.BLL_Usuario
             oUsuario.NombreUsuario = Me.txtUsuario.Text
