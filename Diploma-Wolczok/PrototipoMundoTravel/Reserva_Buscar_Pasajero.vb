@@ -86,7 +86,8 @@ Public Class Reserva_Buscar_Pasajero
                 oPasajero = bblPäsajero.consultarPasajero(oPasajero)
                 reservaViaje.Pasajero = oPasajero
                 Dim bllReserva As New BLL_Reserva
-                bllReserva.altaReserva(reservaViaje)
+                reservaViaje.ID = bllReserva.altaReserva(reservaViaje)
+                reservaViaje.MontoReserva = reservaViaje.viaje.Precio
                 Dim formularioViajeFINAL As New Reserva_Detalle_Viaje(viaje, reservaViaje, reservaOrigen, reservaDestino)
                 formularioViajeFINAL.Show()
                 Me.Close()

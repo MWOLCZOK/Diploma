@@ -29,6 +29,13 @@ Public Class DAL_ReservaViaje
         End Try
     End Sub
 
+
+    Public Function retornarUltimoID() As Integer
+        Return CInt(Acceso.TraerID("ID", "ReservaViaje") - 1)
+    End Function
+
+
+
     Public Sub eliminar(paramobjeto As Object) Implements Master.eliminar
         Try
             Dim paramReservaViaje As BE_ReservaViaje = DirectCast(paramobjeto, BE_ReservaViaje)

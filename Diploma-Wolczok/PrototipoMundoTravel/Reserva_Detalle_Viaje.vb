@@ -27,6 +27,7 @@ Public Class Reserva_Detalle_Viaje
     End Sub
 
     Private Sub iniciar()
+
         Me.Txtdestino.Text = reservaDestino.NombreCompleto
         Me.Txtempresatrans.Text = viaje.Transporte.Empresa.Nombre
         Me.Txtfechaviaje.Text = viaje.FechaHoraSalida

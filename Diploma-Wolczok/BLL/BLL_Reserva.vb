@@ -22,15 +22,16 @@ Public Class BLL_Reserva
         End Try
     End Function
 
-    Public Sub altaReserva(ByVal paramReservaVuelo As EE.BE_ReservaViaje)
+    Public Function altaReserva(ByVal paramReservaVuelo As EE.BE_ReservaViaje) As Integer
         Try
             Dim valor2 = retornarPuntaje(2)
             paramReservaVuelo.puntaje = valor2
             _dalReservaVuelo.alta(paramReservaVuelo)
+            Return _dalReservaVuelo.retornarUltimoID()
         Catch ex As Exception
 
         End Try
-    End Sub
+    End Function
 
     Public Function retornarPuntaje(ByVal idCoeficiente As Integer) As Double
         Try

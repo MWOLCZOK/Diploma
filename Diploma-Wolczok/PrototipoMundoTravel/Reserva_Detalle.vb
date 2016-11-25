@@ -34,6 +34,7 @@ Public Class Reserva_Detalle
             Me.TextBox4.Text = paramDestino.NombreCompleto
             Me.TextBox5.Text = paramReservaAlojamiento.Habitacion.Descripcion
             Me.TextBox6.Text = paramReservaAlojamiento.Habitacion.ID
+            Me.txtValorReserva.Text = paramReservaAlojamiento.MontoReserva
         Catch ex As Exception
             MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
         End Try
