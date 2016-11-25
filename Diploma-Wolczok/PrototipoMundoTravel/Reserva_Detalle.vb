@@ -68,7 +68,7 @@ Public Class Reserva_Detalle
         Dim psi As New ProcessStartInfo()
         psi.UseShellExecute = True
         Dim RutaDeaplicacion As String = Application.StartupPath
-        Dim NombreArchivo As String = "Comprobante de Reserva -" & oReservaAlojamiento.NumeroReserva & ".pdf"
+        Dim NombreArchivo As String = "Comprobante de Reserva -" & oReservaAlojamiento.ID & ".pdf"
         Dim contador As Integer = 0
         Try
             pdfw = PdfWriter.GetInstance(oDoc, New FileStream(NombreArchivo,
@@ -77,7 +77,7 @@ Public Class Reserva_Detalle
             oDoc.NewPage()
             Encabezado(pdfw, oDoc)
             Dim tabla As PdfPTable = New PdfPTable(7)
-            tabla.AddCell(oReservaAlojamiento.NumeroReserva)
+            tabla.AddCell(oReservaAlojamiento.ID)
             tabla.AddCell(oReservaAlojamiento.TipoReserva.ToString)
             tabla.AddCell(oReservaAlojamiento.Fecha_Inicio.ToShortDateString)
             tabla.AddCell(oReservaAlojamiento.Fecha_Fin.ToShortDateString)

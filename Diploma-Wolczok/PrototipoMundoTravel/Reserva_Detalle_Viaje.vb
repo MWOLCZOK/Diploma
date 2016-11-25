@@ -65,7 +65,7 @@ Public Class Reserva_Detalle_Viaje
         Dim psi As New ProcessStartInfo()
         psi.UseShellExecute = True
         Dim RutaDeaplicacion As String = Application.StartupPath
-        Dim NombreArchivo As String = "Comprobante de Reserva -" & oReservaViaje.NumeroReserva & ".pdf"
+        Dim NombreArchivo As String = "Comprobante de Reserva -" & oReservaViaje.ID & ".pdf"
         Dim contador As Integer = 0
         Try
             pdfw = PdfWriter.GetInstance(oDoc, New FileStream(NombreArchivo,
@@ -89,7 +89,7 @@ Public Class Reserva_Detalle_Viaje
                 contador = 0
             End If
             oDoc.Close()
-            Dim EjecutarArchivo = RutaDeaplicacion & "\Comprobante de Reserva -" & oReservaViaje.NumeroReserva & ".pdf"
+            Dim EjecutarArchivo = RutaDeaplicacion & "\Comprobante de Reserva -" & oReservaViaje.ID & ".pdf"
             'Aparenta anda. Esperemos que ande cuando instalo la aplicacion. 
             psi.FileName = EjecutarArchivo
             Process.Start(psi)
