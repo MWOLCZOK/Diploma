@@ -542,8 +542,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Plane.ico" />
-    <Content Include="scripnuevo.sql" />
-    <Content Include="script.sql" />
+    <Content Include="scrip.sql" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
