@@ -542,6 +542,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Plane.ico" />
+    <Content Include="scripnuevo.sql" />
     <Content Include="script.sql" />
   </ItemGroup>
   <ItemGroup>
