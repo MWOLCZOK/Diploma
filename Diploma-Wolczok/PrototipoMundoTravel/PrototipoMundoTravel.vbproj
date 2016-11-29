@@ -542,6 +542,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ajustes Mundo Travel.txt" />
     <Content Include="Plane.ico" />
     <Content Include="scrip.sql" />
   </ItemGroup>
