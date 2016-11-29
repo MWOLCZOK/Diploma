@@ -97,6 +97,7 @@
     <Compile Include="DAL_Viaje.vb" />
     <Compile Include="DAL_GestorPermiso.vb" />
     <Compile Include="DAL_Voucher.vb" />
+    <Compile Include="GestorBD.vb" />
     <Compile Include="Master.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -139,6 +140,9 @@
       <Project>{0adb6d50-dbc9-4dfe-ae2a-6d19f03e94a3}</Project>
       <Name>BE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Scripparainstalador.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

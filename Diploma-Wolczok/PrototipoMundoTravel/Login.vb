@@ -6,6 +6,8 @@ Public Class Login
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnlogin.Click
         Try
+            Dim bllGestorBD As New BLL_GestorBD
+            bllGestorBD.gestorBD()
             validarCampos()
             'BLL_DigitoVerificador.Integridad()
             Dim oUsuario As New EE.BE_Usuario
@@ -56,5 +58,10 @@ Public Class Login
     Private Sub Login_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Login")
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click ' este es el original
+        Dim bllGestorBD As New BLL_GestorBD
+        bllGestorBD.gestorBD()
     End Sub
 End Class

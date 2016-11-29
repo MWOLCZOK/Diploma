@@ -78,6 +78,7 @@
     <Compile Include="BLL_Destino.vb" />
     <Compile Include="BLL_DigitoVerificador.vb" />
     <Compile Include="BLL_EmpresaTransporte.vb" />
+    <Compile Include="BLL_GestorBD.vb" />
     <Compile Include="BLL_Habitacion.vb" />
     <Compile Include="BLL_Hostel.vb" />
     <Compile Include="BLL_Hotel.vb" />
