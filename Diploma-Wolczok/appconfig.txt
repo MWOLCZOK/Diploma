@@ -1,2 +1,2 @@
-<add name="MundoTravel" connectionString="Data Source=9-07880-n\sqlexpress;Initial Catalog=MundoTravel;Integrated Security=True"/>
+<add name="MundoTravel" connectionString="Data Source=.\SQL_UAI;Initial Catalog=MundoTravel;Integrated Security=True"/>
 

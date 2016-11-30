@@ -60,8 +60,7 @@ Public Class Login
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Login")
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click ' este es el original
-        Dim bllGestorBD As New BLL_GestorBD
-        bllGestorBD.gestorBD()
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)  ' este es el original
+
     End Sub
 End Class

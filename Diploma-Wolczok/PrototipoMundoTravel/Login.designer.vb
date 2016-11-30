@@ -30,7 +30,6 @@ Partial Class Login
         Me.Btnlogin = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Btnsalir = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblUsuario
@@ -105,22 +104,12 @@ Partial Class Login
         Me.Btnsalir.Text = "Salir"
         Me.Btnsalir.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(194, 200)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(471, 251)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(471, 208)
         Me.Controls.Add(Me.Btnsalir)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Btnlogin)
@@ -143,5 +132,4 @@ Partial Class Login
     Friend WithEvents Btnlogin As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Btnsalir As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

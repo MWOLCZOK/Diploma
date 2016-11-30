@@ -42,7 +42,7 @@ Public Class Acceso
 
 
     Public Shared Function MiConexionMaster() As SqlConnection
-        Dim MiConecction = New SqlConnection(ConfigurationManager.ConnectionStrings("MundotravelMaster").ConnectionString)
+        Dim MiConecction = New SqlConnection(ConfigurationManager.ConnectionStrings("Casa").ConnectionString)
         Return MiConecction
     End Function
 
@@ -100,7 +100,7 @@ Public Class Acceso
         End Try
     End Function
     Public Shared Function MiConexion() As SqlConnection
-        Dim MiConecction = New SqlConnection(ConfigurationManager.ConnectionStrings("MundoTravel").ConnectionString)
+        Dim MiConecction = New SqlConnection(ConfigurationManager.ConnectionStrings("Casa").ConnectionString)
         'Dim miconecction = New SqlConnection("Data Source=9-07880-n\sqlexpress;Initial Catalog=MundoTravel;Integrated Security=True")
         'Private Shared _objConexion As New SqlConnection("Data Source=9-07880-n\sqlexpress;Initial Catalog=MundoTravel;Integrated Security=True")
 

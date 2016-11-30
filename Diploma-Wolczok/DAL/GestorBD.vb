@@ -33,15 +33,15 @@ Public Class GestorBD
         _comando = New SqlCommand
         '_adaptador = New SqlDataAdapter
         testearConexionBaseDatos()
-        _comando.CommandType = CommandType.StoredProcedure
-        _comando.Connection = _conexion
-        _adaptador.SelectCommand = _comando
+        '_comando.CommandType = CommandType.StoredProcedure
+        '_comando.Connection = _conexion
+        '_adaptador.SelectCommand = _comando
     End Sub
 
     Private Sub testearConexionBaseDatos()
         'prueba de conectarse a la base por default cargada en el app.config
         Try
-            _conexion.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("Casa").ConnectionString ' "mundotravel" es el nombre de add name del appconfig
+            _conexion.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("Casa").ConnectionString ' "casa" es el nombre de "add name" del appconfig
             _conexion.Open()
             _conexion.Close()
         Catch ex As Exception
@@ -49,7 +49,7 @@ Public Class GestorBD
             Try
                 'prueba si ya cree la BD en la instancia actual y de ser así la uso.
                 '_conexion.ConnectionString = "Data Source=" & SqlDataSourceEnumerator.Instance.GetDataSources().Rows(0)("serverName") & "\" & SqlDataSourceEnumerator.Instance.GetDataSources().Rows(0)("instanceName") & ";Initial Catalog=MundoTravel;Integrated Security=True"
-                _conexion.ConnectionString = "Data Source=" & SqlDataSourceEnumerator.Instance.GetDataSources().Rows(0)("serverName") & SqlDataSourceEnumerator.Instance.GetDataSources().Rows(0)("instanceName") & ";Initial Catalog=MundoTravel;Integrated Security=True"
+                _conexion.ConnectionString = "Data Source=" & SqlDataSourceEnumerator.Instance.GetDataSources().Rows(0)("serverName") & SqlDataSourceEnumerator.Instance.GetDataSources().Rows(0)("instanceName") & ";Initial Catalog=MundoTravel;Integrated Security=True" ' Acá reemplazar el Initial Catalog= "Nombre de tu base"
                 _conexion.Open()
                 _conexion.Close()
             Catch exx As Exception
@@ -72,7 +72,7 @@ Public Class GestorBD
         Try
             _comando.Connection.Open()
             _comando.ExecuteNonQuery()
-            Dim sr As New StreamReader(_assembly.GetManifestResourceStream("DAL.Scripparainstalador.sql"))
+            Dim sr As New StreamReader(_assembly.GetManifestResourceStream("DAL.Scripparainstalador.sql")) ' Acá Va el nombre de tu scrip "DAL.tuscrip.sql"
             Dim str As String = sr.ReadToEnd
             sr.Close()
             _comando.CommandText = str
@@ -83,7 +83,7 @@ Public Class GestorBD
             _comando.Connection.Close()
         End Try
         ' para que la primera vez, cuando se crea ya se pueda seguir usando el sistema.
-        _conexion.ConnectionString = _conexion.ConnectionString.Replace("master", "MundoTravel")
+        _conexion.ConnectionString = _conexion.ConnectionString.Replace("master", "MundoTravel") ' aca solo reemplazar "MundoTravel", por el nombre de tu base. 
 
     End Sub
 
