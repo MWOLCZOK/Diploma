@@ -46,18 +46,16 @@ Public Class Modificar_Pais
         Dim Paismodificar As BE_Pais = Nothing
 
         Try
-            If Not IsNothing(Cbxpais.SelectedItem) Then
-                If Not IsNothing(Cbxpais.SelectedItem) And Not String.IsNullOrWhiteSpace(txtDescripcion.Text) And Not String.IsNullOrWhiteSpace(Txtidiomapais.Text) And Not String.IsNullOrWhiteSpace(Txtzonahorariapais.Text) Then
-                    Paismodificar = DirectCast(Cbxpais.SelectedItem, BE_Pais)
-                    Paismodificar.ID = DirectCast(Cbxpais.SelectedItem, BE_Pais).ID
-                    Paismodificar.Descripcion = txtDescripcion.Text
-                    Paismodificar.Idioma = txtDescripcion.Text
-                    Paismodificar.Poblacion_total = txtPoblacionTotal.Text
-                    Paismodificar.Zonahoraria = Txtzonahorariapais.Text
-                    Gestorpais.modificarPais(Paismodificar)
-                    Iniciar()
-                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
-                End If
+            If Not IsNothing(Cbxpais.SelectedItem) And Not String.IsNullOrWhiteSpace(txtDescripcion.Text) And Not String.IsNullOrWhiteSpace(Txtidiomapais.Text) And Not String.IsNullOrWhiteSpace(Txtzonahorariapais.Text) Then
+                Paismodificar = DirectCast(Cbxpais.SelectedItem, BE_Pais)
+                Paismodificar.ID = DirectCast(Cbxpais.SelectedItem, BE_Pais).ID
+                Paismodificar.Descripcion = txtDescripcion.Text
+                Paismodificar.Idioma = txtDescripcion.Text
+                Paismodificar.Poblacion_total = txtPoblacionTotal.Text
+                Paismodificar.Zonahoraria = Txtzonahorariapais.Text
+                Gestorpais.modificarPais(Paismodificar)
+                Iniciar()
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             End If
         Catch ex As Exception
         End Try

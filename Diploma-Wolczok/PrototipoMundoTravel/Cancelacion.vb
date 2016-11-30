@@ -58,20 +58,23 @@ Public Class Cancelacion
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnCancelarReserva.Click
         Try
-            Dim oReserva As New BE_ReservaViaje
-            Dim bllReserva As New BLL_Reserva
-            oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-            oReserva = bllReserva.consultarReservaviajeID(oReserva)
-            Dim oCancel As New BE_Cancelacion
-            oCancel.Tiporeserva = oReserva.TipoReserva
-            oCancel.Fechacancelacion = Today
-            oCancel.MontoDevuelto = paramCancelacion.MontoDevuelto
-            oCancel.MontoRetenido = paramCancelacion.MontoRetenido
-            oCancel.MontoTotal = paramCancelacion.MontoTotal
-            oCancel.Reserva = oReserva
-            oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
-            bllCancel.alta(oCancel)
-            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            If Not String.IsNullOrWhiteSpace(Me.Txtdecrmotivo.Text) Then
+                Dim oReserva As New BE_ReservaViaje
+                Dim bllReserva As New BLL_Reserva
+                oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+                oReserva = bllReserva.consultarReservaviajeID(oReserva)
+                Dim oCancel As New BE_Cancelacion
+                oCancel.Tiporeserva = oReserva.TipoReserva
+                oCancel.Fechacancelacion = Today
+                oCancel.MontoDevuelto = paramCancelacion.MontoDevuelto
+                oCancel.MontoRetenido = paramCancelacion.MontoRetenido
+                oCancel.MontoTotal = paramCancelacion.MontoTotal
+                oCancel.Reserva = oReserva
+                oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
+                bllCancel.alta(oCancel)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            End If
+
         Catch ex As Exception
 
         End Try

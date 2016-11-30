@@ -181,6 +181,7 @@ Partial Class Modificar_Usuario
         '
         Me.Txtnombreusuario.Location = New System.Drawing.Point(35, 116)
         Me.Txtnombreusuario.Name = "Txtnombreusuario"
+        Me.Txtnombreusuario.ReadOnly = True
         Me.Txtnombreusuario.Size = New System.Drawing.Size(191, 20)
         Me.Txtnombreusuario.TabIndex = 1
         '

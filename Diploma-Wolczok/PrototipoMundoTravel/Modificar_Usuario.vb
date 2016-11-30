@@ -78,7 +78,7 @@ Public Class Modificar_Usuario
         Dim NuevoUsuario As EE.BE_Usuario = New BE_Usuario
         Try
             If Not IsNothing(CbxUsuario.SelectedItem) Then
-                If Not IsNothing(CbxIdioma.SelectedItem) And Not IsNothing(CbxPerfil.SelectedItem) And Not String.IsNullOrWhiteSpace(txtNombre.Text) And Not String.IsNullOrWhiteSpace(TxtApe.Text) Then
+                If Not IsNothing(CbxIdioma.SelectedItem) Or Not IsNothing(CbxPerfil.SelectedItem) Or Not String.IsNullOrWhiteSpace(txtNombre.Text) Or Not String.IsNullOrWhiteSpace(TxtApe.Text) Then
                     NuevoUsuario = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
                     NuevoUsuario.ID = DirectCast(CbxUsuario.SelectedItem, BE_Usuario).ID
                     NuevoUsuario.NombreUsuario = Txtnombreusuario.Text

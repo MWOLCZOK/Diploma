@@ -69,21 +69,30 @@ Public Class Modificar_Localidad
         Me.Close()
     End Sub
 
+    Private Function validarFormulario() As Boolean
+        If Me.Cbxloc.SelectedItem Is Nothing Then Return False
+        Return True
+    End Function
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim GestorLoc As New BLL_Localidad
         Dim Locmodificar As New BE_Localidad
 
         Try
-            If Not IsNothing(Cbxloc.SelectedItem) Then
-                Locmodificar = DirectCast(Cbxloc.SelectedItem, BE_Localidad)
-                Locmodificar.ID = DirectCast(Cbxloc.SelectedItem, BE_Localidad).ID
-                Locmodificar.CantidadBarrios = NumericUpDown1.Value
-                Locmodificar.Habitantes = Me.txtHabitantes.Text
-                '   Locmodificar.Destino = Txtdestino.Text
-                GestorLoc.modificarLocalidad(Locmodificar)
-                iniciar()
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            If validarFormulario = True Then
+                If Not IsNothing(Cbxloc.SelectedItem) Then
+                    Locmodificar = DirectCast(Cbxloc.SelectedItem, BE_Localidad)
+                    Locmodificar.ID = DirectCast(Cbxloc.SelectedItem, BE_Localidad).ID
+                    Locmodificar.CantidadBarrios = NumericUpDown1.Value
+                    Locmodificar.Habitantes = Me.txtHabitantes.Text
+                    '   Locmodificar.Destino = Txtdestino.Text
+                    GestorLoc.modificarLocalidad(Locmodificar)
+                    iniciar()
+                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                End If
             End If
+
         Catch ex As Exception
 
         End Try

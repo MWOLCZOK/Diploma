@@ -28,13 +28,16 @@ Public Class Form_Backup
 
     Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
         Try
-            Dim oBack As New EE.BE_BackupRestore(TextBox3.Text, TextBox2.Text)
-            Dim bBack As New BLL.BLL_BackupRestore()
-            If bBack.RealizarBackup(oBack) = True Then
-                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_26"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_25"), ControladorTraductor.TraducirMensaje("Titulo_05"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If Not String.IsNullOrWhiteSpace(Me.TextBox2.Text) Or String.IsNullOrWhiteSpace(Me.TextBox3.Text) Then
+                Dim oBack As New EE.BE_BackupRestore(TextBox3.Text, TextBox2.Text)
+                Dim bBack As New BLL.BLL_BackupRestore()
+                If bBack.RealizarBackup(oBack) = True Then
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_26"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_25"), ControladorTraductor.TraducirMensaje("Titulo_05"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

@@ -68,16 +68,22 @@ Public Class Modificar_Provincia
         Me.Close()
 
     End Sub
+    Private Function validarFormulario() As Boolean
+        If Me.Cbxprov.SelectedItem Is Nothing Then Return False
+        If String.IsNullOrWhiteSpace(Me.txtNombre.Text) Or String.IsNullOrWhiteSpace(Me.txtHabitantes.Text) Or String.IsNullOrWhiteSpace(Me.txtRegion.Text) Or String.IsNullOrWhiteSpace(Me.txtSuperficieTerrestre.Text) Then Return False
+        Return True
+    End Function
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim GestorProv As New BLL_Provincia
         Dim Provmodificar As New BE_Provincia
         Try
-            If Not IsNothing(Cbxprov.SelectedItem) Then
+            If validarFormulario() = True Then
                 Provmodificar = DirectCast(Cbxprov.SelectedItem, BE_Provincia)
                 Provmodificar.ID = DirectCast(Cbxprov.SelectedItem, BE_Provincia).ID
                 Provmodificar.Descripcion = txtNombre.Text
-                Provmodificar.Habitantes = NumericUpDown1.Value
+                Provmodificar.Habitantes = txtHabitantes.Text
                 Provmodificar.Region = txtRegion.Text
                 Provmodificar.SuperficieTerrestre = txtSuperficieTerrestre.Text
                 GestorProv.modificarprovincia(Provmodificar)

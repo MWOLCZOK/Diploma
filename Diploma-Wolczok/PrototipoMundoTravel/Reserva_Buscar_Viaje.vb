@@ -50,18 +50,30 @@ Public Class Reserva_Buscar_Viaje
         Me.Close()
     End Sub
 
+    Public Function validarFormulario() As Boolean
+        If IsNothing(Me.Cbxorigen.SelectedItem) Then Return False
+        If IsNothing(Me.Cbxdestino.SelectedItem) Then Return False
+        If Me.DateTimePicker1.Value < Today Then Return False
+        If Cbxdestino.SelectedItem = Cbxorigen.SelectedItem Then Return False
+        If IsNothing(Me.ComboBox1.SelectedItem) Then Return False
+        Return True
+    End Function
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
-            Dim oListaViaje As New List(Of BE_Viaje)
-            Dim bllViaje As New BLL.BLL_Viaje
-            Dim oOrigen As BE_Destino = DirectCast(Cbxorigen.SelectedItem, BE_Destino)
-            Dim oDestino As BE_Destino = DirectCast(Cbxdestino.SelectedItem, BE_Destino)
-            Dim oTipoTransrpote As BE_TipoTransporte = DirectCast(ComboBox1.SelectedItem, BE_TipoTransporte)
-            oListaViaje = bllViaje.consultarviajes(oOrigen, oDestino, Me.DateTimePicker1.Value.ToShortDateString, oTipoTransrpote)
-            DataGridView1.DataSource = Nothing
-            DataGridView1.DataSource = oListaViaje
-            DataGridView1.ReadOnly = True
-            DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            If validarFormulario = True Then
+                Dim oListaViaje As New List(Of BE_Viaje)
+                Dim bllViaje As New BLL.BLL_Viaje
+                Dim oOrigen As BE_Destino = DirectCast(Cbxorigen.SelectedItem, BE_Destino)
+                Dim oDestino As BE_Destino = DirectCast(Cbxdestino.SelectedItem, BE_Destino)
+                Dim oTipoTransrpote As BE_TipoTransporte = DirectCast(ComboBox1.SelectedItem, BE_TipoTransporte)
+                oListaViaje = bllViaje.consultarviajes(oOrigen, oDestino, Me.DateTimePicker1.Value.ToShortDateString, oTipoTransrpote)
+                DataGridView1.DataSource = Nothing
+                DataGridView1.DataSource = oListaViaje
+                DataGridView1.ReadOnly = True
+                DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            End If
+
         Catch ex As Exception
 
         End Try
