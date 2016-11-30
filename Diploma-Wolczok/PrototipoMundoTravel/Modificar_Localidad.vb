@@ -25,7 +25,7 @@ Public Class Modificar_Localidad
             Cbxloc.SelectedItem = Nothing
             Cbxloc.Items.Clear()
             Me.NumericUpDown1.Value = 0
-            Me.NumericUpDown2.Value = 0
+            Me.txtHabitantes.Text = 0
             'Txtdestino.Text = ""
 
             Dim GestorLoc As New BLL_Localidad
