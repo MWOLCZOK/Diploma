@@ -32,9 +32,8 @@ Partial Class Agregar_Localidad
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.txtHabitantes = New System.Windows.Forms.TextBox()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblProvincia
@@ -125,12 +124,12 @@ Partial Class Agregar_Localidad
         Me.NumericUpDown1.Size = New System.Drawing.Size(165, 20)
         Me.NumericUpDown1.TabIndex = 50
         '
-        'NumericUpDown2
+        'txtHabitantes
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(269, 128)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(165, 20)
-        Me.NumericUpDown2.TabIndex = 51
+        Me.txtHabitantes.Location = New System.Drawing.Point(269, 128)
+        Me.txtHabitantes.Name = "txtHabitantes"
+        Me.txtHabitantes.Size = New System.Drawing.Size(165, 20)
+        Me.txtHabitantes.TabIndex = 51
         '
         'Agregar_Localidad
         '
@@ -138,7 +137,7 @@ Partial Class Agregar_Localidad
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(479, 281)
-        Me.Controls.Add(Me.NumericUpDown2)
+        Me.Controls.Add(Me.txtHabitantes)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
@@ -152,7 +151,6 @@ Partial Class Agregar_Localidad
         Me.Name = "Agregar_Localidad"
         Me.Text = "Agregar_Localidad"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -166,5 +164,5 @@ Partial Class Agregar_Localidad
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents txtHabitantes As TextBox
 End Class

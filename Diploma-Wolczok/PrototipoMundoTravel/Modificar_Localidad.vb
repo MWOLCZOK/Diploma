@@ -54,7 +54,7 @@ Public Class Modificar_Localidad
                 Dim Nuevaloc As BE_Localidad = New BE_Localidad
                 Nuevaloc = DirectCast(Cbxloc.SelectedItem, BE_Localidad)
                 Me.NumericUpDown1.Value = Nuevaloc.CantidadBarrios
-                Me.NumericUpDown2.Value = Nuevaloc.Habitantes
+                Me.txtHabitantes.Text = Nuevaloc.Habitantes
                 For Each miProv As BE_Provincia In Cbxprov.Items
                     If miProv.ID = Nuevaloc.Provincia.ID Then
                         Cbxprov.SelectedItem = miProv
@@ -78,7 +78,7 @@ Public Class Modificar_Localidad
                 Locmodificar = DirectCast(Cbxloc.SelectedItem, BE_Localidad)
                 Locmodificar.ID = DirectCast(Cbxloc.SelectedItem, BE_Localidad).ID
                 Locmodificar.CantidadBarrios = NumericUpDown1.Value
-                Locmodificar.Habitantes = NumericUpDown2.Value
+                Locmodificar.Habitantes = Me.txtHabitantes.Text
                 '   Locmodificar.Destino = Txtdestino.Text
                 GestorLoc.modificarLocalidad(Locmodificar)
                 iniciar()

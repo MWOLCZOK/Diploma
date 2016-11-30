@@ -8,6 +8,7 @@ Public Class Agregar_Usuario
         Try
             If Me.TextBox1.Text = "" Or Me.TextBox2.Text = "" Or Me.TextBox3.Text = "" Or Me.TextBox4.Text = "" Or Me.TextBox5.Text = "" Then Return False
             If Me.TextBox2.Text <> Me.TextBox3.Text Then Return False
+            If Len(Me.TextBox2.Text) < 6 Then Return False
             If Me.ComboBox1.SelectedItem Is Nothing Then Return False
             If Me.ComboBox2.SelectedItem Is Nothing Then Return False
             Return True

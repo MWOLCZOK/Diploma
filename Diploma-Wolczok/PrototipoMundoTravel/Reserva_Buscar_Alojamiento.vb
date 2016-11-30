@@ -18,7 +18,7 @@ Public Class Reserva_Buscar_Alojamiento
 
     Private Function validarFecha() As Boolean
         If Me.DateTimePicker1.Value < Today Then Return False
-        If Me.DateTimePicker2.Value < Me.DateTimePicker1.Value Then Return False
+        If Me.DateTimePicker2.Value <= Me.DateTimePicker1.Value Then Return False
         Return True
     End Function
 
@@ -96,5 +96,9 @@ Public Class Reserva_Buscar_Alojamiento
     Private Sub Reserva_Buscar_Alojamiento_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Alojamiento")
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

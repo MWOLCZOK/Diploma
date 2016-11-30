@@ -101,11 +101,20 @@ Public Class Agregar_Alojamiento
     End Sub
 
     Private Function validarFormulario() As Boolean
-        If NumericUpDown1.Value < 0 Or NumericUpDown1.Value > 4 Then Return False
+        'Valores Numericos Correctos
+        ' Estrellas entre 6 y 0, Ambientes menor a 6
+        If NumericUpDown1.Value < 0 Or NumericUpDown1.Value > 6 Or NumericUpDown2.Value > 7 Then Return False
+
+        'Campos en textbox vacíos
+        If String.IsNullOrWhiteSpace(Me.TextBox1.Text) Or String.IsNullOrWhiteSpace(Me.TextBox3.Text) Or String.IsNullOrWhiteSpace(Me.TextBox5.Text) Or String.IsNullOrWhiteSpace(Me.TextBox7.Text) Then Return False
+
+        'Combo Box sin Seleccion
+        If IsNothing(ComboBox2.SelectedItem) Or IsNothing(ComboBox2.SelectedItem) Then Return False
+
         Return True
     End Function
 
-    Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles BtnAceptar.Click
+    Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If validarFormulario() Then
                 Dim oTipoAlojamiento As New BE_TipoAlojamiento

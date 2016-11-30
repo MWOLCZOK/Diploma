@@ -25,10 +25,22 @@ Public Class Agregar_Habitacion
         Next
     End Sub
 
+    Private Function validarFormulario() As Boolean
+        'Valores Numericos Correctos
+
+        If String.IsNullOrWhiteSpace(Me.TextBox1.Text) Then Return False
+
+        'Combo Box sin Seleccion
+        If IsNothing(ComboBox1.SelectedItem) Then Return False
+
+        Return True
+    End Function
+
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            If Not IsNothing(ComboBox1.SelectedItem) Then
+
+            If validarFormulario() = True Then
                 Dim oHabitacion As New EE.BE_Habitacion
                 oHabitacion.Descripcion = Me.TextBox1.Text
                 oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
@@ -38,7 +50,7 @@ Public Class Agregar_Habitacion
                 bllHabitacion.altaHabitacion(oHabitacion)
                 MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
             Else
-                MsgBox("Debe seleccionar un alojamiento", MsgBoxStyle.Exclamation, "Error")
+                '  MsgBox("Debe seleccionar un alojamiento", MsgBoxStyle.Exclamation, "Error")
             End If
 
         Catch ex As Exception

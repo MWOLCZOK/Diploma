@@ -17,7 +17,7 @@ Public Class Modificar_Pais
             Cbxpais.Items.Clear()
             txtDescripcion.Text = ""
             Txtidiomapais.Text = ""
-            NumericUpDown1.Value = 0
+            txtPoblacionTotal.Text = 0
             Txtzonahorariapais.Text = ""
 
             Dim GestorPais As New BLL_Pais
@@ -35,7 +35,7 @@ Public Class Modificar_Pais
             NuevoPais = DirectCast(Cbxpais.SelectedItem, BE_Pais)
             Me.txtDescripcion.Text = NuevoPais.Descripcion
             Me.Txtidiomapais.Text = NuevoPais.Idioma
-            Me.NumericUpDown1.Value = NuevoPais.Poblacion_total
+            Me.txtPoblacionTotal.Text = NuevoPais.Poblacion_total
             Me.Txtzonahorariapais.Text = NuevoPais.Zonahoraria
         End If
     End Sub
@@ -52,7 +52,7 @@ Public Class Modificar_Pais
                     Paismodificar.ID = DirectCast(Cbxpais.SelectedItem, BE_Pais).ID
                     Paismodificar.Descripcion = txtDescripcion.Text
                     Paismodificar.Idioma = txtDescripcion.Text
-                    Paismodificar.Poblacion_total = Txtidiomapais.Text
+                    Paismodificar.Poblacion_total = txtPoblacionTotal.Text
                     Paismodificar.Zonahoraria = Txtzonahorariapais.Text
                     Gestorpais.modificarPais(Paismodificar)
                     Iniciar()

@@ -77,29 +77,38 @@ Public Class Agregar_Pago
 
     End Sub
 
+    Public Function validarFormulario() As Boolean
+        If String.IsNullOrWhiteSpace(Me.Txtdescripcion.Text) Or String.IsNullOrWhiteSpace(Me.Txtmontopago.Text) Then Return False
+        If Len(Me.Txtdescripcion.Text) < 10 Then Return False
+        Return True
+    End Function
+
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            Dim oPagoviaje As New BE_Pago
-            Dim bllPagoviaje As New BLL_PagoViaje
-            oPagoviaje.Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
-            oPagoviaje.Fecha = Today.Date
-            oPagoviaje.Monto = Me.Txtmontopago.Text
-            oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
+            If validarFormulario = True Then
+                Dim oPagoviaje As New BE_Pago
+                Dim bllPagoviaje As New BLL_PagoViaje
+                oPagoviaje.Metodopago = DirectCast(Cbxmediopago.SelectedItem, BE_Metodopago)
+                oPagoviaje.Fecha = Today.Date
+                oPagoviaje.Monto = Me.Txtmontopago.Text
+                oPagoviaje.NumeroTarjeta = Me.Txtdescripcion.Text
 
-            Dim oreserva As EE.BE_Reserva = DirectCast(Cbxreserva.SelectedItem, BE_Reserva)
-            If oreserva.TipoReserva = TipoReserva.Alojamiento Then
-                oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaAlojamiento)
-            Else
-                oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+                Dim oreserva As EE.BE_Reserva = DirectCast(Cbxreserva.SelectedItem, BE_Reserva)
+                If oreserva.TipoReserva = TipoReserva.Alojamiento Then
+                    oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaAlojamiento)
+                Else
+                    oPagoviaje.Reserva = DirectCast(Cbxreserva.SelectedItem, BE_ReservaViaje)
+                End If
+
+                If bllPagoviaje.validarPago(oPagoviaje) = True Then
+                    bllPagoviaje.altapagoviaje(oPagoviaje)
+                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                Else
+                    MsgBox("el pago excede el monto de la reserva", MsgBoxStyle.Exclamation, "Error")
+
+                End If
             End If
 
-            If bllPagoviaje.validarPago(oPagoviaje) = True Then
-                bllPagoviaje.altapagoviaje(oPagoviaje)
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
-            Else
-                MsgBox("el pago excede el monto de la reserva", MsgBoxStyle.Exclamation, "Error")
-
-            End If
 
         Catch ex As Exception
 

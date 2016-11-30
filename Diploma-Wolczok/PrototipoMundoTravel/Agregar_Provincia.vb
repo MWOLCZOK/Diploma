@@ -24,7 +24,7 @@ Public Class Agregar_Provincia
 
     Private Function validarformulario() As Boolean
         Try
-            If Me.Txtdescripcion.Text = "" Or Me.Txtregion.Text = "" Or Me.Txtsuperficieterrestre.Text = "" Then Return False
+            If String.IsNullOrWhiteSpace(Me.Txtdescripcion.Text) Or String.IsNullOrWhiteSpace(Me.Txtregion.Text) Or String.IsNullOrWhiteSpace(Me.txtHabitantes.Text) Or String.IsNullOrWhiteSpace(Me.Txtsuperficieterrestre.Text) Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -41,7 +41,7 @@ Public Class Agregar_Provincia
                 Dim oProvincia As New BE_Provincia
                 Dim bllProvincia As New BLL_Provincia
                 oProvincia.Descripcion = Txtdescripcion.Text
-                oProvincia.Habitantes = NumericUpDown1.Value
+                oProvincia.Habitantes = txtHabitantes.Text
                 oProvincia.Region = Txtregion.Text
                 oProvincia.SuperficieTerrestre = Txtsuperficieterrestre.Text
                 Dim oPais As New BE_Pais

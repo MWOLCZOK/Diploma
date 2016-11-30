@@ -32,8 +32,7 @@ Partial Class Agregar_Pais
         Me.lblZonaHoraria = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Txtpoblacionpais = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Txtdescripcion
@@ -123,12 +122,12 @@ Partial Class Agregar_Pais
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'NumericUpDown1
+        'Txtpoblacionpais
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(20, 136)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(219, 20)
-        Me.NumericUpDown1.TabIndex = 50
+        Me.Txtpoblacionpais.Location = New System.Drawing.Point(19, 135)
+        Me.Txtpoblacionpais.Name = "Txtpoblacionpais"
+        Me.Txtpoblacionpais.Size = New System.Drawing.Size(220, 20)
+        Me.Txtpoblacionpais.TabIndex = 50
         '
         'Agregar_Pais
         '
@@ -136,7 +135,7 @@ Partial Class Agregar_Pais
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(553, 283)
-        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.Txtpoblacionpais)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblZonaHoraria)
@@ -149,7 +148,6 @@ Partial Class Agregar_Pais
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Pais"
         Me.Text = "Agregar_Pais"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -163,5 +161,5 @@ Partial Class Agregar_Pais
     Friend WithEvents lblZonaHoraria As System.Windows.Forms.Label
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnSalir As Button
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Txtpoblacionpais As TextBox
 End Class

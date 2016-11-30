@@ -27,13 +27,12 @@ Partial Class Modificar_Localidad
         Me.Cbxloc = New System.Windows.Forms.ComboBox()
         Me.lblSeleccionarLocalidad = New System.Windows.Forms.Label()
         Me.Cbxprov = New System.Windows.Forms.ComboBox()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.lblHabitantes = New System.Windows.Forms.Label()
         Me.lblCantidadBarrios = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtHabitantes = New System.Windows.Forms.TextBox()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,13 +75,6 @@ Partial Class Modificar_Localidad
         Me.Cbxprov.Name = "Cbxprov"
         Me.Cbxprov.Size = New System.Drawing.Size(204, 21)
         Me.Cbxprov.TabIndex = 75
-        '
-        'NumericUpDown2
-        '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(275, 135)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(204, 20)
-        Me.NumericUpDown2.TabIndex = 79
         '
         'NumericUpDown1
         '
@@ -135,15 +127,22 @@ Partial Class Modificar_Localidad
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
+        'txtHabitantes
+        '
+        Me.txtHabitantes.Location = New System.Drawing.Point(275, 134)
+        Me.txtHabitantes.Name = "txtHabitantes"
+        Me.txtHabitantes.Size = New System.Drawing.Size(204, 20)
+        Me.txtHabitantes.TabIndex = 82
+        '
         'Modificar_Localidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(531, 289)
+        Me.Controls.Add(Me.txtHabitantes)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.NumericUpDown2)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.lblHabitantes)
         Me.Controls.Add(Me.lblCantidadBarrios)
@@ -154,7 +153,6 @@ Partial Class Modificar_Localidad
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Localidad"
         Me.Text = "Modificar_Localidad"
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -164,10 +162,10 @@ Partial Class Modificar_Localidad
     Friend WithEvents Cbxloc As System.Windows.Forms.ComboBox
     Friend WithEvents lblSeleccionarLocalidad As System.Windows.Forms.Label
     Friend WithEvents Cbxprov As System.Windows.Forms.ComboBox
-    Friend WithEvents NumericUpDown2 As NumericUpDown
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents lblHabitantes As Label
     Friend WithEvents lblCantidadBarrios As Label
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents txtHabitantes As TextBox
 End Class

@@ -11,7 +11,7 @@ Public Class Agregar_Pasajero
 
     Private Function validarformulario() As Boolean
         Try
-            If Me.Txtnombre.Text = "" Or Me.Txtapellido.Text = "" Or Me.Txtcorreo.Text = "" Or Me.Txtdni.Text = "" Or Me.Txtdomicilio.Text = "" Or Me.Txttelefono.Text = "" Then Return False
+            If String.IsNullOrWhiteSpace(Me.Txtnombre.Text) Or String.IsNullOrWhiteSpace(Me.Txtapellido.Text) Or String.IsNullOrWhiteSpace(Me.Txttelefono.Text) Or String.IsNullOrWhiteSpace(Me.Txtdomicilio.Text) Or String.IsNullOrWhiteSpace(Me.Txtcorreo.Text) Or String.IsNullOrWhiteSpace(Me.Txtdni.Text) Then Return False
             Return True
         Catch ex As Exception
             Return False

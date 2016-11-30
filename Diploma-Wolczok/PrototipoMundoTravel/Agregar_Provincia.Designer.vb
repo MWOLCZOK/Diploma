@@ -34,8 +34,7 @@ Partial Class Agregar_Provincia
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtHabitantes = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lblPais
@@ -144,12 +143,12 @@ Partial Class Agregar_Provincia
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'NumericUpDown1
+        'txtHabitantes
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(33, 108)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(235, 20)
-        Me.NumericUpDown1.TabIndex = 56
+        Me.txtHabitantes.Location = New System.Drawing.Point(32, 108)
+        Me.txtHabitantes.Name = "txtHabitantes"
+        Me.txtHabitantes.Size = New System.Drawing.Size(236, 20)
+        Me.txtHabitantes.TabIndex = 56
         '
         'Agregar_Provincia
         '
@@ -157,7 +156,7 @@ Partial Class Agregar_Provincia
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(607, 290)
-        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.txtHabitantes)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.ComboBox1)
@@ -172,7 +171,6 @@ Partial Class Agregar_Provincia
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Agregar_Provincia"
         Me.Text = "Agregar_Provincia"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -188,5 +186,5 @@ Partial Class Agregar_Provincia
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents txtHabitantes As TextBox
 End Class

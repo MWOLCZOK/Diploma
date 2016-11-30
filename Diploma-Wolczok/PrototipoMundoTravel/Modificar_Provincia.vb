@@ -30,7 +30,7 @@ Public Class Modificar_Provincia
             Cbxprov.SelectedItem = Nothing
             Cbxprov.Items.Clear()
             txtNombre.Text = ""
-            NumericUpDown1.Value = 0
+            txtHabitantes.Text = 0
             txtRegion.Text = ""
             txtSuperficieTerrestre.Text = ""
             Dim GestorProv As New BLL_Provincia
@@ -50,7 +50,7 @@ Public Class Modificar_Provincia
                 Dim Nuevaprov As BE_Provincia = New BE_Provincia
                 Nuevaprov = DirectCast(Cbxprov.SelectedItem, BE_Provincia)
                 Me.txtNombre.Text = Nuevaprov.Descripcion
-                Me.NumericUpDown1.Value = Nuevaprov.Habitantes
+                Me.txtHabitantes.Text = Nuevaprov.Habitantes
                 Me.txtRegion.Text = Nuevaprov.Region
                 Me.txtSuperficieTerrestre.Text = Nuevaprov.SuperficieTerrestre
 

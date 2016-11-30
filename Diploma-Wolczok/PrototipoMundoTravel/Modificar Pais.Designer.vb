@@ -25,7 +25,6 @@ Partial Class Modificar_Pais
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Pais))
         Me.Cbxpais = New System.Windows.Forms.ComboBox()
         Me.lblSeleccionarPais = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.lblZonaHoraria = New System.Windows.Forms.Label()
         Me.lblPoblacionTotal = New System.Windows.Forms.Label()
         Me.lblIdioma = New System.Windows.Forms.Label()
@@ -35,7 +34,7 @@ Partial Class Modificar_Pais
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtPoblacionTotal = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Cbxpais
@@ -57,13 +56,6 @@ Partial Class Modificar_Pais
         Me.lblSeleccionarPais.Size = New System.Drawing.Size(115, 15)
         Me.lblSeleccionarPais.TabIndex = 32
         Me.lblSeleccionarPais.Text = "Seleccionar Pais"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(35, 203)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(219, 20)
-        Me.NumericUpDown1.TabIndex = 58
         '
         'lblZonaHoraria
         '
@@ -152,15 +144,22 @@ Partial Class Modificar_Pais
         Me.Button1.Text = "Salir"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'txtPoblacionTotal
+        '
+        Me.txtPoblacionTotal.Location = New System.Drawing.Point(35, 202)
+        Me.txtPoblacionTotal.Name = "txtPoblacionTotal"
+        Me.txtPoblacionTotal.Size = New System.Drawing.Size(219, 20)
+        Me.txtPoblacionTotal.TabIndex = 61
+        '
         'Modificar_Pais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(557, 359)
+        Me.Controls.Add(Me.txtPoblacionTotal)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.lblZonaHoraria)
         Me.Controls.Add(Me.lblPoblacionTotal)
         Me.Controls.Add(Me.lblIdioma)
@@ -173,14 +172,12 @@ Partial Class Modificar_Pais
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Pais"
         Me.Text = "Modificar_Pais"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Cbxpais As System.Windows.Forms.ComboBox
     Friend WithEvents lblSeleccionarPais As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents lblZonaHoraria As Label
     Friend WithEvents lblPoblacionTotal As Label
     Friend WithEvents lblIdioma As Label
@@ -190,4 +187,5 @@ Partial Class Modificar_Pais
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents btnModificar As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents txtPoblacionTotal As TextBox
 End Class

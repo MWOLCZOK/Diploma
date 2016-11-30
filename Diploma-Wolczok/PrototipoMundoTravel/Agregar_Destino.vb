@@ -32,12 +32,15 @@ Public Class Agregar_Destino
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            Dim oDestino As New BE_Destino
-            Dim bllDestino As New BLL.BLL_Destino
-            oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
-            oDestino.TieneAeropuerto = Me.chkTieneAeropuerto.Checked
-            bllDestino.altaDestino(oDestino)
-            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            If Not IsNothing(ComboBox1.SelectedItem) Then
+                Dim oDestino As New BE_Destino
+                Dim bllDestino As New BLL.BLL_Destino
+                oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
+                oDestino.TieneAeropuerto = Me.chkTieneAeropuerto.Checked
+                bllDestino.altaDestino(oDestino)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            End If
+
         Catch ex As Exception
             MsgBox("Error")
         End Try

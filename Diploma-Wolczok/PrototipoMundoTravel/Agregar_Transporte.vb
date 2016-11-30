@@ -36,21 +36,34 @@ Public Class Agregar_Transporte
         Next
     End Sub
 
-    Private Sub Btnaceptar_Click(sender As Object, e As EventArgs)
 
-    End Sub
+    Private Function validarFormulario() As Boolean
+        Try
+            If Me.TextBox1.Text = "" Or Me.TextBox2.Text = "" Then Return False
+            If Me.ComboBox1.SelectedItem Is Nothing Then Return False
+            If Me.Cbxtipotransporte.SelectedItem Is Nothing Then Return False
+            If Me.NumericUpDown5.Value <= 0 Then Return False
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            Dim oTransporte As New BE_Transporte
-            oTransporte.TipoTransporte = DirectCast(Cbxtipotransporte.SelectedItem, BE_TipoTransporte)
-            oTransporte.Empresa = DirectCast(ComboBox1.SelectedItem, BE_EmpresaTransporte)
-            oTransporte.Descripcion = Me.TextBox1.Text
-            oTransporte.Modelo = Me.TextBox2.Text
-            Dim bllTransporte As New BLL_Transporte
-            oTransporte.Asientos = bllTransporte.obtenerAsientos(Me.NumericUpDown1.Value, Me.NumericUpDown2.Value, Me.NumericUpDown3.Value, Me.NumericUpDown4.Value, Me.NumericUpDown5.Value)
-            bllTransporte.altaTransporte(oTransporte)
-            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            If validarformulario = True Then
+                Dim oTransporte As New BE_Transporte
+                oTransporte.TipoTransporte = DirectCast(Cbxtipotransporte.SelectedItem, BE_TipoTransporte)
+                oTransporte.Empresa = DirectCast(ComboBox1.SelectedItem, BE_EmpresaTransporte)
+                oTransporte.Descripcion = Me.TextBox1.Text
+                oTransporte.Modelo = Me.TextBox2.Text
+                Dim bllTransporte As New BLL_Transporte
+                oTransporte.Asientos = bllTransporte.obtenerAsientos(Me.NumericUpDown1.Value, Me.NumericUpDown2.Value, Me.NumericUpDown3.Value, Me.NumericUpDown4.Value, Me.NumericUpDown5.Value)
+                bllTransporte.altaTransporte(oTransporte)
+                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            End If
+
         Catch ex As Exception
 
         End Try

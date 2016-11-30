@@ -48,7 +48,7 @@ Partial Class Agregar_Alojamiento
         Me.chkCocina = New System.Windows.Forms.CheckBox()
         Me.chkPrivada = New System.Windows.Forms.CheckBox()
         Me.Btnsalir = New System.Windows.Forms.Button()
-        Me.BtnAceptar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.lblDestino = New System.Windows.Forms.Label()
         Me.lblUbicacion = New System.Windows.Forms.Label()
         Me.lblAmbientes = New System.Windows.Forms.Label()
@@ -326,16 +326,16 @@ Partial Class Agregar_Alojamiento
         Me.Btnsalir.Text = "Salir"
         Me.Btnsalir.UseVisualStyleBackColor = False
         '
-        'BtnAceptar
+        'btnAgregar
         '
-        Me.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.BtnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAceptar.Location = New System.Drawing.Point(107, 424)
-        Me.BtnAceptar.Name = "BtnAceptar"
-        Me.BtnAceptar.Size = New System.Drawing.Size(150, 30)
-        Me.BtnAceptar.TabIndex = 40
-        Me.BtnAceptar.Text = "Aceptar"
-        Me.BtnAceptar.UseVisualStyleBackColor = False
+        Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(107, 424)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(150, 30)
+        Me.btnAgregar.TabIndex = 40
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'lblDestino
         '
@@ -396,7 +396,7 @@ Partial Class Agregar_Alojamiento
         Me.Controls.Add(Me.lblUbicacion)
         Me.Controls.Add(Me.lblDestino)
         Me.Controls.Add(Me.Btnsalir)
-        Me.Controls.Add(Me.BtnAceptar)
+        Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.chkPrivada)
         Me.Controls.Add(Me.chkCocina)
         Me.Controls.Add(Me.ChkFrigobar)
@@ -455,7 +455,7 @@ Partial Class Agregar_Alojamiento
     Friend WithEvents chkCocina As System.Windows.Forms.CheckBox
     Friend WithEvents chkPrivada As System.Windows.Forms.CheckBox
     Friend WithEvents Btnsalir As Button
-    Friend WithEvents BtnAceptar As Button
+    Friend WithEvents btnAgregar As Button
     Friend WithEvents lblDestino As Label
     Friend WithEvents lblUbicacion As Label
     Friend WithEvents lblAmbientes As Label

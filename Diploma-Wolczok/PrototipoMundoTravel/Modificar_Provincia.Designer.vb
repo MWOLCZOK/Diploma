@@ -25,7 +25,6 @@ Partial Class Modificar_Provincia
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Modificar_Provincia))
         Me.Cbxprov = New System.Windows.Forms.ComboBox()
         Me.lblSeleccionarProvincia = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.lblPais = New System.Windows.Forms.Label()
         Me.lblSuperficieTerrestre = New System.Windows.Forms.Label()
@@ -37,7 +36,7 @@ Partial Class Modificar_Provincia
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtHabitantes = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Cbxprov
@@ -59,13 +58,6 @@ Partial Class Modificar_Provincia
         Me.lblSeleccionarProvincia.Size = New System.Drawing.Size(146, 15)
         Me.lblSeleccionarProvincia.TabIndex = 49
         Me.lblSeleccionarProvincia.Text = "Seleccionar Provincia"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(41, 177)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(235, 20)
-        Me.NumericUpDown1.TabIndex = 72
         '
         'ComboBox1
         '
@@ -173,15 +165,22 @@ Partial Class Modificar_Provincia
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
+        'txtHabitantes
+        '
+        Me.txtHabitantes.Location = New System.Drawing.Point(40, 177)
+        Me.txtHabitantes.Name = "txtHabitantes"
+        Me.txtHabitantes.Size = New System.Drawing.Size(236, 20)
+        Me.txtHabitantes.TabIndex = 86
+        '
         'Modificar_Provincia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(607, 360)
+        Me.Controls.Add(Me.txtHabitantes)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.lblPais)
         Me.Controls.Add(Me.lblSuperficieTerrestre)
@@ -196,14 +195,12 @@ Partial Class Modificar_Provincia
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Modificar_Provincia"
         Me.Text = "Modificar_Provincia"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Cbxprov As System.Windows.Forms.ComboBox
     Friend WithEvents lblSeleccionarProvincia As System.Windows.Forms.Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents lblPais As Label
     Friend WithEvents lblSuperficieTerrestre As Label
@@ -215,4 +212,5 @@ Partial Class Modificar_Provincia
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents txtHabitantes As TextBox
 End Class

@@ -32,7 +32,7 @@ Public Class Agregar_Localidad
 
     Private Function validarFormulario() As Boolean
         Try
-            If Me.Txtdescripcion.Text = "" Then Return False
+            If String.IsNullOrWhiteSpace(Me.txtHabitantes.Text) Or String.IsNullOrWhiteSpace(Me.Txtdescripcion.Text) Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -51,7 +51,7 @@ Public Class Agregar_Localidad
                 Dim bllLoc As New BLL_Localidad
                 oLoc.Descripcion = Me.Txtdescripcion.Text
                 oLoc.CantidadBarrios = Me.NumericUpDown1.Value
-                oLoc.Habitantes = Me.NumericUpDown2.Value
+                oLoc.Habitantes = Me.txtHabitantes.Text
                 Dim oProvincia As New BE_Provincia
                 oProvincia.ID = DirectCast(ComboBox1.SelectedItem, BE_Provincia).ID
                 oLoc.Provincia = oProvincia

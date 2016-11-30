@@ -206,7 +206,7 @@ Partial Class Reserva_Buscar_Asientos
         Me.Controls.Add(Me.Txtempresatrans)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Asientos"
-        Me.Text = "s"
+        Me.Text = "Búsqueda de Asientos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
