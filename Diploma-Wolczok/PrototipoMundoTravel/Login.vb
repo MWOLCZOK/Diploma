@@ -10,6 +10,8 @@ Public Class Login
             bllGestorBD.gestorBD()
             validarCampos()
             'PRUEBA PARA DIGITO
+            'que onda con el DVH?????
+
             'BLL_DigitoVerificador.Integridad()
             Dim oUsuario As New EE.BE_Usuario
             Dim bUsuario As New BLL.BLL_Usuario
@@ -64,4 +66,5 @@ Public Class Login
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)  ' este es el original
 
     End Sub
+
 End Class
