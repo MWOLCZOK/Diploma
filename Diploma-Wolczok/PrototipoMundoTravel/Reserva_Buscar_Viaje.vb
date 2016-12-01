@@ -54,7 +54,7 @@ Public Class Reserva_Buscar_Viaje
         If IsNothing(Me.Cbxorigen.SelectedItem) Then Return False
         If IsNothing(Me.Cbxdestino.SelectedItem) Then Return False
         If Me.DateTimePicker1.Value < Today Then Return False
-        If Cbxdestino.SelectedItem = Cbxorigen.SelectedItem Then Return False
+        If DirectCast(Cbxdestino.SelectedItem, BE_Destino).ID = DirectCast(Cbxorigen.SelectedItem, BE_Destino).ID Then Return False
         If IsNothing(Me.ComboBox1.SelectedItem) Then Return False
         Return True
     End Function
