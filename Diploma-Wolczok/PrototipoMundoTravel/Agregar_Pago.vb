@@ -79,7 +79,7 @@ Public Class Agregar_Pago
 
     Public Function validarFormulario() As Boolean
         If String.IsNullOrWhiteSpace(Me.Txtmontopago.Text) Then Return False
-        If Len(Me.Txtdescripcion.Text) < 10 Then Return False
+        '  If Len(Me.Txtdescripcion.Text) < 10 Then Return False
         Return True
     End Function
 

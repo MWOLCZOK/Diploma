@@ -45,7 +45,7 @@ Public Class Eliminar_Destino
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Dim MiTraductor As New ControladorTraductor
+        MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
     End Sub
 End Class

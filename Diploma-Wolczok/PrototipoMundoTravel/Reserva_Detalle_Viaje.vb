@@ -74,7 +74,7 @@ Public Class Reserva_Detalle_Viaje
             oDoc.NewPage()
             Encabezado(pdfw, oDoc)
             Dim tabla As PdfPTable = New PdfPTable(7)
-            tabla.AddCell(oReservaViaje.NumeroReserva)
+            tabla.AddCell(oReservaViaje.ID)
             tabla.AddCell(oReservaViaje.TipoReserva.ToString)
             tabla.AddCell(oReservaViaje.viaje.FechaHoraLlegada.ToShortDateString)
             tabla.AddCell(oReservaViaje.viaje.FechaHoraLlegada.ToShortDateString)
@@ -113,7 +113,7 @@ Public Class Reserva_Detalle_Viaje
         End With
         Dim table As PdfPTable = New PdfPTable(7)
 
-        Dim Celda As New PdfPCell(New Phrase("Numero de Reserva", New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.BOLD, BaseColor.WHITE)))
+        Dim Celda As New PdfPCell(New Phrase("Identificador de Reserva", New Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14, iTextSharp.text.Font.BOLD, BaseColor.WHITE)))
         Celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER
         Celda.BackgroundColor = New iTextSharp.text.BaseColor(51, 102, 153)
 

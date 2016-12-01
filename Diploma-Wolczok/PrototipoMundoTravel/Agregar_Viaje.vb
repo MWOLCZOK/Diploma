@@ -39,18 +39,12 @@ Public Class Agregar_Viaje
         End Try
     End Sub
 
-    Private Function validarFecha() As Boolean
-        If Me.Fechainicio.Value < Today Then Return False
-        If Me.Fechafin.Value <= Me.Fechainicio.Value Then Return False
-        Return True
-    End Function
-
-
     Private Function validarFormulario() As Boolean
         If Me.Cbxorigen.SelectedItem Is Nothing Then Return False
         If Me.Cbxdestino.SelectedItem Is Nothing Then Return False
         If Me.Cbxtipotransporte.SelectedItem Is Nothing Then Return False
-        validarFecha()
+        If Me.Fechainicio.Value < Today Then Return False
+        If Me.Fechafin.Value < Me.Fechainicio.Value Then Return False
         Return True
     End Function
 
