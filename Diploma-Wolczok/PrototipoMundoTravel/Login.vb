@@ -9,6 +9,7 @@ Public Class Login
             Dim bllGestorBD As New BLL_GestorBD
             bllGestorBD.gestorBD()
             validarCampos()
+            'PRUEBA PARA DIGITO
             'BLL_DigitoVerificador.Integridad()
             Dim oUsuario As New EE.BE_Usuario
             Dim bUsuario As New BLL.BLL_Usuario
