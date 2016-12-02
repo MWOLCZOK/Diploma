@@ -546,6 +546,7 @@
     <Content Include="Ajustes Mundo Travel.txt" />
     <Content Include="Plane.ico" />
     <Content Include="scrip.sql" />
+    <Content Include="scrip2.sql" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
