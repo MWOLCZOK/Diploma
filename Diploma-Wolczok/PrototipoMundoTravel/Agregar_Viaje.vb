@@ -44,7 +44,7 @@ Public Class Agregar_Viaje
         If Me.Cbxdestino.SelectedItem Is Nothing Then Return False
         If Me.Cbxtipotransporte.SelectedItem Is Nothing Then Return False
         If Me.Fechainicio.Value < Today Then Return False
-        If Me.Fechafin.Value < Me.Fechainicio.Value Then Return False
+        If Me.Fechafin.Value.ToShortDateString < Me.Fechainicio.Value.ToShortDateString Then Return False
         Return True
     End Function
 
