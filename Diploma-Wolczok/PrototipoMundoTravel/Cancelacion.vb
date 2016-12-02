@@ -72,7 +72,9 @@ Public Class Cancelacion
                 oCancel.Reserva = oReserva
                 oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
                 bllCancel.alta(oCancel)
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                MsgBox("Se ha cancelado la reserva correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+            Else
+                MsgBox("Complete el motivo de la cancelacion y reintente", MsgBoxStyle.Information, "Mundo Travel SA")
             End If
 
         Catch ex As Exception
@@ -80,7 +82,7 @@ Public Class Cancelacion
         End Try
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles btnCalcularPunitorios.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles btnCalcularPunitorios1.Click
         Try
             Dim bllReserva As New BLL.BLL_Reserva
             Dim oReserva As New BE_ReservaViaje

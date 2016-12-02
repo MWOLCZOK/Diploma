@@ -39,7 +39,7 @@ Partial Class Cancelacion
         Me.Txtdecrmotivo = New System.Windows.Forms.TextBox()
         Me.btnCancelarReserva = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.btnCalcularPunitorios = New System.Windows.Forms.Button()
+        Me.btnCalcularPunitorios1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -183,16 +183,16 @@ Partial Class Cancelacion
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
-        'btnCalcularPunitorios
+        'btnCalcularPunitorios1
         '
-        Me.btnCalcularPunitorios.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
-        Me.btnCalcularPunitorios.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalcularPunitorios.Location = New System.Drawing.Point(263, 353)
-        Me.btnCalcularPunitorios.Name = "btnCalcularPunitorios"
-        Me.btnCalcularPunitorios.Size = New System.Drawing.Size(150, 30)
-        Me.btnCalcularPunitorios.TabIndex = 64
-        Me.btnCalcularPunitorios.Text = "Calcular Punitorios"
-        Me.btnCalcularPunitorios.UseVisualStyleBackColor = False
+        Me.btnCalcularPunitorios1.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.btnCalcularPunitorios1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalcularPunitorios1.Location = New System.Drawing.Point(263, 353)
+        Me.btnCalcularPunitorios1.Name = "btnCalcularPunitorios1"
+        Me.btnCalcularPunitorios1.Size = New System.Drawing.Size(150, 30)
+        Me.btnCalcularPunitorios1.TabIndex = 64
+        Me.btnCalcularPunitorios1.Text = "Calcular Punitorios"
+        Me.btnCalcularPunitorios1.UseVisualStyleBackColor = False
         '
         'Cancelacion
         '
@@ -200,7 +200,7 @@ Partial Class Cancelacion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(884, 427)
-        Me.Controls.Add(Me.btnCalcularPunitorios)
+        Me.Controls.Add(Me.btnCalcularPunitorios1)
         Me.Controls.Add(Me.btnCancelarReserva)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblMotivoCancelacion)
@@ -235,5 +235,5 @@ Partial Class Cancelacion
     Friend WithEvents Txtdecrmotivo As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelarReserva As Button
     Friend WithEvents btnSalir As Button
-    Friend WithEvents btnCalcularPunitorios As Button
+    Friend WithEvents btnCalcularPunitorios1 As Button
 End Class
