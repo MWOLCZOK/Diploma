@@ -102,9 +102,9 @@ Public Class Agregar_Pago
 
                 If bllPagoviaje.validarPago(oPagoviaje) = True Then
                     bllPagoviaje.altapagoviaje(oPagoviaje)
-                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                    MsgBox("Se ha computado el pago correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
                 Else
-                    MsgBox("el pago excede el monto de la reserva", MsgBoxStyle.Exclamation, "Error")
+                    MsgBox("El pago excede el monto de la reserva, por favor cargue el importe correcto", MsgBoxStyle.Exclamation, "Error")
 
                 End If
             End If

@@ -199,9 +199,9 @@ Public Class Agregar_Alojamiento
                     oPosada.Mascota = Me.chkMascotas.Checked
                     bllPosada.altaPosada(oPosada)
                 End If
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                MsgBox("Se ha agregado el alojamiento correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             Else
-                'ACA EL MENSAJE DE ERROR
+                MsgBox("No se logró agregar el alojamiento, intente nuevamente", MsgBoxStyle.Exclamation, "Mundo Travel SA")
             End If
         Catch ex As Exception
 

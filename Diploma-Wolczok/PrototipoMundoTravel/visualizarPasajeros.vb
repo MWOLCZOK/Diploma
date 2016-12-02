@@ -62,7 +62,7 @@ Public Class visualizarPasajeros
             mistream.Close()
             Jsonarray.Serializar(p)
         End If
-        MessageBox.Show("Se ha generado un archivo con los pasajeros.")
+        MessageBox.Show("Se ha generado un archivo JSON con los pasajeros")
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma

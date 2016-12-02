@@ -48,6 +48,7 @@ Public Class Reserva_Detalle
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnVolverComprar.Click
+        MsgBox("Volverá al inicio de la compra", MsgBoxStyle.Information, "Mundo Travel SA")
         Dim formulariobuscaralojamiento As New Reserva_Buscar_Alojamiento()
         formulariobuscaralojamiento.Show()
         Me.Close()

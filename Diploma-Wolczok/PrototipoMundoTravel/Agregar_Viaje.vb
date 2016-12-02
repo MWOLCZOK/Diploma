@@ -71,7 +71,7 @@ Public Class Agregar_Viaje
                 oViaje.FechaHoraLlegada = Fechafin.Value
                 Dim bllViaje As New BLL.BLL_Viaje
                 bllViaje.altaViaje(oViaje)
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                MsgBox("Se ha agregado el viaje correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             End If
 
         Catch ex As Exception

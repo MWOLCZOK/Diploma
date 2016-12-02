@@ -31,7 +31,7 @@ Public Class Eliminar_Destino
                 Dim oDestino As BE_Destino = New BE_Destino
                 oDestino = DirectCast(CbxDestino.SelectedItem, BE_Destino)
                 bllDestino.eliminarDestino(oDestino)
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                MsgBox("Se ha eliminado el destino correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             End If
         Catch ex As Exception
 

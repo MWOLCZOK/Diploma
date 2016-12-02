@@ -81,4 +81,8 @@ Public Class Reserva_Buscar_Habitacion
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Alojamiento")
     End Sub
+
+    Private Sub lblAlojamiento_Click(sender As Object, e As EventArgs) Handles lblAlojamiento.Click
+
+    End Sub
 End Class

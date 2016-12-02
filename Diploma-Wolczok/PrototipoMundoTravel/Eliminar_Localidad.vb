@@ -34,9 +34,10 @@ Public Class Eliminar_Localidad
                 Dim NuevaLoc As New BE_Localidad
                 NuevaLoc = DirectCast(CbxLoc.SelectedItem, BE_Localidad)
                 GestorLoc.eliminarlocalidad(NuevaLoc)
-                If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_30"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_38"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     iniciar()
-                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_31"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MsgBox("No se logró eliminar, por favor reintente", MsgBoxStyle.Information, "Mundo Travel SA")
                 End If
             End If
         Catch ex As Exception

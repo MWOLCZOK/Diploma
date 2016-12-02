@@ -89,7 +89,7 @@ Public Class Modificar_Localidad
                     '   Locmodificar.Destino = Txtdestino.Text
                     GestorLoc.modificarLocalidad(Locmodificar)
                     iniciar()
-                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                    MsgBox("Se ha modificado la localidad correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
                 End If
             End If
 

@@ -56,7 +56,7 @@ Public Class Agregar_Localidad
                 oProvincia.ID = DirectCast(ComboBox1.SelectedItem, BE_Provincia).ID
                 oLoc.Provincia = oProvincia
                 bllLoc.altalocalidad(oLoc)
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                MsgBox("Se ha agregado la localidad correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             Else
                 Throw New Exception
             End If

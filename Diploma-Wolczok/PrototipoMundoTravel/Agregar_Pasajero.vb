@@ -38,7 +38,7 @@ Public Class Agregar_Pasajero
                 oPasajero.Domicilio = Txtdomicilio.Text
                 oPasajero.Telefono = Txttelefono.Text
                 bllPasajero.Altapasajero(oPasajero)
-                MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                MsgBox("Se ha agregado el pasajero correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             Else
                 Throw New Exception
             End If

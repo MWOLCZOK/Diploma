@@ -74,7 +74,7 @@ Public Class Modificar_Pasajero
                     pasmodificar.Telefono = txtTelefono.Text
                     GestorPas.modificarPasajero(pasmodificar)
                     Iniciar()
-                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                    MsgBox("Se ha modificado el pasajero correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
                 End If
             End If
         Catch ex As Exception

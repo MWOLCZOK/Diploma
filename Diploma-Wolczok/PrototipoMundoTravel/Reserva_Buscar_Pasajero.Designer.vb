@@ -23,24 +23,13 @@ Partial Class Reserva_Buscar_Pasajero
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reserva_Buscar_Pasajero))
-        Me.lblBusquedaPasajero = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.lblBusquedaDNI = New System.Windows.Forms.Label()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'lblBusquedaPasajero
-        '
-        Me.lblBusquedaPasajero.AutoSize = True
-        Me.lblBusquedaPasajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBusquedaPasajero.ForeColor = System.Drawing.Color.White
-        Me.lblBusquedaPasajero.Location = New System.Drawing.Point(28, 22)
-        Me.lblBusquedaPasajero.Name = "lblBusquedaPasajero"
-        Me.lblBusquedaPasajero.Size = New System.Drawing.Size(152, 15)
-        Me.lblBusquedaPasajero.TabIndex = 35
-        Me.lblBusquedaPasajero.Text = "Busqueda de Pasajero"
         '
         'TextBox9
         '
@@ -80,16 +69,27 @@ Partial Class Reserva_Buscar_Pasajero
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = False
         '
+        'lblBusquedaDNI
+        '
+        Me.lblBusquedaDNI.AutoSize = True
+        Me.lblBusquedaDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBusquedaDNI.ForeColor = System.Drawing.Color.White
+        Me.lblBusquedaDNI.Location = New System.Drawing.Point(28, 21)
+        Me.lblBusquedaDNI.Name = "lblBusquedaDNI"
+        Me.lblBusquedaDNI.Size = New System.Drawing.Size(205, 15)
+        Me.lblBusquedaDNI.TabIndex = 73
+        Me.lblBusquedaDNI.Text = "Busqueda de Pasajero por DNI"
+        '
         'Reserva_Buscar_Pasajero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(512, 407)
+        Me.Controls.Add(Me.lblBusquedaDNI)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.lblBusquedaPasajero)
         Me.Controls.Add(Me.TextBox9)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reserva_Buscar_Pasajero"
@@ -99,9 +99,9 @@ Partial Class Reserva_Buscar_Pasajero
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblBusquedaPasajero As System.Windows.Forms.Label
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents btnSeleccionar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents lblBusquedaDNI As System.Windows.Forms.Label
 End Class
