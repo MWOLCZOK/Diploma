@@ -9,6 +9,7 @@ Public Class BLL_Destino
         Try
             _dalDestino.alta(paramDes)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

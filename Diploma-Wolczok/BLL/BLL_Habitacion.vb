@@ -8,6 +8,7 @@ Public Class BLL_Habitacion
         Try
             _dalHabitacion.alta(paramHabitacion)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

@@ -34,7 +34,7 @@ Partial Class Agregar_Destino
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(26, 74)
+        Me.ComboBox1.Location = New System.Drawing.Point(26, 81)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(366, 21)
         Me.ComboBox1.TabIndex = 0
