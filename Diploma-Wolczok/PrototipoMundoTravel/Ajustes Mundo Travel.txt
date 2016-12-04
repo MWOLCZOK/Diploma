@@ -1,6 +1,0 @@
-1. Alta de Viaje
-Verificar que cuando generas un viaje nuevo, te permite poner el mismo origen y destino, se debería generar una validación, para que no permita generar el viaje si el origen y destino son iguales.
-
-2. Rerva Alojamiento
-Verificar que al momento de generaer una reserva de alojamiento, no debe permitir "Buscar Alojamientos", si la fecha de inicio y fecha de fin es la misma.
-Actualmente si pones fecha inicio y fecha fin la misma, te trae resultados, y luego te pone cantidad de dias = 0

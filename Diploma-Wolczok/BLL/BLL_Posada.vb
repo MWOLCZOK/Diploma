@@ -8,6 +8,7 @@ Public Class BLL_Posada
         Try
             _dalPosada.alta(paramPosada)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

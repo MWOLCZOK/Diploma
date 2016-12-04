@@ -346,6 +346,7 @@
     <Compile Include="SeleccionarIdioma.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="validacionTextBox.vb" />
     <Compile Include="visualizarBitacora.Designer.vb">
       <DependentUpon>visualizarBitacora.vb</DependentUpon>
     </Compile>
@@ -518,8 +519,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Correciones.zip" />
-    <None Include="MundoTravel con Clase GestorDB.zip" />
+    <None Include="Mensajes y Excepciones.xlsx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -543,10 +543,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ajustes Mundo Travel.txt" />
     <Content Include="Plane.ico" />
-    <Content Include="scrip.sql" />
-    <Content Include="scrip2.sql" />
     <Content Include="scriptFINAL.sql" />
   </ItemGroup>
   <ItemGroup>

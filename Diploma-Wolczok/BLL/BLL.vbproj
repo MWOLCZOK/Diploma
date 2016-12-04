@@ -49,6 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -96,9 +97,17 @@
     <Compile Include="BLL_SesionObservada.vb" />
     <Compile Include="BLL_TipoAlojamiento.vb" />
     <Compile Include="BLL_TipoTransporte.vb" />
+    <Compile Include="BLL_Traduccion.vb" />
     <Compile Include="BLL_Transporte.vb" />
     <Compile Include="BLL_Viaje.vb" />
     <Compile Include="BLL_Voucher.vb" />
+    <Compile Include="Excepciones\CamposIncorrectosException.vb" />
+    <Compile Include="Excepciones\errorEnInsertException.vb" />
+    <Compile Include="Excepciones\errorObtencionDeDatosException.vb" />
+    <Compile Include="Excepciones\ExcepcionPersonalizada.vb" />
+    <Compile Include="Excepciones\FechasIngresadasIncorrectas.vb" />
+    <Compile Include="Excepciones\PasswordnoCoincidenException.vb" />
+    <Compile Include="Excepciones\usuarioAdministradorIncorrectoException.vb" />
     <Compile Include="SerializadorJSON.vb" />
     <Compile Include="Encriptadora.vb" />
     <Compile Include="Excepciones\CamposIncompletosException.vb" />

@@ -16,13 +16,19 @@ Public Class Agregar_Habitacion
     End Sub
 
     Private Sub llenarCombos()
-        Dim oListaAlojamientos As New List(Of BE_Alojamiento)
-        Dim bblAlojamiento As New BLL_Alojamiento
-        oListaAlojamientos = bblAlojamiento.consultarAlojamientos()
-        For Each miAloja As BE_Alojamiento In oListaAlojamientos
-            Me.ComboBox1.Items.Add(miAloja)
-            ComboBox1.DisplayMember = "Nombre"
-        Next
+        Try
+            Dim oListaAlojamientos As New List(Of BE_Alojamiento)
+            Dim bblAlojamiento As New BLL_Alojamiento
+            oListaAlojamientos = bblAlojamiento.consultarAlojamientos()
+            For Each miAloja As BE_Alojamiento In oListaAlojamientos
+                Me.ComboBox1.Items.Add(miAloja)
+                ComboBox1.DisplayMember = "Nombre"
+            Next
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+
+        End Try
+
     End Sub
 
     Private Function validarFormulario() As Boolean
@@ -36,21 +42,30 @@ Public Class Agregar_Habitacion
         Return True
     End Function
 
+    Private Function validarCampos() As Boolean
+        If Me.NumericUpDown1.Value <= 0 Then Return False
+        If Me.NumericUpDown2.Value <= 0 Then Return False
+        Return True
+    End Function
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
 
             If validarFormulario() = True Then
-                Dim oHabitacion As New EE.BE_Habitacion
-                oHabitacion.Descripcion = Me.TextBox1.Text
-                oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
-                oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
-                oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
-                Dim bllHabitacion As New BLL.BLL_Habitacion
-                bllHabitacion.altaHabitacion(oHabitacion)
-                MsgBox("Se ha agregado la habitación correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
-            Else
-                '  MsgBox("Debe seleccionar un alojamiento", MsgBoxStyle.Exclamation, "Error")
+                If validarCampos() = True Then
+                    Dim oHabitacion As New EE.BE_Habitacion
+                    oHabitacion.Descripcion = Me.TextBox1.Text
+                    oHabitacion.CantidadCamas = Me.NumericUpDown1.Value
+                    oHabitacion.CantidadPersonas = Me.NumericUpDown2.Value
+                    oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
+                    Dim bllHabitacion As New BLL.BLL_Habitacion
+                    bllHabitacion.altaHabitacion(oHabitacion)
+                    MsgBox("Se ha agregado la habitación correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                Else
+                    Throw New CamposIncorrectosException
+                End If
+                      Else
+                Throw New CamposIncompletosException
             End If
 
         Catch ex As Exception
@@ -65,7 +80,6 @@ Public Class Agregar_Habitacion
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
         Dim MiTraductor As New ControladorTraductor
         MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
-
     End Sub
 
     Private Sub Agregar_Habitacion_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested

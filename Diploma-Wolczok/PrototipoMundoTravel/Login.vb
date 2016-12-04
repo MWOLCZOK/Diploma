@@ -6,8 +6,8 @@ Public Class Login
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnlogin.Click
         Try
-            Dim bllGestorBD As New BLL_GestorBD
-            bllGestorBD.gestorBD()
+            Dim bllGestorBD As New BLL_GestorBD 
+
             validarCampos()
             'PRUEBA PARA DIGITO
             'que onda con el DVH?????
@@ -17,6 +17,9 @@ Public Class Login
             Dim bUsuario As New BLL.BLL_Usuario
             oUsuario.NombreUsuario = Me.txtUsuario.Text
             oUsuario.Password = Me.txtPassword.Text
+            If bllGestorBD.existeBD = False Then
+                bllGestorBD.gestorBD(oUsuario)
+            End If
             oUsuario = bUsuario.login(oUsuario)
             Dim MiSesion As BLL.SessionBLL = BLL.SessionBLL.SesionActual()
             MiSesion.EstablecerUsuarioActual(oUsuario)
@@ -61,10 +64,6 @@ Public Class Login
     Private Sub Login_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Login")
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)  ' este es el original
-
     End Sub
 
 End Class
