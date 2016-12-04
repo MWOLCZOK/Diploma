@@ -13,6 +13,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BLL", "BLL\BLL.vbproj", "{1
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{513CABD2-F5A9-4CD5-8D49-0EF410C3FB5A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador Software Mundo Travel SA", "Instalador Software Mundo Travel SA\Instalador Software Mundo Travel SA.vdproj", "{90B4C5F3-ECA7-47A0-81BC-7B5DC278614D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,8 @@ Global
 		{125DE246-613F-4346-972E-D8E2DDA248A0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{513CABD2-F5A9-4CD5-8D49-0EF410C3FB5A}.Debug|Any CPU.ActiveCfg = Debug
 		{513CABD2-F5A9-4CD5-8D49-0EF410C3FB5A}.Release|Any CPU.ActiveCfg = Release
+		{90B4C5F3-ECA7-47A0-81BC-7B5DC278614D}.Debug|Any CPU.ActiveCfg = Debug
+		{90B4C5F3-ECA7-47A0-81BC-7B5DC278614D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

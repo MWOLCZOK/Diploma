@@ -63,7 +63,7 @@ Namespace My.Resources
         '''<summary>
         '''  Busca una cadena traducida similar a USE [master]
         '''GO
-        '''/****** Object:  Database [MundoTravel]    Script Date: 02/12/2016 02:15:19 a.m. ******/
+        '''/****** Object:  Database [MundoTravel]    Script Date: 02/12/2016 03:42:21 p.m. ******/
         '''IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N&apos;MundoTravel&apos;)
         '''BEGIN
         '''CREATE DATABASE [MundoTravel]
