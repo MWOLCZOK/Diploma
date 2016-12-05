@@ -22,6 +22,7 @@ Public Class BLL_PagoViaje
                 _bllVoucher.altaVoucher(oVoucher)
             End If
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

@@ -106,6 +106,8 @@
     <Compile Include="Excepciones\errorObtencionDeDatosException.vb" />
     <Compile Include="Excepciones\ExcepcionPersonalizada.vb" />
     <Compile Include="Excepciones\FechasIngresadasIncorrectas.vb" />
+    <Compile Include="Excepciones\montoExcedidoException.vb" />
+    <Compile Include="Excepciones\PasswordCortoException.vb" />
     <Compile Include="Excepciones\PasswordnoCoincidenException.vb" />
     <Compile Include="Excepciones\usuarioAdministradorIncorrectoException.vb" />
     <Compile Include="SerializadorJSON.vb" />

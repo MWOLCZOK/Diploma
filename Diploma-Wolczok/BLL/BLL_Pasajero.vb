@@ -10,7 +10,7 @@ Public Class BLL_Pasajero
         Try
             _dalpasajero.alta(parampasajero)
         Catch ex As Exception
-
+            Throw New errorEnInsertException
         End Try
     End Sub
 

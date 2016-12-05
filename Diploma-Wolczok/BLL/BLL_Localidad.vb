@@ -9,6 +9,7 @@ Public Class BLL_Localidad
         Try
             _dallocalidad.alta(paramloc)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

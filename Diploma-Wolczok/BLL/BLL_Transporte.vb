@@ -7,7 +7,7 @@ Public Class BLL_Transporte
         Try
             _dalTransporte.alta(paramTransporte)
         Catch ex As Exception
-
+            Throw New errorEnInsertException
         End Try
     End Sub
 

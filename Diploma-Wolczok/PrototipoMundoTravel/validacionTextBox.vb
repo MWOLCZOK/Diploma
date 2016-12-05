@@ -10,4 +10,5 @@
     Shared Function Monto(ByVal paramChar As KeyPressEventArgs) As Boolean
         If Char.IsDigit(paramChar.KeyChar) Or paramChar.KeyChar.ToString = "," Or paramChar.KeyChar = ControlChars.Back Then Return False Else Return True
     End Function
+
 End Class

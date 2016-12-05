@@ -6,14 +6,24 @@ Public Class Agregar_Transporte
 
 
     Private Sub Agregar_Transporte_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub iniciar()
-        cargarComboTipoTransporte()
-        cargarComboEmpresas()
+        Try
+            cargarComboTipoTransporte()
+            cargarComboEmpresas()
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+        End Try
     End Sub
 
 
@@ -62,10 +72,15 @@ Public Class Agregar_Transporte
                 oTransporte.Asientos = bllTransporte.obtenerAsientos(Me.NumericUpDown1.Value, Me.NumericUpDown2.Value, Me.NumericUpDown3.Value, Me.NumericUpDown4.Value, Me.NumericUpDown5.Value)
                 bllTransporte.altaTransporte(oTransporte)
                 MsgBox("Se ha agregado el transporte correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+            Else
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnInsertException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -76,7 +91,6 @@ Public Class Agregar_Transporte
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
         Dim MiTraductor As New ControladorTraductor
         MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
-
     End Sub
 
     Private Sub Agregar_Transporte_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
@@ -86,5 +100,13 @@ Public Class Agregar_Transporte
 
     Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
+    End Sub
+
+    Private Sub TextBox2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox2.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
     End Sub
 End Class

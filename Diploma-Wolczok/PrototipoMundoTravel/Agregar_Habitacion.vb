@@ -9,10 +9,11 @@ Public Class Agregar_Habitacion
             llenarCombos()
             SessionBLL.SesionActual.agregarForm(Me)
             SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
     Private Sub llenarCombos()
@@ -26,19 +27,14 @@ Public Class Agregar_Habitacion
             Next
         Catch ex As Exception
             Throw New errorObtencionDeDatosException
-
         End Try
-
     End Sub
 
     Private Function validarFormulario() As Boolean
         'Valores Numericos Correctos
-
         If String.IsNullOrWhiteSpace(Me.TextBox1.Text) Then Return False
-
         'Combo Box sin Seleccion
         If IsNothing(ComboBox1.SelectedItem) Then Return False
-
         Return True
     End Function
 
@@ -64,12 +60,17 @@ Public Class Agregar_Habitacion
                 Else
                     Throw New CamposIncorrectosException
                 End If
-                      Else
+            Else
                 Throw New CamposIncompletosException
             End If
-
+        Catch ex As CamposIncorrectosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnInsertException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -85,5 +86,10 @@ Public Class Agregar_Habitacion
     Private Sub Agregar_Habitacion_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Agregar Habitación")
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
+
     End Sub
 End Class

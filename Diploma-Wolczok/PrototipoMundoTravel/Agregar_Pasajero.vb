@@ -5,8 +5,12 @@ Public Class Agregar_Pasajero
     Implements BLL_Iobservador
 
     Private Sub Agregar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Function validarformulario() As Boolean
@@ -17,13 +21,6 @@ Public Class Agregar_Pasajero
             Return False
         End Try
     End Function
-
-
-
-
-    Private Sub Btn_agregarpasajero_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -40,11 +37,14 @@ Public Class Agregar_Pasajero
                 bllPasajero.Altapasajero(oPasajero)
                 MsgBox("Se ha agregado el pasajero correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             Else
-                Throw New Exception
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnInsertException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("Error")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -61,5 +61,25 @@ Public Class Agregar_Pasajero
     Private Sub Agregar_Pasajero_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Agregar Pasajero")
+    End Sub
+
+    Private Sub Txtapellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtapellido.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
+    End Sub
+
+    Private Sub Txtdni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtdni.KeyPress
+        e.Handled = validacionTextBox.SoloNumeros(e)
+    End Sub
+
+    Private Sub Txtdomicilio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtdomicilio.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
+    End Sub
+
+    Private Sub Txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtnombre.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
+    End Sub
+
+    Private Sub Txttelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txttelefono.KeyPress
+        e.Handled = validacionTextBox.SoloNumeros(e)
     End Sub
 End Class

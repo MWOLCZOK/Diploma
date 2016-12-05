@@ -6,7 +6,7 @@
         Try
             dUsuario.altaUsuario(oUsuario)
         Catch ex As Exception
-            Throw ex
+            Throw New errorEnInsertException
         End Try
     End Sub
 

@@ -9,6 +9,7 @@ Public Class BLL_Provincia
         Try
             _dalprovincia.alta(paramprovincia)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

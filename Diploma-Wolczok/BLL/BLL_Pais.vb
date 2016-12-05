@@ -10,6 +10,7 @@ Public Class BLL_Pais
         Try
             _dalPais.alta(paramPais)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
 

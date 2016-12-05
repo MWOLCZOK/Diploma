@@ -62,7 +62,7 @@ Public Class BLL_Idioma
         Try
             _dalIdioma.altaIdioma(paramIdioma)
         Catch ex As Exception
-
+            Throw New errorEnInsertException
         End Try
     End Sub
 

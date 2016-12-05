@@ -10,8 +10,10 @@ Public Class Agregar_Idioma
             iniciar()
             SessionBLL.SesionActual.agregarForm(Me)
             SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -30,6 +32,7 @@ Public Class Agregar_Idioma
             Next
             TxtNombre.Text = ""
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
 
     End Sub
@@ -67,13 +70,16 @@ Public Class Agregar_Idioma
                     End If
                     MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                 Else
-                    MsgBox("Debe seleccionar un cultura", MsgBoxStyle.Exclamation, "Error")
-
+                    Throw New CamposIncompletosException
                 End If
             Else
             End If
-
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnInsertException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -89,5 +95,10 @@ Public Class Agregar_Idioma
     Private Sub Agregar_Idioma_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Administracion")
+    End Sub
+
+    Private Sub TxtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNombre.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
+
     End Sub
 End Class
