@@ -33,12 +33,11 @@ Public Class Cancelacion
                 For Each item In oListareserva
                     DataGridView1.Rows.Add(item.ID, item.viaje, item.Asiento, item.NumeroReserva, item.Detalle, item.Estado, item.Pasajero, item.puntaje)
                 Next
-
             End If
-
-
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -71,14 +70,17 @@ Public Class Cancelacion
                 oCancel.MontoTotal = paramCancelacion.MontoTotal
                 oCancel.Reserva = oReserva
                 oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
-                bllCancel.alta(oCancel)
+                bllCancel.altaCancelacion(oCancel)
                 MsgBox("Se ha cancelado la reserva correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
             Else
-                MsgBox("Complete el motivo de la cancelacion y reintente", MsgBoxStyle.Information, "Mundo Travel SA")
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnInsertException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -94,8 +96,10 @@ Public Class Cancelacion
             Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
             Me.Txtmontototal.Text = oCancel.MontoTotal
             paramCancelacion = oCancel
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -107,5 +111,9 @@ Public Class Cancelacion
     Private Sub Cancelacion_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Cancelaciones")
+    End Sub
+
+    Private Sub Txtdecrmotivo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtdecrmotivo.KeyPress
+        e.Handled = validacionTextBox.TextoyNumeros(e)
     End Sub
 End Class

@@ -77,7 +77,7 @@
         Try
             dUsuario.Eliminar(paramUsuario)
         Catch ex As Exception
-
+            Throw New errorEnDeleteException
         End Try
     End Sub
 

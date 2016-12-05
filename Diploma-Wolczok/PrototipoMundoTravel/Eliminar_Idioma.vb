@@ -13,7 +13,7 @@ Public Class Eliminar_Idioma
                 CbxIdioma.Items.Add(Idioma)
             Next
         Catch ex As Exception
-
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
@@ -34,16 +34,27 @@ Public Class Eliminar_Idioma
                 MsgBox("Se ha eliminado el idioma correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
                 iniciar()
             Else
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnDeleteException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub Eliminar_Idioma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
-        iniciar()
+        Try
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+            iniciar()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub Eliminar_Idioma_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested

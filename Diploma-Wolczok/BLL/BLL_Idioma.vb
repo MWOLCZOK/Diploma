@@ -79,7 +79,7 @@ Public Class BLL_Idioma
         Try
             _dalIdioma.EliminarIdioma(paramIdioma)
         Catch ex As Exception
-
+            Throw New errorEnDeleteException
         End Try
     End Sub
 

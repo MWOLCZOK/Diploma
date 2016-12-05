@@ -10,7 +10,7 @@ Public Class BLL_Cancelacion
     Dim _dalreservaaloja As New DAL_ReservaAlojamiento
     Dim _dalVoucher As New DAL_Voucher
 
-    Public Sub alta(ByVal paramCancelacion As BE_Cancelacion)
+    Public Sub altaCancelacion(ByVal paramCancelacion As BE_Cancelacion)
         Try
             _cancelacion.alta(paramCancelacion)
             For Each pagoReserva As EE.BE_Pago In paramCancelacion.Reserva.Pagoviaje
@@ -23,8 +23,7 @@ Public Class BLL_Cancelacion
             End If
             _dalVoucher.cancelarVoucher(paramCancelacion.Reserva)
         Catch ex As Exception
+            Throw New errorEnInsertException
         End Try
     End Sub
-
-
 End Class

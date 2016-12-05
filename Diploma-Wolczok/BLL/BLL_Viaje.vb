@@ -35,7 +35,7 @@
         Try
             dalViaje.alta(oViaje)
         Catch ex As Exception
-
+            Throw New errorEnInsertException
         End Try
     End Sub
 

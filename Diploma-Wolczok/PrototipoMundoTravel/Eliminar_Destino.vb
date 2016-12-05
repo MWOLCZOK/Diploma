@@ -5,19 +5,30 @@ Public Class Eliminar_Destino
     Implements BLL.BLL_Iobservador
 
     Private Sub Eliminar_Destino_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        llenarcombos()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            llenarcombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub llenarcombos()
-        Dim oListaDestinos As New List(Of BE_Destino)
-        Dim bllDestino As New BLL_Destino
-        oListaDestinos = bllDestino.consultarDestinos
-        For Each miDest As BE_Destino In oListaDestinos
-            Me.CbxDestino.Items.Add(miDest)
-            CbxDestino.DisplayMember = "NombreCompleto"
-        Next
+        Try
+            Dim oListaDestinos As New List(Of BE_Destino)
+            Dim bllDestino As New BLL_Destino
+            oListaDestinos = bllDestino.consultarDestinos
+            For Each miDest As BE_Destino In oListaDestinos
+                Me.CbxDestino.Items.Add(miDest)
+                CbxDestino.DisplayMember = "NombreCompleto"
+            Next
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+        End Try
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -32,9 +43,15 @@ Public Class Eliminar_Destino
                 oDestino = DirectCast(CbxDestino.SelectedItem, BE_Destino)
                 bllDestino.eliminarDestino(oDestino)
                 MsgBox("Se ha eliminado el destino correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+            Else
+                Throw New CamposIncompletosException
             End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnDeleteException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

@@ -18,6 +18,7 @@ Public Class BLL_Pais
         Try
             _dalPais.eliminar(paramPais)
         Catch ex As Exception
+            Throw New errorEnDeleteException
         End Try
     End Sub
 

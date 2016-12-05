@@ -102,11 +102,14 @@
     <Compile Include="BLL_Viaje.vb" />
     <Compile Include="BLL_Voucher.vb" />
     <Compile Include="Excepciones\CamposIncorrectosException.vb" />
+    <Compile Include="Excepciones\errorEnDeleteException.vb" />
     <Compile Include="Excepciones\errorEnInsertException.vb" />
     <Compile Include="Excepciones\errorObtencionDeDatosException.vb" />
     <Compile Include="Excepciones\ExcepcionPersonalizada.vb" />
-    <Compile Include="Excepciones\FechasIngresadasIncorrectas.vb" />
+    <Compile Include="Excepciones\fechaMayoraHoyException.vb" />
+    <Compile Include="Excepciones\FechasIngresadasIncorrectasException.vb" />
     <Compile Include="Excepciones\montoExcedidoException.vb" />
+    <Compile Include="Excepciones\origenydestinoIgualesException.vb" />
     <Compile Include="Excepciones\PasswordCortoException.vb" />
     <Compile Include="Excepciones\PasswordnoCoincidenException.vb" />
     <Compile Include="Excepciones\usuarioAdministradorIncorrectoException.vb" />

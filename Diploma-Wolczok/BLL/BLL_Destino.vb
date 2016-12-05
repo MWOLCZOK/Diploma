@@ -17,7 +17,7 @@ Public Class BLL_Destino
         Try
             _dalDestino.eliminar(paramDes)
         Catch ex As Exception
-
+            Throw New errorEnDeleteException
         End Try
     End Sub
 

@@ -18,6 +18,7 @@ Public Class BLL_Pasajero
         Try
             _dalpasajero.eliminar(parampasajero)
         Catch ex As Exception
+            Throw New errorEnDeleteException
         End Try
     End Sub
 

@@ -101,6 +101,7 @@ Partial Class Cancelacion
         '
         'Txtmontodevuelto
         '
+        Me.Txtmontodevuelto.Enabled = False
         Me.Txtmontodevuelto.Location = New System.Drawing.Point(12, 114)
         Me.Txtmontodevuelto.Name = "Txtmontodevuelto"
         Me.Txtmontodevuelto.Size = New System.Drawing.Size(212, 20)
@@ -119,6 +120,7 @@ Partial Class Cancelacion
         '
         'Txtmontoretenido
         '
+        Me.Txtmontoretenido.Enabled = False
         Me.Txtmontoretenido.Location = New System.Drawing.Point(12, 173)
         Me.Txtmontoretenido.Name = "Txtmontoretenido"
         Me.Txtmontoretenido.Size = New System.Drawing.Size(212, 20)
@@ -137,6 +139,7 @@ Partial Class Cancelacion
         '
         'Txtmontototal
         '
+        Me.Txtmontototal.Enabled = False
         Me.Txtmontototal.Location = New System.Drawing.Point(12, 234)
         Me.Txtmontototal.Name = "Txtmontototal"
         Me.Txtmontototal.Size = New System.Drawing.Size(212, 20)

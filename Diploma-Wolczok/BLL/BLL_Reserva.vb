@@ -140,7 +140,7 @@ Public Class BLL_Reserva
             Return oCancelacion
 
         Catch ex As Exception
-
+            Throw New errorObtencionDeDatosException
         End Try
     End Function
 

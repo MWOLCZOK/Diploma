@@ -17,7 +17,7 @@ Public Class BLL_Provincia
         Try
             _dalprovincia.eliminar(paramprovincia)
         Catch ex As Exception
-
+            Throw New errorEnDeleteException
         End Try
     End Sub
 

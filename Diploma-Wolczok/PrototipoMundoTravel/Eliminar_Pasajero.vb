@@ -6,9 +6,16 @@ Public Class Eliminar_Pasajero
 
 
     Private Sub Eliminar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub btnsalir_Click(sender As Object, e As EventArgs)
@@ -27,6 +34,8 @@ Public Class Eliminar_Pasajero
                 Cbxpas.DisplayMember = "NombreCompleto"
             Next
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+
         End Try
     End Sub
 
@@ -37,15 +46,20 @@ Public Class Eliminar_Pasajero
                 Dim Gestorpas As New BLL_Pasajero
                 Dim Nuevopas As New BE_Pasajero
                 Nuevopas = DirectCast(Cbxpas.SelectedItem, BE_Pasajero)
-
                 Gestorpas.eliminarPasajero(Nuevopas)
                 If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_34"), ControladorTraductor.TraducirMensaje("Titulo_10"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     iniciar()
                     MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_35"), ControladorTraductor.TraducirMensaje("Titulo_10"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
+            Else
+                Throw New CamposIncompletosException
             End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnDeleteException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

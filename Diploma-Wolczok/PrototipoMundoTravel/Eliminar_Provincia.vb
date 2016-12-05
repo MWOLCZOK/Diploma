@@ -8,9 +8,16 @@ Public Class Eliminar_Provincia
     Implements BLL.BLL_Iobservador
 
     Private Sub Eliminar_Provincia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Public Sub iniciar()
@@ -24,6 +31,7 @@ Public Class Eliminar_Provincia
                 CbxProvincia.Items.Add(prov)
             Next
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
@@ -46,12 +54,19 @@ Public Class Eliminar_Provincia
                     iniciar()
                     MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_32"), ControladorTraductor.TraducirMensaje("Titulo_09"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
+            Else
+                Throw New CamposIncompletosException
 
             End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnDeleteException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
         Dim MiTraductor As New ControladorTraductor
