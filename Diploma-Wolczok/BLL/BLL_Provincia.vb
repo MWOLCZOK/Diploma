@@ -30,7 +30,7 @@ Public Class BLL_Provincia
         Try
             Return _dalprovincia.modificar(paramprovincia)
         Catch ex As Exception
-            Throw ex
+            Throw New errorEnEditException
         End Try
     End Function
 

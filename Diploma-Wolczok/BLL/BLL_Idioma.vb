@@ -70,7 +70,7 @@ Public Class BLL_Idioma
         Try
             _dalIdioma.ModificarIdioma(paramIdioma)
         Catch ex As Exception
-
+            Throw New errorEnEditException
         End Try
     End Sub
 

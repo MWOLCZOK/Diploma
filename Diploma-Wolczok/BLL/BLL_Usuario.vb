@@ -87,7 +87,7 @@
             dUsuario.Modificar(Usuario)
 
         Catch ex As Exception
-            Throw ex
+            Throw New errorEnEditException
         End Try
 
     End Function

@@ -5,10 +5,15 @@ Public Class Modificar_Puntaje
     Implements BLL.BLL_Iobservador
 
     Private Sub Modificar_Puntaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Iniciar()
-
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            Iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
@@ -23,31 +28,31 @@ Public Class Modificar_Puntaje
             For Each pun In Listapunt
                 Cbxpuntaje.Items.Add(pun)
                 'Cbxpuntaje.DisplayMember = "Descripcion"
-
             Next
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
 
     Private Sub Cbxpuntaje_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbxpuntaje.SelectedIndexChanged
-
-        If Not IsNothing(Cbxpuntaje.SelectedItem) Then
-            Dim Nuevopuntaje As BE_Puntaje = New BE_Puntaje
-            Nuevopuntaje = DirectCast(Cbxpuntaje.SelectedItem, BE_Puntaje)
-            Me.Txtdescripcion.Text = Nuevopuntaje.Descripcion
-            Me.Txtpuntaje.Text = Nuevopuntaje.Coeficiente
-        End If
-
+        Try
+            If Not IsNothing(Cbxpuntaje.SelectedItem) Then
+                Dim Nuevopuntaje As BE_Puntaje = New BE_Puntaje
+                Nuevopuntaje = DirectCast(Cbxpuntaje.SelectedItem, BE_Puntaje)
+                Me.Txtdescripcion.Text = Nuevopuntaje.Descripcion
+                Me.Txtpuntaje.Text = Nuevopuntaje.Coeficiente
+            End If
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
-
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Close()
-
     End Sub
-
-
 
     Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
         Dim cantidad As Integer = list.Count
@@ -87,18 +92,26 @@ Public Class Modificar_Puntaje
                     LlenarTabla(DataGridView1, listColumns)
                     DataGridView1.DataSource = Gestorpuntaje.consultarPuntaje()
                     'Iniciar()
-
+                Else
+                    Throw New CamposIncompletosException
                 End If
+            Else
+                Throw New CamposIncorrectosException
             End If
+        Catch ex As CamposIncorrectosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnEditException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma
         Dim MiTraductor As New ControladorTraductor
         MiTraductor.TraducirForm(SessionBLL.SesionActual.ListaForm.Item(SessionBLL.SesionActual.ListaForm.IndexOf(Me)))
-
     End Sub
 
     Private Sub Modificar_Puntaje_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested

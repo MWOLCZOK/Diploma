@@ -41,7 +41,7 @@ Partial Class Modificar_Puntaje
         Me.Cbxpuntaje.FormattingEnabled = True
         Me.Cbxpuntaje.Location = New System.Drawing.Point(34, 51)
         Me.Cbxpuntaje.Name = "Cbxpuntaje"
-        Me.Cbxpuntaje.Size = New System.Drawing.Size(180, 21)
+        Me.Cbxpuntaje.Size = New System.Drawing.Size(393, 21)
         Me.Cbxpuntaje.TabIndex = 0
         '
         'Txtdescripcion

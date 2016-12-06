@@ -21,15 +21,23 @@ Public Class Modificar_Idioma
                 CbxIdioma.Items.Add(Idioma)
             Next
         Catch ex As Exception
-
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
     Private Sub Modificar_Idioma_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
+        Try
+            iniciar()
 
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+
+
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
@@ -64,7 +72,10 @@ Public Class Modificar_Idioma
                 DgVIdioma.Columns(1).Visible = False
                 DgVIdioma.Columns(2).ReadOnly = True
             End If
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -103,16 +114,30 @@ Public Class Modificar_Idioma
                             iniciar()
                             MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                         Else
+                            Throw New CamposIncompletosException
                         End If
                     Else
+                        Throw New CamposIncompletosException
+
                     End If
                 Else
+                    Throw New CamposIncompletosException
+
                 End If
             Else
-            End If
+                Throw New CamposIncorrectosException
 
+            End If
+        Catch ex As CamposIncorrectosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnEditException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma

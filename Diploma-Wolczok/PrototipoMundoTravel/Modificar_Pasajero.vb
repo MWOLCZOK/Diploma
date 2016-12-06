@@ -9,11 +9,15 @@ Public Class Modificar_Pasajero
     End Sub
 
     Private Sub Modificar_Pasajero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Iniciar()
-
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
-
+        Try
+            Iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
@@ -32,9 +36,9 @@ Public Class Modificar_Pasajero
             For Each pas In Listapas
                 Cbxpasajero.Items.Add(pas)
                 Cbxpasajero.DisplayMember = "NombreApellido"
-
             Next
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
@@ -52,10 +56,8 @@ Public Class Modificar_Pasajero
                 Me.txtTelefono.Text = NuevoPas.Telefono
             End If
         Catch ex As Exception
-
+            Throw New errorObtencionDeDatosException
         End Try
-
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -75,10 +77,22 @@ Public Class Modificar_Pasajero
                     GestorPas.modificarPasajero(pasmodificar)
                     Iniciar()
                     MsgBox("Se ha modificado el pasajero correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                Else
+                    Throw New CamposIncorrectosException
                 End If
+            Else
+                Throw New CamposIncorrectosException
             End If
+        Catch ex As CamposIncorrectosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnEditException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma

@@ -43,7 +43,7 @@ Partial Class Modificar_Pais
         Me.Cbxpais.FormattingEnabled = True
         Me.Cbxpais.Location = New System.Drawing.Point(35, 68)
         Me.Cbxpais.Name = "Cbxpais"
-        Me.Cbxpais.Size = New System.Drawing.Size(219, 21)
+        Me.Cbxpais.Size = New System.Drawing.Size(491, 21)
         Me.Cbxpais.TabIndex = 33
         '
         'lblSeleccionarPais

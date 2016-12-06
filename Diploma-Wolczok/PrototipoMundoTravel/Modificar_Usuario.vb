@@ -36,45 +36,54 @@ Public Class Modificar_Usuario
             Next
             ControladorPermisos.CargarPermisos(CbxPerfil)
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
 
     End Sub
 
     Private Sub Modificar_Usuario_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
-
+        Try
+            iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub CbxUsuario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxUsuario.SelectedIndexChanged
-        If Not IsNothing(CbxUsuario.SelectedItem) Then
-            Dim Usuario As New BE_Usuario
-            Usuario = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
-            Me.txtNombre.Text = Usuario.Nombre
-            Me.TxtApe.Text = Usuario.Apellido
-            Me.Txtnombreusuario.Text = Usuario.NombreUsuario
-            For Each Perfil As BE_GrupoPermiso In CbxPerfil.Items
-                If Perfil.Nombre = Usuario.Perfil.Nombre Then
-                    CbxPerfil.SelectedItem = Perfil
-                End If
-            Next
-            For Each Idioma As BE_Idioma In CbxIdioma.Items
-                If Idioma.Nombre = Usuario.idioma.Nombre Then
-                    CbxIdioma.SelectedItem = Idioma
-                End If
-            Next
-        End If
+        Try
+            If Not IsNothing(CbxUsuario.SelectedItem) Then
+                Dim Usuario As New BE_Usuario
+                Usuario = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
+                Me.txtNombre.Text = Usuario.Nombre
+                Me.TxtApe.Text = Usuario.Apellido
+                Me.Txtnombreusuario.Text = Usuario.NombreUsuario
+                For Each Perfil As BE_GrupoPermiso In CbxPerfil.Items
+                    If Perfil.Nombre = Usuario.Perfil.Nombre Then
+                        CbxPerfil.SelectedItem = Perfil
+                    End If
+                Next
+                For Each Idioma As BE_Idioma In CbxIdioma.Items
+                    If Idioma.Nombre = Usuario.idioma.Nombre Then
+                        CbxIdioma.SelectedItem = Idioma
+                    End If
+                Next
+            End If
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnModificar_Click_1(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim usuarioPrevio As New BE_Usuario
         usuarioPrevio = DirectCast(CbxUsuario.SelectedItem, BE_Usuario)
-
-
         Dim GestorUsuario As New BLL_Usuario
         GestorUsuario.gestionarCambio(usuarioPrevio, tipoCambio.Modificacion, tipoValor.Anterior)
-
         Dim NuevoUsuario As EE.BE_Usuario = New BE_Usuario
         Try
             If Not IsNothing(CbxUsuario.SelectedItem) Then
@@ -87,13 +96,23 @@ Public Class Modificar_Usuario
                     NuevoUsuario.idioma = DirectCast(CbxIdioma.SelectedItem, BE_Idioma)
                     NuevoUsuario.Perfil = DirectCast(CbxPerfil.SelectedItem, BE_GrupoPermiso)
                     GestorUsuario.Modificar(NuevoUsuario)
-
                     GestorUsuario.gestionarCambio(NuevoUsuario, tipoCambio.Modificacion, tipoValor.Posterior)
                     MsgBox("Se ha modificado el pasajero correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
                     iniciar()
+                Else
+                    Throw New CamposIncorrectosException
                 End If
+            Else
+                Throw New CamposIncompletosException
             End If
+        Catch ex As CamposIncorrectosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnEditException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

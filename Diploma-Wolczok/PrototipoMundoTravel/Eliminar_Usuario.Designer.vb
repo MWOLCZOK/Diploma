@@ -31,6 +31,7 @@ Partial Class Eliminar_Usuario
         '
         'CbxUsuario
         '
+        Me.CbxUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxUsuario.FormattingEnabled = True
         Me.CbxUsuario.Location = New System.Drawing.Point(47, 105)
         Me.CbxUsuario.Name = "CbxUsuario"
