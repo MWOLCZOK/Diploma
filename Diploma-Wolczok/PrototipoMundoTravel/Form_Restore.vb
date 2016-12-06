@@ -24,23 +24,27 @@ Public Class Form_Restore
 
     Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnRestore.Click
         Try
-            Dim oBack As New EE.BE_BackupRestore(TextBox4.Text)
-            Dim bBack As New BLL.BLL_BackupRestore()
-            If bBack.RealizarRestore(oBack) = True Then
-                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_27"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Owner.Hide()
-                Me.Owner.Close()
-                Me.Close()
+            If Not String.IsNullOrWhiteSpace(Me.TextBox4.Text) Then
+                Dim oBack As New EE.BE_BackupRestore(TextBox4.Text)
+                Dim bBack As New BLL.BLL_BackupRestore()
+                If bBack.RealizarRestore(oBack) = True Then
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_27"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.Owner.Hide()
+                    Me.Owner.Close()
+                    Me.Close()
+                Else
+                    Throw New restoreerroneoexception
+                End If
             Else
-                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_25"), ControladorTraductor.TraducirMensaje("Titulo_05"), MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                Throw New CamposIncompletosException
             End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As backuperroneoexception
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox(ex)
-
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
     Private Sub Form_Restore_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested

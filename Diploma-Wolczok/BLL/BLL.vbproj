@@ -101,8 +101,10 @@
     <Compile Include="BLL_Transporte.vb" />
     <Compile Include="BLL_Viaje.vb" />
     <Compile Include="BLL_Voucher.vb" />
+    <Compile Include="Excepciones\backuperroneoexception.vb" />
     <Compile Include="Excepciones\CamposIncorrectosException.vb" />
     <Compile Include="Excepciones\errorEnDeleteException.vb" />
+    <Compile Include="Excepciones\errorEnGenerarDB.vb" />
     <Compile Include="Excepciones\errorEnInsertException.vb" />
     <Compile Include="Excepciones\errorObtencionDeDatosException.vb" />
     <Compile Include="Excepciones\ExcepcionPersonalizada.vb" />
@@ -112,6 +114,7 @@
     <Compile Include="Excepciones\origenydestinoIgualesException.vb" />
     <Compile Include="Excepciones\PasswordCortoException.vb" />
     <Compile Include="Excepciones\PasswordnoCoincidenException.vb" />
+    <Compile Include="Excepciones\restoreerroneoexception.vb" />
     <Compile Include="Excepciones\usuarioAdministradorIncorrectoException.vb" />
     <Compile Include="SerializadorJSON.vb" />
     <Compile Include="Encriptadora.vb" />

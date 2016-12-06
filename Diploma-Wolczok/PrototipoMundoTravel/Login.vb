@@ -6,12 +6,10 @@ Public Class Login
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btnlogin.Click
         Try
-            Dim bllGestorBD As New BLL_GestorBD 
-
+            Dim bllGestorBD As New BLL_GestorBD
             validarCampos()
             'PRUEBA PARA DIGITO
             'que onda con el DVH?????
-
             'BLL_DigitoVerificador.Integridad()
             Dim oUsuario As New EE.BE_Usuario
             Dim bUsuario As New BLL.BLL_Usuario
@@ -31,15 +29,19 @@ Public Class Login
             Menu.Show(Me)
             Me.Hide()
         Catch ex As BLL.CamposIncompletosException
-            MsgBox("Debe completar los campos para continuar", MsgBoxStyle.Information, "Campos Incompletos")
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As BLL.usuarioInexistenteException
-            MsgBox("El Usuario ingresado no existe en la Base de Datos", MsgBoxStyle.Exclamation, "Error")
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As BLL.UsuarioBloqueadoException
-            MsgBox("El Usuario ingresado se encuentra bloqueado", MsgBoxStyle.Exclamation, "Error")
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As BLL.errorEnGenerarDB
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As BLL.usuarioAdministradorIncorrectoException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As BLL.PasswordIncorrectoException
-            MsgBox("La contraseña ingresada no es correcta. Intente Nuevamente", MsgBoxStyle.Exclamation, "Error")
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("Se ha producido un error al realizar la acción. Contacte con el Administrador", MsgBoxStyle.Exclamation, "Error")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

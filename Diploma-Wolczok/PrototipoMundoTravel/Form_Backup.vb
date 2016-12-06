@@ -1,7 +1,6 @@
 ﻿Imports BLL
 
 Public Class Form_Backup
-
     Implements BLL_Iobservador
 
     Private Sub Form_Backup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -23,9 +22,6 @@ Public Class Form_Backup
         Me.Close()
     End Sub
 
-
-
-
     Private Sub btnBackup_Click(sender As Object, e As EventArgs) Handles btnBackup.Click
         Try
             If Not String.IsNullOrWhiteSpace(Me.TextBox2.Text) Or String.IsNullOrWhiteSpace(Me.TextBox3.Text) Then
@@ -34,12 +30,17 @@ Public Class Form_Backup
                 If bBack.RealizarBackup(oBack) = True Then
                     MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_26"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_25"), ControladorTraductor.TraducirMensaje("Titulo_05"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Throw New backuperroneoexception
                 End If
+            Else
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As backuperroneoexception
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
