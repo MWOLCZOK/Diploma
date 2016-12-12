@@ -6,20 +6,31 @@ Public Class Modificar_Provincia
     Implements BLL.BLL_Iobservador
 
     Private Sub Modificar_Provincia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        cargarCombos()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            iniciar()
+            cargarCombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 
     Private Sub cargarCombos()
-        Dim oListaPaises As New List(Of EE.BE_Pais)
-        Dim bllPais As New BLL.BLL_Pais
-        oListaPaises = bllPais.ConsultarPaises()
-        For Each mipais As EE.BE_Pais In oListaPaises
-            Me.ComboBox1.Items.Add(mipais)
-        Next
+        Try
+            Dim oListaPaises As New List(Of EE.BE_Pais)
+            Dim bllPais As New BLL.BLL_Pais
+            oListaPaises = bllPais.ConsultarPaises()
+            For Each mipais As EE.BE_Pais In oListaPaises
+                Me.ComboBox1.Items.Add(mipais)
+            Next
+
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+        End Try
 
     End Sub
 
@@ -39,10 +50,15 @@ Public Class Modificar_Provincia
                 Cbxprov.Items.Add(prov)
             Next
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+
         End Try
     End Sub
 
-
+    Private Function validarCampos() As Boolean
+        If Not String.IsNullOrWhiteSpace(txtNombre.Text) Or Not String.IsNullOrWhiteSpace(txtHabitantes.Text) Or Not String.IsNullOrWhiteSpace(txtRegion.Text) Or Not String.IsNullOrWhiteSpace(txtSuperficieTerrestre.Text) Then Return False
+        Return True
+    End Function
 
     Private Sub Cbxprov_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbxprov.SelectedIndexChanged
         Try
@@ -53,14 +69,20 @@ Public Class Modificar_Provincia
                 Me.txtHabitantes.Text = Nuevaprov.Habitantes
                 Me.txtRegion.Text = Nuevaprov.Region
                 Me.txtSuperficieTerrestre.Text = Nuevaprov.SuperficieTerrestre
-
                 For Each miPais As BE_Pais In ComboBox1.Items
                     If miPais.ID = Nuevaprov.Pais.ID Then
                         ComboBox1.SelectedItem = miPais
                     End If
                 Next
+            Else
+                Throw New CamposIncompletosException
             End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -89,10 +111,17 @@ Public Class Modificar_Provincia
                 GestorProv.modificarprovincia(Provmodificar)
                 iniciar()
                 MsgBox("Se ha modificado la provincia correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+            Else
+                Throw New CamposIncompletosException
             End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnEditException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma

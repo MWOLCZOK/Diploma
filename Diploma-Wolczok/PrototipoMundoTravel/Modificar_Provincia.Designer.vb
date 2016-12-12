@@ -45,7 +45,7 @@ Partial Class Modificar_Provincia
         Me.Cbxprov.FormattingEnabled = True
         Me.Cbxprov.Location = New System.Drawing.Point(40, 63)
         Me.Cbxprov.Name = "Cbxprov"
-        Me.Cbxprov.Size = New System.Drawing.Size(236, 21)
+        Me.Cbxprov.Size = New System.Drawing.Size(526, 21)
         Me.Cbxprov.TabIndex = 50
         '
         'lblSeleccionarProvincia
@@ -61,6 +61,7 @@ Partial Class Modificar_Provincia
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(333, 176)
         Me.ComboBox1.Name = "ComboBox1"

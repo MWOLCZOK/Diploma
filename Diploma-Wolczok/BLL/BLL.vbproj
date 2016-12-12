@@ -104,6 +104,7 @@
     <Compile Include="Excepciones\backuperroneoexception.vb" />
     <Compile Include="Excepciones\CamposIncorrectosException.vb" />
     <Compile Include="Excepciones\errorEnDeleteException.vb" />
+    <Compile Include="Excepciones\errorEnEditException.vb" />
     <Compile Include="Excepciones\errorEnGenerarDB.vb" />
     <Compile Include="Excepciones\errorEnInsertException.vb" />
     <Compile Include="Excepciones\errorObtencionDeDatosException.vb" />

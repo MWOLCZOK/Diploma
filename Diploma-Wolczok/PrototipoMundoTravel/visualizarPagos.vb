@@ -3,7 +3,7 @@ Imports BLL
 
 
 
-Public Class Visualizar_Pagos
+Public Class visualizarPagos
 
 
     Implements BLL.BLL_Iobservador

@@ -303,7 +303,7 @@ Public Class FormMenu
     End Sub
 
     Private Sub VisualizarPagosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizarPagosToolStripMenuItem.Click
-        Dim formvisualizarpagos As New Visualizar_Pagos
+        Dim formvisualizarpagos As New visualizarPagos
         AbrirForm(formvisualizarpagos)
     End Sub
 

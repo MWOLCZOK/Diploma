@@ -26,7 +26,7 @@ Public Class BLL_Pasajero
         Try
             _dalpasajero.modificar(paramPasajero)
         Catch ex As Exception
-
+            Throw New errorEnEditException
         End Try
     End Function
 

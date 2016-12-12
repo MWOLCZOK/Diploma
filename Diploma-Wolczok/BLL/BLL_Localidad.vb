@@ -29,6 +29,7 @@ Public Class BLL_Localidad
         Try
             Return _dallocalidad.modificar(paramloc)
         Catch ex As Exception
+            Throw New errorEnEditException
         End Try
 
     End Function

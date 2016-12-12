@@ -7,17 +7,22 @@ Public Class Modificar_Localidad
     Implements BLL.BLL_Iobservador
 
     Private Sub Modificar_Localidad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        cargarcombos()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            iniciar()
+            cargarcombos()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
 
     Private Sub btnsalir_Click(sender As Object, e As EventArgs)
         Me.Close()
-
     End Sub
 
     Public Sub iniciar()
@@ -26,25 +31,27 @@ Public Class Modificar_Localidad
             Cbxloc.Items.Clear()
             Me.NumericUpDown1.Value = 0
             Me.txtHabitantes.Text = 0
-            'Txtdestino.Text = ""
-
             Dim GestorLoc As New BLL_Localidad
             Dim Listaloc = GestorLoc.consultarLocalidades()
             For Each local In Listaloc
                 Cbxloc.Items.Add(local)
-
             Next
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
     Public Sub cargarcombos()
-        Dim Listaprov As New List(Of BE_Provincia)
-        Dim bllListaprov As New BLL_Provincia
-        Listaprov = bllListaprov.Consultarprovincias
-        For Each miprov As BE_Provincia In Listaprov
-            Me.Cbxprov.Items.Add(miprov)
-        Next
+        Try
+            Dim Listaprov As New List(Of BE_Provincia)
+            Dim bllListaprov As New BLL_Provincia
+            Listaprov = bllListaprov.Consultarprovincias
+            For Each miprov As BE_Provincia In Listaprov
+                Me.Cbxprov.Items.Add(miprov)
+            Next
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+        End Try
 
     End Sub
 
@@ -62,6 +69,7 @@ Public Class Modificar_Localidad
                 Next
             End If
         Catch ex As Exception
+            Throw New errorObtencionDeDatosException
         End Try
     End Sub
 
@@ -78,7 +86,6 @@ Public Class Modificar_Localidad
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim GestorLoc As New BLL_Localidad
         Dim Locmodificar As New BE_Localidad
-
         Try
             If validarFormulario = True Then
                 If Not IsNothing(Cbxloc.SelectedItem) Then
@@ -86,15 +93,23 @@ Public Class Modificar_Localidad
                     Locmodificar.ID = DirectCast(Cbxloc.SelectedItem, BE_Localidad).ID
                     Locmodificar.CantidadBarrios = NumericUpDown1.Value
                     Locmodificar.Habitantes = Me.txtHabitantes.Text
-                    '   Locmodificar.Destino = Txtdestino.Text
                     GestorLoc.modificarLocalidad(Locmodificar)
                     iniciar()
                     MsgBox("Se ha modificado la localidad correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                Else
+                    Throw New CamposIncompletosException
                 End If
+            Else
+                Throw New CamposIncorrectosException
             End If
-
+        Catch ex As CamposIncorrectosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnEditException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

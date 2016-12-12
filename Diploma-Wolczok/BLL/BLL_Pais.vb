@@ -27,6 +27,7 @@ Public Class BLL_Pais
         Try
             Return _dalPais.modificar(paramPais)
         Catch ex As Exception
+            Throw New errorEnEditException
         End Try
 
     End Function

@@ -9,7 +9,7 @@ Public Class BLL_Puntaje
         Try
             Return _dalpuntaje.modificar(paramPuntaje)
         Catch ex As Exception
-
+            Throw New errorEnEditException
         End Try
 
     End Function

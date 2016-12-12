@@ -365,10 +365,10 @@
     <Compile Include="visualizarPasajeros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Visualizar_Pagos.Designer.vb">
-      <DependentUpon>Visualizar_Pagos.vb</DependentUpon>
+    <Compile Include="visualizarPagos.Designer.vb">
+      <DependentUpon>visualizarPagos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Visualizar_Pagos.vb">
+    <Compile Include="visualizarPagos.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -514,8 +514,8 @@
     <EmbeddedResource Include="visualizarPasajeros.resx">
       <DependentUpon>visualizarPasajeros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Visualizar_Pagos.resx">
-      <DependentUpon>Visualizar_Pagos.vb</DependentUpon>
+    <EmbeddedResource Include="visualizarPagos.resx">
+      <DependentUpon>visualizarPagos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
