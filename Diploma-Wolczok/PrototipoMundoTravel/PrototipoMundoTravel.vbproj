@@ -519,6 +519,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Composite.zip" />
     <None Include="Mensajes y Excepciones.xlsx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
