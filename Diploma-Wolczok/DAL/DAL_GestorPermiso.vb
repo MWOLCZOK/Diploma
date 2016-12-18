@@ -3,6 +3,25 @@ Imports EE
 Imports DAL
 Public Class DAL_GestorPermiso
 
+    Public Function chequearNombre(ByVal paramPerfil As BE_GrupoPermiso) As Boolean
+        Try
+            Dim consulta As String = "Select * from Permiso where Nombre=@Nombre"
+            Dim Command As SqlCommand = Acceso.MiComando(consulta)
+            With Command.Parameters
+                .Add(New SqlParameter("@Nombre", paramPerfil.Nombre))
+            End With
+            Dim dt As DataTable = Acceso.Lectura(Command)
+            If dt.Rows.Count = 1 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
     Public Function ListarFamilias(ByVal filtro As Boolean) As List(Of BE_PermisoBase)
         Try
             Dim _listaFamilias As New List(Of BE_PermisoBase)

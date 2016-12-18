@@ -45,14 +45,27 @@ Public Class Agregar_Permisos
                 Perfil = ControladorPermisos.RecorrerArbol(Nothing, Perfil, Tree)
                 If Perfil.Hijos.Count <> 0 Then
                     Dim GestorPermisos As New BLL.BLL_GestorPermiso
-                    GestorPermisos.Alta(Perfil)
-                    ControladorPermisos.CargarPermisos(Tree)
-                    txtnombre.Text = ""
-                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                    If GestorPermisos.chequearNombre(Perfil) = False Then
+                        GestorPermisos.Alta(Perfil)
+                        ControladorPermisos.CargarPermisos(Tree)
+                        txtnombre.Text = ""
+                        MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                    Else
+                        Throw New nombreRepetidoException
+                    End If
+                Else
+                    Throw New CamposIncompletosException
                 End If
             Else
             End If
+        Catch ex As nombreRepetidoException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorEnInsertException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

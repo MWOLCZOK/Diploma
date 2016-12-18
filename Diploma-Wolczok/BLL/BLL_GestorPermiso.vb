@@ -17,6 +17,15 @@ Public Class BLL_GestorPermiso
         End Try
     End Function
 
+    Public Function chequearNombre(ByVal paramPerfil As BE_GrupoPermiso) As Boolean
+        Try
+            Dim permisodal As New DAL.DAL_GestorPermiso
+            Return permisodal.chequearNombre(paramPerfil)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
     Public Function ConsultarporID(ByVal ID As Integer) As BE_GrupoPermiso
         Try
             Dim Permisos As BE_GrupoPermiso = New BE_GrupoPermiso
@@ -64,7 +73,7 @@ Public Class BLL_GestorPermiso
                 Throw New Exception
             End If
         Catch ex As Exception
-            Throw ex
+            Throw New errorEnInsertException
         End Try
     End Sub
 

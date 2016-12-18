@@ -90,7 +90,7 @@ Public Class DAL_Usuario
     Public Function BloquearUsuario(ByVal oUsuario As EE.BE_Usuario) As Boolean
         Try
             If oUsuario.Bloqueado = True Then
-                Dim Consulta As String = "update Usuario set Bloqueo= 'False', DVH =@DVH where NombreUsuario=@NombreUsuario and BL=0"
+                Dim Consulta As String = "update Usuario set Bloqueado= 'False', DVH =@DVH where NombreUsuario=@NombreUsuario and BL=0"
                 Dim Command = Acceso.MiComando(Consulta)
                 With Command.Parameters
                     .Add(New SqlParameter("@NombreUsuario", oUsuario.NombreUsuario))

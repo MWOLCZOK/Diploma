@@ -81,17 +81,22 @@ Public Class Agregar_Usuario
                         oUsuario.Password = BLL.Encriptadora.EncriptarPass(Me.TextBox2.Text)
                         oUsuario.Nombre = Me.TextBox4.Text
                         oUsuario.Apellido = Me.TextBox5.Text
-                        Dim oIdioma As New EE.BE_Idioma
-                        Dim bllIdioma As New BLL.BLL_Idioma
-                        bllIdioma.consultarIdiomas()
-                        oIdioma = bllIdioma.consultarIdiomas(CInt(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Idioma).id_idioma))
-                        oUsuario.idioma = oIdioma
-                        Dim oPerfil As New EE.BE_GrupoPermiso
-                        Dim bllPerfil As New BLL.BLL_GestorPermiso
-                        oPerfil = bllPerfil.ConsultarporID(CInt(DirectCast(Me.ComboBox2.SelectedItem, EE.BE_GrupoPermiso).ID))
-                        oUsuario.Perfil = oPerfil
-                        bllUsuario.altaUsuario(oUsuario)
-                        MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                        If bllUsuario.chequearUsuario(oUsuario) = False Then
+                            Dim oIdioma As New EE.BE_Idioma
+                            Dim bllIdioma As New BLL.BLL_Idioma
+                            bllIdioma.consultarIdiomas()
+                            oIdioma = bllIdioma.consultarIdiomas(CInt(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Idioma).id_idioma))
+                            oUsuario.idioma = oIdioma
+                            Dim oPerfil As New EE.BE_GrupoPermiso
+                            Dim bllPerfil As New BLL.BLL_GestorPermiso
+                            oPerfil = bllPerfil.ConsultarporID(CInt(DirectCast(Me.ComboBox2.SelectedItem, EE.BE_GrupoPermiso).ID))
+                            oUsuario.Perfil = oPerfil
+                            bllUsuario.altaUsuario(oUsuario)
+                            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                        Else
+                            Throw New nombreRepetidoException
+                        End If
+
                     Else
                         Throw New PasswordCortoException
                     End If
@@ -101,6 +106,8 @@ Public Class Agregar_Usuario
             Else
                 Throw New CamposIncompletosException
             End If
+        Catch ex As nombreRepetidoException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As CamposIncompletosException
             MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As PasswordnoCoincidenException

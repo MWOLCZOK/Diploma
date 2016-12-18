@@ -112,6 +112,7 @@
     <Compile Include="Excepciones\fechaMayoraHoyException.vb" />
     <Compile Include="Excepciones\FechasIngresadasIncorrectasException.vb" />
     <Compile Include="Excepciones\montoExcedidoException.vb" />
+    <Compile Include="Excepciones\nombreRepetidoException.vb" />
     <Compile Include="Excepciones\origenydestinoIgualesException.vb" />
     <Compile Include="Excepciones\PasswordCortoException.vb" />
     <Compile Include="Excepciones\PasswordnoCoincidenException.vb" />
