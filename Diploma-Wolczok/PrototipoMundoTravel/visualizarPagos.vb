@@ -77,30 +77,43 @@ Public Class visualizarPagos
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If Not Me.Cbxpasajero.SelectedItem Is Nothing Then
-            If Not Me.ComboBox2.SelectedItem Is Nothing Then
-                Me.DataGridView1.DataSource = Nothing
-                Dim oPasajero As New BE_Pasajero
-                Dim oReserva As New BE_Reserva
-                Dim oPagoviaje As New BE_Pago
-                oPasajero = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero)
-                oReserva = DirectCast(ComboBox2.SelectedItem, BE_Reserva)
-                oReserva.Pasajero = oPasajero
-                oPagoviaje.Reserva = oReserva
-                Dim bllPagoViaje As New BLL_PagoViaje
-                Dim oListapago As New List(Of BE_Pago)
-                oListapago = bllPagoViaje.consultarPagosViajes(oReserva)
-                Dim listColumns As New List(Of String)
-                listColumns.Add("Reserva")
-                listColumns.Add("TipoReserva")
-                listColumns.Add("Fecha")
-                listColumns.Add("Metodopago")
-                listColumns.Add("Monto")
-                listColumns.Add("Numerotarjeta")
-                LlenarTabla(DataGridView1, listColumns)
-                Me.DataGridView1.DataSource = oListapago
-                DataGridView1.ReadOnly = True
+        Try
+            If Not Me.Cbxpasajero.SelectedItem Is Nothing Then
+                If Not Me.ComboBox2.SelectedItem Is Nothing Then
+                    Me.DataGridView1.DataSource = Nothing
+                    Dim oPasajero As New BE_Pasajero
+                    Dim oReserva As New BE_Reserva
+                    Dim oPagoviaje As New BE_Pago
+                    oPasajero = DirectCast(Cbxpasajero.SelectedItem, BE_Pasajero)
+                    oReserva = DirectCast(ComboBox2.SelectedItem, BE_Reserva)
+                    oReserva.Pasajero = oPasajero
+                    oPagoviaje.Reserva = oReserva
+                    Dim bllPagoViaje As New BLL_PagoViaje
+                    Dim oListapago As New List(Of BE_Pago)
+                    oListapago = bllPagoViaje.consultarPagosViajes(oReserva)
+                    Dim listColumns As New List(Of String)
+                    listColumns.Add("Reserva")
+                    listColumns.Add("TipoReserva")
+                    listColumns.Add("Fecha")
+                    listColumns.Add("Metodopago")
+                    listColumns.Add("Monto")
+                    listColumns.Add("Numerotarjeta")
+                    LlenarTabla(DataGridView1, listColumns)
+                    Me.DataGridView1.DataSource = oListapago
+                    DataGridView1.ReadOnly = True
+                Else
+                    Throw New CamposIncompletosException
+
+                End If
+            Else
+                Throw New CamposIncompletosException
             End If
-        End If
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
     End Sub
 End Class

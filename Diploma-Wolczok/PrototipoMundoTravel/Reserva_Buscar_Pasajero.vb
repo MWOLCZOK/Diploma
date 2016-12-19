@@ -58,10 +58,13 @@ Public Class Reserva_Buscar_Pasajero
                 DataGridView2.ReadOnly = True
                 DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             End If
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
 
     End Sub
 
@@ -76,8 +79,6 @@ Public Class Reserva_Buscar_Pasajero
 
 
     Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
-
-
         Try
             If flag = True Then
                 Dim oPasajero As New EE.BE_Pasajero
@@ -103,9 +104,12 @@ Public Class Reserva_Buscar_Pasajero
                 formularioSeleccionHabitacion.Show()
                 Me.Close()
             End If
-
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

@@ -50,15 +50,23 @@ Public Class visualizarControlCambios
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If Not IsNothing(ComboBox1.SelectedItem) Then
-            Dim bllBitacora As New BLL_Bitacora
-            Dim listaControl As New List(Of EE.BE_Usuario_Control_Cambios)
-            Dim beCambio As New BE_Usuario_Control_Cambios
-            beCambio = DirectCast(ComboBox1.SelectedItem, BE_Usuario_Control_Cambios)
-            listaControl = bllBitacora.ConsultarGestorCambios(beCambio)
-            dgvBitacora.DataSource = Nothing
-            dgvBitacora.DataSource = listaControl
-        End If
+        Try
+
+            If Not IsNothing(ComboBox1.SelectedItem) Then
+                Dim bllBitacora As New BLL_Bitacora
+                Dim listaControl As New List(Of EE.BE_Usuario_Control_Cambios)
+                Dim beCambio As New BE_Usuario_Control_Cambios
+                beCambio = DirectCast(ComboBox1.SelectedItem, BE_Usuario_Control_Cambios)
+                listaControl = bllBitacora.ConsultarGestorCambios(beCambio)
+                dgvBitacora.DataSource = Nothing
+                dgvBitacora.DataSource = listaControl
+            End If
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
 
     End Sub
 

@@ -22,13 +22,19 @@ Public Class BLL_Destino
     End Sub
 
     Public Function consultarDestinos() As List(Of BE_Destino)
-        Return _dalDestino.consultarDestinos()
+        Try
+            Return _dalDestino.consultarDestinos()
+
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+        End Try
     End Function
 
     Public Function modificarDestino(ByVal paramDes As BE_Localidad) As Boolean
         Try
             Return _dalDestino.modificar(paramDes)
         Catch ex As Exception
+            Throw New errorEnEditException
         End Try
 
     End Function

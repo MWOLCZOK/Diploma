@@ -53,28 +53,35 @@ Public Class visualizarBitacora
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim gestorbitacora As New BLL.BLL_Bitacora
-        If IsNothing(ComboBox1.SelectedItem) Then
-            If IsNothing(ComboBox2.SelectedItem) Then
-                Me.dgvBitacora.DataSource = Nothing
-                Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(, , DateTimePicker1.Value, DateTimePicker2.Value)
-                EstablecerGrid()
+        Try
+            Dim gestorbitacora As New BLL.BLL_Bitacora
+            If IsNothing(ComboBox1.SelectedItem) Then
+                If IsNothing(ComboBox2.SelectedItem) Then
+                    Me.dgvBitacora.DataSource = Nothing
+                    Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(, , DateTimePicker1.Value, DateTimePicker2.Value)
+                    EstablecerGrid()
+                Else
+                    Me.dgvBitacora.DataSource = Nothing
+                    Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(, DirectCast(ComboBox2.SelectedItem, EE.BE_TipoBitacora), DateTimePicker1.Value, DateTimePicker2.Value)
+                    EstablecerGrid()
+                End If
             Else
-                Me.dgvBitacora.DataSource = Nothing
-                Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(, DirectCast(ComboBox2.SelectedItem, EE.BE_TipoBitacora), DateTimePicker1.Value, DateTimePicker2.Value)
-                EstablecerGrid()
+                If IsNothing(ComboBox2.SelectedItem) Then
+                    Me.dgvBitacora.DataSource = Nothing
+                    Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(DirectCast(ComboBox1.SelectedItem, EE.BE_Usuario), , DateTimePicker1.Value, DateTimePicker2.Value)
+                    EstablecerGrid()
+                Else
+                    Me.dgvBitacora.DataSource = Nothing
+                    Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(DirectCast(ComboBox1.SelectedItem, EE.BE_Usuario), DirectCast(ComboBox2.SelectedItem, EE.BE_TipoBitacora), DateTimePicker1.Value, DateTimePicker2.Value)
+                    EstablecerGrid()
+                End If
             End If
-        Else
-            If IsNothing(ComboBox2.SelectedItem) Then
-                Me.dgvBitacora.DataSource = Nothing
-                Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(DirectCast(ComboBox1.SelectedItem, EE.BE_Usuario), , DateTimePicker1.Value, DateTimePicker2.Value)
-                EstablecerGrid()
-            Else
-                Me.dgvBitacora.DataSource = Nothing
-                Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora(DirectCast(ComboBox1.SelectedItem, EE.BE_Usuario), DirectCast(ComboBox2.SelectedItem, EE.BE_TipoBitacora), DateTimePicker1.Value, DateTimePicker2.Value)
-                EstablecerGrid()
-            End If
-        End If
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

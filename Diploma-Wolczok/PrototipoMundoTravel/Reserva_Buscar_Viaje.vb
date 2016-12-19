@@ -5,9 +5,18 @@ Public Class Reserva_Buscar_Viaje
     Implements BLL.BLL_Iobservador
 
     Private Sub Reserva_Buscar_Viaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        iniciar()
-        SessionBLL.SesionActual.agregarForm(Me)
-        SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Try
+            iniciar()
+            SessionBLL.SesionActual.agregarForm(Me)
+            SessionBLL.SesionActual.notificarCambiodeIdioma()
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
 
@@ -21,9 +30,14 @@ Public Class Reserva_Buscar_Viaje
     End Sub
 
     Private Sub iniciar()
-        cargarComboTipoTransporte()
-        llenarComboDestino()
-        llenarComboOrigen()
+        Try
+            cargarComboTipoTransporte()
+            llenarComboDestino()
+            llenarComboOrigen()
+        Catch ex As Exception
+            Throw New errorObtencionDeDatosException
+        End Try
+
     End Sub
 
     Private Sub llenarComboDestino()
@@ -59,6 +73,7 @@ Public Class Reserva_Buscar_Viaje
         Return True
     End Function
 
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             If validarFormulario = True Then
@@ -72,10 +87,15 @@ Public Class Reserva_Buscar_Viaje
                 DataGridView1.DataSource = oListaViaje
                 DataGridView1.ReadOnly = True
                 DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+            Else
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -110,23 +130,26 @@ Public Class Reserva_Buscar_Viaje
                             formularioreservaasientos.Show()
                             Me.Close()
                         Else
-                            MsgBox("Debe cargar una fecha correcta", MsgBoxStyle.Exclamation, "Error")
+                            Throw New FechasIngresadasIncorrectasException
 
                         End If
                     Else
-                        MsgBox("Debe cargar un Tipo de Transporte", MsgBoxStyle.Exclamation, "Error")
-
+                        Throw New CamposIncompletosException
                     End If
                 Else
-                    MsgBox("Debe cargar un Destino", MsgBoxStyle.Exclamation, "Error")
+                    Throw New CamposIncompletosException
                 End If
-
             Else
-                MsgBox("Debe cargar un Origen", MsgBoxStyle.Exclamation, "Error")
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As FechasIngresadasIncorrectasException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

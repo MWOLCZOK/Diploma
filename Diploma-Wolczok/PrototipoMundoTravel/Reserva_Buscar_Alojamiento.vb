@@ -9,11 +9,11 @@ Public Class Reserva_Buscar_Alojamiento
             cargarCombos()
             SessionBLL.SesionActual.agregarForm(Me)
             SessionBLL.SesionActual.notificarCambiodeIdioma()
-
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
     Private Function validarFecha() As Boolean
@@ -34,16 +34,17 @@ Public Class Reserva_Buscar_Alojamiento
                     DataGridView1.ReadOnly = True
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
                 Else
-                    MsgBox("Las fechas ingresadas son incorrectas", MsgBoxStyle.Exclamation, "Error")
-
+                    Throw New FechasIngresadasIncorrectasException
                 End If
-
             Else
-                MsgBox("Debe seleccionar un destino", MsgBoxStyle.Exclamation, "Error")
+                Throw New CamposIncompletosException
             End If
-
+        Catch ex As FechasIngresadasIncorrectasException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -59,9 +60,8 @@ Public Class Reserva_Buscar_Alojamiento
                 ComboBox1.DisplayMember = "NombreCompleto"
             Next
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            Throw New errorObtencionDeDatosException
         End Try
-
     End Sub
 
 
@@ -83,8 +83,12 @@ Public Class Reserva_Buscar_Alojamiento
             Dim formularioSeleccionHabitacion As New Reserva_Buscar_Habitacion(oAlojamiento, oDestino, oReservaAlojamiento)
             formularioSeleccionHabitacion.Show()
             Me.Close()
+        Catch ex As FechasIngresadasIncorrectasException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

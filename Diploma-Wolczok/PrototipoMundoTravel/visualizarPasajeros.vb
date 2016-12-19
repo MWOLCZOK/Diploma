@@ -44,25 +44,30 @@ Public Class visualizarPasajeros
     End Sub
 
     Private Sub btn_exportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
-        Dim _bllPasajero As New BLL.BLL_Pasajero
-        Dim Pasajeros As New List(Of EE.BE_Pasajero)
-        Pasajeros = _bllPasajero.consultarPasajeros()
-        Dim Jsonarray As BLL.SerializadorJSON(Of List(Of EE.BE_Pasajero)) = New BLL.SerializadorJSON(Of List(Of EE.BE_Pasajero))
-        If File.Exists("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON") Then
-            File.Delete("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON")
-            Dim mistream = File.Open("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON", FileMode.Create)
-            Dim p As New List(Of EE.BE_Pasajero)
-            p = Pasajeros
-            mistream.Close()
-            Jsonarray.Serializar(p)
-        Else
-            Dim mistream = File.Open("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON", FileMode.Create)
-            Dim p As New List(Of EE.BE_Pasajero)
-            p = Pasajeros
-            mistream.Close()
-            Jsonarray.Serializar(p)
-        End If
-        MessageBox.Show("Se ha generado un archivo JSON con los pasajeros")
+        Try
+            Dim _bllPasajero As New BLL.BLL_Pasajero
+            Dim Pasajeros As New List(Of EE.BE_Pasajero)
+            Pasajeros = _bllPasajero.consultarPasajeros()
+            Dim Jsonarray As BLL.SerializadorJSON(Of List(Of EE.BE_Pasajero)) = New BLL.SerializadorJSON(Of List(Of EE.BE_Pasajero))
+            If File.Exists("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON") Then
+                File.Delete("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON")
+                Dim mistream = File.Open("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON", FileMode.Create)
+                Dim p As New List(Of EE.BE_Pasajero)
+                p = Pasajeros
+                mistream.Close()
+                Jsonarray.Serializar(p)
+            Else
+                Dim mistream = File.Open("Pasajeros" & Now.Date.Month & "-" & Now.Date.Year & ".JSON", FileMode.Create)
+                Dim p As New List(Of EE.BE_Pasajero)
+                p = Pasajeros
+                mistream.Close()
+                Jsonarray.Serializar(p)
+            End If
+            MessageBox.Show("Se ha generado un archivo JSON con los pasajeros")
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Public Sub actualizarIdioma(ParamObservador As BLL_SesionObservada) Implements BLL_Iobservador.actualizarIdioma

@@ -35,8 +35,12 @@ Public Class Reserva_Buscar_Habitacion
             DataGridView1.DataSource = paramAlojamiento.ListaHabitaciones
             DataGridView1.ReadOnly = True
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        Catch ex As FechasIngresadasIncorrectasException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -58,8 +62,12 @@ Public Class Reserva_Buscar_Habitacion
             Dim formularioSeleccionHabitacion As New Reserva_Buscar_Pasajero(Alojamiento, reservaDestino, oReservaAlojamiento)
             formularioSeleccionHabitacion.Show()
             Me.Close()
+        Catch ex As FechasIngresadasIncorrectasException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -82,7 +90,4 @@ Public Class Reserva_Buscar_Habitacion
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Alojamiento")
     End Sub
 
-    Private Sub lblAlojamiento_Click(sender As Object, e As EventArgs) Handles lblAlojamiento.Click
-
-    End Sub
 End Class

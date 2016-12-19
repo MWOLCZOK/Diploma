@@ -12,6 +12,7 @@ Public Class Reserva_Buscar_Asientos
     Protected Friend reservaTransporte As EE.BE_Transporte
 
     Sub New(ByVal oViaje As BE_Viaje, ByVal oReservaViaje As BE_ReservaViaje, ByVal oOrigen As BE_Destino, ByVal oDestino As BE_Destino)
+
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
         viaje = oViaje
@@ -26,18 +27,24 @@ Public Class Reserva_Buscar_Asientos
     End Sub
 
     Private Sub cargarGrid()
-        Me.Txtdestino.Text = reservaDestino.NombreCompleto
-        Me.Txtorigen.Text = reservaOrigen.NombreCompleto
-        Me.Txtempresatrans.Text = viaje.Transporte.Empresa.Nombre
-        Me.Txtfechaviaje.Text = viaje.FechaHoraSalida.Date
-        Me.Txttipotrans.Text = viaje.Transporte.TipoTransporte.Descripcion
-        Dim oListaAsiento As New List(Of EE.BE_Asiento)
-        Dim bllAsiento As New BLL.BLL_Asiento
-        oListaAsiento = bllAsiento.consultarAsientos(viaje)
-        DataGridView1.DataSource = Nothing
-        DataGridView1.DataSource = oListaAsiento
-        DataGridView1.ReadOnly = True
-        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        Try
+            Me.Txtdestino.Text = reservaDestino.NombreCompleto
+            Me.Txtorigen.Text = reservaOrigen.NombreCompleto
+            Me.Txtempresatrans.Text = viaje.Transporte.Empresa.Nombre
+            Me.Txtfechaviaje.Text = viaje.FechaHoraSalida.Date
+            Me.Txttipotrans.Text = viaje.Transporte.TipoTransporte.Descripcion
+            Dim oListaAsiento As New List(Of EE.BE_Asiento)
+            Dim bllAsiento As New BLL.BLL_Asiento
+            oListaAsiento = bllAsiento.consultarAsientos(viaje)
+            DataGridView1.DataSource = Nothing
+            DataGridView1.DataSource = oListaAsiento
+            DataGridView1.ReadOnly = True
+            DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        Catch ex As errorObtencionDeDatosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 
@@ -63,8 +70,12 @@ Public Class Reserva_Buscar_Asientos
             Dim formularioreservaasientos As New Reserva_Buscar_Pasajero(viaje, oReservaViaje, reservaOrigen, reservaDestino)
             formularioreservaasientos.Show()
             Me.Close()
+        Catch ex As FechasIngresadasIncorrectasException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As CamposIncompletosException
+            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
