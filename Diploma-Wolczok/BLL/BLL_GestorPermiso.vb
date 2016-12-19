@@ -17,6 +17,15 @@ Public Class BLL_GestorPermiso
         End Try
     End Function
 
+    Public Function retornarUltimoID() As Integer
+        Try
+            Dim permisoda2l As New DAL.DAL_GestorPermiso
+            Return permisoda2l.retornarUltimoID
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
     Public Function chequearNombre(ByVal paramPerfil As BE_GrupoPermiso) As Boolean
         Try
             Dim permisodal As New DAL.DAL_GestorPermiso

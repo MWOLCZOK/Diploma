@@ -21,6 +21,14 @@ Public Class DAL_GestorPermiso
         End Try
     End Function
 
+    Public Function retornarUltimoID() As Integer
+        Try
+            Return Acceso.TraerUltimoID("ID_Permiso", "Permiso")
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 
     Public Function ListarFamilias(ByVal filtro As Boolean) As List(Of BE_PermisoBase)
         Try

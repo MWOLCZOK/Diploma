@@ -8,7 +8,6 @@ Public Class Agregar_Usuario
         Try
             If Me.TextBox1.Text = "" Or Me.TextBox2.Text = "" Or Me.TextBox3.Text = "" Or Me.TextBox4.Text = "" Or Me.TextBox5.Text = "" Then Return False
             If Me.ComboBox1.SelectedItem Is Nothing Then Return False
-            If Me.ComboBox2.SelectedItem Is Nothing Then Return False
             Return True
         Catch ex As Exception
             Return False
@@ -45,16 +44,25 @@ Public Class Agregar_Usuario
         End Try
     End Sub
 
+    Private Sub Tree_AfterCheck(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.TreeViewEventArgs) Handles Tree.AfterCheck
+        If eventArgs.Action = TreeViewAction.ByKeyboard Or eventArgs.Action = TreeViewAction.ByMouse Then
+            Try
+                ControladorPermisos.CheckChildNodes(eventArgs.Node)
+
+            Catch ex As Exception
+            End Try
+
+        End If
+    End Sub
 
     Private Sub llenarCombos()
         Try
+            ControladorPermisos.CargarPermisos(Tree)
             Me.ComboBox1.Items.Clear()
-            Me.ComboBox2.Items.Clear()
             Dim milistaIdioma As New List(Of EE.BE_Idioma)
             Dim bllIdioma As New BLL.BLL_Idioma
             Dim bllPerfil As New BLL.BLL_GestorPermiso
             milistaIdioma = bllIdioma.consultarIdiomas
-            ControladorPermisos.CargarPermisos(Me.ComboBox2)
             For Each Idioma In milistaIdioma
                 Me.ComboBox1.Items.Add(Idioma)
             Next
@@ -75,6 +83,8 @@ Public Class Agregar_Usuario
             If validarFormulario() = True Then
                 If validarPasswordRepetido() = True Then
                     If validarLongitudPassword() = True Then
+                        'Genero un Permiso con el Nombre de Usuario que se esta generando
+
                         Dim oUsuario As New EE.BE_Usuario
                         Dim bllUsuario As New BLL.BLL_Usuario
                         oUsuario.NombreUsuario = Me.TextBox1.Text
@@ -87,9 +97,23 @@ Public Class Agregar_Usuario
                             bllIdioma.consultarIdiomas()
                             oIdioma = bllIdioma.consultarIdiomas(CInt(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Idioma).id_idioma))
                             oUsuario.idioma = oIdioma
+                            Dim Perfil As New EE.BE_GrupoPermiso
+                            Perfil.Nombre = Me.TextBox1.Text
+                            Perfil = ControladorPermisos.RecorrerArbol(Nothing, Perfil, Tree)
+                            If Perfil.Hijos.Count <> 0 Then
+                                Dim GestorPermisos As New BLL.BLL_GestorPermiso
+                                If GestorPermisos.chequearNombre(Perfil) = False Then
+                                    GestorPermisos.Alta(Perfil)
+                                    ControladorPermisos.CargarPermisos(Tree)
+                                Else
+                                    Throw New nombreRepetidoException
+                                End If
+                            Else
+                                Throw New CamposIncompletosException
+                            End If
                             Dim oPerfil As New EE.BE_GrupoPermiso
                             Dim bllPerfil As New BLL.BLL_GestorPermiso
-                            oPerfil = bllPerfil.ConsultarporID(CInt(DirectCast(Me.ComboBox2.SelectedItem, EE.BE_GrupoPermiso).ID))
+                            oPerfil = bllPerfil.ConsultarporID(CInt(bllPerfil.retornarUltimoID()))
                             oUsuario.Perfil = oPerfil
                             bllUsuario.altaUsuario(oUsuario)
                             MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
