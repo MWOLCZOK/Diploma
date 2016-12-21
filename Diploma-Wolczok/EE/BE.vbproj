@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Negocio\BE_Cancelacion.vb" />
+    <Compile Include="Negocio\BE_Master.vb" />
     <Compile Include="Negocio\BE_Metodopago.vb" />
     <Compile Include="Negocio\BE_Puntaje.vb" />
     <Compile Include="Negocio\BE_Asiento.vb" />

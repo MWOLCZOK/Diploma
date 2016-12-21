@@ -1,14 +1,6 @@
 ﻿Public Class BE_Pago
 
-    Private _id As Integer
-    Public Property ID() As Integer
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Integer)
-            _id = value
-        End Set
-    End Property
+    Inherits BE_Master
 
     Private _reserva As BE_Reserva
     Public Property Reserva() As BE_Reserva

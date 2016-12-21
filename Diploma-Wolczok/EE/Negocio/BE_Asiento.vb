@@ -1,14 +1,6 @@
 ﻿Public Class BE_Asiento
 
-    Private _id As Integer
-    Public Property ID() As Integer
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Integer)
-            _id = value
-        End Set
-    End Property
+    Inherits BE_Master
 
     Private _transporte As BE_Transporte
     Public Property Transporte() As BE_Transporte
