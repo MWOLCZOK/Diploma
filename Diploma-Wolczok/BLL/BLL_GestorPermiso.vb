@@ -86,6 +86,16 @@ Public Class BLL_GestorPermiso
         End Try
     End Sub
 
+
+    Public Sub AltaPermisosUsuario(ByVal paramUsuario As EE.BE_Usuario)
+        Try
+            PermisosDAL = New DAL.DAL_GestorPermiso
+            PermisosDAL.AltaPermisosUsuario(paramUsuario)
+        Catch ex As Exception
+            Throw New errorEnInsertException
+        End Try
+    End Sub
+
     Public Sub Baja(ByVal paramPermisoID As Integer)
         Try
             PermisosDAL = New DAL.DAL_GestorPermiso

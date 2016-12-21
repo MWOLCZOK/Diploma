@@ -103,6 +103,28 @@ Public Class DAL_GestorPermiso
         End Try
     End Function
 
+    Public Function ConsultarporUsuario(ByVal paramUsuario As BE_Usuario) As BE_GrupoPermiso
+        Try
+            Dim _grupoPermiso As New BE_GrupoPermiso
+            Dim Command As SqlCommand = Acceso.MiComando("Select * from Permiso_Usuario where ID_Usuario=@ID_Usuario")
+            Command.Parameters.Add(New SqlParameter("@ID_Usuario", paramUsuario.ID))
+            Dim _dt As DataTable = Acceso.Lectura(Command)
+            For Each drow As DataRow In _dt.Rows
+                Dim Command2 As SqlCommand = Acceso.MiComando("Select * from Permiso where ID_Permiso=@IDPermiso")
+                Command2.Parameters.Add(New SqlParameter("@IDPermiso", drow("ID_Permiso")))
+                Dim _dt2 As DataTable = Acceso.Lectura(Command2)
+                If _dt2.Rows.Count = 1 Then
+                    _grupoPermiso.agregarHijo(ConvertirDataRowEnPermiso(_dt2.Rows(0)))
+                Else
+                    Return Nothing
+                End If
+            Next
+            Return _grupoPermiso
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Private Function ConvertirDataRowEnPermiso(_dr As DataRow) As BE_PermisoBase
         Try
             Dim _permiso As BE_PermisoBase
@@ -172,6 +194,21 @@ Public Class DAL_GestorPermiso
                 End With
                 Acceso.Escritura(Command)
             End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub AltaPermisosUsuario(ByVal paramUsuario As EE.BE_Usuario)
+        Try
+            For Each paramPermiso As BE_PermisoBase In paramUsuario.Perfil.Hijos
+                Dim Command As SqlCommand = Acceso.MiComando("insert into Permiso_Usuario values(@ID_Usuario, @ID_Permiso)")
+                With Command.Parameters
+                    .Add(New SqlParameter("@ID_Usuario", paramUsuario.ID))
+                    .Add(New SqlParameter("@ID_Permiso", paramPermiso.ID))
+                End With
+                Acceso.Escritura(Command)
+            Next
         Catch ex As Exception
             Throw ex
         End Try

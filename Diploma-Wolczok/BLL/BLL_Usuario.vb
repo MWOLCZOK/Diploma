@@ -5,6 +5,11 @@
     Public Sub altaUsuario(ByVal oUsuario As EE.BE_Usuario)
         Try
             dUsuario.altaUsuario(oUsuario)
+            Dim bllGestorPermiso As New BLL_GestorPermiso
+            Dim idUsuario As Integer
+            idUsuario = dUsuario.retornarUltimoID()
+            oUsuario.ID = idUsuario
+            bllGestorPermiso.AltaPermisosUsuario(oUsuario)
         Catch ex As Exception
             Throw New errorEnInsertException
         End Try
@@ -92,6 +97,13 @@
 
     End Function
 
+    Public Function retornarUltimoID() As Integer
+        Try
+            Return dUsuario.retornarUltimoID
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 
     Public Sub gestionarCambio(ByVal oUsuario As EE.BE_Usuario, ByVal vTipoValor As EE.tipoValor, ByVal vTipoCambio As EE.tipoCambio)
         Try

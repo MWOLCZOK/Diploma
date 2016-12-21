@@ -108,7 +108,7 @@ Public Class DAL_Usuario
                 DAL_DigitoVerificador.CalcularDVV(Digitos, "Usuario")
                 Return False
             Else
-                Dim Consulta As String = "Update Usuario set Bloqueo = 'True', DVH = @DVH where NombreUsuario=@NombreUsuario and BL=0 "
+                Dim Consulta As String = "Update Usuario set Bloqueado = 'True', DVH = @DVH where NombreUsuario=@NombreUsuario and BL=0 "
                 Dim Command = Acceso.MiComando(Consulta)
                 With Command.Parameters
                     .Add(New SqlParameter("@NombreUsuario", oUsuario.NombreUsuario))
@@ -154,6 +154,14 @@ Public Class DAL_Usuario
     End Sub
 
 #End Region
+
+    Public Function retornarUltimoID() As Integer
+        Try
+            Return Acceso.TraerUltimoID("ID_Usuario", "Usuario")
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
 
     Public Sub gestionarCambio(ByVal oUsuario As EE.BE_Usuario, ByVal vTipoCambio As EE.tipoCambio, ByVal vtipovalor As tipoValor)
         Try
@@ -365,7 +373,8 @@ Public Class DAL_Usuario
             oUsuario.Apellido = paramDataRow.Item("Apellido")
             oUsuario.BL = paramDataRow.Item("BL")
             Dim oDalPerfil As New DAL.DAL_GestorPermiso
-            oUsuario.Perfil = oDalPerfil.ConsultarporID(CInt(paramDataRow.Item("ID_Perfil")))
+            '        oUsuario.Perfil = oDalPerfil.ConsultarporID(CInt(paramDataRow.Item("ID_Perfil")))
+            oUsuario.Perfil = oDalPerfil.ConsultarporUsuario(oUsuario)
             Dim oDalIdioma As New DAL.DAL_Idioma
             oUsuario.idioma = oDalIdioma.ConsultarPorID(CInt(paramDataRow.Item("ID_Idioma")))
             oUsuario.BL = paramDataRow.Item("BL")

@@ -97,25 +97,11 @@ Public Class Agregar_Usuario
                             bllIdioma.consultarIdiomas()
                             oIdioma = bllIdioma.consultarIdiomas(CInt(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Idioma).id_idioma))
                             oUsuario.idioma = oIdioma
-                            Dim Perfil As New EE.BE_GrupoPermiso
-                            Perfil.Nombre = Me.TextBox1.Text
-                            Perfil = ControladorPermisos.RecorrerArbol(Nothing, Perfil, Tree)
-                            If Perfil.Hijos.Count <> 0 Then
-                                Dim GestorPermisos As New BLL.BLL_GestorPermiso
-                                If GestorPermisos.chequearNombre(Perfil) = False Then
-                                    GestorPermisos.Alta(Perfil)
-                                    ControladorPermisos.CargarPermisos(Tree)
-                                Else
-                                    Throw New nombreRepetidoException
-                                End If
-                            Else
-                                Throw New CamposIncompletosException
-                            End If
                             Dim oPerfil As New EE.BE_GrupoPermiso
-                            Dim bllPerfil As New BLL.BLL_GestorPermiso
-                            oPerfil = bllPerfil.ConsultarporID(CInt(bllPerfil.retornarUltimoID()))
+                            oPerfil.Nombre = Me.TextBox1.Text
+                            oPerfil = ControladorPermisos.RecorrerArbol(Nothing, oPerfil, Tree)
                             oUsuario.Perfil = oPerfil
-                            bllUsuario.altaUsuario(oUsuario)
+                                bllUsuario.altaUsuario(oUsuario)
                             MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
                         Else
                             Throw New nombreRepetidoException
