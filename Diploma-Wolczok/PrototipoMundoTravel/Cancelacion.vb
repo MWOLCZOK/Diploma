@@ -58,20 +58,25 @@ Public Class Cancelacion
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnCancelarReserva.Click
         Try
             If Not String.IsNullOrWhiteSpace(Me.Txtdecrmotivo.Text) Then
-                Dim oReserva As New BE_ReservaViaje
-                Dim bllReserva As New BLL_Reserva
-                oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
-                oReserva = bllReserva.consultarReservaviajeID(oReserva)
-                Dim oCancel As New BE_Cancelacion
-                oCancel.Tiporeserva = oReserva.TipoReserva
-                oCancel.Fechacancelacion = Today
-                oCancel.MontoDevuelto = paramCancelacion.MontoDevuelto
-                oCancel.MontoRetenido = paramCancelacion.MontoRetenido
-                oCancel.MontoTotal = paramCancelacion.MontoTotal
-                oCancel.Reserva = oReserva
-                oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
-                bllCancel.altaCancelacion(oCancel)
-                MsgBox("Se ha cancelado la reserva correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                If paramCancelacion.MontoDevuelto <> 0 Or paramCancelacion.MontoRetenido <> 0 Or paramCancelacion.MontoTotal <> 0 Then
+                    Dim oReserva As New BE_ReservaViaje
+                    Dim bllReserva As New BLL_Reserva
+                    oReserva.ID = CInt(Me.DataGridView1.SelectedRows.Item(0).Cells(0).Value)
+                    oReserva = bllReserva.consultarReservaviajeID(oReserva)
+                    Dim oCancel As New BE_Cancelacion
+                    oCancel.Tiporeserva = oReserva.TipoReserva
+                    oCancel.Fechacancelacion = Today
+                    oCancel.MontoDevuelto = paramCancelacion.MontoDevuelto
+                    oCancel.MontoRetenido = paramCancelacion.MontoRetenido
+                    oCancel.MontoTotal = paramCancelacion.MontoTotal
+                    oCancel.Reserva = oReserva
+                    oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
+                    bllCancel.altaCancelacion(oCancel)
+                    MsgBox("Se ha cancelado la reserva correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                Else
+                    Throw New CamposIncompletosException
+                End If
+
             Else
                 Throw New CamposIncompletosException
             End If
