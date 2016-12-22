@@ -37,7 +37,7 @@ Public Class visualizarPasajeros
 
     Private Sub EstablecerGrid()
         Me.dgvBitacora.Columns.Remove("ID_")
-        Me.dgvBitacora.Columns("NombreCompleto").Name = "Column_NombreCompleto"
+        Me.dgvBitacora.Columns("Nombre Completo").Name = "Column_NombreCompleto"
         Me.dgvBitacora.Columns("DNI").Name = "Column_DNI"
         Me.dgvBitacora.Columns("Telefono").Name = "Column_Telefono"
         Me.dgvBitacora.Columns("CorreoElectronico").Name = "Column_MAIL"

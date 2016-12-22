@@ -22,6 +22,22 @@ Public Class Reserva_Buscar_Alojamiento
         Return True
     End Function
 
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             If Not IsNothing(ComboBox1.SelectedItem) Then
@@ -30,8 +46,38 @@ Public Class Reserva_Buscar_Alojamiento
                     Dim bllAlojamiento As New BLL.BLL_Alojamiento
                     oListaAlojamiento = bllAlojamiento.consultarAlojamiento(DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Destino), Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
                     DataGridView1.DataSource = Nothing
-                    DataGridView1.DataSource = oListaAlojamiento
+                    'DataGridView1.DataSource = oListaAlojamiento
                     DataGridView1.ReadOnly = True
+
+                    Dim listColumns As New List(Of String)
+                    listColumns.Add("ID")
+                    listColumns.Add("Nombre")
+                    listColumns.Add("Descripcion")
+                    listColumns.Add("Estrellas")
+                    listColumns.Add("Ubicacion")
+                    listColumns.Add("Ambientes")
+                    listColumns.Add("ConectividadWifi")
+                    listColumns.Add("Gimnasio")
+                    listColumns.Add("Mascotas")
+                    listColumns.Add("Piscina")
+                    listColumns.Add("Sauna")
+                    listColumns.Add("ServicioAireAcond")
+                    listColumns.Add("ServicioTV")
+                    listColumns.Add("Cochera")
+                    listColumns.Add("Amoblado")
+                    listColumns.Add("Cocina")
+                    listColumns.Add("HabitacionPrivada")
+
+                    LlenarTabla(DataGridView1, listColumns)
+                    Me.DataGridView1.DataSource = oListaAlojamiento
+
+
+
+
+
+
+
+
                     DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
                 Else
                     Throw New FechasIngresadasIncorrectasException

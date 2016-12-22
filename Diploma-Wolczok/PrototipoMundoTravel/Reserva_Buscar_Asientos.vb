@@ -37,8 +37,20 @@ Public Class Reserva_Buscar_Asientos
             Dim bllAsiento As New BLL.BLL_Asiento
             oListaAsiento = bllAsiento.consultarAsientos(viaje)
             DataGridView1.DataSource = Nothing
-            DataGridView1.DataSource = oListaAsiento
+            'DataGridView1.DataSource = oListaAsiento
             DataGridView1.ReadOnly = True
+
+            Dim listColumns As New List(Of String)
+            listColumns.Add("ID")
+            listColumns.Add("Transporte")
+            listColumns.Add("Fila")
+            listColumns.Add("NumeroAsiento")
+            listColumns.Add("CategoriaAsiento")
+            LlenarTabla(DataGridView1, listColumns)
+            Me.DataGridView1.DataSource = oListaAsiento
+
+
+
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         Catch ex As errorObtencionDeDatosException
             MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -87,4 +99,30 @@ Public Class Reserva_Buscar_Asientos
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Vuelos")
     End Sub
+
+    Private Sub Txtdestino_TextChanged(sender As Object, e As EventArgs) Handles Txtdestino.TextChanged
+
+    End Sub
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+
+
+
+
+
 End Class

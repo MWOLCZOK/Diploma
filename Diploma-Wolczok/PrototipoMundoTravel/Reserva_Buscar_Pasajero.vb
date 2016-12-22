@@ -54,8 +54,27 @@ Public Class Reserva_Buscar_Pasajero
                 Dim listaPAsajeros As New List(Of EE.BE_Pasajero)
                 listaPAsajeros = _bllPasajero.consultarPasajeroporDNI(oPasajero)
                 Me.DataGridView2.DataSource = Nothing
-                Me.DataGridView2.DataSource = listaPAsajeros
+                'Me.DataGridView2.DataSource = listaPAsajeros
                 DataGridView2.ReadOnly = True
+
+
+                Dim listColumns As New List(Of String)
+                listColumns.Add("ID")
+                listColumns.Add("Nombre")
+                listColumns.Add("Apellido")
+                listColumns.Add("Correoelectronico")
+                listColumns.Add("DNI")
+                listColumns.Add("Domicilio")
+                listColumns.Add("Telefono")
+
+
+                LlenarTabla(DataGridView2, listColumns)
+                Me.DataGridView2.DataSource = listaPAsajeros
+
+
+
+
+
                 DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             End If
         Catch ex As errorObtencionDeDatosException
@@ -129,4 +148,23 @@ Public Class Reserva_Buscar_Pasajero
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Pasajeros")
     End Sub
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+
+
 End Class

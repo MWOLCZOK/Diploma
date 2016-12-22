@@ -84,8 +84,25 @@ Public Class Reserva_Buscar_Viaje
                 Dim oTipoTransrpote As BE_TipoTransporte = DirectCast(ComboBox1.SelectedItem, BE_TipoTransporte)
                 oListaViaje = bllViaje.consultarviajes(oOrigen, oDestino, Me.DateTimePicker1.Value.ToShortDateString, oTipoTransrpote)
                 DataGridView1.DataSource = Nothing
-                DataGridView1.DataSource = oListaViaje
                 DataGridView1.ReadOnly = True
+
+                Dim listColumns As New List(Of String)
+                listColumns.Add("ID")
+                listColumns.Add("Transporte")
+                listColumns.Add("FechaHoraLLegada")
+                listColumns.Add("FechaHoraSalida")
+                listColumns.Add("Precio")
+                listColumns.Add("Origen")
+                listColumns.Add("Destino")
+                listColumns.Add("Cena")
+                listColumns.Add("Almuerzo")
+                listColumns.Add("Cafeteria")
+
+                'DataGridView1.DataSource = oListaViaje
+
+                LlenarTabla(DataGridView1, listColumns)
+                Me.DataGridView1.DataSource = oListaViaje
+
                 DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
             Else
                 Throw New CamposIncompletosException
@@ -162,4 +179,27 @@ Public Class Reserva_Buscar_Viaje
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Vuelos")
     End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+
+
 End Class

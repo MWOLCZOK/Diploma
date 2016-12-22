@@ -10,6 +10,8 @@ Public Class visualizarBitacora
         Me.dgvBitacora.DataSource = Nothing
         Me.dgvBitacora.DataSource = gestorbitacora.ConsultarBitacora
         EstablecerGrid()
+
+
         SessionBLL.SesionActual.agregarForm(Me)
         SessionBLL.SesionActual.notificarCambiodeIdioma()
     End Sub
@@ -35,6 +37,8 @@ Public Class visualizarBitacora
 
 
     Private Sub EstablecerGrid()
+
+
         Me.dgvBitacora.Columns.Remove("ID_Bitacora")
         Me.dgvBitacora.Columns("Codigo").Name = "Column_Codigo"
         Me.dgvBitacora.Columns("Fecha").Name = "Column_Fecha"
@@ -139,4 +143,23 @@ Public Class visualizarBitacora
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Visualizar Bitácora")
     End Sub
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+
+
 End Class

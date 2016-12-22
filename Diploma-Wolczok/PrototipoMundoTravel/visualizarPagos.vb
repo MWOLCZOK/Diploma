@@ -92,6 +92,7 @@ Public Class visualizarPagos
                     Dim oListapago As New List(Of BE_Pago)
                     oListapago = bllPagoViaje.consultarPagosViajes(oReserva)
                     Dim listColumns As New List(Of String)
+                    listColumns.Add("ID")
                     listColumns.Add("Reserva")
                     listColumns.Add("TipoReserva")
                     listColumns.Add("Fecha")

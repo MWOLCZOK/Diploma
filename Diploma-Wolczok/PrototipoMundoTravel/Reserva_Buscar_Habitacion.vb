@@ -32,8 +32,30 @@ Public Class Reserva_Buscar_Habitacion
             Me.TextBox4.Text = paramDestino.NombreCompleto
             Me.TextBox5.Text = DateDiff(DateInterval.Day, paramReservaAlojamiento.Fecha_Inicio.Date, paramReservaAlojamiento.Fecha_Fin.Date)
             DataGridView1.DataSource = Nothing
-            DataGridView1.DataSource = paramAlojamiento.ListaHabitaciones
+            'DataGridView1.DataSource = paramAlojamiento.ListaHabitaciones
             DataGridView1.ReadOnly = True
+
+            'Me.DataGridView1.Columns("Descripcion").Name = "Column_Descripcion"
+            'Me.DataGridView1.Columns("Cantidad de Camas").Name = "Column_CantidadCamas"
+            'Me.DataGridView1.Columns("Cantidad de Personas").Name = "Column_CantidadPersonas"
+
+
+
+            Dim listColumns As New List(Of String)
+            listColumns.Add("ID")
+            listColumns.Add("Descripcion")
+            listColumns.Add("CantidadCamas")
+            listColumns.Add("CantidadPersonas")
+           
+
+            LlenarTabla(DataGridView1, listColumns)
+            Me.DataGridView1.DataSource = paramAlojamiento.ListaHabitaciones
+
+
+
+
+
+
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         Catch ex As FechasIngresadasIncorrectasException
             MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -89,5 +111,32 @@ Public Class Reserva_Buscar_Habitacion
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Alojamiento")
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Shared Sub LlenarTabla(dvg As DataGridView, list As List(Of String))
+        Dim cantidad As Integer = list.Count
+        Dim i = 0
+        dvg.ColumnCount = cantidad
+        dvg.AutoGenerateColumns = False
+
+        For Each item In list
+            dvg.Columns(i).Name = item
+            dvg.Columns(i).DataPropertyName = item
+            dvg.Columns(i).HeaderText = item
+            i = i + 1
+        Next
+        dvg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
+
+
+
+
+
+
 
 End Class
