@@ -233,6 +233,20 @@ Public Class DAL_Usuario
         End Try
     End Function
 
+    Public Function ModificarPassword(ByRef Usuario As EE.BE_Usuario) As Boolean
+        Try
+            Dim Command As SqlCommand = Acceso.MiComando("update Usuario set password=@password where ID_Usuario=@ID_Usuario")
+            With Command.Parameters
+                .Add(New SqlParameter("@ID_Usuario", Usuario.ID))
+                .Add(New SqlParameter("@password", Usuario.Password))
+            End With
+            Acceso.Escritura(Command)
+            Command.Dispose()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Sub altaUsuario(ByVal oUsuario As EE.BE_Usuario)
         Try
             Dim Command As SqlCommand = Acceso.MiComando("insert into Usuario values (@ID_Usuario, @NombreUsuario, @Password, @Intentos, @Bloqueado, @Nombre, @Apellido, @ID_Perfil, @BL, @ID_Idioma, @DVH)")

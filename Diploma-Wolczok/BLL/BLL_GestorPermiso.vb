@@ -35,6 +35,23 @@ Public Class BLL_GestorPermiso
         End Try
     End Function
 
+    Public Function ConsultarporIDporUsuario(ByVal ID As Integer) As BE_GrupoPermiso
+        Try
+            Dim Permisos As BE_GrupoPermiso = New BE_GrupoPermiso
+            Permisos = (New DAL_GestorPermiso).ConsultarporIDporUsuario(ID)
+            If Not IsNothing(Permisos) Then
+                If Permisos.ID = 0 And IsNothing(SessionBLL.SesionActual.ObtenerUsuarioActual) Then
+                    Throw New Exception
+                End If
+                Return Permisos
+            Else
+                Throw New Exception
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function ConsultarporID(ByVal ID As Integer) As BE_GrupoPermiso
         Try
             Dim Permisos As BE_GrupoPermiso = New BE_GrupoPermiso
@@ -81,6 +98,15 @@ Public Class BLL_GestorPermiso
             Else
                 Throw New Exception
             End If
+        Catch ex As Exception
+            Throw New errorEnInsertException
+        End Try
+    End Sub
+
+    Public Sub ModificarPermisosUsuario(ByVal paramUsuario As EE.BE_Usuario)
+        Try
+            PermisosDAL = New DAL.DAL_GestorPermiso
+            PermisosDAL.ModificarPermisosUsuario(paramUsuario)
         Catch ex As Exception
             Throw New errorEnInsertException
         End Try

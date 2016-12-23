@@ -90,7 +90,8 @@
     Public Function Modificar(ByVal Usuario As EE.BE_Usuario) As Boolean
         Try
             dUsuario.Modificar(Usuario)
-
+            Dim bllGestorPermiso As New BLL_GestorPermiso
+            bllGestorPermiso.ModificarPermisosUsuario(Usuario)
         Catch ex As Exception
             Throw New errorEnEditException
         End Try
@@ -108,6 +109,15 @@
     Public Sub gestionarCambio(ByVal oUsuario As EE.BE_Usuario, ByVal vTipoValor As EE.tipoValor, ByVal vTipoCambio As EE.tipoCambio)
         Try
             dUsuario.gestionarCambio(oUsuario, vTipoValor, vTipoCambio)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+    Public Sub modificarPassword(ByVal oUsuario As EE.BE_Usuario)
+        Try
+            dUsuario.modificarPassword(oUsuario)
         Catch ex As Exception
 
         End Try
