@@ -14,7 +14,7 @@ Public Class FormMenu
     Public Sub RecibirPermisos(ByRef PermComp As EE.BE_GrupoPermiso)
         For Each MiMenuItem As ToolStripMenuItem In Me.MenuStrip1.Items
             For Each SegundoNivel As ToolStripMenuItem In MiMenuItem.DropDownItems
-                If SegundoNivel.Name = "CerrarSesiónToolStripMenuItem" Or SegundoNivel.Name = "SeleccionarIdioma" Then
+                If SegundoNivel.Name = "CerrarSesiónToolStripMenuItem" Or SegundoNivel.Name = "SeleccionarIdioma" Or SegundoNivel.Name = "CambiarPassword" Then
                     SegundoNivel.Visible = True
                 Else
                     SegundoNivel.Visible = False
@@ -337,5 +337,10 @@ Public Class FormMenu
     Private Sub Login_HelpRequested(sender As Object, hlpevent As HelpEventArgs) Handles Me.HelpRequested
         Dim RutaDeaplicacion As String = Application.StartupPath & "\Ayuda-MundoTravel.chm"
         Help.ShowHelp(ParentForm, RutaDeaplicacion, HelpNavigator.KeywordIndex, "Pantalla Principal")
+    End Sub
+
+    Private Sub CambiarPasswordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiarPassword.Click
+        Dim vVisualizar As New Cambiar_Password
+        AbrirForm(vVisualizar)
     End Sub
 End Class

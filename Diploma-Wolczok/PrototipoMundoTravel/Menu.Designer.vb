@@ -71,6 +71,7 @@ Partial Class FormMenu
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CambiarPassword = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -357,7 +358,7 @@ Partial Class FormMenu
         '
         'OpcionesToolStripMenuItem
         '
-        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SeleccionarIdioma, Me.CerrarSesiónToolStripMenuItem})
+        Me.OpcionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CambiarPassword, Me.SeleccionarIdioma, Me.CerrarSesiónToolStripMenuItem})
         Me.OpcionesToolStripMenuItem.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OpcionesToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
@@ -367,13 +368,13 @@ Partial Class FormMenu
         'SeleccionarIdioma
         '
         Me.SeleccionarIdioma.Name = "SeleccionarIdioma"
-        Me.SeleccionarIdioma.Size = New System.Drawing.Size(175, 22)
+        Me.SeleccionarIdioma.Size = New System.Drawing.Size(190, 22)
         Me.SeleccionarIdioma.Text = "Cambiar Idioma"
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'PictureBox1
@@ -396,6 +397,12 @@ Partial Class FormMenu
         Me.Label1.Size = New System.Drawing.Size(72, 24)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
+        '
+        'CambiarPassword
+        '
+        Me.CambiarPassword.Name = "CambiarPassword"
+        Me.CambiarPassword.Size = New System.Drawing.Size(190, 22)
+        Me.CambiarPassword.Text = "Cambiar Password"
         '
         'FormMenu
         '
@@ -465,4 +472,5 @@ Partial Class FormMenu
     Friend WithEvents AgregarViajeToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents VisualizarPasajerosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ControlDeCambiosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CambiarPassword As ToolStripMenuItem
 End Class

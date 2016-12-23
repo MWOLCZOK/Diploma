@@ -149,6 +149,12 @@
     <Compile Include="Agregar_Viaje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cambiar_Password.Designer.vb">
+      <DependentUpon>Cambiar_Password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cambiar_Password.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cancelacion.Designer.vb">
       <DependentUpon>Cancelacion.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Viaje.resx">
       <DependentUpon>Agregar_Viaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cambiar_Password.resx">
+      <DependentUpon>Cambiar_Password.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cancelacion.resx">
       <DependentUpon>Cancelacion.vb</DependentUpon>

@@ -55,6 +55,32 @@ Public Class DAL_GestorPermiso
         End Try
     End Function
 
+
+    Public Function ConsultarporIDporUsuario(ByVal ID As Integer) As BE_GrupoPermiso
+        Try
+            Try
+                Dim Command As SqlCommand = Acceso.MiComando("Select * from Permiso_Usuario where ID_Permiso=@ID_Permiso")
+                Command.Parameters.Add(New SqlParameter("@ID_Permiso", ID))
+                Dim _dt As DataTable = Acceso.Lectura(Command)
+                If _dt.Rows.Count = 1 Then
+                    Dim Command2 As SqlCommand = Acceso.MiComando("Select * from Permiso where ID_Permiso=@IDPermiso")
+                    Command2.Parameters.Add(New SqlParameter("@IDPermiso", _dt.Rows(0)("ID_Permiso")))
+                    Dim _dt2 As DataTable = Acceso.Lectura(Command2)
+                    If _dt2.Rows.Count = 1 Then
+                        Return ConvertirDataRowEnPermiso(_dt2.Rows(0))
+                    Else
+                        Return Nothing
+                    End If
+                End If
+            Catch ex As Exception
+                Throw ex
+            End Try
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
     Public Function ConsultarporID(ByVal ID As Integer) As BE_GrupoPermiso
         Try
             Dim Command As SqlCommand = Acceso.MiComando("Select * from Permiso where ID_Permiso=@IDPermiso")
@@ -201,6 +227,28 @@ Public Class DAL_GestorPermiso
 
     Public Sub AltaPermisosUsuario(ByVal paramUsuario As EE.BE_Usuario)
         Try
+            For Each paramPermiso As BE_PermisoBase In paramUsuario.Perfil.Hijos
+                Dim Command As SqlCommand = Acceso.MiComando("insert into Permiso_Usuario values(@ID_Usuario, @ID_Permiso)")
+                With Command.Parameters
+                    .Add(New SqlParameter("@ID_Usuario", paramUsuario.ID))
+                    .Add(New SqlParameter("@ID_Permiso", paramPermiso.ID))
+                End With
+                Acceso.Escritura(Command)
+            Next
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+
+    Public Sub ModificarPermisosUsuario(ByVal paramUsuario As EE.BE_Usuario)
+        Try
+            Dim CommandEliminar As SqlCommand = Acceso.MiComando("delete from Permiso_Usuario where ID_Usuario=@ID_Usuario")
+            With CommandEliminar.Parameters
+                .Add(New SqlParameter("@ID_Usuario", paramUsuario.ID))
+            End With
+            Acceso.Escritura(CommandEliminar)
+            CommandEliminar.Dispose()
             For Each paramPermiso As BE_PermisoBase In paramUsuario.Perfil.Hijos
                 Dim Command As SqlCommand = Acceso.MiComando("insert into Permiso_Usuario values(@ID_Usuario, @ID_Permiso)")
                 With Command.Parameters
