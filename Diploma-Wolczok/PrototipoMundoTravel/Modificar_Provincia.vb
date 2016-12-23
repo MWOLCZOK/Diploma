@@ -110,7 +110,7 @@ Public Class Modificar_Provincia
                 Provmodificar.SuperficieTerrestre = txtSuperficieTerrestre.Text
                 GestorProv.modificarprovincia(Provmodificar)
                 iniciar()
-                MsgBox("Se ha modificado la provincia correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_121"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Throw New CamposIncompletosException
             End If

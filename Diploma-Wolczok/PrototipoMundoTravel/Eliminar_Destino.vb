@@ -42,7 +42,7 @@ Public Class Eliminar_Destino
                 Dim oDestino As BE_Destino = New BE_Destino
                 oDestino = DirectCast(CbxDestino.SelectedItem, BE_Destino)
                 bllDestino.eliminarDestino(oDestino)
-                MsgBox("Se ha eliminado el destino correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_113"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Throw New CamposIncompletosException
             End If

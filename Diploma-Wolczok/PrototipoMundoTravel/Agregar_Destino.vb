@@ -42,7 +42,7 @@ Public Class Agregar_Destino
                 oDestino.Localidad = DirectCast(Me.ComboBox1.SelectedItem, BE_Localidad)
                 oDestino.TieneAeropuerto = Me.chkTieneAeropuerto.Checked
                 bllDestino.altaDestino(oDestino)
-                MsgBox("Se ha agregado el destino correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_100"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Throw New CamposIncompletosException
             End If

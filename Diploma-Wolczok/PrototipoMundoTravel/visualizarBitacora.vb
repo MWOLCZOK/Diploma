@@ -130,6 +130,7 @@ Public Class visualizarBitacora
             workbook = Nothing
             excel = Nothing
         End Try
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_128"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
 

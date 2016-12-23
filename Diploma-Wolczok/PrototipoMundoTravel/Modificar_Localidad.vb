@@ -95,7 +95,7 @@ Public Class Modificar_Localidad
                     Locmodificar.Habitantes = Me.txtHabitantes.Text
                     GestorLoc.modificarLocalidad(Locmodificar)
                     iniciar()
-                    MsgBox("Se ha modificado la localidad correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_118"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     Throw New CamposIncompletosException
                 End If

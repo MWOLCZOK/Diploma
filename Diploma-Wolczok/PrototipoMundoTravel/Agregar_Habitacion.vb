@@ -56,7 +56,7 @@ Public Class Agregar_Habitacion
                     oHabitacion.Alojamiento = DirectCast(Me.ComboBox1.SelectedItem, EE.BE_Alojamiento)
                     Dim bllHabitacion As New BLL.BLL_Habitacion
                     bllHabitacion.altaHabitacion(oHabitacion)
-                    MsgBox("Se ha agregado la habitación correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_101"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     Throw New CamposIncorrectosException
                 End If

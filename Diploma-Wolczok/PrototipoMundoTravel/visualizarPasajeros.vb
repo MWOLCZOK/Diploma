@@ -63,7 +63,8 @@ Public Class visualizarPasajeros
                 mistream.Close()
                 Jsonarray.Serializar(p)
             End If
-            MessageBox.Show("Se ha generado un archivo JSON con los pasajeros")
+
+            MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_129"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
 
         End Try

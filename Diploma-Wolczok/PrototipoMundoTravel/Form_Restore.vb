@@ -28,7 +28,7 @@ Public Class Form_Restore
                 Dim oBack As New EE.BE_BackupRestore(TextBox4.Text)
                 Dim bBack As New BLL.BLL_BackupRestore()
                 If bBack.RealizarRestore(oBack) = True Then
-                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_27"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_27"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Me.Owner.Hide()
                     Me.Owner.Close()
                     Me.Close()

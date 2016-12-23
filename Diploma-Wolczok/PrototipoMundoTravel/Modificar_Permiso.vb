@@ -37,7 +37,7 @@ Public Class Modificar_Permiso
                 Tree.Nodes.Clear()
                 ControladorPermisos.CargarPermisos(TreeNuevos)
             End If
-            MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+            MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_120"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 

@@ -39,7 +39,7 @@ Public Class Agregar_Pais
                 oPais.Poblacion_total = Me.Txtpoblacionpais.Text
                 oPais.Zonahoraria = Me.Txtzonahorariapais.Text
                 bllPais.AltaPais(oPais)
-                MsgBox("Se ha agregado el pais correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_104"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Throw New CamposIncorrectosException
             End If

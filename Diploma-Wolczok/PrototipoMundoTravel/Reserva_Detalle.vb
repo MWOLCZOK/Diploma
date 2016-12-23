@@ -36,19 +36,19 @@ Public Class Reserva_Detalle
             Me.TextBox6.Text = paramReservaAlojamiento.Habitacion.ID
             Me.txtValorReserva.Text = paramReservaAlojamiento.MontoReserva
         Catch ex As Exception
-            MsgBox("No se pudo cargar correctamente los datos", MsgBoxStyle.Exclamation, "Error Base de Datos")
+            MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_126"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnFinalizarCompra.Click
-
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_124"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
 
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnVolverComprar.Click
-        MsgBox("Volverá al inicio de la compra", MsgBoxStyle.Information, "Mundo Travel SA")
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_125"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Dim formulariobuscaralojamiento As New Reserva_Buscar_Alojamiento()
         formulariobuscaralojamiento.Show()
         Me.Close()
@@ -56,6 +56,7 @@ Public Class Reserva_Detalle
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnGenerarPDF.Click
         GenerarPDF()
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_127"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
 

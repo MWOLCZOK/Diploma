@@ -520,6 +520,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Mensajes y Excepciones.xlsx" />
+    <None Include="Mensajes y Excepciones2.xlsx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -544,6 +545,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Plane.ico" />
+    <Content Include="ScripNuevoConMensajes.sql" />
     <Content Include="ScriptNuevoOriginal.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -94,7 +94,7 @@ Public Class Agregar_Pago
                 End If
                 If bllPagoviaje.validarPago(oPagoviaje) = True Then
                     bllPagoviaje.altapagoviaje(oPagoviaje)
-                    MsgBox("Se ha computado el pago correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_103"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     Throw New montoExcedidoException
                 End If

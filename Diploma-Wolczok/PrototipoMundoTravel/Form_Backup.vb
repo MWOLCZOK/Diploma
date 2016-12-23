@@ -28,7 +28,7 @@ Public Class Form_Backup
                 Dim oBack As New EE.BE_BackupRestore(TextBox3.Text, TextBox2.Text)
                 Dim bBack As New BLL.BLL_BackupRestore()
                 If bBack.RealizarBackup(oBack) = True Then
-                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_26"), ControladorTraductor.TraducirMensaje("Titulo_06"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_26"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     Throw New backuperroneoexception
                 End If

@@ -47,9 +47,9 @@ Public Class Modificar_Usuario
             SessionBLL.SesionActual.agregarForm(Me)
             SessionBLL.SesionActual.notificarCambiodeIdioma()
         Catch ex As errorObtencionDeDatosException
-            MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -97,7 +97,7 @@ Public Class Modificar_Usuario
                     NuevoUsuario.Perfil = DirectCast(CbxPerfil.SelectedItem, BE_GrupoPermiso)
                     GestorUsuario.Modificar(NuevoUsuario)
                     GestorUsuario.gestionarCambio(NuevoUsuario, tipoCambio.Modificacion, tipoValor.Posterior)
-                    MsgBox("Se ha modificado el pasajero correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_123"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                     iniciar()
                 Else
                     Throw New CamposIncorrectosException

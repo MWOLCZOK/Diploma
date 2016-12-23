@@ -41,17 +41,20 @@ Public Class Reserva_Detalle_Viaje
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnVolverComprar.Click
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_124"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Dim formulariobuscarviaje As New Reserva_Buscar_Viaje()
         formulariobuscarviaje.Show()
         Me.Close()
     End Sub
 
     Private Sub btnFinalizarCompra_Click(sender As Object, e As EventArgs) Handles btnFinalizarCompra.Click
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_124"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
     End Sub
 
     Private Sub btnGenerarPDF_Click(sender As Object, e As EventArgs) Handles btnGenerarPDF.Click
         GenerarPDF()
+        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_127"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
 

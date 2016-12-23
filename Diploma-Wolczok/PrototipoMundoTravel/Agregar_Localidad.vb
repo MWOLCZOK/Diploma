@@ -56,7 +56,7 @@ Public Class Agregar_Localidad
                 oProvincia.ID = DirectCast(ComboBox1.SelectedItem, BE_Provincia).ID
                 oLoc.Provincia = oProvincia
                 bllLoc.altalocalidad(oLoc)
-                MsgBox("Se ha agregado la localidad correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_102"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Throw New CamposIncompletosException
             End If

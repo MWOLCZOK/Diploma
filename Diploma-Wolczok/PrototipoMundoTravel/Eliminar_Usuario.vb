@@ -43,9 +43,9 @@ Public Class Eliminar_Usuario
                 Dim NuevoUsuario As New EE.BE_Usuario
                 NuevoUsuario = DirectCast(CbxUsuario.SelectedItem, EE.BE_Usuario)
                 GestorUsuario.eliminarUsuario(NuevoUsuario)
-                If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_28"), ControladorTraductor.TraducirMensaje("Titulo_07"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_28"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     iniciar()
-                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_29"), ControladorTraductor.TraducirMensaje("Titulo_07"), MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_29"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Else
                 Throw New CamposIncorrectosException

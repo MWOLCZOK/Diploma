@@ -71,7 +71,7 @@ Public Class Agregar_Transporte
                 Dim bllTransporte As New BLL_Transporte
                 oTransporte.Asientos = bllTransporte.obtenerAsientos(Me.NumericUpDown1.Value, Me.NumericUpDown2.Value, Me.NumericUpDown3.Value, Me.NumericUpDown4.Value, Me.NumericUpDown5.Value)
                 bllTransporte.altaTransporte(oTransporte)
-                MsgBox("Se ha agregado el transporte correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_108"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Throw New CamposIncompletosException
             End If

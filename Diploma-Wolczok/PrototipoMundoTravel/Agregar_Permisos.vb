@@ -49,7 +49,7 @@ Public Class Agregar_Permisos
                         GestorPermisos.Alta(Perfil)
                         ControladorPermisos.CargarPermisos(Tree)
                         txtnombre.Text = ""
-                        MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                        MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_106"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         Throw New nombreRepetidoException
                     End If

@@ -68,7 +68,7 @@ Public Class Modificar_Pais
                     Paismodificar.Zonahoraria = Txtzonahorariapais.Text
                     Gestorpais.modificarPais(Paismodificar)
                     Iniciar()
-                    MsgBox("Se ha generado el campo correctamente.", MsgBoxStyle.Information, "Accion Correcta")
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_117"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     Throw New CamposIncompletosException
                 End If

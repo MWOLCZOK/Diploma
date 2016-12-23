@@ -72,7 +72,7 @@ Public Class Cancelacion
                     oCancel.Reserva = oReserva
                     oCancel.DescripcionMotivoCancelacion = Me.Txtdecrmotivo.Text
                     bllCancel.altaCancelacion(oCancel)
-                    MsgBox("Se ha cancelado la reserva correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                    MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_112"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     Throw New CamposIncompletosException
                 End If
@@ -101,6 +101,7 @@ Public Class Cancelacion
             Me.Txtmontodevuelto.Text = oCancel.MontoDevuelto
             Me.Txtmontototal.Text = oCancel.MontoTotal
             paramCancelacion = oCancel
+            MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_111"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As errorObtencionDeDatosException
             MessageBox.Show(ex.Mensaje, ex.Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception

@@ -95,7 +95,7 @@ Public Class Agregar_Viaje
                             oViaje.FechaHoraLlegada = Fechafin.Value
                             Dim bllViaje As New BLL.BLL_Viaje
                             bllViaje.altaViaje(oViaje)
-                            MsgBox("Se ha agregado el viaje correctamente", MsgBoxStyle.Information, "Mundo Travel SA")
+                            MessageBox.Show(ControladorTraductor.TraducirMensaje("Mensaje_110"), ControladorTraductor.TraducirMensaje("Titulo_Mensaje_0"), MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             Throw New origenydestinoIgualesException
                         End If
